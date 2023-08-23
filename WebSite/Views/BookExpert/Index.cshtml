@@ -4,6 +4,10 @@
 
 @using (Html.BeginForm("Book", "BookExpert", FormMethod.Post))
 {
+    
+    <label for="BookerEmailAddress">Din Epostadresse:</label>
+    <input type="text" name="BookerEmailAddress" value="" />
+    <br/>
     <span>.Net-utvikler</span>
     <input type="submit" value="Bestill"/> 
 }

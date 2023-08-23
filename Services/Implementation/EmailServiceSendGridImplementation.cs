@@ -28,6 +28,19 @@ namespace Services.Implementation
             var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
+            Dictionary<string, dynamic>? responseContent = await response.DeserializeResponseBodyAsync();
+            if(responseContent?.Keys != null)
+            {
+                foreach(var key in responseContent.Keys)
+                {
+                    Console.WriteLine(key + " " + responseContent[key]);
+                }
+                Console.WriteLine("Email sent");
+            }
+            else
+            {
+                Console.WriteLine("Noe gikk galt: "+ JsonSerializer.Serialize(response));
+            }
             return response.IsSuccessStatusCode;
         }
     }
