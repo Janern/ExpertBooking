@@ -10,7 +10,7 @@ public class BookExpertUseCase
         _emailService = emailService;
     }
 
-    public void Execute(){
-        _emailService.SendEmail();
+    public async Task<bool> Execute(){
+        return await _emailService.SendEmail();
     }
 }

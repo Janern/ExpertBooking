@@ -1,5 +1,6 @@
+using BusinessModels;
 namespace Services;
 public interface EmailService
 {
-    void SendEmail();
+    Task<bool> SendEmail(Booking booking);
 }

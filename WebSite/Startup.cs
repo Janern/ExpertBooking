@@ -1,8 +1,12 @@
+using Services;
+using Services.Implementation;
+using UseCases;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+AddServices(builder.Services);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,3 +29,10 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+void AddServices(IServiceCollection services)
+{
+    EmailService emailService = new EmailServiceSendGridImplementation("");
+    services.AddSingleton(emailService);
+    services.AddScoped<BookExpertUseCase>();
+}
