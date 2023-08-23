@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebSite.Models;
 using UseCases;
+using BusinessModels;
 
 namespace WebSite.Controllers;
 
@@ -24,9 +25,9 @@ public class BookExpertController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Book()
+    public async Task<IActionResult> Book(Booking booking)
     {
-        bool success = await _useCase.Execute();
+        bool success = await _useCase.Execute(booking);
         return new JsonResult(success?"success":"not success");
     }
 }

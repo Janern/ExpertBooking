@@ -32,7 +32,7 @@ app.Run();
 
 void AddServices(IServiceCollection services)
 {
-    EmailService emailService = new EmailServiceSendGridImplementation("");
+    EmailService emailService = new EmailServiceSendGridImplementation("", fromAddress: "");
     services.AddSingleton(emailService);
     services.AddScoped<BookExpertUseCase>();
 }

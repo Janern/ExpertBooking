@@ -1,4 +1,5 @@
 ﻿using Services;
+using BusinessModels;
 
 namespace UseCases;
 public class BookExpertUseCase
@@ -10,7 +11,7 @@ public class BookExpertUseCase
         _emailService = emailService;
     }
 
-    public async Task<bool> Execute(){
-        return await _emailService.SendEmail();
+    public async Task<bool> Execute(Booking booking){
+        return await _emailService.SendEmail(booking);
     }
 }

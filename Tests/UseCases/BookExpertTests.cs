@@ -2,6 +2,7 @@ using Xunit;
 using UseCases;
 using Services;
 using System.Threading.Tasks;
+using BusinessModels;
 
 namespace tests;
 
@@ -17,30 +18,42 @@ public class BookExpertTests
     }
 
     [Fact]
-    public async Task WhenBookingExpertShouldSendMail()
+    public async Task WhenBookingExpertShouldSendEmail()
     {
-        await _useCase.Execute();
+        await _useCase.Execute(new Booking());
 
-        Assert.True(_fakeEmailService.EmailSent);
+        Assert.NotNull(_fakeEmailService.SentEmail);
     }
 
     [Fact]
-    public async Task WhenBookingExpertShouldSendMailToReceiver()
+    public async Task WhenBookingExpertShouldSendEmailToBookerEmailAddress()
     {
-        await _useCase.Execute();
+        string bookerEmailAddress = "test@example.com";
+        Booking booking = new Booking{BookerEmailAddress = bookerEmailAddress};
 
-        Assert.True(_fakeEmailService.EmailSent);
+        await _useCase.Execute(booking);
+
+        Assert.Equal(bookerEmailAddress, _fakeEmailService.SentEmail.BookerEmailAddress);
     }
     
     private class FakeEmailService : EmailService
     {
-        public EmailRequest SentEmail = null;
+        public Booking SentEmail = null;
 
-        async Task<bool> EmailService.SendEmail(EmailRequest sentEmail)
+        public Task<bool> SendEmail(Booking booking)
         {
-            SentEmail = sentEmail;
+            throw new System.NotImplementedException();
+        }
+
+        async Task<bool> EmailService.SendEmail(Booking booking)
+        {
+            SentEmail = booking;
             await Task.CompletedTask;
             return true;
         }
     }
+}
+
+public class EmailRequest
+{
 }
