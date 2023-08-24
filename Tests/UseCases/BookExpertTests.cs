@@ -40,12 +40,7 @@ public class BookExpertTests
     {
         public Booking SentEmail = null;
 
-        public Task<bool> SendEmail(Booking booking)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        async Task<bool> EmailService.SendEmail(Booking booking)
+        public async Task<bool> SendEmail(Booking booking)
         {
             SentEmail = booking;
             await Task.CompletedTask;
