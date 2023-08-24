@@ -3,21 +3,58 @@
 }
 @using (Html.BeginForm("Book", "BookExpert", FormMethod.Post))
 {
-    
-    <label for="TypeOfExpert">Type ressurs:</label>
-    <select></select>
-    <br/>
-    <label for="RoleOfExpert">Rolle:</label>
-    <select></select>
-    <br/>
-    <label for="ExpectedTimePeriod">Forventet periode:</label>
-    <input type="text" name="ExpectedTimePeriod" value=""/>
-    <br/>
-    <label for="BookerEmailAddress">Din Epostadresse:</label>
-    <input type="text" name="BookerEmailAddress" value="" />
-    <br/>
-    <span>.Net-utvikler</span>
-    <input type="submit" value="Bestill"/> 
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="four columns float-right">
+                    <label for="TypeOfExpert">Type ressurs:</label>
+                </div>
+                <div class="four columns">
+                    <select id="TypeOfExpert" class="u-full-width">
+                        <option value=".net">.Net</option>
+                        <option value="java">Java</option>
+                        <option value="ux">UX</option>
+                        <option value="tester">Tester</option>
+                        <option value="python">Python</option>
+                        <option value="frontend">Frontend</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns float-right">
+                    <label for="RoleOfExpert">Rolle:</label>
+                </div>
+                <div class="four columns">
+                    <select id="TypeOfExpert" class="u-full-width">
+                        <option value="leader">Prosjektleder</option>
+                        <option value="senior">Senior</option>
+                        <option value="junior">Junior</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns float-right">
+                    <label for="ExpectedTimePeriod">Forventet periode:</label>
+                </div>
+                <div class="four columns">
+                    <input type="text" name="ExpectedTimePeriod" value=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns float-right">
+                    <label for="BookerEmailAddress">Din Epostadresse:</label>
+                </div>
+                <div class="four columns">
+                    <input type="text" name="BookerEmailAddress" value="" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <input type="submit" class="button-primary" value="Bestill"/> 
+                </div>
+            </div>
+        </div>
+    </div>
 }
 @section scripts {
     <script> 
