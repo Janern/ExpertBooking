@@ -35,7 +35,51 @@ public class BookExpertTests
 
         Assert.Equal(bookerEmailAddress, _fakeEmailService.SentEmail.BookerEmailAddress);
     }
+
+    [Fact]
+    public async Task WhenBookingExpertShouldSendEmailWithTypeOfExpert()
+    {
+        string expertType = ".Net";
+        Booking booking = new Booking{ExpertType=expertType};
+
+        await _useCase.Execute(booking);
+
+        Assert.Equal(expertType, _fakeEmailService.SentEmail.ExpertType);
+    }
     
+    [Fact]
+    public async Task WhenBookingExpertShouldSendEmailWithRoleOfExpert()
+    {
+        string expertRole = "Prosjektleder";
+        Booking booking = new Booking{ExpertRole=expertRole};
+
+        await _useCase.Execute(booking);
+
+        Assert.Equal(expected: expertRole, _fakeEmailService.SentEmail.ExpertRole);
+    }
+    
+    [Fact]
+    public async Task WhenBookingExpertShouldSendEmailWithExpectedPeriod()
+    {
+        string expectedPeriod = "2023-09-01 2023-09-30";
+        Booking booking = new Booking{ExpectedPeriod=expectedPeriod};
+
+        await _useCase.Execute(booking);
+
+        Assert.Equal(expected: expectedPeriod, _fakeEmailService.SentEmail.ExpectedPeriod);
+    }
+
+    [Fact]
+    public async Task WhenBookingExpertShouldSendEmailWithQuantity()
+    {
+        int quantity = 2;
+        Booking booking = new Booking{Quantity=quantity};
+
+        await _useCase.Execute(booking);
+
+        Assert.Equal(expected: quantity, _fakeEmailService.SentEmail.Quantity);
+    }
+
     private class FakeEmailService : EmailService
     {
         public Booking SentEmail = null;
