@@ -34,10 +34,26 @@
             </div>
             <div class="row">
                 <div class="four columns float-right">
-                    <label for="ExpectedTimePeriod">Forventet periode:</label>
+                    <label for="Quantity">Antall:</label>
                 </div>
                 <div class="four columns">
-                    <input type="text" name="ExpectedTimePeriod" value=""/>
+                    <input type="number" id="Quantity"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns float-right">
+                    <label for="TimePeriod">Forventet periode:</label>
+                </div>
+                <div class="four columns">
+                    <input type="text" name="TimePeriod" value=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns float-right">
+                    <label for="Description">Beskrivelse av prosjektet:</label>
+                </div>
+                <div class="four columns inpu">
+                    <textarea  type="text" name="Description" value=""></textarea>
                 </div>
             </div>
             <div class="row">
@@ -58,6 +74,6 @@
 }
 @section scripts {
     <script> 
-        $('input[name="ExpectedTimePeriod"]').daterangepicker();
+        $('input[name="TimePeriod"]').daterangepicker();
    </script>
 }

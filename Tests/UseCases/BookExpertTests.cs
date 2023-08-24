@@ -59,14 +59,14 @@ public class BookExpertTests
     }
     
     [Fact]
-    public async Task WhenBookingExpertShouldSendEmailWithExpectedPeriod()
+    public async Task WhenBookingExpertShouldSendEmailWithTimePeriod()
     {
-        string expectedPeriod = "2023-09-01 2023-09-30";
-        Booking booking = new Booking{ExpectedPeriod=expectedPeriod};
+        string timePeriod = "2023-09-01 2023-09-30";
+        Booking booking = new Booking{TimePeriod=timePeriod};
 
         await _useCase.Execute(booking);
 
-        Assert.Equal(expected: expectedPeriod, _fakeEmailService.SentEmail.ExpectedPeriod);
+        Assert.Equal(expected: timePeriod, _fakeEmailService.SentEmail.TimePeriod);
     }
 
     [Fact]
@@ -78,6 +78,17 @@ public class BookExpertTests
         await _useCase.Execute(booking);
 
         Assert.Equal(expected: quantity, _fakeEmailService.SentEmail.Quantity);
+    }
+
+    [Fact]
+    public async Task WhenBookingExpertShouldSendEmailWithDescription()
+    {
+        string description = "Beskrivelse av problemet";
+        Booking booking = new Booking{Description=description};
+
+        await _useCase.Execute(booking);
+
+        Assert.Equal(expected: description, _fakeEmailService.SentEmail.Description);
     }
 
     private class FakeEmailService : EmailService
