@@ -4,10 +4,23 @@
 
 @using (Html.BeginForm("Book", "BookExpert", FormMethod.Post))
 {
-    
+    <label for="TypeOfExpert">Type ressurs:</label>
+    <select></select>
+    <br/>
+    <label for="RoleOfExpert">Rolle:</label>
+    <select></select>
+    <br/>
+    <label for="ExpectedTimePeriod">Forventet periode:</label>
+    <input type="text" name="ExpectedTimePeriod" value=""/>
+    <br/>
     <label for="BookerEmailAddress">Din Epostadresse:</label>
     <input type="text" name="BookerEmailAddress" value="" />
     <br/>
     <span>.Net-utvikler</span>
     <input type="submit" value="Bestill"/> 
+}
+@section scripts {
+    <script> 
+        $('input[name="ExpectedTimePeriod"]').daterangepicker();
+   </script>
 }
