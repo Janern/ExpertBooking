@@ -28,8 +28,8 @@ namespace Services.Implementation
                                               Type ressurs: {booking.ExpertType}
                                               Rolle: {booking.ExpertRole}
                                               Antall {booking.Quantity}
-                                              Forventet periode: {booking.TimePeriod}";
-                                            //   Beskrivelse av prosjektet: {booking.Description}";
+                                              Forventet periode: {booking.TimePeriod}
+                                              Beskrivelse av prosjektet: {booking.Description}";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, "");
             var response = await client.SendEmailAsync(msg);
             Dictionary<string, dynamic>? responseContent = await response.DeserializeResponseBodyAsync();
