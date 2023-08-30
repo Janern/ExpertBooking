@@ -1,12 +1,18 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 using Services;
 using Services.Implementation;
 using UseCases;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Load configuration from Azure App Configuration
+IConfigurationRoot azureConfig = GetConfigFromAzure();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-AddServices(builder.Services);
+AddServices(builder.Services, azureConfig);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,9 +36,19 @@ app.MapControllerRoute(
 
 app.Run();
 
-void AddServices(IServiceCollection services)
+static IConfigurationRoot GetConfigFromAzure()
 {
-    EmailService emailService = new EmailServiceSendGridImplementation("", fromAddress: "");
+    ConfigurationBuilder? configbuilder = new ConfigurationBuilder();
+    configbuilder.AddAzureAppConfiguration(Environment.GetEnvironmentVariable("AzureStoreConnectionString"));
+    IConfigurationRoot? config = configbuilder.Build();
+    return config;
+}
+
+void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
+{
+    EmailService emailService = new EmailServiceSendGridImplementation(
+        azureConfig["SendGridApiKey"],  
+        azureConfig["BookingReceiverEmail"]);
     services.AddSingleton(emailService);
     services.AddScoped<BookExpertUseCase>();
 }
