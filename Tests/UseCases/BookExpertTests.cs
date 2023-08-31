@@ -4,7 +4,7 @@ using Services;
 using System.Threading.Tasks;
 using BusinessModels;
 
-namespace tests;
+namespace Tests;
 
 public class BookExpertTests
 {
