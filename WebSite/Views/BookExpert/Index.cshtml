@@ -1,0 +1,83 @@
+@{
+    ViewData["Title"] = "AnyShore | Book ekspert";
+}
+@using (Html.BeginForm("Book", "BookExpert", FormMethod.Post))
+{
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                </div>
+                <div class="four columns">
+                    <label for="ExpertType">Type ressurs:</label>
+                    <select name="ExpertType" name="" class="u-full-width">
+                        <option value=".net">.Net</option>
+                        <option value="java">Java</option>
+                        <option value="ux">UX</option>
+                        <option value="tester">Tester</option>
+                        <option value="python">Python</option>
+                        <option value="frontend">Frontend</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                </div>
+                <div class="four columns">
+                    <label for="ExpertRole">Rolle:</label>
+                    <select name="ExpertRole" class="u-full-width">
+                        <option value="leader">Prosjektleder</option>
+                        <option value="senior">Senior</option>
+                        <option value="junior">Junior</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                </div>
+                <div class="four columns">
+                    <label for="Quantity">Antall:</label>
+                    <input type="number" name="Quantity"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                    
+                </div>
+                <div class="four columns">
+                    <label for="TimePeriod">Forventet periode:</label>
+                    <input type="text" name="TimePeriod" value=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                </div>
+                <div class="four columns inpu">
+                    <label for="Description">Beskrivelse av prosjektet:</label>
+                    <textarea  type="text" name="Description" value=""></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                    
+                </div>
+                <div class="four columns">
+                    <label for="BookerEmailAddress">Din Epostadresse:</label>
+                    <input type="text" name="BookerEmailAddress" value="" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                </div>
+                <div class="four columns">
+                    <input type="submit" class="button-primary" value="Bestill"/> 
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section scripts {
+    <script> 
+        $('input[name="TimePeriod"]').daterangepicker();
+   </script>
+}
