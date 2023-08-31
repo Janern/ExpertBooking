@@ -1,3 +1,5 @@
 {
-    "dotnet.defaultSolution": "ExpertBooking.sln"
+    "dotnet.defaultSolution": "ExpertBooking.sln",
+    "appService.defaultWebAppToDeploy": "/subscriptions/deb612ed-3966-4cb5-9d52-72dc3097a472/resourceGroups/AnyShore/providers/Microsoft.Web/sites/AnyShore",
+    "appService.deploySubpath": "WebSite\\bin\\Publish"
 }
