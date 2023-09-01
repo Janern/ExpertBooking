@@ -1,7 +1,10 @@
+using BusinessModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 using Services;
 using Services.Implementation;
+using Storage.Api;
+using Storage.Implementation;
 using UseCases;
 
 var builder = WebApplication.CreateBuilder(args);

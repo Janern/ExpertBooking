@@ -30,4 +30,11 @@ public class BookExpertController : Controller
         bool success = await _useCase.Execute(booking);
         return new JsonResult(success?"success":"not success");
     }
+
+    [HttpGet]
+    public async Task<Expert[]> GetExperts()
+    {
+        Expert[] experts = await _useCase.Execute(booking);
+        return new JsonResult(success?"success":"not success");
+    }
 }
