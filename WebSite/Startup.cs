@@ -53,5 +53,14 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
         azureConfig["SendGridApiKey"],  
         azureConfig["BookingReceiverEmail"]);
     services.AddSingleton(emailService);
+    
+    Expert[] experts = new Expert[]{
+        new Expert(),
+        new Expert()
+    };
+    ExpertsStorage expertsStorage = new ExpertsStorageInMemoryImplementation(experts);
+    services.AddSingleton(expertsStorage);
+    services.AddScoped<ListExpertsUseCase>();
+    
     services.AddScoped<BookExpertUseCase>();
 }
