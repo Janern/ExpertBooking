@@ -1,14 +1,17 @@
 using BusinessModels;
+using Storage.Api;
 
 namespace UseCases;
 public class ListExpertsUseCase
 {
-    public ListExpertsUseCase()
+    private ExpertsStorage _storage { get; set; }
+    public ListExpertsUseCase(ExpertsStorage storage)
     {
+        _storage = storage;
     }
 
     public Expert[] Execute()
     {
-        return new Expert[0];
+        return _storage.GetExperts();
     }
 }
