@@ -16,3 +16,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.img-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+}
+
+.pick-expert {
+  width: 10px;
+  left: 90%;
+  top: 10%;
+  border: 0;
+}
