@@ -46,4 +46,30 @@ public class ListExpertsTests
 
         Assert.Equal(_existingExperts.Length, actualExperts.Length);
     }
+
+    [Fact]
+    public void GivenExistingExpertsWhenListingAllExpertsShouldReturnExpertsWithFields()
+    {
+        Expert existingExpert = new Expert
+            {
+                FirstName="FirstName1",
+                LastName="LastName1",
+                Role="Role1",
+                Technology="Technology1",
+                Description="Description1"
+            };
+        _existingExperts = new Expert[]
+        {
+            existingExpert
+        };
+        SetUpUseCase();
+
+        Expert actualExpert = _useCase.Execute()[0];
+
+        Assert.Equal(existingExpert.FirstName, actualExpert.FirstName);
+        Assert.Equal(existingExpert.LastName, actualExpert.LastName);
+        Assert.Equal(existingExpert.Role, actualExpert.Role);
+        Assert.Equal(existingExpert.Technology, actualExpert.Technology);
+        Assert.Equal(existingExpert.Description, actualExpert.Description);
+    }
 }
