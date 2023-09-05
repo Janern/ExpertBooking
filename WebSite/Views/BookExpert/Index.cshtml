@@ -34,6 +34,9 @@
                 </div>
             </div>
             <div class="row">
+                <div class="twelve columns">
+                    <button type="button" id="fetchDataButton">Fetch JSON Data</button>
+                </div>
                 <div class="four columns">
                     <img src="images/LiniSaroksan.jpg" class="expert-table-img"/>
                 </div>
@@ -65,5 +68,20 @@
 @section scripts {
     <script> 
         $('input[name="TimePeriod"]').daterangepicker();
+        $(document).ready(function () {
+        $('#fetchDataButton').click(function () {
+            $.ajax({
+                url: '/ListExperts/JsonData',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function () {
+                    console.error('Error fetching JSON data.');
+                }
+            });
+        });
+    });
    </script>
 }
