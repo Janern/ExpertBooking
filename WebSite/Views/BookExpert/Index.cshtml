@@ -61,8 +61,8 @@
 @section scripts {
     <script>
         $('input[name="TimePeriod"]').daterangepicker();
-        $(document).ready(function () {
-        $('#fetchDataButton').click(function () {
+        function fetchExperts() 
+        {
             $.ajax({
                 url: '/ListExperts/JsonData',
                 type: 'GET',
@@ -94,7 +94,12 @@
                     console.error('Error fetching JSON data.');
                 }
             });
+        };
+        $(document).ready(function() {
+            fetchExperts();
+            $('#fetchDataButton').click(function () {
+                fetchExperts();
+            });
         });
-    });
    </script>
 }
