@@ -52,6 +52,7 @@ public class ListExpertsTests
     {
         Expert existingExpert = new Expert
             {
+                Id="ID1",
                 FirstName="FirstName1",
                 LastName="LastName1",
                 Role="Role1",
@@ -66,6 +67,7 @@ public class ListExpertsTests
 
         Expert actualExpert = _useCase.Execute()[0];
 
+        Assert.Equal(existingExpert.Id, actualExpert.Id);
         Assert.Equal(existingExpert.FirstName, actualExpert.FirstName);
         Assert.Equal(existingExpert.LastName, actualExpert.LastName);
         Assert.Equal(existingExpert.Role, actualExpert.Role);
