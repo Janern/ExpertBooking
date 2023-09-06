@@ -1,11 +1,11 @@
+using System.Text.Json;
 using BusinessModels;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 using Services;
 using Services.Implementation;
 using Storage.Api;
 using Storage.Implementation;
 using UseCases;
+using WebSite.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,10 +54,7 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
         azureConfig["BookingReceiverEmail"]);
     services.AddSingleton(emailService);
     
-    Expert[] experts = new Expert[]{
-        new Expert(),
-        new Expert()
-    };
+    Expert[] experts = JsonSerializer.Deserialize<Expert[]>(ReadJsonFromFileHelper.ReadJsonFromTextFile(azureConfig["ExpertsJsonFilePath"]));
     ExpertsStorage expertsStorage = new ExpertsStorageInMemoryImplementation(experts);
     services.AddSingleton(expertsStorage);
     services.AddScoped<ListExpertsUseCase>();

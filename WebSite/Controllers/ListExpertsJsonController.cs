@@ -1,27 +1,25 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using BusinessModels;
 using Microsoft.AspNetCore.Mvc;
+using UseCases;
 
 namespace WebSite.Controllers
 {
     [Route("ListExperts")]
     public class ListExpertsJsonController : Controller
     {
-        public ListExpertsJsonController()
+        private ListExpertsUseCase _listExpertsUseCase;
+
+        public ListExpertsJsonController(ListExpertsUseCase listExpertsUseCase)
         {
+            _listExpertsUseCase = listExpertsUseCase;
         }
 
         [Route("JsonData")]
         public IActionResult GetAllExperts()
         {
-            List<Expert>? jsonData = new List<Expert>
-            {
-                new Expert {  },
-                new Expert {  },
-                new Expert {  }
-            };
-            string jsonString = JsonSerializer.Serialize(jsonData);
+            Expert[] experts = _listExpertsUseCase.Execute();
+            string jsonString = JsonSerializer.Serialize(experts);
             return new JsonResult(jsonString);
         }
     }
