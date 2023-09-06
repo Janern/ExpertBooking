@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "AnyShore | Book ekspert";
 }
+@model BusinessModels.Expert[]
 @using (Html.BeginForm("Book", "BookExpert", FormMethod.Post))
 {
     <div class="section">
@@ -33,19 +34,11 @@
                     <input type="text" name="TimePeriod" value=""/>
                 </div>
             </div>
-            <div class="row">
-                <div class="twelve columns">
-                    <button type="button" id="fetchDataButton">Fetch JSON Data</button>
-                </div>
-                <div class="four columns">
-                    <img src="images/LiniSaroksan.jpg" class="expert-table-img"/>
-                </div>
-                <div class="four columns">                   
-                    <img src="images/LiniSaroksan.jpg" class="expert-table-img"/>
-                </div>
-                <div class="four columns">                   
-                    <img src="images/LiniSaroksan.jpg" class="expert-table-img"/>
-                </div>
+            <div class="twelve columns">
+                <button type="button" id="fetchDataButton">Fetch JSON Data</button>
+            </div>
+            <div class="row" id="expertTable">
+                <!-- placeholder for json from controller -->
             </div>
             <div class="row">
                 <div class="four columns">
@@ -59,14 +52,14 @@
             </div>
             <div class="row">
                 <div class="twelve columns">
-                    <input type="submit" class="button-primary" value="Bestill"/> 
+                    <input type="submit" class="button-primary" value="Bestill"/>
                 </div>
             </div>
         </div>
     </div>
 }
 @section scripts {
-    <script> 
+    <script>
         $('input[name="TimePeriod"]').daterangepicker();
         $(document).ready(function () {
         $('#fetchDataButton').click(function () {
@@ -76,6 +69,26 @@
                 dataType: 'json',
                 success: function (data) {
                     console.log(data);
+                    $('#expertTable').empty();
+                    $.each(JSON.parse(data), function (index, expert) {
+                        var row = '<div class="four columns">';
+                        row += '<img src="images/'+
+                        expert.Id+
+                        '.jpg" class="expert-table-img" />'
+                        row += '<span class="expertLabel">Navn: </span>'+
+                            '<span class="expertAttribute"> '+
+                                expert.FirstName +' '+ expert.LastName +
+                            '</span><br/>';
+                        row += '<span class="expertLabel">Rolle: </span>'+
+                            '<span class="expertAttribute"> '+
+                                expert.Role +
+                            '</span><br/>';
+                        row += '<span class="expertLabel">Teknologi: </span>' +
+                            '<span class="expertAttribute"> '+ expert.Technology +
+                            '</span><br/>'
+                        row += '</div>'
+                        $('#expertTable').append(row);
+                    });
                 },
                 error: function () {
                     console.error('Error fetching JSON data.');

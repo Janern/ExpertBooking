@@ -33,4 +33,13 @@ body {
 
 .expert-table-img {
   width: 100%;
+  border-radius: 25%;
+}
+
+.expertLabel {
+  font-weight: bold;
+}
+
+.expertAttribute {
+  color: red;
 }
