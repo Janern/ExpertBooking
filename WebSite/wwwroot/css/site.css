@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  
 }
 
 @media (min-width: 768px) {
@@ -32,8 +33,7 @@ body {
 }
 
 .expert-table-img {
-  width: 100%;
-  border-radius: 25%;
+  border-radius: 12%;
 }
 
 .expertLabel {
@@ -41,4 +41,13 @@ body {
 }
 
 .expertAttribute {
+}
+
+.form-row {
+  padding-bottom: 1em;
+	text-decoration: none;
+	border-bottom: 1px dotted #253c93;
+}
+
+.light-blue{
 }

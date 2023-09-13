@@ -6,10 +6,7 @@
 {
     <div class="section">
         <div class="container">
-            <div class="row">
-                <div class="twelve columns">
-                    <h3>Filter</h3>
-                </div>
+            <div class="row form-row">
                 <div class="four columns">
                     <label for="ExpertType">Type ressurs:</label>
                     <select name="ExpertType" name="" class="u-full-width">
@@ -34,23 +31,23 @@
                     <input type="text" name="TimePeriod" value=""/>
                 </div>
             </div>
-            <div class="twelve columns">
-                <button type="button" id="fetchDataButton">Fetch JSON Data</button>
-            </div>
-            <div class="row" id="expertTable">
+            <div class="row form-row light-blue" id="expertTable">
                 <!-- placeholder for json from controller -->
             </div>
-            <div class="row">
-                <div class="four columns">
+            <div class="row form-row">
+                <div class="twelve columns full u-full-width">
                     <label for="Description">Beskrivelse av prosjektet:</label>
-                    <textarea  type="text" name="Description" value=""></textarea>
+                    <textarea class="u-full-width" type="text" name="Description" value=""></textarea>
                 </div>
+            </div>
+            <div class="row form-row light-blue">
+                <div class="four columns"></div>
                 <div class="four columns">
                     <label for="BookerEmailAddress">Din Epostadresse:</label>
                     <input type="text" name="BookerEmailAddress" value="" />
                 </div>
             </div>
-            <div class="row">
+            <div class="row form-row">
                 <div class="twelve columns">
                     <input type="submit" class="button-primary" value="Bestill"/>
                 </div>
@@ -69,11 +66,20 @@
                 dataType: 'json',
                 success: function (data) {
                     $('#expertTable').empty();
+                    var row = '<div class="row">'
+                    $('#expertTable').append(row);
                     $.each(JSON.parse(data), function (index, expert) {
-                        var row = '<div class="four columns">';
-                        row += '<img src="images/'+
-                        expert.Id+
-                        '.jpg" class="expert-table-img" />'
+                        row = '<div class="one-third column">';
+                        row += '<img src="images/'+expert.Id+'.jpg" class="expert-table-img u-max-full-width" />'
+                        row += '</div>'
+                        $('#expertTable').append(row);
+                    });
+                    row = '</div>';
+                    $('#expertTable').append(row);
+                    var row = '<div class="row">'
+                    $('#expertTable').append(row);
+                    $.each(JSON.parse(data), function (index, expert) {
+                        row = '<div class="one-third column">';
                         row += '<span class="expertLabel">Navn: </span>'+
                             '<span class="expertAttribute"> '+
                                 expert.FirstName +' '+ expert.LastName +
@@ -85,9 +91,11 @@
                         row += '<span class="expertLabel">Teknologi: </span>' +
                             '<span class="expertAttribute"> '+ expert.Technology +
                             '</span><br/>'
-                        row += '</div>'
+                        row += '</div>';
                         $('#expertTable').append(row);
                     });
+                    row = '</div>';
+                    $('#expertTable').append(row);
                 },
                 error: function () {
                     console.error('Error fetching JSON data.');
