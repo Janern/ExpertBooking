@@ -8,7 +8,7 @@ namespace WebSite.Helpers
     {
         public static Booking Convert(BookingInputModel inputModel)
         {
-            Expert[] expertsDeserialized = JsonSerializer.Deserialize<Expert[]>(inputModel.SelectedExpertsJson);
+            Expert[] expertsDeserialized = JsonSerializer.Deserialize<Expert[]>(inputModel.SelectedExpertsJson??"[]");
             return new Booking
             {
                 Experts = expertsDeserialized,
