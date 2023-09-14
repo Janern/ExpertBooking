@@ -3,6 +3,7 @@ using UseCases;
 using Services;
 using System.Threading.Tasks;
 using BusinessModels;
+using Tests.TestHelpers;
 
 namespace Tests;
 
@@ -101,24 +102,8 @@ public class BookExpertTests
         await _useCase.Execute(booking);
         
         Assert.Equal(experts.Length, _fakeEmailService.SentBooking.Experts.Length);
-        AssertContainsExpert(experts[0], _fakeEmailService.SentBooking.Experts);
-        AssertContainsExpert(experts[1], _fakeEmailService.SentBooking.Experts);
-    }
-
-    private void AssertContainsExpert(Expert expected, Expert[] actual)
-    {
-        bool exists = false;
-        foreach(var expert in actual)
-        {
-            if(expert.Id == expected.Id)
-            {
-                Assert.Equal(expected.FirstName, expert.FirstName);
-                Assert.Equal(expected.LastName, expert.LastName);
-                exists = true;
-                break;
-            }
-        }
-        Assert.True(exists, "ExpertId was not found in array of experts");
+        ExpertAssertionHelper.AssertContainsExpert(experts[0], _fakeEmailService.SentBooking.Experts);
+        ExpertAssertionHelper.AssertContainsExpert(experts[1], _fakeEmailService.SentBooking.Experts);
     }
 
     [Fact]
