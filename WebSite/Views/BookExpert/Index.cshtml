@@ -74,11 +74,12 @@
                     availableExpertsJson = JSON.parse(data);
                     $('#expertTable').empty();
                     $.each(availableExpertsJson, function (index, expert) {
-                        row = '<div id="'+expert.Id+'" class="one-third column expertCard" onclick="ToggleExpertSelected(\''+expert.Id+'\')">';
+                        row = '<div id="'+expert.Id+'" class="one-third column expertCard" onclick="ToggleExpertSelected(this, \''+expert.Id+'\')">';
                         row += '<div class="two columns">&nbsp;';
                         row += '</div>';
                         row += '<div class="eight columns">';
                         row += '<img src="images/'+expert.Id+'.jpg" class="expert-table-img u-max-full-width" />';
+                        row += '<i class="selectedExpertCheckmark img-overlay-pick-expert-btn"></i>';
                         row += '</div>';
                         row += '<div class="two columns">&nbsp;';
                         row += '</div>';
@@ -109,8 +110,7 @@
                 }
             });
         };
-        function ToggleExpertSelected(expertId){
-            console.log('clicked: '+expertId);
+        function ToggleExpertSelected(clickedElement, expertId){
             let indexOfExpert = selectedExpertsJson.findIndex(item => item.Id === expertId);
             if(indexOfExpert > -1){
                 selectedExpertsJson = selectedExpertsJson.splice(indexOfExpert, 1);
@@ -122,6 +122,7 @@
                 }
             }
             selectedExpertsJsonInput.value = JSON.stringify(selectedExpertsJson);
+            clickedElement.classList.toggle("clicked");
         };
         $(document).ready(function() {
             availableExpertsJson = fetchExperts();

@@ -18,17 +18,11 @@ body {
   margin-bottom: 60px;
 }
 
-.img-overlay-pick-expert-container {
+.img-overlay-pick-expert-btn {
   position: relative;
   text-align: center;
   z-index: 100;
   top:-50%;
-  height: 100%;
-}
-
-.img-overlay-pick-expert-btn {
-  position: relative;
-  text-align: center;
   height: 100%;
 }
 
@@ -50,7 +44,28 @@ body {
   margin-bottom: 3em;
 }
 
+.clicked {
+  border: green dotted 10px;
+}
+
 .form-row {
   padding-bottom: 1em;
 	text-decoration: none;
+}
+
+.selectedExpertCheckmark i {
+  background: url('/images/square-check-regular.svg');
+}
+
+.one-third.column.expertCard i {
+  display: none;
+}
+
+.one-third.column.expertCard.clicked i {
+  display: block;
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+  color: #709b09; /* Change to your desired icon color */
+  font-size: 24px; /* Change to your desired icon size */
 }
