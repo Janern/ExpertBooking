@@ -27,9 +27,10 @@ BookExpertController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Book(BookingInputModel booking)
+    public async Task<IActionResult> Book(BookingInputModel bookingInput)
     {
-        bool success = await _useCase.Execute(BookingInputModelConverter.Convert(booking));
-        return new JsonResult(success?"success":"not success");
+        var booking = BookingInputModelConverter.Convert(bookingInput);
+        bool success = await _useCase.Execute(booking);
+        return RedirectToAction("Index", "BookExpertResult", new BookingResultModel{Booking = booking, Success = success});
     }
 }
