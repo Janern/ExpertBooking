@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using WebSite.Models;
 using UseCases;
 using BusinessModels;
+using WebSite.Helpers;
 
 namespace WebSite.Controllers;
 
-public class BookExpertController : Controller
+public class 
+BookExpertController : Controller
 {
     private readonly ILogger<BookExpertController> _logger;
     private BookExpertUseCase _useCase;
@@ -25,9 +27,9 @@ public class BookExpertController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Book(Booking booking)
+    public async Task<IActionResult> Book(BookingInputModel booking)
     {
-        bool success = await _useCase.Execute(booking);
+        bool success = await _useCase.Execute(BookingInputModelConverter.Convert(booking));
         return new JsonResult(success?"success":"not success");
     }
 }
