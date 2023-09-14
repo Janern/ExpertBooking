@@ -1,3 +1,4 @@
+using System.Text.Json;
 using BusinessModels;
 using WebSite.Models;
 
@@ -7,7 +8,11 @@ namespace WebSite.Helpers
     {
         public static Booking Convert(BookingInputModel inputModel)
         {
-            return null;
+            Expert[] expertsDeserialized = JsonSerializer.Deserialize<Expert[]>(inputModel.ExpertsJson);
+            return new Booking
+            {
+                Experts = expertsDeserialized
+            };
         }
     }
 }
