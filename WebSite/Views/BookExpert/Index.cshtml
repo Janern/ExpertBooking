@@ -35,7 +35,7 @@
                 <!-- placeholder for json from controller -->
             </div>
 
-            <input id="SelectedExpertsJsonInput" type="hidden"/>
+            <input id="SelectedExpertsJsonInput" name="SelectedExpertsJson" value="" />
             <div class="row form-row">
                 <div class="twelve columns full u-full-width">
                     <label for="Description">Beskrivelse av prosjektet:</label>
@@ -60,6 +60,10 @@
 @section scripts {
     <script>
         $('input[name="TimePeriod"]').daterangepicker();
+        let selectedExpertsJson = [];
+        let availableExpertsJson = []; 
+        const selectedExpertsJsonInput = document.getElementById("SelectedExpertsJsonInput");
+        
         function fetchExperts() 
         {
             $.ajax({
@@ -67,9 +71,10 @@
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
+                    availableExpertsJson = JSON.parse(data);
                     $('#expertTable').empty();
-                    $.each(JSON.parse(data), function (index, expert) {
-                        row = '<div class="one-third column expertCard">';
+                    $.each(availableExpertsJson, function (index, expert) {
+                        row = '<div id="'+expert.Id+'" class="one-third column expertCard" onclick="ToggleExpertSelected(\''+expert.Id+'\')">';
                         row += '<div class="two columns">&nbsp;';
                         row += '</div>';
                         row += '<div class="eight columns">';
@@ -104,10 +109,24 @@
                 }
             });
         };
+        function ToggleExpertSelected(expertId){
+            console.log('clicked: '+expertId);
+            let indexOfExpert = selectedExpertsJson.findIndex(item => item.Id === expertId);
+            if(indexOfExpert > -1){
+                selectedExpertsJson = selectedExpertsJson.splice(indexOfExpert, 1);
+            }else{
+                let indexOfExpert = availableExpertsJson.findIndex(item => item.Id === expertId);
+                if(indexOfExpert > -1)
+                {
+                    selectedExpertsJson.push(availableExpertsJson[indexOfExpert]);
+                }
+            }
+            selectedExpertsJsonInput.value = JSON.stringify(selectedExpertsJson);
+        };
         $(document).ready(function() {
-            fetchExperts();
+            availableExpertsJson = fetchExperts();
             $('#fetchDataButton').click(function () {
-                fetchExperts();
+                availableExpertsJson = fetchExperts();
             });
         });
    </script>

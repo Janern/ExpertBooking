@@ -1,6 +1,6 @@
 [
     {
-        "Id": "Jan Erik Dehli",
+        "Id": "JanErikDehli",
         "FirstName": "Jan Erik",
         "LastName": "Dehli",
         "Role": "Seniorkonsulent",
@@ -8,7 +8,7 @@
         "Description": "Jan Erik er en senior .Net-utvikler med erfaring fra hele stacken, og har over ti \u00E5rs erfaring med C#. Han har jobbet med databaseteknologier som MSSQL, PostgreSQL og Mongo, og frontendteknologier som HTML, JavaScript, CSS og Vue.Han arbeider alltid for \u00E5 ha en god dialog med kunde og tar ansvar for at arkitekturen st\u00F8tter behovene kunden har n\u00E5 og i fremtiden."
     },
     {
-        "Id": "Lin Bele Jacobsen",
+        "Id": "LinBeleJacobsen",
         "FirstName": "Lin Bele",
         "LastName": "Jacobsen",
         "Role": "UX Lead",
@@ -16,7 +16,7 @@
         "Description": "Lin jobber med brukeropplevelse og tjenestedesign som sine hovedfelt. Hun er faglig sterk og har bred erfaring fra ulike selskaper og bransjer. Hun har jobbet b\u00E5de som konsulent og inhouse ressurs, og glir lett inn i tverrfaglige team. Hun har erfaring som Design Lead og tar naturlig en veiledende rolle og ansvar i et team."
     },
     {
-        "Id": "Jan Erik Dehli",
+        "Id": "JanErikDehli3",
         "FirstName": "Jan Erik",
         "LastName": "Dehli",
         "Role": "Seniorkonsulent",
@@ -24,7 +24,7 @@
         "Description": "Jan Erik er en senior .Net-utvikler med erfaring fra hele stacken, og har over ti \u00E5rs erfaring med C#. Han har jobbet med databaseteknologier som MSSQL, PostgreSQL og Mongo, og frontendteknologier som HTML, JavaScript, CSS og Vue.Han arbeider alltid for \u00E5 ha en god dialog med kunde og tar ansvar for at arkitekturen st\u00F8tter behovene kunden har n\u00E5 og i fremtiden."
     },
     {
-        "Id": "Jan Erik Dehli",
+        "Id": "JanErikDehli4",
         "FirstName": "Jan Erik",
         "LastName": "Dehli",
         "Role": "Seniorkonsulent",
@@ -32,7 +32,7 @@
         "Description": "Jan Erik er en senior .Net-utvikler med erfaring fra hele stacken, og har over ti \u00E5rs erfaring med C#. Han har jobbet med databaseteknologier som MSSQL, PostgreSQL og Mongo, og frontendteknologier som HTML, JavaScript, CSS og Vue.Han arbeider alltid for \u00E5 ha en god dialog med kunde og tar ansvar for at arkitekturen st\u00F8tter behovene kunden har n\u00E5 og i fremtiden."
     },
     {
-        "Id": "Jan Erik Dehli",
+        "Id": "JanErikDehli5",
         "FirstName": "Jan Erik",
         "LastName": "Dehli",
         "Role": "Seniorkonsulent",
@@ -40,7 +40,7 @@
         "Description": "Jan Erik er en senior .Net-utvikler med erfaring fra hele stacken, og har over ti \u00E5rs erfaring med C#. Han har jobbet med databaseteknologier som MSSQL, PostgreSQL og Mongo, og frontendteknologier som HTML, JavaScript, CSS og Vue.Han arbeider alltid for \u00E5 ha en god dialog med kunde og tar ansvar for at arkitekturen st\u00F8tter behovene kunden har n\u00E5 og i fremtiden."
     },
     {
-        "Id": "Jan Erik Dehli",
+        "Id": "JanErikDehli6",
         "FirstName": "Jan Erik",
         "LastName": "Dehli",
         "Role": "Seniorkonsulent",
@@ -48,7 +48,7 @@
         "Description": "Jan Erik er en senior .Net-utvikler med erfaring fra hele stacken, og har over ti \u00E5rs erfaring med C#. Han har jobbet med databaseteknologier som MSSQL, PostgreSQL og Mongo, og frontendteknologier som HTML, JavaScript, CSS og Vue.Han arbeider alltid for \u00E5 ha en god dialog med kunde og tar ansvar for at arkitekturen st\u00F8tter behovene kunden har n\u00E5 og i fremtiden."
     },
     {
-        "Id": "Jan Erik Dehli",
+        "Id": "JanErikDehli7",
         "FirstName": "Jan Erik",
         "LastName": "Dehli",
         "Role": "Seniorkonsulent",
@@ -56,7 +56,7 @@
         "Description": "Jan Erik er en senior .Net-utvikler med erfaring fra hele stacken, og har over ti \u00E5rs erfaring med C#. Han har jobbet med databaseteknologier som MSSQL, PostgreSQL og Mongo, og frontendteknologier som HTML, JavaScript, CSS og Vue.Han arbeider alltid for \u00E5 ha en god dialog med kunde og tar ansvar for at arkitekturen st\u00F8tter behovene kunden har n\u00E5 og i fremtiden."
     },
     {
-        "Id": "Jan Erik Dehli",
+        "Id": "JanErikDehli8",
         "FirstName": "Jan Erik",
         "LastName": "Dehli",
         "Role": "Seniorkonsulent",
@@ -64,15 +64,7 @@
         "Description": "Jan Erik er en senior .Net-utvikler med erfaring fra hele stacken, og har over ti \u00E5rs erfaring med C#. Han har jobbet med databaseteknologier som MSSQL, PostgreSQL og Mongo, og frontendteknologier som HTML, JavaScript, CSS og Vue.Han arbeider alltid for \u00E5 ha en god dialog med kunde og tar ansvar for at arkitekturen st\u00F8tter behovene kunden har n\u00E5 og i fremtiden."
     },
     {
-        "Id": "Jan Erik Dehli",
-        "FirstName": "Jan Erik",
-        "LastName": "Dehli",
-        "Role": "Seniorkonsulent",
-        "Technology": ".Net",
-        "Description": "Jan Erik er en senior .Net-utvikler med erfaring fra hele stacken, og har over ti \u00E5rs erfaring med C#. Han har jobbet med databaseteknologier som MSSQL, PostgreSQL og Mongo, og frontendteknologier som HTML, JavaScript, CSS og Vue.Han arbeider alltid for \u00E5 ha en god dialog med kunde og tar ansvar for at arkitekturen st\u00F8tter behovene kunden har n\u00E5 og i fremtiden."
-    },
-    {
-        "Id": "Jan Erik Dehli",
+        "Id": "JanErikDehli9",
         "FirstName": "Jan Erik",
         "LastName": "Dehli",
         "Role": "Seniorkonsulent",

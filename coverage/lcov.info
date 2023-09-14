@@ -1,4 +1,4 @@
-SF:C:\Repositories\ExpertBooking\BusinessModels\Booking.cs
+SF:c:\Repositories\ExpertBooking\BusinessModels\Booking.cs
 FN:4,System.String BusinessModels.Booking::get_BookerEmailAddress()
 FNDA:12,System.String BusinessModels.Booking::get_BookerEmailAddress()
 DA:5,12
@@ -18,7 +18,7 @@ BRH:0
 FNF:4
 FNH:4
 end_of_record
-SF:C:\Repositories\ExpertBooking\BusinessModels\Expert.cs
+SF:c:\Repositories\ExpertBooking\BusinessModels\Expert.cs
 FN:3,System.String BusinessModels.Expert::get_Id()
 FNDA:52,System.String BusinessModels.Expert::get_Id()
 DA:4,52
@@ -44,7 +44,7 @@ BRH:0
 FNF:6
 FNH:6
 end_of_record
-SF:C:\Repositories\ExpertBooking\Services\Implementation\EmailServiceConsoleLogImplementation.cs
+SF:c:\Repositories\ExpertBooking\Services\Implementation\EmailServiceConsoleLogImplementation.cs
 FN:11,System.Void Services.Implementation.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
 FNDA:0,System.Void Services.Implementation.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
 DA:12,0
@@ -59,7 +59,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Services\Implementation\EmailServiceSendGridImplementation.cs
+SF:c:\Repositories\ExpertBooking\Services\Implementation\EmailServiceSendGridImplementation.cs
 FN:9,System.String Services.Implementation.EmailServiceSendGridImplementation::get__apiKey()
 FNDA:0,System.String Services.Implementation.EmailServiceSendGridImplementation::get__apiKey()
 DA:10,0
@@ -131,7 +131,7 @@ BRH:0
 FNF:5
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Storage\Implementation\ExpertsStorageInMemoryImplementation.cs
+SF:c:\Repositories\ExpertBooking\Storage\Implementation\ExpertsStorageInMemoryImplementation.cs
 FN:7,BusinessModels.Expert[] Storage.Implementation.ExpertsStorageInMemoryImplementation::get__experts()
 FNDA:8,BusinessModels.Expert[] Storage.Implementation.ExpertsStorageInMemoryImplementation::get__experts()
 DA:8,8
@@ -197,7 +197,7 @@ BRH:0
 FNF:3
 FNH:3
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Startup.cs
+SF:c:\Repositories\ExpertBooking\WebSite\Startup.cs
 FN:9,System.Void Program::<Main>$(System.String[])
 FNDA:0,System.Void Program::<Main>$(System.String[])
 DA:10,0
@@ -248,7 +248,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Views\BookExpert\Index.cshtml
+SF:c:\Repositories\ExpertBooking\WebSite\Views\BookExpert\Index.cshtml
 FN:1,System.Void AspNetCoreGeneratedDocument.Views_BookExpert_Index/<ExecuteAsync>d__16::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_BookExpert_Index/<ExecuteAsync>d__16::MoveNext()
 DA:2,0
@@ -280,7 +280,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Views\Shared\Error.cshtml
+SF:c:\Repositories\ExpertBooking\WebSite\Views\Shared\Error.cshtml
 FN:2,System.Void AspNetCoreGeneratedDocument.Views_Shared_Error/<ExecuteAsync>d__0::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared_Error/<ExecuteAsync>d__0::MoveNext()
 DA:3,0
@@ -301,7 +301,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Views\_ViewStart.cshtml
+SF:c:\Repositories\ExpertBooking\WebSite\Views\_ViewStart.cshtml
 FN:1,System.Void AspNetCoreGeneratedDocument.Views__ViewStart/<ExecuteAsync>d__0::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views__ViewStart/<ExecuteAsync>d__0::MoveNext()
 DA:2,0
@@ -312,7 +312,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Views\Shared\_Layout.cshtml
+SF:c:\Repositories\ExpertBooking\WebSite\Views\Shared\_Layout.cshtml
 FN:5,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__20_0>d::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__20_0>d::MoveNext()
 DA:6,0
@@ -346,7 +346,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Models\BookingInputModel.cs
+SF:c:\Repositories\ExpertBooking\WebSite\Models\BookingInputModel.cs
 FN:4,System.String WebSite.Models.BookingInputModel::get_SelectedExpertsJson()
 FNDA:12,System.String WebSite.Models.BookingInputModel::get_SelectedExpertsJson()
 DA:5,12
@@ -366,7 +366,7 @@ BRH:0
 FNF:4
 FNH:4
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Models\ErrorViewModel.cs
+SF:c:\Repositories\ExpertBooking\WebSite\Models\ErrorViewModel.cs
 FN:4,System.String WebSite.Models.ErrorViewModel::get_RequestId()
 FNDA:0,System.String WebSite.Models.ErrorViewModel::get_RequestId()
 DA:5,0
@@ -380,7 +380,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Helpers\BookingInputModelConverter.cs
+SF:c:\Repositories\ExpertBooking\WebSite\Helpers\BookingInputModelConverter.cs
 FN:9,BusinessModels.Booking WebSite.Helpers.BookingInputModelConverter::Convert(WebSite.Models.BookingInputModel)
 FNDA:6,BusinessModels.Booking WebSite.Helpers.BookingInputModelConverter::Convert(WebSite.Models.BookingInputModel)
 DA:10,6
@@ -393,14 +393,16 @@ DA:16,6
 DA:17,6
 DA:18,6
 DA:19,6
+BRDA:11,8,0,0
+BRDA:11,8,1,6
 LF:10
 LH:10
-BRF:0
-BRH:0
+BRF:2
+BRH:1
 FNF:1
 FNH:1
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Helpers\ReadJsonFromFileHelper.cs
+SF:c:\Repositories\ExpertBooking\WebSite\Helpers\ReadJsonFromFileHelper.cs
 FN:4,System.String WebSite.Helpers.ReadJsonFromFileHelper::ReadJsonFromTextFile(System.String)
 FNDA:0,System.String WebSite.Helpers.ReadJsonFromFileHelper::ReadJsonFromTextFile(System.String)
 DA:5,0
@@ -419,7 +421,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Controllers\BookExpertController.cs
+SF:c:\Repositories\ExpertBooking\WebSite\Controllers\BookExpertController.cs
 FN:24,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.BookExpertController::Index()
 FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.BookExpertController::Index()
 DA:25,0
@@ -449,7 +451,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\WebSite\Controllers\ListExpertsJsonController.cs
+SF:c:\Repositories\ExpertBooking\WebSite\Controllers\ListExpertsJsonController.cs
 FN:19,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.ListExpertsJsonController::GetAllExperts()
 FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.ListExpertsJsonController::GetAllExperts()
 DA:20,0
