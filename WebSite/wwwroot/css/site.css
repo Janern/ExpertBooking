@@ -33,21 +33,25 @@ body {
 }
 
 .expert-table-img {
-  border-radius: 12%;
+  border-radius: 100%;
+  margin-top: -3em;
 }
 
 .expertLabel {
   font-weight: bold;
 }
 
-.expertAttribute {
+.expertCard {
+  background-color: #386097;
+  color: white;
+  border-radius: 25%;
+  font-size: medium;
+  padding-bottom: 1em;
+  margin-bottom: 3em;
 }
 
 .form-row {
   padding-bottom: 1em;
 	text-decoration: none;
 	border-bottom: 1px dotted #253c93;
-}
-
-.light-blue{
 }

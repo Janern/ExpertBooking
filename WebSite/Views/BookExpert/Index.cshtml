@@ -66,36 +66,36 @@
                 dataType: 'json',
                 success: function (data) {
                     $('#expertTable').empty();
-                    var row = '<div class="row">'
-                    $('#expertTable').append(row);
                     $.each(JSON.parse(data), function (index, expert) {
-                        row = '<div class="one-third column">';
-                        row += '<img src="images/'+expert.Id+'.jpg" class="expert-table-img u-max-full-width" />'
-                        row += '</div>'
-                        $('#expertTable').append(row);
-                    });
-                    row = '</div>';
-                    $('#expertTable').append(row);
-                    var row = '<div class="row">'
-                    $('#expertTable').append(row);
-                    $.each(JSON.parse(data), function (index, expert) {
-                        row = '<div class="one-third column">';
+                        row = '<div class="one-third column expertCard">';
+                        row += '<div class="two columns">&nbsp;';
+                        row += '</div>';
+                        row += '<div class="eight columns">';
+                        row += '<img src="images/'+expert.Id+'.jpg" class="expert-table-img u-max-full-width" />';
+                        row += '</div>';
+                        row += '<div class="two columns">&nbsp;';
+                        row += '</div>';
+                        row += '<div class="twelve columns">';
                         row += '<span class="expertLabel">Navn: </span>'+
                             '<span class="expertAttribute"> '+
                                 expert.FirstName +' '+ expert.LastName +
-                            '</span><br/>';
+                            '</span>';
+                        row += '</div>';
+                        row += '<div class="twelve columns">';
                         row += '<span class="expertLabel">Rolle: </span>'+
                             '<span class="expertAttribute"> '+
                                 expert.Role +
-                            '</span><br/>';
+                            '</span>';
+                        row += '</div>';
+                        row += '<div class="twelve columns">';
                         row += '<span class="expertLabel">Teknologi: </span>' +
                             '<span class="expertAttribute"> '+ expert.Technology +
-                            '</span><br/>'
+                            '</span>'
                         row += '</div>';
+                        row += '</div>';
+
                         $('#expertTable').append(row);
                     });
-                    row = '</div>';
-                    $('#expertTable').append(row);
                 },
                 error: function () {
                     console.error('Error fetching JSON data.');
