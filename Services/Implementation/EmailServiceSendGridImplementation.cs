@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
 using BusinessModels;
 using SendGrid;
 using SendGrid.Helpers.Mail;
@@ -24,10 +20,9 @@ namespace Services.Implementation
             var from = new EmailAddress(_bookingReceiver);
             var subject = "Ny bestilling fra "+booking.BookerEmailAddress;
             var to = new EmailAddress(_bookingReceiver);
+            string expertsText = GenerateExpertsText(booking.Experts);
             var plainTextContent = $@"Epost: {booking.BookerEmailAddress}
-                                              Type ressurs: {booking.ExpertType}
-                                              Rolle: {booking.ExpertRole}
-                                              Antall {booking.Quantity}
+                                              Experter: {expertsText}
                                               Forventet periode: {booking.TimePeriod}
                                               Beskrivelse av prosjektet: {booking.Description}";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, "");
@@ -46,6 +41,17 @@ namespace Services.Implementation
                 }
             }
             return response.IsSuccessStatusCode;
+        }
+
+        private string GenerateExpertsText(Expert[] experts){
+            string result = "";
+            if(experts == null) return result;
+            
+            foreach(var expert in experts )
+            {
+                result += $"Navn: {expert.FirstName} {expert.LastName}\r\n";
+            }
+            return result;
         }
     }
 }
