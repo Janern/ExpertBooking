@@ -48,7 +48,7 @@ namespace Tests.WebSite
         {
             string expertsJson = "[]";
             
-            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{ExpertsJson=expertsJson});
+            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{SelectedExpertsJson=expertsJson});
 
             Assert.Empty(result.Experts);
         }
@@ -59,7 +59,7 @@ namespace Tests.WebSite
         {
             string expertsJson = $"[{expert1JsonString}]";
             
-            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{ExpertsJson=expertsJson});
+            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{SelectedExpertsJson=expertsJson});
 
             Assert.Single(result.Experts);
         }
@@ -69,7 +69,7 @@ namespace Tests.WebSite
         {
             string expertsJson = $"[{expert1JsonString}, {expert2JsonString}]";
             
-            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{ExpertsJson=expertsJson});
+            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{SelectedExpertsJson=expertsJson});
 
             Assert.Equal(2, result.Experts.Length);
         }
@@ -79,7 +79,7 @@ namespace Tests.WebSite
         {
             string expertsJson = $"[{expert1JsonString}]";
             
-            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{ExpertsJson=expertsJson});
+            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{SelectedExpertsJson=expertsJson});
 
             Assert.Equal(Expert1.Id, result.Experts[0].Id);
             Assert.Equal(Expert1.FirstName, result.Experts[0].FirstName);
@@ -94,10 +94,32 @@ namespace Tests.WebSite
         {
             string expertsJson = $"[{expert1JsonString}, {expert2JsonString}]";
             
-            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{ExpertsJson=expertsJson});
+            Booking result = BookingInputModelConverter.Convert(new BookingInputModel{SelectedExpertsJson=expertsJson});
 
             ExpertAssertionHelper.AssertContainsExpert(Expert1, result.Experts);
             ExpertAssertionHelper.AssertContainsExpert(Expert2, result.Experts);
+        }
+        [Fact]
+        public void ShouldConvertFieldsOnBooking()
+        {
+            string expertsJson = "[]";
+            Booking expectedBooking = new Booking{
+                BookerEmailAddress = "EMAIL@EMAil.com",
+                TimePeriod = "2020-10-8 20:20:20",
+                Description = "DESCRIPTION"
+            };
+            
+            Booking result = BookingInputModelConverter.Convert(new BookingInputModel
+            {
+                SelectedExpertsJson = expertsJson, 
+                BookerEmailAddress=expectedBooking.BookerEmailAddress, 
+                Description=expectedBooking.Description, 
+                TimePeriod = expectedBooking.TimePeriod
+            });
+
+            Assert.Equal(expectedBooking.BookerEmailAddress, result.BookerEmailAddress);
+            Assert.Equal(expectedBooking.TimePeriod, result.TimePeriod);
+            Assert.Equal(expectedBooking.Description, result.Description);
         }
     }
 }
