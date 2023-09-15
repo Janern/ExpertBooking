@@ -28,7 +28,7 @@ body {
 
 .expert-table-img {
   border-radius: 100%;
-  margin-top: -3em;
+  margin-top: -1em;
 }
 
 .expertLabel {
@@ -36,16 +36,16 @@ body {
 }
 
 .expertCard {
-  background-color: #386097;
+  background-color: #5C7D70;
   color: white;
-  border-radius: 25%;
   font-size: medium;
   padding-bottom: 1em;
   margin-bottom: 3em;
+  /* margin-left: 22px; */
 }
 
 .clicked {
-  border: green dotted 10px;
+  border: gold dotted 10px;
 }
 
 .form-row {
@@ -68,4 +68,22 @@ body {
   right: 10px; /* Adjust the right position as needed */
   color: #709b09; /* Change to your desired icon color */
   font-size: 24px; /* Change to your desired icon size */
+}
+
+.inputLabel{
+  color: var(--Tekst, #202020);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.inputValue {
+  color: var(--Tekst, #202020);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
 }
