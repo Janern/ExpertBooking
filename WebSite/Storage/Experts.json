@@ -62,13 +62,5 @@
         "Role": "Backend-konsulent",
         "Technology": ".Net",
         "Description": "Lars har bred kompetanse og mange års erfaring som systemutvikler og løsningsarkitekt – med hovedfokus på Windows- og web-baserte løsninger utviklet med Microsoft-teknologi. I tillegg til mange konsulentoppdrag som systemutvikler har han også hatt rolle som løsningsarkitekt og/eller teknisk ansvarlig. Han har gode analytiske evner og er flink til å sette seg inn i kundens ønsker og behov."
-    },
-    {
-        "Id": "OyvindStensby",
-        "FirstName": "Øyvind",
-        "LastName": "Stensby",
-        "Role": "Prosjektleder",
-        "Technology": "SAP, Microsoft Surestep",
-        "Description": "Øyvind er en erfaren konsulent som har hatt ulike lederjobber i Forsvaret og han har mer enn 26 års erfaring fra ulike roller i IT industrien. Han har lang erfaring fra Consulting hvor hovedområdene var ERP-rådgivning. Videre har han erfaring i å lede store endringsprosjekter hvor IT er hoveddriveren både nasjonalt og internasjonalt, og i privat og offentlig sektor."
     }
 ]
