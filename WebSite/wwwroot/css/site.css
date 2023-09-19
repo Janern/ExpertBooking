@@ -87,3 +87,21 @@ body {
   font-weight: 400;
   line-height: 140%; /* 22.4px */
 }
+
+.layoutLogo {
+  width: 158px;
+  height: 52px;
+}
+
+.navbar {
+  height: 96px;
+  margin-left: auto;
+  box-sizing: border-box;
+  color: #000;
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
