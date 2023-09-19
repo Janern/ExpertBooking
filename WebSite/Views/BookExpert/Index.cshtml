@@ -7,7 +7,10 @@
     <div class="section">
         <div class="container">
             <div class="row form-row">
-                <div class="four columns">&nbsp;</div>
+                <div class="four columns">
+                    <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
+                    <input class="inputValue" type="text" name="TimePeriod" value=""/>
+                </div>
                 <div class="four columns">
                     <label class="inputLabel" for="ExpertRole">Rolle:</label>
                     <select class="inputValue u-full-width" name="ExpertRole" class="u-full-width">
@@ -29,10 +32,6 @@
                         <option value="frontend">Frontend</option>
                     </select>
                 </div>
-                @* <div class="four columns">
-                    <label for="TimePeriod">Forventet periode:</label>
-                    <input type="text" name="TimePeriod" value=""/>
-                </div> *@
             </div>
             <div class="row form-row light-blue" id="expertTable">
                 <!-- placeholder for json from controller -->
