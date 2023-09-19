@@ -36,12 +36,14 @@ body {
 }
 
 .expertCard {
+  position: relative;
   background-color: #5C7D70;
   color: white;
   font-size: medium;
   padding-bottom: 1em;
   margin-bottom: 3em;
-  /* margin-left: 22px; */
+  margin-left: 22px;
+  height: 350px;
 }
 
 .clicked {
@@ -104,4 +106,30 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.bottom{
+  bottom: 0px;
+  padding-top: 1em;
+  position: absolute;
+}
+
+.senior-label{
+  border-radius: 4px;
+  background: var(--Experis-lys-gr, #D9D9DB);
+  color: var(--Experis-text, #404040);
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 65px;
+  height: 19px;
+}
+
+.expertDetailsButton{
+  width: 35.014px;
+  float: right;
+  position: relative;
 }

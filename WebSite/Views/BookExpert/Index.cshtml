@@ -5,56 +5,54 @@
 @using (Html.BeginForm("Book", "BookExpert", FormMethod.Post))
 {
     <div class="section">
-        <div class="container">
-            <div class="row form-row">
-                <div class="four columns">
-                    <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
-                    <input class="inputValue" type="text" name="TimePeriod" value=""/>
-                </div>
-                <div class="four columns">
-                    <label class="inputLabel" for="ExpertRole">Rolle:</label>
-                    <select class="inputValue u-full-width" name="ExpertRole" class="u-full-width">
-                        <option value="">Alle</option>
-                        <option value="leader">Prosjektleder</option>
-                        <option value="senior">Senior</option>
-                        <option value="junior">Junior</option>
-                    </select>
-                </div>
-                <div class="four columns">
-                    <label class="inputLabel" for="ExpertType">Teknologi:</label>
-                    <select class="inputValue u-full-width" name="ExpertType" name="" class="u-full-width">
-                        <option value="">Alle</option>
-                        <option value=".net">.Net</option>
-                        <option value="java">Java</option>
-                        <option value="ux">UX</option>
-                        <option value="tester">Tester</option>
-                        <option value="python">Python</option>
-                        <option value="frontend">Frontend</option>
-                    </select>
-                </div>
+        <div class="row form-row">
+            <div class="four columns">
+                <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
+                <input class="inputValue" type="text" name="TimePeriod" value=""/>
             </div>
-            <div class="row form-row light-blue" id="expertTable">
-                <!-- placeholder for json from controller -->
+            <div class="four columns">
+                <label class="inputLabel" for="ExpertRole">Rolle:</label>
+                <select class="inputValue u-full-width" name="ExpertRole" class="u-full-width">
+                    <option value="">Alle</option>
+                    <option value="leader">Prosjektleder</option>
+                    <option value="senior">Senior</option>
+                    <option value="junior">Junior</option>
+                </select>
             </div>
+            <div class="four columns">
+                <label class="inputLabel" for="ExpertType">Teknologi:</label>
+                <select class="inputValue u-full-width" name="ExpertType" name="" class="u-full-width">
+                    <option value="">Alle</option>
+                    <option value=".net">.Net</option>
+                    <option value="java">Java</option>
+                    <option value="ux">UX</option>
+                    <option value="tester">Tester</option>
+                    <option value="python">Python</option>
+                    <option value="frontend">Frontend</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-row" id="expertTable">
+            <!-- placeholder for json from controller -->
+        </div>
 
-            <input id="SelectedExpertsJsonInput" name="SelectedExpertsJson" type="hidden" value="" />
-            <div class="row form-row">
-                <div class="twelve columns full u-full-width">
-                    <label for="Description">Beskriv prosjektet:</label>
-                    <textarea class="u-full-width" type="text" name="Description" value=""></textarea>
-                </div>
+        <input id="SelectedExpertsJsonInput" name="SelectedExpertsJson" type="hidden" value="" />
+        <div class="row form-row">
+            <div class="twelve columns full u-full-width">
+                <label for="Description">Beskriv prosjektet:</label>
+                <textarea class="u-full-width" type="text" name="Description" value=""></textarea>
             </div>
-            <div class="row form-row light-blue">
-                <div class="four columns"></div>
-                <div class="four columns">
-                    <label for="BookerEmailAddress">Din Epostadresse:</label>
-                    <input type="text" name="BookerEmailAddress" value="" />
-                </div>
+        </div>
+        <div class="row form-row light-blue">
+            <div class="four columns"></div>
+            <div class="four columns">
+                <label for="BookerEmailAddress">Din Epostadresse:</label>
+                <input type="text" name="BookerEmailAddress" value="" />
             </div>
-            <div class="row form-row">
-                <div class="twelve columns">
-                    <input type="submit" class="button-primary" value="Bestill"/>
-                </div>
+        </div>
+        <div class="row form-row">
+            <div class="twelve columns">
+                <input type="submit" class="button-primary" value="Bestill"/>
             </div>
         </div>
     </div>
@@ -76,35 +74,13 @@
                     availableExpertsJson = JSON.parse(data);
                     $('#expertTable').empty();
                     $.each(availableExpertsJson, function (index, expert) {
-                        row = '<div id="'+expert.Id+'" class="three columns expertCard" onclick="ToggleExpertSelected(this, \''+expert.Id+'\')">';
-                        row += '<div class="two columns">&nbsp;';
-                        row += '</div>';
-                        row += '<div class="eight columns">';
-                        row += '<img src="images/'+expert.Id+'.jpg" class="expert-table-img u-max-full-width" />';
-                        row += '<i class="selectedExpertCheckmark img-overlay-pick-expert-btn"></i>';
-                        row += '</div>';
-                        row += '<div class="two columns">&nbsp;';
-                        row += '</div>';
-                        row += '<div class="twelve columns">';
-                        row += '<span class="expertLabel">Navn: </span>'+
-                            '<span class="expertAttribute"> '+
-                                expert.FirstName +' '+ expert.LastName +
-                            '</span>';
-                        row += '</div>';
-                        row += '<div class="twelve columns">';
-                        row += '<span class="expertLabel">Rolle: </span>'+
-                            '<span class="expertAttribute"> '+
-                                expert.Role +
-                            '</span>';
-                        row += '</div>';
-                        row += '<div class="twelve columns">';
-                        row += '<span class="expertLabel">Teknologi: </span>' +
-                            '<span class="expertAttribute"> '+ expert.Technology +
-                            '</span>'
-                        row += '</div>';
-                        row += '</div>';
-
-                        $('#expertTable').append(row);
+                        $.get('/templates/bookExpert/_ExpertListCard.html', function (template) {
+                            var cardHtml = template.replace(/{ExpertId}/g, expert.Id)
+                                                   .replace(/{ExpertName}/g, expert.FirstName + ' ' + expert.LastName)
+                                                   .replace(/{ExpertRole}/g, expert.Role)
+                                                   .replace(/{ExpertTechnology}/g, expert.Technology);
+                            $('#expertTable').append(cardHtml);
+                        });
                     });
                 },
                 error: function () {
