@@ -152,4 +152,11 @@ body {
   background-color: #5C7D70;
   border-radius: 5%;
   color: white;
+  padding-top: 2em;
+  padding-left: 10px;
+  padding-right: 2px;
+}
+.modal-content img{
+  position: relative;
+  padding-left: 2em;
 }
