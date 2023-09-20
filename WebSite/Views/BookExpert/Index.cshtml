@@ -1,7 +1,6 @@
 @{
     ViewData["Title"] = "AnyShore | Book ekspert";
 }
-@model BusinessModels.Expert[]
 @using (Html.BeginForm("Book", "BookExpert", FormMethod.Post))
 {
     <div class="section">
@@ -35,7 +34,7 @@
         <div class="row form-row" id="expertTable">
             <!-- placeholder for json from controller -->
         </div>
-
+        @{ await Html.RenderPartialAsync("_ExpertModal"); }
         <input id="SelectedExpertsJsonInput" name="SelectedExpertsJson" type="hidden" value="" />
         <div class="row form-row">
             <div class="twelve columns full u-full-width">
@@ -55,7 +54,7 @@
                 <input type="submit" class="button-primary" value="Bestill"/>
             </div>
         </div>
-    </div>
+    </div>            
 }
 @section scripts {
     <script>
@@ -88,6 +87,30 @@
                 }
             });
         };
+        $('#expertDetailsButton').on('click', '.expertCard', function () {
+            var expertId = $(this).attr('id');
+            ShowExpertInfoModal(expertId);
+        });
+
+        function ShowExpertInfoModal(clickedElement, expertId){
+            console.log("Clicked expert ID: " + expertId);
+            let indexOfExpert = availableExpertsJson.findIndex(item => item.Id === expertId);
+            if(indexOfExpert > -1)
+            {
+                let expert = availableExpertsJson[indexOfExpert];
+                $('#expertModal img').attr('src',"images/"+expert.Id+".jpg");
+                $('#expertModal h3').text(expert.FirstName+" "+expert.LastName);
+                $('#expertModal p').text(expert.Description);
+                $('#expertModal .role').text("Rolle: " + expert.Role);
+                $('#expertModal .technology').text("Teknologi: " + expert.Technology);
+                $('#expertModal').show();
+            }
+            
+        };
+
+        function HideExpertInfoModal(){
+            $('#expertModal').hide();
+        }
         function ToggleExpertSelected(clickedElement, expertId){
             let indexOfExpert = selectedExpertsJson.findIndex(item => item.Id === expertId);
             if(indexOfExpert > -1){

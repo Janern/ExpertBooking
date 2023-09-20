@@ -66,21 +66,21 @@ DA:10,0
 FN:10,System.String Services.Implementation.EmailServiceSendGridImplementation::get__bookingReceiver()
 FNDA:0,System.String Services.Implementation.EmailServiceSendGridImplementation::get__bookingReceiver()
 DA:11,0
-FN:45,System.String Services.Implementation.EmailServiceSendGridImplementation::GenerateExpertsText(BusinessModels.Expert[])
+FN:46,System.String Services.Implementation.EmailServiceSendGridImplementation::GenerateExpertsText(BusinessModels.Expert[])
 FNDA:0,System.String Services.Implementation.EmailServiceSendGridImplementation::GenerateExpertsText(BusinessModels.Expert[])
-DA:46,0
 DA:47,0
 DA:48,0
-DA:50,0
+DA:49,0
 DA:51,0
 DA:52,0
 DA:53,0
 DA:54,0
 DA:55,0
-BRDA:48,13,0,0
-BRDA:48,13,1,0
-BRDA:50,139,1,0
-BRDA:50,139,0,0
+DA:56,0
+BRDA:49,13,0,0
+BRDA:49,13,1,0
+BRDA:51,139,1,0
+BRDA:51,139,0,0
 FN:11,System.Void Services.Implementation.EmailServiceSendGridImplementation::.ctor(System.String,System.String)
 FNDA:0,System.Void Services.Implementation.EmailServiceSendGridImplementation::.ctor(System.String,System.String)
 DA:12,0
@@ -107,7 +107,7 @@ DA:31,0
 DA:32,0
 DA:33,0
 DA:34,0
-DA:36,0
+DA:35,0
 DA:37,0
 DA:38,0
 DA:39,0
@@ -116,15 +116,16 @@ DA:41,0
 DA:42,0
 DA:43,0
 DA:44,0
-BRDA:31,631,0,0
-BRDA:31,631,1,0
-BRDA:38,963,1,0
-BRDA:40,731,1,0
-BRDA:40,731,0,0
-BRDA:40,828,1,0
-BRDA:40,828,0,0
-BRDA:38,963,0,0
-LF:42
+DA:45,0
+BRDA:32,591,0,0
+BRDA:32,591,1,0
+BRDA:39,923,1,0
+BRDA:41,691,1,0
+BRDA:41,691,0,0
+BRDA:41,788,1,0
+BRDA:41,788,0,0
+BRDA:39,923,0,0
+LF:43
 LH:0
 BRF:12
 BRH:0
@@ -153,7 +154,7 @@ BRH:0
 FNF:3
 FNH:3
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\BookExpertUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\BookExpertUseCase.cs
 FN:6,Services.EmailService UseCases.BookExpertUseCase::get__emailService()
 FNDA:14,Services.EmailService UseCases.BookExpertUseCase::get__emailService()
 DA:7,14
@@ -175,7 +176,7 @@ BRH:0
 FNF:3
 FNH:3
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\ListExpertsUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\ListExpertsUseCase.cs
 FN:6,Storage.Api.ExpertsStorage UseCases.ListExpertsUseCase::get__storage()
 FNDA:8,Storage.Api.ExpertsStorage UseCases.ListExpertsUseCase::get__storage()
 DA:7,8
@@ -269,32 +270,33 @@ SF:c:\Repositories\ExpertBooking\WebSite\Views\BookExpert\Index.cshtml
 FN:1,System.Void AspNetCoreGeneratedDocument.Views_BookExpert_Index/<ExecuteAsync>d__17::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_BookExpert_Index/<ExecuteAsync>d__17::MoveNext()
 DA:2,0
+DA:4,0
 DA:5,0
-DA:6,0
-DA:61,0
-BRDA:6,671,0,0
-BRDA:6,671,1,0
-BRDA:6,1163,0,0
-BRDA:6,1163,1,0
-BRDA:6,1655,0,0
-BRDA:6,1655,1,0
-BRDA:6,2147,0,0
-BRDA:6,2147,1,0
-BRDA:6,2706,0,0
-BRDA:6,2706,1,0
-BRDA:6,3200,0,0
-BRDA:6,3200,1,0
-BRDA:6,3694,0,0
-BRDA:6,3694,1,0
-BRDA:6,4188,0,0
-BRDA:6,4188,1,0
-BRDA:6,4682,0,0
-BRDA:6,4682,1,0
-BRDA:6,5176,0,0
-BRDA:6,5176,1,0
-BRDA:6,5670,0,0
-BRDA:6,5670,1,0
-LF:4
+DA:37,0
+DA:58,0
+BRDA:5,680,0,0
+BRDA:5,680,1,0
+BRDA:5,1172,0,0
+BRDA:5,1172,1,0
+BRDA:5,1664,0,0
+BRDA:5,1664,1,0
+BRDA:5,2156,0,0
+BRDA:5,2156,1,0
+BRDA:5,2715,0,0
+BRDA:5,2715,1,0
+BRDA:5,3209,0,0
+BRDA:5,3209,1,0
+BRDA:5,3703,0,0
+BRDA:5,3703,1,0
+BRDA:5,4197,0,0
+BRDA:5,4197,1,0
+BRDA:5,4691,0,0
+BRDA:5,4691,1,0
+BRDA:5,5185,0,0
+BRDA:5,5185,1,0
+BRDA:5,5679,0,0
+BRDA:5,5679,1,0
+LF:5
 LH:0
 BRF:22
 BRH:0

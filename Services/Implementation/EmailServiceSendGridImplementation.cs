@@ -21,10 +21,11 @@ namespace Services.Implementation
             var subject = "Ny bestilling fra "+booking.BookerEmailAddress;
             var to = new EmailAddress(_bookingReceiver);
             string expertsText = GenerateExpertsText(booking.Experts);
-            var plainTextContent = $@"Epost: {booking.BookerEmailAddress}
-                                              Experter: {expertsText}
-                                              Forventet periode: {booking.TimePeriod}
-                                              Beskrivelse av prosjektet: {booking.Description}";
+            var plainTextContent = $"Epost: {booking.BookerEmailAddress}" +
+                                            "Experter: <br/>"+
+                                           $"{expertsText}<br/>"+
+                                           $"Forventet periode: {booking.TimePeriod}<br/>"+
+                                           $"Beskrivelse av prosjektet: {booking.Description}<br/>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, "");
             var response = await client.SendEmailAsync(msg);
             Dictionary<string, dynamic>? responseContent = await response.DeserializeResponseBodyAsync();

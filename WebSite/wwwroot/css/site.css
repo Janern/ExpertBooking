@@ -44,6 +44,15 @@ body {
   margin-bottom: 3em;
   margin-left: 22px;
   height: 350px;
+  font-family: Noto Sans;
+}
+
+.expertName {
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .clicked {
@@ -66,10 +75,10 @@ body {
 .one-third.column.expertCard.clicked i {
   display: block;
   position: absolute;
-  top: 10px; /* Adjust the top position as needed */
-  right: 10px; /* Adjust the right position as needed */
-  color: #709b09; /* Change to your desired icon color */
-  font-size: 24px; /* Change to your desired icon size */
+  top: 10px; 
+  right: 10px; 
+  color: #709b09; 
+  font-size: 24px; 
 }
 
 .inputLabel{
@@ -132,4 +141,15 @@ body {
   width: 35.014px;
   float: right;
   position: relative;
+}
+
+.modal {
+  background-color: rgba(120, 120, 120, 0.7); /* Semi-transparent black background */
+  width: 100%;
+}
+
+.modal-content {
+  background-color: #5C7D70;
+  border-radius: 5%;
+  color: white;
 }
