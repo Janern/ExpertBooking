@@ -4,6 +4,6 @@ namespace Storage.Api
 {
     public interface ExpertsStorage
     {
-        Expert[] GetExperts();
+        Expert[] GetExperts(string technologyFilter);
     }
 }

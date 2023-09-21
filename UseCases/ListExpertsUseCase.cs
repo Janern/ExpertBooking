@@ -10,8 +10,8 @@ public class ListExpertsUseCase
         _storage = storage;
     }
 
-    public Expert[] Execute()
+    public Expert[] Execute(string technologyFilter = "")
     {
-        return _storage.GetExperts();
+        return _storage.GetExperts(technologyFilter);
     }
 }

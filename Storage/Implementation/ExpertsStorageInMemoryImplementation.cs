@@ -12,9 +12,12 @@ namespace Storage.Implementation
             _experts = experts;
         }
 
-        public Expert[] GetExperts()
+        public Expert[] GetExperts(string technologyFilter)
         {
-            return _experts;
+            if(technologyFilter.Trim() == ""){
+                return _experts;
+            }
+            return _experts.Where(e => e.Technology.Trim().ToUpper() == technologyFilter.Trim().ToUpper()).ToArray();
         }
     }
 }
