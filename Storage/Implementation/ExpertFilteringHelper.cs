@@ -8,12 +8,12 @@ public static class ExpertFilteringHelper
         if(filterString.Trim() == "")
             return experts;
         List<Expert> result = new List<Expert>();
-        var filterStrings = filterString.ToUpper().Split(separationString);
+        var filterStrings = filterString.ToUpper();
         foreach(var expert in experts){
             if(expert.Technology
                      .ToUpper()
                      .Split(separationString)
-                     .Any(technology => filterStrings.Any(filter => filter.Trim() == technology.Trim()))){
+                     .Any(technology => technology == filterString.Trim().ToUpper())){
                 result.Add(expert);
             }
         }
