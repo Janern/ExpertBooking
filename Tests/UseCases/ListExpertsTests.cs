@@ -89,7 +89,7 @@ public class ListExpertsTests
                 FirstName="FirstName1",
                 LastName="LastName1",
                 Role="Role1",
-                Technology=expectedTechnology,
+                Technology=expectedTechnology+", HTML",
                 Description="Description1"
             },
             new Expert
@@ -98,7 +98,7 @@ public class ListExpertsTests
                 FirstName="FirstName2",
                 LastName="LastName2",
                 Role="Role2",
-                Technology=expectedTechnology,
+                Technology=expectedTechnology+", JavaScript",
                 Description="Description2"
             },
             new Expert
@@ -107,7 +107,7 @@ public class ListExpertsTests
                 FirstName="FirstName3",
                 LastName="LastName3",
                 Role="Role3",
-                Technology=expectedTechnology,
+                Technology=expectedTechnology+", Java",
                 Description="Description3"
             }
         };
@@ -119,7 +119,7 @@ public class ListExpertsTests
                 FirstName="FirstName4",
                 LastName="LastName4",
                 Role="Role4",
-                Technology="Java",
+                Technology="Java, Javascript",
                 Description="Description4"
             },
             new Expert
@@ -128,7 +128,7 @@ public class ListExpertsTests
                 FirstName="FirstName5",
                 LastName="LastName5",
                 Role="Role5",
-                Technology="Python",
+                Technology="Python, HTML",
                 Description="Description5"
             },
             new Expert
@@ -137,7 +137,7 @@ public class ListExpertsTests
                 FirstName="FirstName6",
                 LastName="LastName6",
                 Role="Role6",
-                Technology="Javascript",
+                Technology="Javascript, CSS",
                 Description="Description6"
             }
         };
