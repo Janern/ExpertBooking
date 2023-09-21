@@ -56,7 +56,12 @@ body {
 }
 
 .clicked {
-  border: gold dotted 10px;
+  
+      display: block;
+      background-image: url("/images/square-check-regular.svg");
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-position: bottom +20% center;
 }
 
 .form-row {

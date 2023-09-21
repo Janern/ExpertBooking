@@ -13,19 +13,13 @@
         <span class="expertAttribute">{ExpertTechnology}</span>
     </div>
     <div class="twelve columns bottom row u-max-full-width">
-        <div class="six columns u-max-full-width">
-            <div id="selectExpertButton" class="expertDetailsButton u-pull-right" onclick="ToggleExpertSelected(this, '{ExpertId}');">
-                <svg width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M35.7214 8.70711C36.1119 8.31658 36.1119 7.68342 35.7214 7.29289L29.3574 0.928932C28.9669 0.538408 28.3337 0.538408 27.9432 0.928932C27.5527 1.31946 27.5527 1.95262 27.9432 2.34315L33.6001 8L27.9432 13.6569C27.5527 14.0474 27.5527 14.6805 27.9432 15.0711C28.3337 15.4616 28.9669 15.4616 29.3574 15.0711L35.7214 8.70711ZM0 9H35.0143V7H0L0 9Z" fill="white"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-    <div class="twelve columns bottom row u-max-full-width">
-        <div class="six columns senior-label">
+        <div class="four columns senior-label">
             Senior
         </div>
-        <div class="six columns u-max-full-width">
+        <div class="four columns senior-label expertDetailsButton" onclick="ToggleExpertSelected(this.parentElement.parentElement, '{ExpertId}')">
+            Velg
+        </div>
+        <div class="four columns u-max-full-width">
             <div id="expertDetailsButton" class="expertDetailsButton u-pull-right" onclick="ShowExpertInfoModal(this, '{ExpertId}');">
                 <svg width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M35.7214 8.70711C36.1119 8.31658 36.1119 7.68342 35.7214 7.29289L29.3574 0.928932C28.9669 0.538408 28.3337 0.538408 27.9432 0.928932C27.5527 1.31946 27.5527 1.95262 27.9432 2.34315L33.6001 8L27.9432 13.6569C27.5527 14.0474 27.5527 14.6805 27.9432 15.0711C28.3337 15.4616 28.9669 15.4616 29.3574 15.0711L35.7214 8.70711ZM0 9H35.0143V7H0L0 9Z" fill="white"/>
