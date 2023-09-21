@@ -19,8 +19,8 @@
                 </select>
             </div>
             <div class="four columns">
-                <label class="inputLabel" for="ExpertType">Teknologi:</label>
-                <select class="inputValue u-full-width" name="ExpertType" name="" class="u-full-width">
+                <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
+                <select id="technologyFilter" class="inputValue u-full-width" name="TechnologyFilter" name="" class="u-full-width">
                     <option value="">Alle</option>
                     <option value=".net">.Net</option>
                     <option value="java">Java</option>
@@ -63,10 +63,10 @@
         let availableExpertsJson = []; 
         const selectedExpertsJsonInput = document.getElementById("SelectedExpertsJsonInput");
         
-        function fetchExperts() 
+        function fetchExperts(filter) 
         {
             $.ajax({
-                url: '/ListExperts/JsonData',
+                url: '/ListExperts/JsonData?filter='+filter,
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
@@ -87,10 +87,14 @@
                 }
             });
         };
+        $('#technologyFilter').on('change', function () {
+                var selectedTechnology = $(this).val();
+                availableExpertsJson = fetchExperts(selectedTechnology);
+            });
         $('#expertDetailsButton').on('click', '.expertCard', function () {
             var expertId = $(this).attr('id');
             ShowExpertInfoModal(expertId);
-        });
+        });        
 
         function ShowExpertInfoModal(clickedElement, expertId){
             console.log("Clicked expert ID: " + expertId);
@@ -126,10 +130,7 @@
             clickedElement.classList.toggle("clicked");
         };
         $(document).ready(function() {
-            availableExpertsJson = fetchExperts();
-            $('#fetchDataButton').click(function () {
-                availableExpertsJson = fetchExperts();
-            });
+            availableExpertsJson = fetchExperts('');
         });
    </script>
 }
