@@ -4,6 +4,7 @@ namespace WebSite.Models
     {
         public string SelectedExpertsJson { get; set; }
         public string BookerEmailAddress { get; set; }
+        public string TechnologyFilter { get; set;}
         public string TimePeriod { get; set; }
         public string Description { get; set; }
     }

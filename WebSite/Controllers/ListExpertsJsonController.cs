@@ -16,9 +16,9 @@ namespace WebSite.Controllers
         }
 
         [Route("JsonData")]
-        public IActionResult GetAllExperts()
+        public IActionResult GetAllExperts(string filter)
         {
-            Expert[] experts = _listExpertsUseCase.Execute("");
+            Expert[] experts = _listExpertsUseCase.Execute(filter);
             string jsonString = JsonSerializer.Serialize(experts);
             return new JsonResult(jsonString);
         }

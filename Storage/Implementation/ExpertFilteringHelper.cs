@@ -3,9 +3,9 @@ using BusinessModels;
 namespace Storage.Implementation;
 public static class ExpertFilteringHelper
 {
-    public static Expert[] FilterExperts(Expert[] experts, string filterString, string separationString = ",")
+    public static Expert[] FilterExperts(Expert[] experts, string filterString = null, string separationString = ",")
     {
-        if(filterString.Trim() == "")
+        if(filterString == null || filterString.Trim() == "")
             return experts;
         List<Expert> result = new List<Expert>();
         var filterStrings = filterString.ToUpper();
