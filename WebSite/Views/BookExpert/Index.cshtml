@@ -83,7 +83,7 @@
         };
         $('#technologyFilter').on('change', function () {
                 var selectedTechnology = $(this).val();
-                availableExpertsJson = fetchExperts(selectedTechnology);
+                fetchExperts(selectedTechnology);
             });
         $('#expertDetailsButton').on('click', '.expertCard', function () {
             var expertId = $(this).attr('id');
