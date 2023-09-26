@@ -22,6 +22,7 @@
                 </select>
             </div>
         </div>
+        <h2>Sett sammen ditt ekspertlag</h2>
         <div class="row form-row" id="expertTable">
             <!-- placeholder for json from controller -->
         </div>
@@ -87,8 +88,8 @@
             ShowExpertInfoModal(expertId);
         });        
 
-        function ShowExpertInfoModal(clickedElement, expertId){
-            console.log("Clicked expert ID: " + expertId);
+        function ShowExpertInfoModal(event, clickedElement, expertId){
+            event.stopPropagation();
             let indexOfExpert = availableExpertsJson.findIndex(item => item.Id === expertId);
             if(indexOfExpert > -1)
             {
