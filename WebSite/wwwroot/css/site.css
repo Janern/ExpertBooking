@@ -1,3 +1,8 @@
+:root {
+  --anyshore-green: #5C7D70;
+  --anyshore-green-hover: #7C9D90;
+}
+
 html {
   font-size: 14px;
   
@@ -37,7 +42,7 @@ body {
 
 .expertCard {
   position: relative;
-  background-color: #5C7D70;
+  background-color: var(--anyshore-green);
   color: white;
   font-size: medium;
   padding-bottom: 1em;
@@ -56,12 +61,12 @@ body {
 }
 
 .clicked {
-  
-      display: block;
-      background-image: url("/images/square-check-regular.svg");
-      background-repeat: no-repeat;
-      background-size: 50%;
-      background-position: bottom +20% center;
+  /* display: block;
+  background-image: url("/images/square-check-regular.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: bottom +20% center; */
+  background-color: var(--anyshore-green-hover);
 }
 
 .form-row {
@@ -120,6 +125,7 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  overflow: hidden;
 }
 
 .bottom{
@@ -142,10 +148,19 @@ body {
   height: 19px;
 }
 
+.expertSelectButton {
+  padding: 0;
+  text-transform: none;
+  color: white;
+}
+
 .expertDetailsButton{
   width: 35.014px;
-  float: right;
   position: relative;
+  border: 0;
+}
+.expertDetailsButton :hover{
+  rotate: 5deg;
 }
 
 .modal {
@@ -154,7 +169,7 @@ body {
 }
 
 .modal-content {
-  background-color: #5C7D70;
+  background-color: var(--anyshore-green);
   border-radius: 5%;
   color: white;
   padding-top: 2em;

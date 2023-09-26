@@ -1,6 +1,3 @@
-@{
-    ViewData["Title"] = "AnyShore | Book ekspert";
-}
 @using (Html.BeginForm("Book", "BookExpert", FormMethod.Post))
 {
     <div class="section">
@@ -25,6 +22,7 @@
                 </select>
             </div>
         </div>
+        <h2>Sett sammen ditt ekspertlag</h2>
         <div class="row form-row" id="expertTable">
             <!-- placeholder for json from controller -->
         </div>
@@ -83,15 +81,15 @@
         };
         $('#technologyFilter').on('change', function () {
                 var selectedTechnology = $(this).val();
-                availableExpertsJson = fetchExperts(selectedTechnology);
+                fetchExperts(selectedTechnology);
             });
         $('#expertDetailsButton').on('click', '.expertCard', function () {
             var expertId = $(this).attr('id');
             ShowExpertInfoModal(expertId);
         });        
 
-        function ShowExpertInfoModal(clickedElement, expertId){
-            console.log("Clicked expert ID: " + expertId);
+        function ShowExpertInfoModal(event, clickedElement, expertId){
+            event.stopPropagation();
             let indexOfExpert = availableExpertsJson.findIndex(item => item.Id === expertId);
             if(indexOfExpert > -1)
             {
