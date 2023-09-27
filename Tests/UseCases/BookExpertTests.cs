@@ -1,12 +1,12 @@
 using Xunit;
 using UseCases;
+using UseCases.Exceptions;
 using Services;
 using System.Threading.Tasks;
 using BusinessModels;
 using Tests.TestHelpers;
 
 namespace Tests;
-
 public class BookExpertTests
 {
     private BookExpertUseCase _useCase;
@@ -21,7 +21,9 @@ public class BookExpertTests
     [Fact]
     public async Task WhenBookingExpertShouldSendEmail()
     {
-        await _useCase.Execute(new Booking());
+        string bookerEmailAddress = "test@example.com";
+        Booking booking = new Booking{BookerEmailAddress = bookerEmailAddress};
+        await _useCase.Execute(booking);
 
         Assert.NotNull(_fakeEmailService.SentBooking);
     }
@@ -46,7 +48,8 @@ public class BookExpertTests
                 Id = expertId
             }
         };
-        Booking booking = new Booking{Experts = experts};
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
 
@@ -66,7 +69,8 @@ public class BookExpertTests
                 LastName = expertLastName
             }
         };
-        Booking booking = new Booking{Experts = experts};
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
 
@@ -97,7 +101,8 @@ public class BookExpertTests
                 LastName = expertLastName2
             }
         };        
-        Booking booking = new Booking{Experts=experts};
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
         
@@ -110,7 +115,8 @@ public class BookExpertTests
     public async Task WhenBookingExpertShouldSendEmailWithTimePeriod()
     {
         string timePeriod = "2023-09-01 2023-09-30";
-        Booking booking = new Booking{TimePeriod=timePeriod};
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{TimePeriod=timePeriod, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
 
@@ -121,11 +127,21 @@ public class BookExpertTests
     public async Task WhenBookingExpertShouldSendEmailWithDescription()
     {
         string description = "Beskrivelse av problemet";
-        Booking booking = new Booking{Description=description};
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{Description=description, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
 
         Assert.Equal(expected: description, _fakeEmailService.SentBooking.Description);
+    }
+
+    [Fact]
+    public async Task GivenNoEmailWhenBookingExpertShouldThrowException()
+    {
+        string description = "Beskrivelse av problemet";
+        Booking booking = new Booking{Description=description};
+
+        await Assert.ThrowsAsync<InvalidBookingException>(() => _useCase.Execute(booking));
     }
 
     private class FakeEmailService : EmailService
