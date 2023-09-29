@@ -1,31 +1,165 @@
+SF:c:\Repositories\ExpertBooking\BusinessModels\Booking.cs
+FN:4,System.String BusinessModels.Booking::get_BookerEmailAddress()
+FNDA:26,System.String BusinessModels.Booking::get_BookerEmailAddress()
+DA:5,26
+FN:5,BusinessModels.Expert[] BusinessModels.Booking::get_Experts()
+FNDA:26,BusinessModels.Expert[] BusinessModels.Booking::get_Experts()
+DA:6,26
+FN:6,System.String BusinessModels.Booking::get_TimePeriod()
+FNDA:12,System.String BusinessModels.Booking::get_TimePeriod()
+DA:7,12
+FN:7,System.String BusinessModels.Booking::get_Description()
+FNDA:13,System.String BusinessModels.Booking::get_Description()
+DA:8,13
+LF:4
+LH:4
+BRF:0
+BRH:0
+FNF:4
+FNH:4
+end_of_record
+SF:c:\Repositories\ExpertBooking\BusinessModels\Expert.cs
+FN:3,System.String BusinessModels.Expert::get_Id()
+FNDA:70,System.String BusinessModels.Expert::get_Id()
+DA:4,70
+FN:4,System.String BusinessModels.Expert::get_FirstName()
+FNDA:59,System.String BusinessModels.Expert::get_FirstName()
+DA:5,59
+FN:5,System.String BusinessModels.Expert::get_LastName()
+FNDA:59,System.String BusinessModels.Expert::get_LastName()
+DA:6,59
+FN:6,System.String BusinessModels.Expert::get_Role()
+FNDA:41,System.String BusinessModels.Expert::get_Role()
+DA:7,41
+FN:7,System.String BusinessModels.Expert::get_Technology()
+FNDA:47,System.String BusinessModels.Expert::get_Technology()
+DA:8,47
+FN:8,System.String BusinessModels.Expert::get_Description()
+FNDA:41,System.String BusinessModels.Expert::get_Description()
+DA:9,41
+LF:6
+LH:6
+BRF:0
+BRH:0
+FNF:6
+FNH:6
+end_of_record
+SF:c:\Repositories\ExpertBooking\Services\Implementation\EmailServiceConsoleLogImplementation.cs
+FN:11,System.Void Services.Implementation.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
+FNDA:0,System.Void Services.Implementation.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:c:\Repositories\ExpertBooking\Services\Implementation\EmailServiceSendGridImplementation.cs
+FN:9,System.String Services.Implementation.EmailServiceSendGridImplementation::get__apiKey()
+FNDA:0,System.String Services.Implementation.EmailServiceSendGridImplementation::get__apiKey()
+DA:10,0
+FN:10,System.String Services.Implementation.EmailServiceSendGridImplementation::get__bookingReceiver()
+FNDA:0,System.String Services.Implementation.EmailServiceSendGridImplementation::get__bookingReceiver()
+DA:11,0
+FN:46,System.String Services.Implementation.EmailServiceSendGridImplementation::GenerateExpertsText(BusinessModels.Expert[])
+FNDA:0,System.String Services.Implementation.EmailServiceSendGridImplementation::GenerateExpertsText(BusinessModels.Expert[])
+DA:47,0
+DA:48,0
+DA:49,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+BRDA:49,13,0,0
+BRDA:49,13,1,0
+BRDA:51,139,1,0
+BRDA:51,139,0,0
+FN:11,System.Void Services.Implementation.EmailServiceSendGridImplementation::.ctor(System.String,System.String)
+FNDA:0,System.Void Services.Implementation.EmailServiceSendGridImplementation::.ctor(System.String,System.String)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+FN:17,System.Void Services.Implementation.EmailServiceSendGridImplementation/<SendEmail>d__9::MoveNext()
+FNDA:0,System.Void Services.Implementation.EmailServiceSendGridImplementation/<SendEmail>d__9::MoveNext()
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+BRDA:32,591,0,0
+BRDA:32,591,1,0
+BRDA:39,923,1,0
+BRDA:41,691,1,0
+BRDA:41,691,0,0
+BRDA:41,788,1,0
+BRDA:41,788,0,0
+BRDA:39,923,0,0
+LF:43
+LH:0
+BRF:12
+BRH:0
+FNF:5
+FNH:0
+end_of_record
 SF:c:\Repositories\ExpertBooking\Storage\Implementation\ExpertFilteringHelper.cs
 FN:6,BusinessModels.Expert[] Storage.Implementation.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String)
-FNDA:8,BusinessModels.Expert[] Storage.Implementation.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String)
-DA:7,8
-DA:8,8
-DA:9,6
-DA:10,2
-DA:11,2
-DA:12,42
-DA:13,12
-DA:14,12
-DA:15,12
-DA:16,36
-DA:17,6
-DA:18,6
-DA:19,12
-DA:20,2
-DA:21,8
-BRDA:8,20,0,8
+FNDA:4,BusinessModels.Expert[] Storage.Implementation.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String)
+DA:7,4
+DA:8,4
+DA:9,3
+DA:10,1
+DA:11,1
+DA:12,21
+DA:13,6
+DA:14,6
+DA:15,6
+DA:16,18
+DA:17,3
+DA:18,3
+DA:19,6
+DA:20,1
+DA:21,4
+BRDA:8,20,0,4
 BRDA:8,20,1,0
-BRDA:8,48,0,6
-BRDA:8,48,1,2
-BRDA:12,180,1,12
-BRDA:13,119,0,2
-BRDA:13,119,1,12
-BRDA:13,154,0,6
-BRDA:13,154,1,12
-BRDA:12,180,0,2
+BRDA:8,48,0,3
+BRDA:8,48,1,1
+BRDA:12,180,1,6
+BRDA:13,119,0,1
+BRDA:13,119,1,6
+BRDA:13,154,0,3
+BRDA:13,154,1,6
+BRDA:12,180,0,1
 LF:15
 LH:15
 BRF:10
@@ -35,19 +169,19 @@ FNH:1
 end_of_record
 SF:c:\Repositories\ExpertBooking\Storage\Implementation\ExpertsStorageInMemoryImplementation.cs
 FN:8,BusinessModels.Expert[] Storage.Implementation.ExpertsStorageInMemoryImplementation::get__experts()
-FNDA:22,BusinessModels.Expert[] Storage.Implementation.ExpertsStorageInMemoryImplementation::get__experts()
-DA:9,22
+FNDA:11,BusinessModels.Expert[] Storage.Implementation.ExpertsStorageInMemoryImplementation::get__experts()
+DA:9,11
 FN:16,BusinessModels.Expert[] Storage.Implementation.ExpertsStorageInMemoryImplementation::GetExperts(System.String)
-FNDA:8,BusinessModels.Expert[] Storage.Implementation.ExpertsStorageInMemoryImplementation::GetExperts(System.String)
-DA:17,8
-DA:18,8
-DA:19,8
+FNDA:4,BusinessModels.Expert[] Storage.Implementation.ExpertsStorageInMemoryImplementation::GetExperts(System.String)
+DA:17,4
+DA:18,4
+DA:19,4
 FN:10,System.Void Storage.Implementation.ExpertsStorageInMemoryImplementation::.ctor(BusinessModels.Expert[])
-FNDA:14,System.Void Storage.Implementation.ExpertsStorageInMemoryImplementation::.ctor(BusinessModels.Expert[])
-DA:11,14
-DA:12,14
-DA:13,14
-DA:14,14
+FNDA:7,System.Void Storage.Implementation.ExpertsStorageInMemoryImplementation::.ctor(BusinessModels.Expert[])
+DA:11,7
+DA:12,7
+DA:13,7
+DA:14,7
 LF:8
 LH:8
 BRF:0
@@ -57,23 +191,23 @@ FNH:3
 end_of_record
 SF:c:\Repositories\ExpertBooking\UseCases\BookExpertUseCase.cs
 FN:7,Services.EmailService UseCases.BookExpertUseCase::get__emailService()
-FNDA:30,Services.EmailService UseCases.BookExpertUseCase::get__emailService()
-DA:8,30
+FNDA:15,Services.EmailService UseCases.BookExpertUseCase::get__emailService()
+DA:8,15
 FN:9,System.Void UseCases.BookExpertUseCase::.ctor(Services.EmailService)
-FNDA:16,System.Void UseCases.BookExpertUseCase::.ctor(Services.EmailService)
-DA:10,16
-DA:11,16
-DA:12,16
-DA:13,16
+FNDA:8,System.Void UseCases.BookExpertUseCase::.ctor(Services.EmailService)
+DA:10,8
+DA:11,8
+DA:12,8
+DA:13,8
 FN:14,System.Void UseCases.BookExpertUseCase/<Execute>d__5::MoveNext()
-FNDA:16,System.Void UseCases.BookExpertUseCase/<Execute>d__5::MoveNext()
-DA:15,16
-DA:16,16
-DA:17,2
-DA:18,14
-DA:19,14
-BRDA:16,48,0,2
-BRDA:16,48,1,14
+FNDA:8,System.Void UseCases.BookExpertUseCase/<Execute>d__5::MoveNext()
+DA:15,8
+DA:16,8
+DA:17,1
+DA:18,7
+DA:19,7
+BRDA:16,33,0,1
+BRDA:16,33,1,7
 LF:10
 LH:10
 BRF:2
@@ -83,19 +217,19 @@ FNH:3
 end_of_record
 SF:c:\Repositories\ExpertBooking\UseCases\ListExpertsUseCase.cs
 FN:6,Storage.Api.ExpertsStorage UseCases.ListExpertsUseCase::get__storage()
-FNDA:22,Storage.Api.ExpertsStorage UseCases.ListExpertsUseCase::get__storage()
-DA:7,22
+FNDA:11,Storage.Api.ExpertsStorage UseCases.ListExpertsUseCase::get__storage()
+DA:7,11
 FN:13,BusinessModels.Expert[] UseCases.ListExpertsUseCase::Execute(System.String)
-FNDA:8,BusinessModels.Expert[] UseCases.ListExpertsUseCase::Execute(System.String)
-DA:14,8
-DA:15,8
-DA:16,8
+FNDA:4,BusinessModels.Expert[] UseCases.ListExpertsUseCase::Execute(System.String)
+DA:14,4
+DA:15,4
+DA:16,4
 FN:7,System.Void UseCases.ListExpertsUseCase::.ctor(Storage.Api.ExpertsStorage)
-FNDA:14,System.Void UseCases.ListExpertsUseCase::.ctor(Storage.Api.ExpertsStorage)
-DA:8,14
-DA:9,14
-DA:10,14
-DA:11,14
+FNDA:7,System.Void UseCases.ListExpertsUseCase::.ctor(Storage.Api.ExpertsStorage)
+DA:8,7
+DA:9,7
+DA:10,7
+DA:11,7
 LF:8
 LH:8
 BRF:0
@@ -124,8 +258,8 @@ DA:36,0
 DA:37,0
 DA:38,0
 DA:40,0
-BRDA:22,97,0,0
-BRDA:22,97,1,0
+BRDA:22,61,0,0
+BRDA:22,61,1,0
 FN:42,Microsoft.Extensions.Configuration.IConfigurationRoot Program::<<Main>$>g__GetConfigFromAzure|0_0()
 FNDA:0,Microsoft.Extensions.Configuration.IConfigurationRoot Program::<<Main>$>g__GetConfigFromAzure|0_0()
 DA:43,0
@@ -162,8 +296,8 @@ DA:5,0
 DA:7,0
 DA:8,0
 DA:10,0
-BRDA:5,67,0,0
-BRDA:5,67,1,0
+BRDA:5,53,0,0
+BRDA:5,53,1,0
 LF:5
 LH:0
 BRF:2
@@ -178,20 +312,20 @@ DA:1,0
 DA:2,0
 DA:29,0
 DA:50,0
-BRDA:2,662,0,0
-BRDA:2,662,1,0
-BRDA:2,1168,0,0
-BRDA:2,1168,1,0
-BRDA:2,1674,0,0
-BRDA:2,1674,1,0
-BRDA:2,2180,0,0
-BRDA:2,2180,1,0
-BRDA:2,2686,0,0
-BRDA:2,2686,1,0
-BRDA:2,3194,0,0
-BRDA:2,3194,1,0
-BRDA:2,3702,0,0
-BRDA:2,3702,1,0
+BRDA:2,648,0,0
+BRDA:2,648,1,0
+BRDA:2,1140,0,0
+BRDA:2,1140,1,0
+BRDA:2,1632,0,0
+BRDA:2,1632,1,0
+BRDA:2,2124,0,0
+BRDA:2,2124,1,0
+BRDA:2,2616,0,0
+BRDA:2,2616,1,0
+BRDA:2,3110,0,0
+BRDA:2,3110,1,0
+BRDA:2,3604,0,0
+BRDA:2,3604,1,0
 LF:4
 LH:0
 BRF:14
@@ -207,12 +341,12 @@ DA:9,0
 DA:10,0
 DA:12,0
 DA:14,0
-BRDA:9,78,0,0
-BRDA:9,78,1,0
-BRDA:9,105,0,0
-BRDA:12,164,0,0
-BRDA:12,164,1,0
-BRDA:9,105,1,0
+BRDA:9,64,0,0
+BRDA:9,64,1,0
+BRDA:9,77,0,0
+BRDA:12,115,0,0
+BRDA:12,115,1,0
+BRDA:9,77,1,0
 LF:5
 LH:0
 BRF:6
@@ -237,34 +371,34 @@ FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsy
 DA:9,0
 DA:17,0
 DA:18,0
-BRDA:9,486,0,0
-BRDA:9,486,1,0
-BRDA:9,996,0,0
-BRDA:9,996,1,0
-BRDA:9,1506,0,0
-BRDA:9,1506,1,0
-BRDA:17,2172,0,0
-BRDA:17,2172,1,0
-BRDA:18,2838,0,0
-BRDA:18,2838,1,0
+BRDA:9,479,0,0
+BRDA:9,479,1,0
+BRDA:9,975,0,0
+BRDA:9,975,1,0
+BRDA:9,1471,0,0
+BRDA:9,1471,1,0
+BRDA:17,2116,0,0
+BRDA:17,2116,1,0
+BRDA:18,2761,0,0
+BRDA:18,2761,1,0
 FN:43,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__20_1>d::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__20_1>d::MoveNext()
 DA:44,0
 DA:55,0
 DA:59,0
-BRDA:44,444,0,0
-BRDA:44,444,1,0
-BRDA:44,932,0,0
-BRDA:44,932,1,0
-BRDA:55,1576,0,0
-BRDA:55,1576,1,0
+BRDA:44,437,0,0
+BRDA:44,437,1,0
+BRDA:44,911,0,0
+BRDA:44,911,1,0
+BRDA:55,1534,0,0
+BRDA:55,1534,1,0
 FN:1,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<ExecuteAsync>d__20::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<ExecuteAsync>d__20::MoveNext()
 DA:2,0
-BRDA:2,351,0,0
-BRDA:2,351,1,0
-BRDA:2,803,0,0
-BRDA:2,803,1,0
+BRDA:2,344,0,0
+BRDA:2,344,1,0
+BRDA:2,782,0,0
+BRDA:2,782,1,0
 LF:7
 LH:0
 BRF:20
@@ -274,20 +408,20 @@ FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Models\BookingInputModel.cs
 FN:4,System.String WebSite.Models.BookingInputModel::get_SelectedExpertsJson()
-FNDA:24,System.String WebSite.Models.BookingInputModel::get_SelectedExpertsJson()
-DA:5,24
+FNDA:12,System.String WebSite.Models.BookingInputModel::get_SelectedExpertsJson()
+DA:5,12
 FN:5,System.String WebSite.Models.BookingInputModel::get_BookerEmailAddress()
-FNDA:14,System.String WebSite.Models.BookingInputModel::get_BookerEmailAddress()
-DA:6,14
+FNDA:7,System.String WebSite.Models.BookingInputModel::get_BookerEmailAddress()
+DA:6,7
 FN:6,System.String WebSite.Models.BookingInputModel::get_TechnologyFilter()
 FNDA:0,System.String WebSite.Models.BookingInputModel::get_TechnologyFilter()
 DA:7,0
 FN:7,System.String WebSite.Models.BookingInputModel::get_TimePeriod()
-FNDA:14,System.String WebSite.Models.BookingInputModel::get_TimePeriod()
-DA:8,14
+FNDA:7,System.String WebSite.Models.BookingInputModel::get_TimePeriod()
+DA:8,7
 FN:8,System.String WebSite.Models.BookingInputModel::get_Description()
-FNDA:14,System.String WebSite.Models.BookingInputModel::get_Description()
-DA:9,14
+FNDA:7,System.String WebSite.Models.BookingInputModel::get_Description()
+DA:9,7
 LF:5
 LH:4
 BRF:0
@@ -328,19 +462,19 @@ FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Helpers\BookingInputModelConverter.cs
 FN:9,BusinessModels.Booking WebSite.Helpers.BookingInputModelConverter::Convert(WebSite.Models.BookingInputModel)
-FNDA:12,BusinessModels.Booking WebSite.Helpers.BookingInputModelConverter::Convert(WebSite.Models.BookingInputModel)
-DA:10,12
-DA:11,12
-DA:12,12
-DA:13,12
-DA:14,12
-DA:15,12
-DA:16,12
-DA:17,12
-DA:18,12
-DA:19,12
-BRDA:11,22,0,0
-BRDA:11,22,1,12
+FNDA:6,BusinessModels.Booking WebSite.Helpers.BookingInputModelConverter::Convert(WebSite.Models.BookingInputModel)
+DA:10,6
+DA:11,6
+DA:12,6
+DA:13,6
+DA:14,6
+DA:15,6
+DA:16,6
+DA:17,6
+DA:18,6
+DA:19,6
+BRDA:11,8,0,0
+BRDA:11,8,1,6
 LF:10
 LH:10
 BRF:2
@@ -368,25 +502,33 @@ FNF:1
 FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Controllers\BookExpertController.cs
-FN:17,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.BookExpertController::Index()
+FN:18,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.BookExpertController::Index()
 FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.BookExpertController::Index()
-DA:18,0
 DA:19,0
 DA:20,0
-FN:11,System.Void WebSite.Controllers.BookExpertController::.ctor(UseCases.BookExpertUseCase)
+DA:21,0
+FN:12,System.Void WebSite.Controllers.BookExpertController::.ctor(UseCases.BookExpertUseCase)
 FNDA:0,System.Void WebSite.Controllers.BookExpertController::.ctor(UseCases.BookExpertUseCase)
-DA:12,0
 DA:13,0
 DA:14,0
 DA:15,0
-FN:23,System.Void WebSite.Controllers.BookExpertController/<Book>d__3::MoveNext()
+DA:16,0
+FN:24,System.Void WebSite.Controllers.BookExpertController/<Book>d__3::MoveNext()
 FNDA:0,System.Void WebSite.Controllers.BookExpertController/<Book>d__3::MoveNext()
-DA:24,0
 DA:25,0
 DA:26,0
 DA:27,0
 DA:28,0
-LF:12
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:38,0
+LF:20
 LH:0
 BRF:0
 BRH:0

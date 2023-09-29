@@ -38,7 +38,13 @@
             <div class="four columns"></div>
             <div class="four columns">
                 <label for="BookerEmailAddress">Din Epostadresse:</label>
-                <input type="text" name="BookerEmailAddress" value="" />
+                <input id="BookerEmailAddress" 
+                       type="text" 
+                       name="BookerEmailAddress" 
+                       value="" 
+                       required 
+                       oninvalid="this.setCustomValidity('Vi trenger din epost for å kontakte deg')" 
+                       oninput="this.setCustomValidity('')"/>
             </div>
         </div>
         <div class="row form-row">

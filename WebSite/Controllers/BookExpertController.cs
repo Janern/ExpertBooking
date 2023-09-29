@@ -2,6 +2,7 @@
 using WebSite.Models;
 using UseCases;
 using WebSite.Helpers;
+using BusinessModels;
 
 namespace WebSite.Controllers;
 
@@ -22,8 +23,17 @@ public class BookExpertController : Controller
     [HttpPost]
     public async Task<IActionResult> Book(BookingInputModel bookingInput)
     {
-        var booking = BookingInputModelConverter.Convert(bookingInput);
-        bool success = await _useCase.Execute(booking);
-        return RedirectToAction("Index", "BookExpertResult", new BookingResultModel{Booking = booking, Success = success});
+        Booking booking = null;
+        bool success = false;
+        try{
+            booking = BookingInputModelConverter.Convert(bookingInput);
+            success = await _useCase.Execute(booking);
+        }catch(Exception ex){
+        }
+        return RedirectToAction("Index", "BookExpertResult", 
+            new BookingResultModel{
+                Booking = booking, 
+                Success = success});
+        
     }
 }
