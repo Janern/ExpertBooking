@@ -1,5 +1,11 @@
+:root {
+  --anyshore-green: #5C7D70;
+  --anyshore-green-hover: #7C9D90;
+}
+
 html {
   font-size: 14px;
+  
 }
 
 @media (min-width: 768px) {
@@ -15,4 +21,178 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+.img-overlay-pick-expert-btn {
+  position: relative;
+  text-align: center;
+  z-index: 100;
+  top:-50%;
+  height: 100%;
+}
+
+.expert-table-img {
+  border-radius: 100%;
+  margin-top: -1em;
+}
+
+.expertLabel {
+  font-weight: bold;
+}
+
+.expertCard {
+  position: relative;
+  background-color: var(--anyshore-green);
+  color: white;
+  font-size: medium;
+  padding-bottom: 1em;
+  margin-bottom: 3em;
+  margin-left: 22px;
+  height: 350px;
+  font-family: Noto Sans;
+}
+
+.expertName {
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.clicked {
+  /* display: block;
+  background-image: url("/images/square-check-regular.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: bottom +20% center; */
+  background-color: var(--anyshore-green-hover);
+}
+
+.form-row {
+  padding-bottom: 1em;
+	text-decoration: none;
+}
+
+.selectedExpertCheckmark i {
+  background: url('/images/square-check-regular.svg');
+}
+
+.one-third.column.expertCard i {
+  display: none;
+}
+
+.one-third.column.expertCard.clicked i {
+  display: block;
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  color: #709b09; 
+  font-size: 24px; 
+}
+
+.inputLabel{
+  color: var(--Tekst, #202020);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.inputValue {
+  color: var(--Tekst, #202020);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+}
+
+.layoutLogo {
+  width: 158px;
+  height: 52px;
+}
+
+.navbar {
+  height: 96px;
+  margin-left: auto;
+  box-sizing: border-box;
+  color: #000;
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  overflow: hidden;
+}
+
+.bottom{
+  bottom: 0px;
+  padding-top: 1em;
+  position: absolute;
+}
+
+.senior-label{
+  border-radius: 4px;
+  background: var(--Experis-lys-gr, #D9D9DB);
+  color: var(--Experis-text, #404040);
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 65px;
+  height: 19px;
+}
+
+.expertSelectButton {
+  padding: 0;
+  text-transform: none;
+  color: white;
+}
+
+.expertDetailsButton{
+  width: 35.014px;
+  position: relative;
+  border: 0;
+}
+.expertDetailsButton :hover{
+  rotate: 5deg;
+}
+
+.modal {
+  background-color: rgba(120, 120, 120, 0.7); /* Semi-transparent black background */
+  width: 100%;
+}
+
+.modal-content {
+  background-color: var(--anyshore-green);
+  border-radius: 5%;
+  color: white;
+  padding-top: 2em;
+  padding-left: 10px;
+  padding-right: 2px;
+}
+.modal-content img{
+  position: relative;
+  padding-left: 2em;
+}
+
+.chosenExpertsContainer{
+  display: flex;
+  flex-direction: column-reverse; /* Stack images vertically in reverse order */
+  align-items: center; /* Center align the images horizontally */
+  position: fixed;
+  top: 0;
+  right: 10%;
+}
+.chosenExpertsContainer img{
+  width: 100px; /* Adjust the width of each image */
+  margin-top: 10px; /* Spacing between stacked images */
+  transform: rotate(-5deg); /* Rotate each image slightly */
+  transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+  border-radius: 10%;
 }

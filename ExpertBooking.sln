@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "WebSite\WebSite.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessModels", "BusinessModels\BusinessModels.csproj", "{728CE483-7CAF-43FD-9945-EC60700977E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage", "Storage\Storage.csproj", "{3FAC74AF-52D8-4558-91EB-37416A7FA805}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,13 @@ Global
 		{728CE483-7CAF-43FD-9945-EC60700977E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{728CE483-7CAF-43FD-9945-EC60700977E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{728CE483-7CAF-43FD-9945-EC60700977E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FAC74AF-52D8-4558-91EB-37416A7FA805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FAC74AF-52D8-4558-91EB-37416A7FA805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FAC74AF-52D8-4558-91EB-37416A7FA805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FAC74AF-52D8-4558-91EB-37416A7FA805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360D11F3-46A0-48D1-AFDC-D3E6E4D5DCB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360D11F3-46A0-48D1-AFDC-D3E6E4D5DCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360D11F3-46A0-48D1-AFDC-D3E6E4D5DCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360D11F3-46A0-48D1-AFDC-D3E6E4D5DCB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

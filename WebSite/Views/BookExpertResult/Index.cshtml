@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "AnyShore | Book ekspert";
+}
+@model BookingResultModel
+@if(Model.Success){
+    <span>Takk for din bestilling!</span>
+}else
+{
+    <span>Noe gikk galt, prøv igjen.</span>
+}

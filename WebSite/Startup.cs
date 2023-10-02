@@ -1,8 +1,11 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+using System.Text.Json;
+using BusinessModels;
 using Services;
 using Services.Implementation;
+using Storage.Api;
+using Storage.Implementation;
 using UseCases;
+using WebSite.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +35,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=BookExpert}/{action=Index}/{id?}");
+    pattern: "{controller=BookExpert}/{action=Index}");
 
 app.Run();
 
@@ -50,5 +53,11 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
         azureConfig["SendGridApiKey"],  
         azureConfig["BookingReceiverEmail"]);
     services.AddSingleton(emailService);
+    
+    Expert[] experts = JsonSerializer.Deserialize<Expert[]>(ReadJsonFromFileHelper.ReadJsonFromTextFile(azureConfig["ExpertsJsonFilePath"]));
+    ExpertsStorage expertsStorage = new ExpertsStorageInMemoryImplementation(experts);
+    services.AddSingleton(expertsStorage);
+    services.AddScoped<ListExpertsUseCase>();
+    
     services.AddScoped<BookExpertUseCase>();
 }

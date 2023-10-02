@@ -1,11 +1,12 @@
 using Xunit;
 using UseCases;
+using UseCases.Exceptions;
 using Services;
 using System.Threading.Tasks;
 using BusinessModels;
+using Tests.TestHelpers;
 
-namespace tests;
-
+namespace Tests;
 public class BookExpertTests
 {
     private BookExpertUseCase _useCase;
@@ -20,9 +21,11 @@ public class BookExpertTests
     [Fact]
     public async Task WhenBookingExpertShouldSendEmail()
     {
-        await _useCase.Execute(new Booking());
+        string bookerEmailAddress = "test@example.com";
+        Booking booking = new Booking{BookerEmailAddress = bookerEmailAddress};
+        await _useCase.Execute(booking);
 
-        Assert.NotNull(_fakeEmailService.SentEmail);
+        Assert.NotNull(_fakeEmailService.SentBooking);
     }
 
     [Fact]
@@ -33,77 +36,123 @@ public class BookExpertTests
 
         await _useCase.Execute(booking);
 
-        Assert.Equal(bookerEmailAddress, _fakeEmailService.SentEmail.BookerEmailAddress);
+        Assert.Equal(bookerEmailAddress, _fakeEmailService.SentBooking.BookerEmailAddress);
     }
 
     [Fact]
-    public async Task WhenBookingExpertShouldSendEmailWithTypeOfExpert()
+    public async Task WhenBookingSingleExpertShouldSendEmailWithExpertId()
     {
-        string expertType = ".Net";
-        Booking booking = new Booking{ExpertType=expertType};
+        string expertId = "EXPERT1";
+        Expert[] experts = new Expert[]{
+             new Expert{
+                Id = expertId
+            }
+        };
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
 
-        Assert.Equal(expertType, _fakeEmailService.SentEmail.ExpertType);
+        Assert.Equal(expected: expertId, _fakeEmailService.SentBooking.Experts[0].Id);
+    }
+
+    [Fact]
+    public async Task WhenBookingSingleExpertShouldSendEmailWithExpertName()
+    {
+        string expertId = "EXPERT1";
+        string expertFirstName = "Firstname";
+        string expertLastName = "LASTNAME";
+        Expert[] experts = new Expert[]{
+             new Expert{
+                Id = expertId,
+                FirstName = expertFirstName,
+                LastName = expertLastName
+            }
+        };
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
+
+        await _useCase.Execute(booking);
+
+        Assert.Equal(expected: expertFirstName, _fakeEmailService.SentBooking.Experts[0].FirstName);
+        Assert.Equal(expected: expertLastName, _fakeEmailService.SentBooking.Experts[0].LastName);
     }
     
     [Fact]
-    public async Task WhenBookingExpertShouldSendEmailWithRoleOfExpert()
+    public async Task WhenBookingTwoExpertsShouldSendEmailWithExpertIds()
     {
-        string expertRole = "Prosjektleder";
-        Booking booking = new Booking{ExpertRole=expertRole};
+        string expertId1 = "EXPERT1";
+        string expertId2 = "EXPERT2";
+        string expertFirstName1 = "Firstname1";
+        string expertFirstName2 = "Firstname2";
+        string expertLastName1 = "LASTNAME1";
+        string expertLastName2 = "LASTNAME2";
+        Expert[] experts = new Expert[]{
+            new Expert
+            {
+                Id = expertId1,
+                FirstName = expertFirstName1,
+                LastName = expertLastName1
+            },
+            new Expert 
+            {
+                Id = expertId2,
+                FirstName = expertFirstName2,
+                LastName = expertLastName2
+            }
+        };        
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
-
-        Assert.Equal(expected: expertRole, _fakeEmailService.SentEmail.ExpertRole);
+        
+        Assert.Equal(experts.Length, _fakeEmailService.SentBooking.Experts.Length);
+        ExpertAssertionHelper.AssertContainsExpert(experts[0], _fakeEmailService.SentBooking.Experts);
+        ExpertAssertionHelper.AssertContainsExpert(experts[1], _fakeEmailService.SentBooking.Experts);
     }
-    
+
     [Fact]
     public async Task WhenBookingExpertShouldSendEmailWithTimePeriod()
     {
         string timePeriod = "2023-09-01 2023-09-30";
-        Booking booking = new Booking{TimePeriod=timePeriod};
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{TimePeriod=timePeriod, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
 
-        Assert.Equal(expected: timePeriod, _fakeEmailService.SentEmail.TimePeriod);
-    }
-
-    [Fact]
-    public async Task WhenBookingExpertShouldSendEmailWithQuantity()
-    {
-        int quantity = 2;
-        Booking booking = new Booking{Quantity=quantity};
-
-        await _useCase.Execute(booking);
-
-        Assert.Equal(expected: quantity, _fakeEmailService.SentEmail.Quantity);
+        Assert.Equal(expected: timePeriod, _fakeEmailService.SentBooking.TimePeriod);
     }
 
     [Fact]
     public async Task WhenBookingExpertShouldSendEmailWithDescription()
     {
         string description = "Beskrivelse av problemet";
-        Booking booking = new Booking{Description=description};
+        string bookerEmailAddress = "booker@example.com";
+        Booking booking = new Booking{Description=description, BookerEmailAddress=bookerEmailAddress};
 
         await _useCase.Execute(booking);
 
-        Assert.Equal(expected: description, _fakeEmailService.SentEmail.Description);
+        Assert.Equal(expected: description, _fakeEmailService.SentBooking.Description);
+    }
+
+    [Fact]
+    public async Task GivenNoEmailWhenBookingExpertShouldThrowException()
+    {
+        string description = "Beskrivelse av problemet";
+        Booking booking = new Booking{Description=description};
+
+        await Assert.ThrowsAsync<InvalidBookingException>(() => _useCase.Execute(booking));
     }
 
     private class FakeEmailService : EmailService
     {
-        public Booking SentEmail = null;
+        public Booking SentBooking = null;
 
         public async Task<bool> SendEmail(Booking booking)
         {
-            SentEmail = booking;
+            SentBooking = booking;
             await Task.CompletedTask;
             return true;
         }
     }
-}
-
-public class EmailRequest
-{
 }

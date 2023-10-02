@@ -1,5 +1,6 @@
 ﻿using Services;
 using BusinessModels;
+using UseCases.Exceptions;
 
 namespace UseCases;
 public class BookExpertUseCase
@@ -12,6 +13,8 @@ public class BookExpertUseCase
     }
 
     public async Task<bool> Execute(Booking booking){
+        if(string.IsNullOrWhiteSpace(booking.BookerEmailAddress))
+            throw new InvalidBookingException();
         return await _emailService.SendEmail(booking);
     }
 }
