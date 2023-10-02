@@ -180,3 +180,19 @@ body {
   position: relative;
   padding-left: 2em;
 }
+
+.chosenExpertsContainer{
+  display: flex;
+  flex-direction: column-reverse; /* Stack images vertically in reverse order */
+  align-items: center; /* Center align the images horizontally */
+  position: fixed;
+  top: 0;
+  right: 10%;
+}
+.chosenExpertsContainer img{
+  width: 100px; /* Adjust the width of each image */
+  margin-top: 10px; /* Spacing between stacked images */
+  transform: rotate(-5deg); /* Rotate each image slightly */
+  transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+  border-radius: 10%;
+}
