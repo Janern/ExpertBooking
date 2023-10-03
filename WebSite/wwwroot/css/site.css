@@ -196,3 +196,15 @@ body {
   transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
   border-radius: 10%;
 }
+
+button.button-primary {
+  background-color: var(--anyshore-green);
+  color: white;
+  border-color: white;
+}
+
+button.button-primary:hover {
+  background-color: var(--anyshore-green-hover);
+  color: white;
+  border-color: white;
+}
