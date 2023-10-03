@@ -1,0 +1,135 @@
+<div class="row form-row">
+    <div class="four columns">
+        &nbsp;
+    </div>
+    <div class="four columns">
+        <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
+        <input class="inputValue" type="text" name="TimePeriod" value=""/>
+    </div>
+    <div class="four columns">
+        <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
+        <select id="technologyFilter" class="inputValue u-full-width" name="TechnologyFilter" name="" class="u-full-width">
+            <option value="">Alle</option>
+            <option value=".net">.Net</option>
+            <option value="java">Java</option>
+            <option value="ux">UX</option>
+            <option value="tester">Tester</option>
+            <option value="python">Python</option>
+            <option value="frontend">Frontend</option>
+        </select>
+    </div>
+</div>
+<h2>Sett sammen ditt ekspertlag</h2>
+<div class="row form-row" id="expertTable">
+    <!-- placeholder for json from controller -->
+</div>
+@{ await Html.RenderPartialAsync("_ExpertModal"); }
+@{ await Html.RenderPartialAsync("_ChosenExperts"); }
+<input id="SelectedExpertsJsonInput" name="SelectedExpertsJson" type="hidden" value="" />
+<div class="row form-row">
+    <div class="twelve columns full u-full-width">
+        <label for="Description">Beskriv prosjektet:</label>
+        <textarea class="u-full-width" type="text" name="Description" value=""></textarea>
+    </div>
+</div>
+<div class="row form-row light-blue">
+    <div class="four columns"></div>
+    <div class="four columns">
+        <label for="BookerEmailAddress">Din Epostadresse:</label>
+        <input id="BookerEmailAddress" 
+                type="text" 
+                name="BookerEmailAddress" 
+                value="" 
+                required 
+                oninvalid="this.setCustomValidity('Vi trenger din epost for å kontakte deg')" 
+                oninput="this.setCustomValidity('')"/>
+    </div>
+</div>
+<script>
+    $('input[name="TimePeriod"]').daterangepicker();
+    let selectedExpertsJson = [];
+    let availableExpertsJson = []; 
+    const selectedExpertsJsonInput = document.getElementById("SelectedExpertsJsonInput");
+    
+    function fetchExperts(filter) 
+    {
+        $.ajax({
+            url: '/ListExperts/JsonData?filter='+filter,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                availableExpertsJson = JSON.parse(data);
+                $('#expertTable').empty();
+                $.each(availableExpertsJson, function (index, expert) {
+                    $.get('/templates/bookExpert/_ExpertListCard.html', function (template) {
+                        var cardHtml = template.replace(/{ExpertId}/g, expert.Id)
+                                                .replace(/{ExpertName}/g, expert.FirstName + ' ' + expert.LastName)
+                                                .replace(/{ExpertRole}/g, expert.Role)
+                                                .replace(/{ExpertTechnology}/g, expert.Technology);
+                        $('#expertTable').append(cardHtml);
+                    });
+                });
+            },
+            error: function () {
+                console.error('Error fetching JSON data.');
+            }
+        });
+    };
+    $('#technologyFilter').on('change', function () {
+            var selectedTechnology = $(this).val();
+            fetchExperts(selectedTechnology);
+        });
+    $('#expertDetailsButton').on('click', '.expertCard', function () {
+        var expertId = $(this).attr('id');
+        ShowExpertInfoModal(expertId);
+    });        
+
+    function ShowExpertInfoModal(event, clickedElement, expertId){
+        event.stopPropagation();
+        let indexOfExpert = availableExpertsJson.findIndex(item => item.Id === expertId);
+        if(indexOfExpert > -1)
+        {
+            let expert = availableExpertsJson[indexOfExpert];
+            $('#expertModal img').attr('src',"images/"+expert.Id+".jpg");
+            $('#expertModal h3').text(expert.FirstName+" "+expert.LastName);
+            $('#expertModal p').text(expert.Description);
+            $('#expertModal .role').text("Rolle: " + expert.Role);
+            $('#expertModal .technology').text("Teknologi: " + expert.Technology);
+            $('#expertModal').show();
+        }
+        
+    };
+
+    function HideExpertInfoModal(){
+        $('#expertModal').hide();
+    }
+    function ToggleExpertSelected(clickedElement, expertId){
+        let indexOfExpert = selectedExpertsJson.findIndex(item => item.Id === expertId);
+        if(indexOfExpert > -1){
+            selectedExpertsJson.splice(indexOfExpert, 1);
+        }else{
+            let indexOfExpert = availableExpertsJson.findIndex(item => item.Id === expertId);
+            if(indexOfExpert > -1)
+            {
+                selectedExpertsJson.push(availableExpertsJson[indexOfExpert]);
+            }
+        }
+        selectedExpertsJsonInput.value = JSON.stringify(selectedExpertsJson);
+        UpdateChosenExpertsView();
+        clickedElement.classList.toggle("clicked");
+    };
+    
+    const shoppingCart = '<img><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg></img>'
+    function UpdateChosenExpertsView(){
+        const container = $('#ChosenExperts');
+        container.empty();
+        container.append(shoppingCart);
+        selectedExpertsJson.forEach((expert, index) => {
+            let expertImage = $('<img>').attr('src', 'images/' + expert.Id + '.jpg');
+            container.append(expertImage);
+        });
+    }
+    $(document).ready(function() {
+        availableExpertsJson = fetchExperts('');
+    });
+</script>

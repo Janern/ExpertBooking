@@ -197,13 +197,18 @@ body {
   border-radius: 10%;
 }
 
-button.button-primary {
+.submitButton {
   background-color: var(--anyshore-green);
   color: white;
   border-color: white;
 }
 
-button.button-primary:hover {
+.submitButton:hover {
+  background-color: var(--anyshore-green-hover);
+  color: white;
+  border-color: white;
+}
+.submitButton:disabled {
   background-color: var(--anyshore-green-hover);
   color: white;
   border-color: white;
