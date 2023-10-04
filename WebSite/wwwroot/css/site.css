@@ -50,6 +50,20 @@ body {
   margin-left: 22px;
   height: 350px;
   font-family: Noto Sans;
+  background-image: url("/images/svg/add-checkmark.svg");
+  display: block;
+  background-repeat: no-repeat;
+  background-size: calc(8% + 2px);
+  background-position: top 5% right 5%;
+}
+
+.expertCard.clicked {
+  background-image: url("/images/svg/checkmark.svg");
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 8%;
+  background-position: top 5% right calc(5% + 2px);
+  background-color: var(--anyshore-green-hover);
 }
 
 .expertName {
@@ -60,14 +74,7 @@ body {
   line-height: normal;
 }
 
-.clicked {
-  /* display: block;
-  background-image: url("/images/square-check-regular.svg");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: bottom +20% center; */
-  background-color: var(--anyshore-green-hover);
-}
+
 
 .form-row {
   padding-bottom: 1em;
