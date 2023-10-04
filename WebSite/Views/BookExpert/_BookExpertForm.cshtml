@@ -4,7 +4,7 @@
     </div>
     <div class="four columns">
         <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
-        <input class="inputValue" type="text" name="TimePeriod" value=""/>
+        <input id="timePeriod" class="inputValue" type="text" name="TimePeriod" value="" placeholder="Klikk for å velge periode"/>
     </div>
     <div class="four columns">
         <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
@@ -46,11 +46,21 @@
     </div>
 </div>
 <script>
-    $('input[name="TimePeriod"]').daterangepicker();
     let selectedExpertsJson = [];
     let availableExpertsJson = []; 
     const selectedExpertsJsonInput = document.getElementById("SelectedExpertsJsonInput");
     
+    flatpickr('#timePeriod', 
+    {
+        mode: "range",
+        minDate: "today",
+        dateFormat: "d-m-Y",
+        altInput: "Y-m-d",
+        altFormat: "d-m-Y",
+        "locale": "no"
+    }
+    );
+
     function fetchExperts(filter) 
     {
         $.ajax({
