@@ -36,45 +36,12 @@ body {
   margin-top: -1em;
 }
 
-.expertLabel {
-  font-weight: bold;
-}
 
-.expertCard {
-  position: relative;
-  background-color: var(--anyshore-green);
-  color: white;
-  font-size: medium;
-  padding-bottom: 1em;
-  margin-bottom: 3em;
-  margin-left: 22px;
-  height: 350px;
-  font-family: Noto Sans;
-}
-
-button.expertSelectedCheckmark {
-  border: none;
-  background: none;
-}
-
-.expertSelectedCheckmark img{
-  width: 2em;
-  margin-top: 1em;
-  left: -1em;
-  position: relative;
-}
 
 .hidden{
   display: none;
 }
 
-.expertName {
-  color: #FFF;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
 
 
 
@@ -83,26 +50,10 @@ button.expertSelectedCheckmark {
 	text-decoration: none;
 }
 
-.selectedExpertCheckmark i {
-  background: url('/images/square-check-regular.svg');
-}
 
-.one-third.column.expertCard i {
-  display: none;
-}
-
-.one-third.column.expertCard.clicked i {
-  display: block;
-  position: absolute;
-  top: 10px; 
-  right: 10px; 
-  color: #709b09; 
-  font-size: 24px; 
-}
 
 .inputLabel{
   color: var(--Tekst, #202020);
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -111,7 +62,6 @@ button.expertSelectedCheckmark {
 
 .inputValue {
   color: var(--Tekst, #202020);
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -143,34 +93,8 @@ button.expertSelectedCheckmark {
   position: absolute;
 }
 
-.senior-label{
-  border-radius: 4px;
-  background: var(--Experis-lys-gr, #D9D9DB);
-  color: var(--Experis-text, #404040);
-  text-align: center;
-  font-family: Noto Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  width: 65px;
-  height: 19px;
-}
 
-.expertSelectButton {
-  padding: 0;
-  text-transform: none;
-  color: white;
-}
 
-.expertDetailsButton{
-  width: 35.014px;
-  position: relative;
-  border: 0;
-}
-.expertDetailsButton :hover{
-  rotate: 5deg;
-}
 
 .modal {
   background-color: rgba(120, 120, 120, 0.7); /* Semi-transparent black background */
@@ -192,17 +116,17 @@ button.expertSelectedCheckmark {
 
 .chosenExpertsContainer{
   display: flex;
-  flex-direction: column-reverse; /* Stack images vertically in reverse order */
-  align-items: end; /* Center align the images horizontally */
+  flex-direction: column-reverse; 
+  align-items: end;
   position: fixed;
   top: 0;
   right: 10%;
 }
 .chosenExpertsContainer img{
-  width: 3em; /* Adjust the width of each image */
-  margin-top: 10px; /* Spacing between stacked images */
-  transform: rotate(-5deg); /* Rotate each image slightly */
-  transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+  width: 3em;
+  margin-top: 10px;
+  transform: rotate(-5deg); 
+  transition: transform 0.2s ease-in-out; 
   border-radius: 10%;
 }
 
