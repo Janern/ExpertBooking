@@ -17,8 +17,8 @@
     font-size: medium;
     padding-bottom: 1em;
     margin-bottom: 3em;
-    margin-left: 22px;
-    height: 350px;
+    margin-left: 1.5em;
+    height: 23.5em;
     font-family: Noto Sans;
   }
   
@@ -44,15 +44,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 65px;
-    height: 19px;
+    width: 4em;
+    height: 1.5em;
   }
 
-  .expertDetailsButton{
-    width: 35.014px;
-    position: relative;
-    border: 0;
-  }
-  .expertDetailsButton :hover{
-    rotate: 5deg;
+  .moreInfoArrow {
+    margin-bottom: 1em;
   }
