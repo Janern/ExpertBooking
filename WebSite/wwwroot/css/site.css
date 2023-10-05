@@ -50,20 +50,22 @@ body {
   margin-left: 22px;
   height: 350px;
   font-family: Noto Sans;
-  background-image: url("/images/svg/add-checkmark.svg");
-  display: block;
-  background-repeat: no-repeat;
-  background-size: calc(8% + 2px);
-  background-position: top 5% right 5%;
 }
 
-.expertCard.clicked {
-  background-image: url("/images/svg/checkmark.svg");
-  display: block;
-  background-repeat: no-repeat;
-  background-size: 8%;
-  background-position: top 5% right calc(5% + 2px);
-  background-color: var(--anyshore-green-hover);
+button.expertSelectedCheckmark {
+  border: none;
+  background: none;
+}
+
+.expertSelectedCheckmark img{
+  width: 2em;
+  margin-top: 1em;
+  left: -1em;
+  position: relative;
+}
+
+.hidden{
+  display: none;
 }
 
 .expertName {

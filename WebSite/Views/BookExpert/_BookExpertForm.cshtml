@@ -54,7 +54,6 @@
     {
         mode: "range",
         minDate: "today",
-        
         dateFormat: "Y-m-d",
         altInput: "true",
         altFormat: "d-m-Y",
@@ -118,6 +117,7 @@
         let indexOfExpert = selectedExpertsJson.findIndex(item => item.Id === expertId);
         if(indexOfExpert > -1){
             selectedExpertsJson.splice(indexOfExpert, 1);
+
         }else{
             let indexOfExpert = availableExpertsJson.findIndex(item => item.Id === expertId);
             if(indexOfExpert > -1)
@@ -125,6 +125,10 @@
                 selectedExpertsJson.push(availableExpertsJson[indexOfExpert]);
             }
         }
+        let toShow = $(clickedElement).find('img.expertSelectedCheckmark.hidden');
+        let toHide = $(clickedElement).find('img.expertSelectedCheckmark:not(.hidden)');
+        toShow.removeClass('hidden');
+        toHide.addClass('hidden');
         selectedExpertsJsonInput.value = JSON.stringify(selectedExpertsJson);
         UpdateChosenExpertsView();
         clickedElement.classList.toggle("clicked");
