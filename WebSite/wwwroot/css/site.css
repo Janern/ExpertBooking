@@ -37,21 +37,14 @@ body {
   margin-top: -1em;
 }
 
-
-
 .hidden{
   display: none;
 }
-
-
-
 
 .form-row {
   padding-bottom: 1em;
 	text-decoration: none;
 }
-
-
 
 .inputLabel{
   color: var(--Tekst, #202020);

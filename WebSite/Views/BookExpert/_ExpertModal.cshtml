@@ -1,24 +1,35 @@
-<div id="expertModal" class="modal modal-background" onclick="HideExpertInfoModal()">  
+<div id="expertModal" class="modal modal-background" onclick="HideExpertInfoModal()">
     <div class="two columns">&nbsp;</div>
     <div class="modal-window six columns" onclick="(function(event){event.stopPropagation()})">
-        <div class="modal-textbox">
+        <div class="modal-textbox twelve columns">
             <div class="row">
                 <div class="four columns">
-                    <img src="" class="u-max-full-width" />
+                    <img id="expertImage" src="" class="u-max-full-width" />
                 </div>
                 <div class="eight columns">
-                    <span class="expert-name">Expert Name</span><br/>
+                    <span class="expert-name">Expert Name</span><br />
                     <span class="role">Expert Role</span>
                 </div>
             </div>
             <div class="row">
-                
+
             </div>
             <div class="row">
                 <p>Expert Description</p>
             </div>
             <div class="row">
-                <span class="technology">Expert Technology</span>
+                <div class="columns four">
+                    &nbsp;
+                </div>
+                <div class="columns four">
+                    <button>
+                        <img class="expertSelectedCheckmark" src="images/svg/add-checkmark.svg"></img>
+                        Legg til i Team
+                    </button>
+                </div>
+                <div class="columns four">
+                    <button class="main-button">Bestill</button>
+                </div>
             </div>
         </div>
     </div>

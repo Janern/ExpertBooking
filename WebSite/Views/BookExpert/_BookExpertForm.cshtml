@@ -100,7 +100,7 @@
         if(indexOfExpert > -1)
         {
             let expert = availableExpertsJson[indexOfExpert];
-            $('#expertModal img').attr('src',"images/"+expert.Id+".jpg");
+            $('#expertImage').attr('src',"images/"+expert.Id+".jpg");
             $('#expertModal .expert-name').text(expert.FirstName+" "+expert.LastName);
             $('#expertModal p').text(expert.Description);
             $('#expertModal .role').text(expert.Role);

@@ -42,3 +42,15 @@
 .role {
     font-size: 24px;
 }
+
+.main-button button{
+    color: white;
+    background-color: var(--anyshore-green);
+}
+
+.modal-textbox button {
+    border: var(--anyshore-green) solid 2px;
+    border-radius: 32px;
+    text-transform: none;
+    color: var(--anyshore-green);
+}
