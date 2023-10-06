@@ -4,21 +4,41 @@
     z-index: 1;
 }
 
-.modal-content {
+.modal-window {
+    margin-left: 12%;
+    margin-right: auto;
     background-color: #ECECEC;
-    color: white;
-      padding-top: 2em;
-    padding-left: 10px;
-    padding-right: 2px;
+    border-radius: 0;
     color: #000;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     z-index: 100;
+    margin-top: 5em;
+    position: relative;
 }
 
-.modal-content img {
-    position: relative;
-    padding-left: 2em;
+.modal-textbox {
+    margin-top: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-bottom: 4em;
+}
+
+.modal-textbox img {
+    border-radius: 100%;
+    margin-bottom: 2em;
+    
+}
+
+.expert-name {
+    font-size: 32px;
+    padding-top: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.role {
+    font-size: 24px;
 }

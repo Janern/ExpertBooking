@@ -101,10 +101,10 @@
         {
             let expert = availableExpertsJson[indexOfExpert];
             $('#expertModal img').attr('src',"images/"+expert.Id+".jpg");
-            $('#expertModal h3').text(expert.FirstName+" "+expert.LastName);
+            $('#expertModal .expert-name').text(expert.FirstName+" "+expert.LastName);
             $('#expertModal p').text(expert.Description);
-            $('#expertModal .role').text("Rolle: " + expert.Role);
-            $('#expertModal .technology').text("Teknologi: " + expert.Technology);
+            $('#expertModal .role').text(expert.Role);
+            $('#expertModal .technology').text(expert.Technology);
             $('#expertModal').show();
         }
         
