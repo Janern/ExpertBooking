@@ -113,6 +113,7 @@
     function HideExpertInfoModal(){
         $('#expertModal').hide();
     }
+
     function ToggleExpertSelected(event, clickedElement, expertId){
         event.stopPropagation();
         let indexOfExpert = selectedExpertsJson.findIndex(item => item.Id === expertId);

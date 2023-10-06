@@ -5,6 +5,7 @@
 
 html {
   font-size: 14px;
+  font-family: Noto Sans;
   
 }
 
@@ -79,7 +80,6 @@ body {
   box-sizing: border-box;
   color: #000;
   text-align: center;
-  font-family: Noto Sans;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -91,27 +91,6 @@ body {
   bottom: 0px;
   padding-top: 1em;
   position: absolute;
-}
-
-
-
-
-.modal {
-  background-color: rgba(120, 120, 120, 0.7); /* Semi-transparent black background */
-  width: 100%;
-}
-
-.modal-content {
-  background-color: var(--anyshore-green);
-  border-radius: 5%;
-  color: white;
-  padding-top: 2em;
-  padding-left: 10px;
-  padding-right: 2px;
-}
-.modal-content img{
-  position: relative;
-  padding-left: 2em;
 }
 
 .chosenExpertsContainer{
