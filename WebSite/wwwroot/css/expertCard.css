@@ -26,9 +26,9 @@
   }
   
   .expertSelectedCheckmark img{
-    width: 2em;
+    width: 1.5em;
     margin-top: 1em;
-    left: -1em;
+    left: 0.5em;
     position: relative;
   }
 
