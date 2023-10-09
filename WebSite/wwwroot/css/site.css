@@ -1,6 +1,7 @@
 :root {
   --anyshore-green: #5C7D70;
   --anyshore-green-hover: #7C9D90;
+  --anyshore-green-filter: invert(47%) sepia(9%) saturate(891%) hue-rotate(105deg) brightness(95%) contrast(90%);
 }
 
 html {
@@ -26,6 +27,10 @@ body {
 
 .green {
   background-color: var(--anyshore-green);
+}
+
+.green-svg {
+  filter: var(--anyshore-green-filter);
 }
 
 button.green {
