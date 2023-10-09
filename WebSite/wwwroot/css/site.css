@@ -24,6 +24,14 @@ body {
   margin-bottom: 60px;
 }
 
+.green {
+  background-color: var(--anyshore-green);
+}
+
+button.green {
+  color: white;
+}
+
 .img-overlay-pick-expert-btn {
   position: relative;
   text-align: center;

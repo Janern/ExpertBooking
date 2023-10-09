@@ -105,6 +105,7 @@
             $('#expertModal p').text(expert.Description);
             $('#expertModal .role').text(expert.Role);
             $('#expertModal .technology').text(expert.Technology);
+            $('#modalAddToTeamButton').attr('onclick', 'ToggleExpertSelected(event, this, \''+expert.Id+'\')');
             $('#expertModal').show();
         }
         
