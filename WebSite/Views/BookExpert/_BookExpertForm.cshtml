@@ -100,11 +100,12 @@
         if(indexOfExpert > -1)
         {
             let expert = availableExpertsJson[indexOfExpert];
-            $('#expertModal img').attr('src',"images/"+expert.Id+".jpg");
-            $('#expertModal h3').text(expert.FirstName+" "+expert.LastName);
+            $('#expertImage').attr('src',"images/"+expert.Id+".jpg");
+            $('#expertModal .expert-name').text(expert.FirstName+" "+expert.LastName);
             $('#expertModal p').text(expert.Description);
-            $('#expertModal .role').text("Rolle: " + expert.Role);
-            $('#expertModal .technology').text("Teknologi: " + expert.Technology);
+            $('#expertModal .role').text(expert.Role);
+            $('#expertModal .technology').text(expert.Technology);
+            $('#modalAddToTeamButton').attr('onclick', 'ToggleExpertSelected(event, this, \''+expert.Id+'\')');
             $('#expertModal').show();
         }
         
@@ -113,7 +114,9 @@
     function HideExpertInfoModal(){
         $('#expertModal').hide();
     }
-    function ToggleExpertSelected(clickedElement, expertId){
+
+    function ToggleExpertSelected(event, clickedElement, expertId){
+        event.stopPropagation();
         let indexOfExpert = selectedExpertsJson.findIndex(item => item.Id === expertId);
         if(indexOfExpert > -1){
             selectedExpertsJson.splice(indexOfExpert, 1);

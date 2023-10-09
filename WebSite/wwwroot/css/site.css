@@ -1,10 +1,12 @@
 :root {
   --anyshore-green: #5C7D70;
   --anyshore-green-hover: #7C9D90;
+  --anyshore-green-filter: invert(47%) sepia(9%) saturate(891%) hue-rotate(105deg) brightness(95%) contrast(90%);
 }
 
 html {
   font-size: 14px;
+  font-family: Noto Sans;
   
 }
 
@@ -23,6 +25,18 @@ body {
   margin-bottom: 60px;
 }
 
+.green {
+  background-color: var(--anyshore-green);
+}
+
+.green-svg {
+  filter: var(--anyshore-green-filter);
+}
+
+button.green {
+  color: white;
+}
+
 .img-overlay-pick-expert-btn {
   position: relative;
   text-align: center;
@@ -36,21 +50,14 @@ body {
   margin-top: -1em;
 }
 
-
-
 .hidden{
   display: none;
 }
-
-
-
 
 .form-row {
   padding-bottom: 1em;
 	text-decoration: none;
 }
-
-
 
 .inputLabel{
   color: var(--Tekst, #202020);
@@ -79,7 +86,6 @@ body {
   box-sizing: border-box;
   color: #000;
   text-align: center;
-  font-family: Noto Sans;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -91,27 +97,6 @@ body {
   bottom: 0px;
   padding-top: 1em;
   position: absolute;
-}
-
-
-
-
-.modal {
-  background-color: rgba(120, 120, 120, 0.7); /* Semi-transparent black background */
-  width: 100%;
-}
-
-.modal-content {
-  background-color: var(--anyshore-green);
-  border-radius: 5%;
-  color: white;
-  padding-top: 2em;
-  padding-left: 10px;
-  padding-right: 2px;
-}
-.modal-content img{
-  position: relative;
-  padding-left: 2em;
 }
 
 .chosenExpertsContainer{

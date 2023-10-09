@@ -1,0 +1,61 @@
+.modal-background {
+    background-color: rgba(120, 120, 120, 0.7);
+    width: 100%;
+    z-index: 1;
+}
+
+.modal-window {
+    margin-left: 12%;
+    margin-right: auto;
+    background-color: #ECECEC;
+    border-radius: 0;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 100;
+    margin-top: 5em;
+    position: relative;
+}
+
+.modal-textbox {
+    margin-top: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-bottom: 4em;
+}
+
+
+#expertImage {
+    border-radius: 100%;
+    margin-bottom: 2em;
+}
+
+.expert-name {
+    font-size: 32px;
+    padding-top: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.role {
+    font-size: 24px;
+}
+
+.main-button button{
+    color: white;
+    background-color: var(--anyshore-green);
+}
+
+.modal-textbox button {
+    border: var(--anyshore-green) solid 2px;
+    border-radius: 32px;
+    text-transform: none;
+    color: var(--anyshore-green);
+    height: 3em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; 
+}

@@ -1,4 +1,3 @@
-
 .expertName {
     color: #FFF;
     font-size: 20px;
@@ -17,9 +16,8 @@
     font-size: medium;
     padding-bottom: 1em;
     margin-bottom: 3em;
-    margin-left: 22px;
-    height: 350px;
-    font-family: Noto Sans;
+    margin-left: 1.5em;
+    height: 23.5em;
   }
   
   button.expertSelectedCheckmark {
@@ -28,31 +26,25 @@
   }
   
   .expertSelectedCheckmark img{
-    width: 2em;
+    width: 1.5em;
     margin-top: 1em;
-    left: -1em;
+    left: 0.5em;
     position: relative;
   }
 
   .senior-label{
     border-radius: 4px;
-    background: var(--Experis-lys-gr, #D9D9DB);
-    color: var(--Experis-text, #404040);
+    background: #D9D9DB;
+    color:  #404040;
     text-align: center;
-    font-family: Noto Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 65px;
-    height: 19px;
+    width: 4em;
+    height: 1.5em;
   }
 
-  .expertDetailsButton{
-    width: 35.014px;
-    position: relative;
-    border: 0;
-  }
-  .expertDetailsButton :hover{
-    rotate: 5deg;
+  .moreInfoArrow {
+    margin-bottom: 1em;
   }
