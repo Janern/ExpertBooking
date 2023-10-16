@@ -1,4 +1,3 @@
-using System.Text.Json;
 using BusinessModels;
 using Microsoft.AspNetCore.Mvc;
 using UseCases;
@@ -15,9 +14,9 @@ namespace WebSite.Controllers
             _listExpertsUseCase = listExpertsUseCase;
         }
 
-        public IActionResult Index(string filter)
+        public IActionResult Index(string technologyFilter)
         {
-            Expert[] experts = _listExpertsUseCase.Execute(filter);
+            Expert[] experts = _listExpertsUseCase.Execute(technologyFilter);
             return PartialView("_expertTable", experts);
         }
     }

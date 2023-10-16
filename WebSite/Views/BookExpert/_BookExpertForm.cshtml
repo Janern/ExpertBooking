@@ -8,7 +8,8 @@
     </div>
     <div class="four columns">
         <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
-        <select id="technologyFilter" class="inputValue u-full-width" name="TechnologyFilter" name="" class="u-full-width">
+        <select id="technologyFilter" class="inputValue u-full-width" name="TechnologyFilter" class="u-full-width"
+                hx-trigger="change" hx-get="ListExperts" hx-target="#expertTable">
             <option value="">Alle</option>
             <option value=".net">.Net</option>
             <option value="java">Java</option>
@@ -60,35 +61,6 @@
         "locale": "no"
     }
     );
-
-    function fetchExperts(filter) 
-    {
-        $.ajax({
-            @* url: '/ListExperts/JsonData?filter='+filter,
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                availableExpertsJson = JSON.parse(data);
-                $('#expertTable').empty();
-                $.each(availableExpertsJson, function (index, expert) {
-                    $.get('/templates/bookExpert/_ExpertListCard.html', function (template) {
-                        var cardHtml = template.replace(/{ExpertId}/g, expert.Id)
-                                                .replace(/{ExpertName}/g, expert.FirstName + ' ' + expert.LastName)
-                                                .replace(/{ExpertRole}/g, expert.Role)
-                                                .replace(/{ExpertTechnology}/g, expert.Technology);
-                        $('#expertTable').append(cardHtml);
-                    });
-                });
-            },
-            error: function () {
-                console.error('Error fetching JSON data.');
-            } *@
-        });
-    };
-    $('#technologyFilter').on('change', function () {
-            var selectedTechnology = $(this).val();
-            fetchExperts(selectedTechnology);
-        });
     $('#expertDetailsButton').on('click', '.expertCard', function () {
         var expertId = $(this).attr('id');
         ShowExpertInfoModal(expertId);
@@ -148,6 +120,5 @@
         });
     }
     $(document).ready(function() {
-        availableExpertsJson = fetchExperts('');
     });
 </script>
