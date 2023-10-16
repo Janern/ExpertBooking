@@ -20,8 +20,8 @@
     </div>
 </div>
 <h2>Sett sammen ditt ekspertlag</h2>
-<div class="row form-row" id="expertTable">
-    <!-- placeholder for json from controller -->
+<div class="row form-row" id="expertTable" hx-get="ListExperts" hx-trigger="load">
+    
 </div>
 @{ await Html.RenderPartialAsync("_ExpertModal"); }
 @{ await Html.RenderPartialAsync("_ChosenExperts"); }
@@ -64,7 +64,7 @@
     function fetchExperts(filter) 
     {
         $.ajax({
-            url: '/ListExperts/JsonData?filter='+filter,
+            @* url: '/ListExperts/JsonData?filter='+filter,
             type: 'GET',
             dataType: 'json',
             success: function (data) {
@@ -82,7 +82,7 @@
             },
             error: function () {
                 console.error('Error fetching JSON data.');
-            }
+            } *@
         });
     };
     $('#technologyFilter').on('change', function () {
