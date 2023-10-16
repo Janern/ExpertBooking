@@ -1,6 +1,7 @@
 using BusinessModels;
 using Microsoft.AspNetCore.Mvc;
 using UseCases;
+using WebSite.Helpers;
 
 namespace WebSite.Controllers
 {
@@ -14,10 +15,10 @@ namespace WebSite.Controllers
             _listExpertsUseCase = listExpertsUseCase;
         }
 
-        public IActionResult Index(string technologyFilter)
+        public IActionResult Index(string technologyFilter, string[]? selectedExperts = null)
         {
             Expert[] experts = _listExpertsUseCase.Execute(technologyFilter);
-            return PartialView("_expertTable", experts);
+            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, selectedExperts));
         }
     }
 }
