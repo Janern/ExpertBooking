@@ -6,7 +6,7 @@ using Storage.Implementation;
 using System.Linq;
 using Tests.TestHelpers;
 
-namespace Tests;
+namespace Tests.UseCases;
 public class ListExpertsTests
 {
     private ListExpertsUseCase _useCase;
@@ -52,14 +52,14 @@ public class ListExpertsTests
     public void GivenExistingExpertsWhenListingAllExpertsShouldReturnExpertsWithFields()
     {
         Expert existingExpert = new Expert
-            {
-                Id="ID1",
-                FirstName="FirstName1",
-                LastName="LastName1",
-                Role="Role1",
-                Technology="Technology1",
-                Description="Description1"
-            };
+        {
+            Id = "ID1",
+            FirstName = "FirstName1",
+            LastName = "LastName1",
+            Role = "Role1",
+            Technology = "Technology1",
+            Description = "Description1"
+        };
         _existingExperts = new Expert[]
         {
             existingExpert
@@ -145,7 +145,8 @@ public class ListExpertsTests
         Expert[] actualExperts = _useCase.Execute(expectedTechnology);
 
         Assert.Equal(expectedExperts.Length, actualExperts.Length);
-        foreach(var expert in expectedExperts){
+        foreach (var expert in expectedExperts)
+        {
             ExpertAssertionHelper.AssertContainsExpert(expert, actualExperts);
         };
     }

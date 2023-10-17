@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using BusinessModels;
 using Tests.TestHelpers;
 
-namespace Tests;
+namespace Tests.UseCases;
 public class BookExpertTests
 {
     private BookExpertUseCase _useCase;
@@ -22,7 +22,7 @@ public class BookExpertTests
     public async Task WhenBookingExpertShouldSendEmail()
     {
         string bookerEmailAddress = "test@example.com";
-        Booking booking = new Booking{BookerEmailAddress = bookerEmailAddress};
+        Booking booking = new Booking { BookerEmailAddress = bookerEmailAddress };
         await _useCase.Execute(booking);
 
         Assert.NotNull(_fakeEmailService.SentBooking);
@@ -32,7 +32,7 @@ public class BookExpertTests
     public async Task WhenBookingExpertShouldSendEmailToBookerEmailAddress()
     {
         string bookerEmailAddress = "test@example.com";
-        Booking booking = new Booking{BookerEmailAddress = bookerEmailAddress};
+        Booking booking = new Booking { BookerEmailAddress = bookerEmailAddress };
 
         await _useCase.Execute(booking);
 
@@ -49,7 +49,7 @@ public class BookExpertTests
             }
         };
         string bookerEmailAddress = "booker@example.com";
-        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
+        Booking booking = new Booking { Experts = experts, BookerEmailAddress = bookerEmailAddress };
 
         await _useCase.Execute(booking);
 
@@ -70,14 +70,14 @@ public class BookExpertTests
             }
         };
         string bookerEmailAddress = "booker@example.com";
-        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
+        Booking booking = new Booking { Experts = experts, BookerEmailAddress = bookerEmailAddress };
 
         await _useCase.Execute(booking);
 
         Assert.Equal(expected: expertFirstName, _fakeEmailService.SentBooking.Experts[0].FirstName);
         Assert.Equal(expected: expertLastName, _fakeEmailService.SentBooking.Experts[0].LastName);
     }
-    
+
     [Fact]
     public async Task WhenBookingTwoExpertsShouldSendEmailWithExpertIds()
     {
@@ -94,18 +94,18 @@ public class BookExpertTests
                 FirstName = expertFirstName1,
                 LastName = expertLastName1
             },
-            new Expert 
+            new Expert
             {
                 Id = expertId2,
                 FirstName = expertFirstName2,
                 LastName = expertLastName2
             }
-        };        
+        };
         string bookerEmailAddress = "booker@example.com";
-        Booking booking = new Booking{Experts=experts, BookerEmailAddress=bookerEmailAddress};
+        Booking booking = new Booking { Experts = experts, BookerEmailAddress = bookerEmailAddress };
 
         await _useCase.Execute(booking);
-        
+
         Assert.Equal(experts.Length, _fakeEmailService.SentBooking.Experts.Length);
         ExpertAssertionHelper.AssertContainsExpert(experts[0], _fakeEmailService.SentBooking.Experts);
         ExpertAssertionHelper.AssertContainsExpert(experts[1], _fakeEmailService.SentBooking.Experts);
@@ -116,7 +116,7 @@ public class BookExpertTests
     {
         string timePeriod = "2023-09-01 2023-09-30";
         string bookerEmailAddress = "booker@example.com";
-        Booking booking = new Booking{TimePeriod=timePeriod, BookerEmailAddress=bookerEmailAddress};
+        Booking booking = new Booking { TimePeriod = timePeriod, BookerEmailAddress = bookerEmailAddress };
 
         await _useCase.Execute(booking);
 
@@ -128,7 +128,7 @@ public class BookExpertTests
     {
         string description = "Beskrivelse av problemet";
         string bookerEmailAddress = "booker@example.com";
-        Booking booking = new Booking{Description=description, BookerEmailAddress=bookerEmailAddress};
+        Booking booking = new Booking { Description = description, BookerEmailAddress = bookerEmailAddress };
 
         await _useCase.Execute(booking);
 
@@ -139,7 +139,7 @@ public class BookExpertTests
     public async Task GivenNoEmailWhenBookingExpertShouldThrowException()
     {
         string description = "Beskrivelse av problemet";
-        Booking booking = new Booking{Description=description};
+        Booking booking = new Booking { Description = description };
 
         await Assert.ThrowsAsync<InvalidBookingException>(() => _useCase.Execute(booking));
     }
