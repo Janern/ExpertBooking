@@ -1,10 +1,12 @@
 using System.Text.Json;
 using BusinessModels;
+using Microsoft.Extensions.Azure;
 using Services;
 using Services.Implementation;
 using Storage.Api;
 using Storage.Implementation;
 using UseCases;
+using UseCases.Cart;
 using WebSite.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,7 +59,11 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
     Expert[] experts = JsonSerializer.Deserialize<Expert[]>(ReadJsonFromFileHelper.ReadJsonFromTextFile(azureConfig["ExpertsJsonFilePath"]));
     ExpertsStorage expertsStorage = new ExpertsStorageInMemoryImplementation(experts);
     services.AddSingleton(expertsStorage);
-    services.AddScoped<ListExpertsUseCase>();
+    CartStorage cartStorage = new CartStorageInMemoryImplementation();
+    services.AddSingleton(cartStorage);
     
+    services.AddScoped<ListExpertsUseCase>();
+    services.AddScoped<GetCartUseCase>();
+    services.AddScoped<AddExpertToCartUseCase>();
     services.AddScoped<BookExpertUseCase>();
 }
