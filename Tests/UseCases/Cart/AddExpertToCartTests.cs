@@ -20,7 +20,7 @@ public class AddExpertToCartTests
     [Fact]
     public void GivenNoCartWhenAddingExpertToCartShouldCreateNewCartId()
     {
-        string createdCartId = _useCase.Execute(new AddToCartRequest());
+        string createdCartId = _useCase.Execute(new EditCartRequest());
 
         Assert.False(string.IsNullOrEmpty(createdCartId));
     }
@@ -28,8 +28,8 @@ public class AddExpertToCartTests
     [Fact]
     public void GivenExistingCartWhenAddingExpertToCartWithoutProvidingCartIdShouldCreateNewCartId()
     {
-        string existingCartId = _useCase.Execute(new AddToCartRequest());
-        string newCartId = _useCase.Execute(new AddToCartRequest());
+        string existingCartId = _useCase.Execute(new EditCartRequest());
+        string newCartId = _useCase.Execute(new EditCartRequest());
 
         Assert.NotEqual(existingCartId, newCartId);
     }
@@ -37,9 +37,9 @@ public class AddExpertToCartTests
     [Fact]
     public void GivenExistingCartWhenAddingExpertToCartProvidingCartIdShouldNotCreateNewCartId()
     {
-        string existingCartId = _useCase.Execute(new AddToCartRequest());
+        string existingCartId = _useCase.Execute(new EditCartRequest());
 
-        string newCartId = _useCase.Execute(new AddToCartRequest{CartId = existingCartId});
+        string newCartId = _useCase.Execute(new EditCartRequest{CartId = existingCartId});
 
         Assert.Equal(existingCartId, newCartId);
     }
@@ -49,7 +49,7 @@ public class AddExpertToCartTests
     {
         Expert existingExpert = new Expert { Id = "ID" };
 
-        string cartId = _useCase.Execute(new AddToCartRequest{ExpertId = existingExpert.Id});
+        string cartId = _useCase.Execute(new EditCartRequest{ExpertId = existingExpert.Id});
 
         Assert.Single(_storage.GetCart(cartId).ExpertIds);
         Assert.Equal(existingExpert.Id, _storage.GetCart(cartId).ExpertIds[0]);
@@ -60,9 +60,9 @@ public class AddExpertToCartTests
     {
         Expert existingExpert = new Expert { Id = "ID" };
         Expert existingExpert2 = new Expert { Id = "ID2" };
-        string cartId = _useCase.Execute(new AddToCartRequest{ExpertId = existingExpert.Id});
+        string cartId = _useCase.Execute(new EditCartRequest{ExpertId = existingExpert.Id});
 
-        _useCase.Execute(new AddToCartRequest{CartId = cartId, ExpertId = existingExpert2.Id});
+        _useCase.Execute(new EditCartRequest{CartId = cartId, ExpertId = existingExpert2.Id});
 
         var experts = _storage.GetCart(cartId).ExpertIds;
         Assert.Equal(2, experts.Count);

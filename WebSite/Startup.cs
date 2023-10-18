@@ -64,6 +64,8 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
     
     services.AddScoped<ListExpertsUseCase>();
     services.AddScoped<GetCartUseCase>();
+    services.AddScoped<ListCartsUseCase>();
     services.AddScoped<AddExpertToCartUseCase>();
+    services.AddScoped<RemoveExpertFromCartUseCase>();
     services.AddScoped<BookExpertUseCase>();
 }

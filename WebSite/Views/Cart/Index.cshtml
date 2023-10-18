@@ -1,5 +1,14 @@
-@model BusinessModels.Cart;
-@foreach(var expert in Model.ExpertIds){
-    <span>@expert</span>
+@model List<BusinessModels.Cart>;
+<table>
+@foreach(var cart in Model)
+{
+    <tr><span>CartId: @cart.Id</span>
+        <table>
+            @foreach(var expert in cart.ExpertIds)
+            {
+                <tr><span>ExpertId: @expert</span></tr>
+            }
+        </table>
+    </tr>
 }
-CartId: @Model.Id
+</table>

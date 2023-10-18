@@ -1,6 +1,6 @@
 namespace UseCases.Cart;
 
-public class AddToCartRequest
+public class EditCartRequest
 {
     public string CartId { get; set; }
     public string ExpertId { get; set; }

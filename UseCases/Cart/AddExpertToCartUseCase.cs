@@ -10,7 +10,7 @@ public class AddExpertToCartUseCase
     {
         _storage = storage;
     }
-    public string Execute(AddToCartRequest request)
+    public string Execute(EditCartRequest request)
     {
         BusinessModels.Cart cart = string.IsNullOrEmpty(request.CartId) ? _storage.CreateCart() : _storage.GetCart(request.CartId);
         _storage.UpdateCart(new CartUpdate

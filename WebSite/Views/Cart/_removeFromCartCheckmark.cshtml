@@ -1,0 +1,8 @@
+@model string
+<form hx-post="Cart/Remove"
+      hx-swap="outerHTML">
+    <button type="submit" class="expertSelectedCheckmark">
+        <img id="checkmark" class="expertSelectedCheckmark" src="images/svg/checkmark.svg" />
+    </button>
+    <input type="hidden" name="ExpertId" value="@Model"/>
+</form>

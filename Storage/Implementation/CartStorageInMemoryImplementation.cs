@@ -39,4 +39,9 @@ public class CartStorageInMemoryImplementation : CartStorage
         if(existingCart != null && existingCart.ExpertIds != null)
             existingCart.ExpertIds = update.ExpertIds;
     }
+
+    public List<Cart> ListCarts()
+    {
+        return _carts;
+    }
 }
