@@ -61,11 +61,8 @@ public class CartController : Controller
             {
                 request.CartId = result;
                 _removeExpertFromCartUseCase.Execute(request);
-                Console.WriteLine("Item removed from cart successfully.");
                 return PartialView("_addToCartCheckmark", request.ExpertId);
             }
-        }catch(InvalidEditCartRequestException ex){
-            Console.WriteLine("Error while removing item from cart" + ex + ex.Message);
         }catch(Exception ex){
             Console.WriteLine("Error while removing item from cart" + ex + ex.Message);
         }
