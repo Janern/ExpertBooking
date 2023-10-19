@@ -1,5 +1,8 @@
 @model ExpertViewModel;
-<div id="expertModal" class="modal modal-background" onClick="HideModal()">
+<div id="expertModal" class="modal modal-background" 
+    hx-swap="delete"
+    hx-target="this"
+    hx-get="">
     <div class="two columns">&nbsp;</div>
     <div class="modal-window six columns">
         <div class="modal-textbox twelve columns">
@@ -30,12 +33,5 @@
         </div>
     </div>
 </div>
-<script>
-    $('#expertModal').show();
-    function HideModal()
-    {
-        $('#expertModal').hide();
-    }
-</script>
 
     

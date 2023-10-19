@@ -131,3 +131,7 @@ button.green {
   color: white;
   border-color: white;
 }
+
+.modal {
+  display: block;
+}
