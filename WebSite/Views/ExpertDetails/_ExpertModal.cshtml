@@ -1,29 +1,29 @@
-<div id="expertModal" class="modal modal-background" onclick="HideExpertInfoModal()">
+@model ExpertViewModel;
+<div id="expertModal" class="modal modal-background">
     <div class="two columns">&nbsp;</div>
-    <div class="modal-window six columns" onclick="(function(event){event.stopPropagation()})">
+    <div class="modal-window six columns">
         <div class="modal-textbox twelve columns">
             <div class="row">
                 <div class="four columns">
                     <img id="expertImage" src="" class="u-max-full-width" />
                 </div>
                 <div class="eight columns">
-                    <span class="expert-name">Expert Name</span><br />
-                    <span class="role">Expert Role</span>
+                    <span class="expert-name">@Model.FirstName @Model.LastName</span><br />
+                    <span class="role">@Model.Role</span>
                 </div>
             </div>
             <div class="row">
-                <p>Expert Description</p>
+                <p>@Model.Description</p>
             </div>
             <div class="row">
                 <div class="columns four">
                     &nbsp;
                 </div>
                 <div class="columns five">
-                    <button id="modalAddToTeamButton" type="button" onclick="">
-                        <img class="modalAddToTeamCheckmark green-svg" src="images/svg/add-checkmark.svg"></img>
-                        Legg til i Team
-                    </button>
-                </div>
+                    @{ await (Model.IsSelected ?  
+                        Html.RenderPartialAsync("../Cart/_removeFromCartCheckmark", Model.Id) :  
+                        Html.RenderPartialAsync("../Cart/_addToCartCheckmark", Model.Id)); }
+                    </div>
                 <div class="columns three">
                 </div>
             </div>

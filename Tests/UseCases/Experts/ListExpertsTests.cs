@@ -1,21 +1,21 @@
 using Xunit;
 using BusinessModels;
-using UseCases;
 using Storage.Api;
 using Storage.Implementation;
 using System.Linq;
 using Tests.TestHelpers;
+using UseCases.Experts;
 
-namespace Tests.UseCases;
+namespace Tests.UseCases.Experts;
 public class ListExpertsTests
 {
     private ListExpertsUseCase _useCase;
     private ExpertsStorage _storage;
-    private Expert[] _existingExperts;
+    private BusinessModels.Expert[] _existingExperts;
 
     public ListExpertsTests()
     {
-        _existingExperts = new Expert[0];
+        _existingExperts = new BusinessModels.Expert[0];
         SetUpUseCase();
     }
 
@@ -38,8 +38,8 @@ public class ListExpertsTests
     {
         _existingExperts = new Expert[]
         {
-            new Expert(),
-            new Expert()
+            new Expert{Id="ID"},
+            new Expert{Id="ID2"}
         };
         SetUpUseCase();
 

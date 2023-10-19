@@ -1,7 +1,7 @@
 using BusinessModels;
 using Storage.Api;
 
-namespace UseCases;
+namespace UseCases.Experts;
 public class ListExpertsUseCase
 {
     private ExpertsStorage _storage { get; set; }
@@ -10,7 +10,7 @@ public class ListExpertsUseCase
         _storage = storage;
     }
 
-    public Expert[] Execute(string technologyFilter = "")
+    public BusinessModels.Expert[] Execute(string technologyFilter = "")
     {
         return _storage.GetExperts(technologyFilter);
     }

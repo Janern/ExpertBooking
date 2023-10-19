@@ -1,7 +1,7 @@
 using BusinessModels;
 using Microsoft.AspNetCore.Mvc;
-using UseCases;
 using UseCases.Cart;
+using UseCases.Experts;
 using WebSite.Helpers;
 
 namespace WebSite.Controllers
@@ -31,7 +31,7 @@ namespace WebSite.Controllers
                     expertIds = _getCartUseCase.Execute(result)?.ExpertIds;
                 }
             }catch{}
-            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, expertIds?.ToArray()));
+            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, expertIds));
         }
     }
 }

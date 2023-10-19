@@ -1,12 +1,11 @@
 using System.Text.Json;
 using BusinessModels;
-using Microsoft.Extensions.Azure;
 using Services;
 using Services.Implementation;
 using Storage.Api;
 using Storage.Implementation;
-using UseCases;
 using UseCases.Cart;
+using UseCases.Experts;
 using WebSite.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -62,9 +61,11 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
     CartStorage cartStorage = new CartStorageInMemoryImplementation();
     services.AddSingleton(cartStorage);
     
-    services.AddScoped<ListExpertsUseCase>();
     services.AddScoped<GetCartUseCase>();
     services.AddScoped<ListCartsUseCase>();
+    
+    services.AddScoped<ListExpertsUseCase>();
+    services.AddScoped<GetExpertUseCase>();
     services.AddScoped<AddExpertToCartUseCase>();
     services.AddScoped<RemoveExpertFromCartUseCase>();
     services.AddScoped<BookExpertUseCase>();

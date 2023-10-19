@@ -24,9 +24,7 @@
 <div class="row form-row" id="expertTable" hx-get="ListExperts" hx-trigger="load">
     
 </div>
-@{ await Html.RenderPartialAsync("_ExpertModal"); }
 @{ await Html.RenderPartialAsync("_ChosenExperts"); }
-<input id="SelectedExpertsJsonInput" name="SelectedExpertsJson" type="hidden" value="" />
 <div class="row form-row">
     <div class="twelve columns full u-full-width">
         <label for="Description">Beskriv prosjektet:</label>
@@ -47,10 +45,6 @@
     </div>
 </div>
 <script>
-    let selectedExpertsJson = [];
-    let availableExpertsJson = []; 
-    const selectedExpertsJsonInput = document.getElementById("SelectedExpertsJsonInput");
-    
     flatpickr('#timePeriod', 
     {
         mode: "range",

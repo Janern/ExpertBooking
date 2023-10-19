@@ -10,7 +10,7 @@ namespace WebSite.Helpers;
 
 public static class ExpertViewModelConverter
 {
-    public static ExpertViewModel[] Convert(Expert[] experts, string[]? selectedExperts)
+    public static ExpertViewModel[] Convert(Expert[] experts, List<string>? selectedExperts)
     {
         ExpertViewModel[] expertViewModels = new ExpertViewModel[experts.Length];
         for(int i = 0; i < expertViewModels.Length; i++)
@@ -27,5 +27,24 @@ public static class ExpertViewModelConverter
             };
         }
         return expertViewModels;
+    }
+
+    public static ExpertViewModel Convert(Expert expert, List<string>? selectedExperts)
+    {
+        return CreateViewModel(expert, selectedExperts?.Any(e => e == expert.Id)??false);
+    }
+
+    private static ExpertViewModel CreateViewModel(Expert expert, bool isSelected)
+    {
+        return new ExpertViewModel
+            {
+                Id = expert.Id,
+                FirstName = expert.FirstName,
+                LastName = expert.LastName,
+                Description = expert.Description,
+                Role = expert.Role,
+                Technology = expert.Technology,
+                IsSelected = isSelected
+            };
     }
 }

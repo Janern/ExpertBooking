@@ -6,16 +6,32 @@ namespace Storage.Implementation
     public class ExpertsStorageInMemoryImplementation : ExpertsStorage
     {
 
-        private Expert[] _experts { get; set; }
+        private IDictionary<string, Expert> _experts { get; set; }
 
         public ExpertsStorageInMemoryImplementation(Expert[] experts)
         {
-            _experts = experts;
+            _experts = new Dictionary<string, Expert>();
+            foreach(var expert in experts)
+            {
+                if(expert != null && !string.IsNullOrEmpty(expert.Id))
+                    _experts.Add(expert.Id, expert);
+            }
+            
         }
 
         public Expert[] GetExperts(string technologyFilter)
         {
-            return ExpertFilteringHelper.FilterExperts(_experts, technologyFilter);
+            return ExpertFilteringHelper.FilterExperts(_experts.Values.ToArray(), technologyFilter);
+        }
+
+        public Expert GetExpert(string id)
+        {
+            try{
+                return _experts[id];
+            }catch(KeyNotFoundException){
+
+            }
+            return null;
         }
     }
 }
