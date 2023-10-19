@@ -11,6 +11,7 @@ namespace WebSite.Controllers
     {
         private ListExpertsUseCase _listExpertsUseCase;
         private GetCartUseCase _getCartUseCase;
+        private const string CartCookie = "__CartId";
 
         public ListExpertsController(
             ListExpertsUseCase listExpertsUseCase, 
@@ -20,11 +21,17 @@ namespace WebSite.Controllers
             _getCartUseCase = getCartUseCase;
         }
 
-        public IActionResult Index(string technologyFilter, string cartId)
+        public IActionResult Index(string technologyFilter)
         {
             Expert[] experts = _listExpertsUseCase.Execute(technologyFilter);
-            Cart cart = _getCartUseCase.Execute(cartId);
-            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, cart?.ExpertIds?.ToArray()));
+            List<string>? expertIds = null;
+            try{
+                if(Request.Cookies.TryGetValue(CartCookie, out var result) && _getCartUseCase.Execute(result) != null)
+                {
+                    expertIds = _getCartUseCase.Execute(result)?.ExpertIds;
+                }
+            }catch{}
+            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, expertIds?.ToArray()));
         }
     }
 }

@@ -56,7 +56,8 @@ public class CartController : Controller
     [HttpPost, Route("Remove")]
     public IActionResult RemoveFromCart(EditCartRequest request)
     {
-        try{
+        try
+        {
             if(Request.Cookies.TryGetValue(CartCookie, out var result))
             {
                 request.CartId = result;
