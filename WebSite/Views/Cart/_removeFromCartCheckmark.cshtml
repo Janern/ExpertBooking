@@ -1,6 +1,7 @@
 @model string
 <form hx-post="Cart/Remove"
-      hx-swap="outerHTML">
+      hx-swap="outerHTML"
+      hx-target="this">
     <button type="submit" class="expertSelectedCheckmark">
         <img id="checkmark" class="expertSelectedCheckmark" src="images/svg/checkmark.svg" />
     </button>
