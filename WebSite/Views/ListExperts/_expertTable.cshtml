@@ -3,8 +3,8 @@
 {
     <div id="@expert.Id" class="three columns expertCard" 
         hx-get="ExpertDetails/@expert.Id" 
-        hx-target="#expertModal" 
-        hx-swap="outerHTML">
+        hx-target="#expertModalContainer" 
+        hx-swap="innerHTML">
         <div class="two columns">&nbsp;</div>
         <div class="eight columns">
             <img src="images/@(expert.Id).jpg" class="expert-table-img u-max-full-width" />
