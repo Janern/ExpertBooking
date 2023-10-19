@@ -1,7 +1,10 @@
 @model ExpertViewModel[];
 @foreach(var expert in Model)
 {
-    <div id="@expert.Id" class="three columns expertCard">
+    <div id="@expert.Id" class="three columns expertCard" 
+        hx-get="ExpertDetails/@expert.Id" 
+        hx-target="#expertModal" 
+        hx-swap="outerHTML">
         <div class="two columns">&nbsp;</div>
         <div class="eight columns">
             <img src="images/@(expert.Id).jpg" class="expert-table-img u-max-full-width" />
