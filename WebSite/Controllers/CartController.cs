@@ -50,6 +50,7 @@ public class CartController : Controller
         }catch{}
         string cartId = _addExpertToCartUseCase.Execute(request);
         Response.Cookies.Append(CartCookie, cartId);
+        Response.Headers.Add("HX-Trigger", "CartChanged");
         return PartialView("_removeFromCartCheckmark", request.ExpertId);
     }
 
@@ -62,11 +63,30 @@ public class CartController : Controller
             {
                 request.CartId = result;
                 _removeExpertFromCartUseCase.Execute(request);
+                Response.Headers.Add("HX-Trigger", "CartChanged");
                 return PartialView("_addToCartCheckmark", request.ExpertId);
             }
         }catch(Exception ex){
             Console.WriteLine("Error while removing item from cart" + ex + ex.Message);
         }
         return PartialView("_removeFromCartCheckmark", request.ExpertId);
+    }
+
+    [HttpGet, Route("MenuButton")]
+    public IActionResult GetCartMenuButton(EditCartRequest request)
+    {
+        try
+        {
+            if(Request.Cookies.TryGetValue(CartCookie, out var result))
+            {
+                request.CartId = result;
+                var cart = _getCartUseCase.Execute(result);
+                if(cart != null)
+                    return PartialView("_cartMenuButton", cart.ExpertIds.Count);
+            }
+        }catch(Exception ex){
+            Console.WriteLine("Error while getting cart menu button" + ex + ex.Message);
+        }
+        return PartialView("_cartMenuButton", 0);
     }
 }

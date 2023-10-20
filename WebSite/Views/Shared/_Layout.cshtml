@@ -37,13 +37,18 @@
                             <img class="layoutLogo" src="images/Experis logo horizontal.svg"/>
                         </a>
                     </div>
-                    <div class="ten columns">
+                    <div class="nine columns">
                         <!-- Slogan -->
                         <div class="slogan">
                             <span>Få en ekspert på laget innen 24 timer</span>
                             <!-- Call-to-Action Button -->
                             <a href="/BookExpert" class="cta-button">Book en ekspert nå</a>
                         </div>
+                    </div>
+                    <div id="shoppingCartButton" class="one column" 
+                         hx-get="Cart/MenuButton" 
+                         hx-trigger="CartChanged from:body"></div>
+                        &nbsp;
                     </div>
                 </div>
             </div>
