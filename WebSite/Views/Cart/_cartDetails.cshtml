@@ -1,0 +1,18 @@
+@model BusinessModels.Cart;
+<div id="cartItemsList" hx-get="../Cart/Details" hx-trigger="CartChanged from:body"
+     hx-target="this" >
+    <span hx-get="" 
+        hx-swap="delete"
+        hx-target="#cartItemsList">
+        x
+    </span>
+    @foreach (string item in Model.ExpertIds)
+    {
+        <div>
+            <span>@item</span>
+            <img src="images/@(item).jpg" class="expert-table-img u-max-full-width" />
+             @{ await Html.RenderPartialAsync("../Cart/_removeFromCartCheckmark", item); }  
+        </div>
+        
+    }
+</div>

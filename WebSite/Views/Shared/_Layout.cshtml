@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="~/css/modal.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -46,9 +47,9 @@
                         </div>
                     </div>
                     <div id="shoppingCartButton" class="one column" 
-                         hx-get="Cart/MenuButton" 
-                         hx-trigger="CartChanged from:body"></div>
-                        &nbsp;
+                         hx-get="Cart/Details"
+                         hx-target="#cartDetails">
+                        @{ await Html.RenderPartialAsync("/Views/Cart/_cartMenuButton.cshtml", 0); }
                     </div>
                 </div>
             </div>

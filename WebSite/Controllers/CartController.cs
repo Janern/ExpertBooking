@@ -25,17 +25,8 @@ public class CartController : Controller
         _removeExpertFromCartUseCase = removeExpertFromCartUseCase;
     }
 
-    [HttpGet, Route("Cart/{Id}")]
-    public IActionResult GetCart(string Id)
-    {
-        var cart = _getCartUseCase.Execute(Id);
-        if(cart != null)
-            return View();
-        return StatusCode(404);
-    }
-
     [HttpGet, Route("/Carts")]
-    public IActionResult Index(string Id)
+    public IActionResult Index()
     {
         var carts = _listCartsUseCase.Execute();
         return View("Index", carts);
@@ -73,13 +64,12 @@ public class CartController : Controller
     }
 
     [HttpGet, Route("MenuButton")]
-    public IActionResult GetCartMenuButton(EditCartRequest request)
+    public IActionResult GetCartMenuButton()
     {
         try
         {
             if(Request.Cookies.TryGetValue(CartCookie, out var result))
             {
-                request.CartId = result;
                 var cart = _getCartUseCase.Execute(result);
                 if(cart != null)
                     return PartialView("_cartMenuButton", cart.ExpertIds.Count);
@@ -88,5 +78,22 @@ public class CartController : Controller
             Console.WriteLine("Error while getting cart menu button" + ex + ex.Message);
         }
         return PartialView("_cartMenuButton", 0);
+    }
+
+    [HttpGet, Route("Details")]
+    public IActionResult GetCart()
+    {
+        try
+        {
+            if(Request.Cookies.TryGetValue(CartCookie, out var result))
+            {
+                BusinessModels.Cart cart = _getCartUseCase.Execute(result);
+                if(cart != null)
+                    return PartialView("_cartDetails", cart);
+            }
+        }catch(Exception ex){
+            Console.WriteLine("Error while getting cart details" + ex + ex.Message);
+        }
+        return Index(); //TODO find better handling of errors
     }
 }
