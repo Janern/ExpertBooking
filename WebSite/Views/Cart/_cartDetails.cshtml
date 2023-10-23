@@ -8,9 +8,13 @@
     </span>
     @foreach (string item in Model.ExpertIds)
     {
-        <div>
+        <div hx-get="ExpertDetails/@item" 
+        hx-target="#expertModalContainer" 
+        hx-swap="innerHTML"
+        hx-trigger="click target:.openModal">
             <span>@item</span>
             <img src="images/@(item).jpg" class="expert-table-img u-max-full-width" />
+            
              @{ await Html.RenderPartialAsync("../Cart/_removeFromCartCheckmark", item); }  
         </div>
         

@@ -45,22 +45,21 @@ public class CartController : Controller
         return PartialView("_removeFromCartCheckmark", request.ExpertId);
     }
 
-    [HttpPost, Route("Remove")]
-    public IActionResult RemoveFromCart(EditCartRequest request)
+    [HttpPost, Route("Remove/{Id}")]
+    public IActionResult RemoveFromCart(string Id)
     {
         try
         {
             if(Request.Cookies.TryGetValue(CartCookie, out var result))
             {
-                request.CartId = result;
-                _removeExpertFromCartUseCase.Execute(request);
+                _removeExpertFromCartUseCase.Execute(new EditCartRequest{CartId = result, ExpertId = Id});
                 Response.Headers.Add("HX-Trigger", "CartChanged");
-                return PartialView("_addToCartCheckmark", request.ExpertId);
+                return PartialView("_addToCartCheckmark", Id);
             }
         }catch(Exception ex){
             Console.WriteLine("Error while removing item from cart" + ex + ex.Message);
         }
-        return PartialView("_removeFromCartCheckmark", request.ExpertId);
+        return PartialView("_removeFromCartCheckmark", Id);
     }
 
     [HttpGet, Route("MenuButton")]
