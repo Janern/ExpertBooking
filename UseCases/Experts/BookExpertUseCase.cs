@@ -1,5 +1,5 @@
-﻿using Services;
-using BusinessModels;
+﻿using BusinessModels;
+using UseCases.Email;
 using UseCases.Exceptions;
 
 namespace UseCases.Experts;

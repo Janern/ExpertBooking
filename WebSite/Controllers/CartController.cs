@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using UseCases.Cart;
-using UseCases.Exceptions;
 namespace WebSite.Controllers;
 
 [Route("[controller]")]

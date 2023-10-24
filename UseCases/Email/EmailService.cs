@@ -1,5 +1,5 @@
 using BusinessModels;
-namespace Services;
+namespace UseCases.Email;
 public interface EmailService
 {
     Task<bool> SendEmail(Booking booking);

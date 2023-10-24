@@ -1,55 +1,57 @@
 <div class="section">
-    <div class="row form-row">
-        <div class="four columns">
-            &nbsp;
+    <form>
+        <div class="row form-row">
+            <div class="four columns">
+                &nbsp;
+            </div>
+            <div class="four columns">
+                <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
+                <input id="timePeriod" class="inputValue" type="text" name="TimePeriod" value="" placeholder="Klikk for å velge periode"/>
+            </div>
+            <div class="four columns">
+                <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
+                <select id="technologyFilter" class="inputValue u-full-width" name="TechnologyFilter" class="u-full-width"
+                        hx-trigger="change" hx-get="ListExperts" hx-target="#expertTable">
+                    <option value="">Alle</option>
+                    <option value=".net">.Net</option>
+                    <option value="java">Java</option>
+                    <option value="ux">UX</option>
+                    <option value="tester">Tester</option>
+                    <option value="python">Python</option>
+                    <option value="frontend">Frontend</option>
+                </select>
+            </div>
         </div>
-        <div class="four columns">
-            <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
-            <input id="timePeriod" class="inputValue" type="text" name="TimePeriod" value="" placeholder="Klikk for å velge periode"/>
+        <h2>Sett sammen ditt ekspertlag</h2>
+        <div class="row form-row" id="expertTable" hx-get="ListExperts" hx-trigger="load"></div>
+        <div id="expertModalContainer"></div>
+        <div id="cartDetails" class="chosenExpertsContainer"></div>
+        <div class="row form-row">
+            <div class="twelve columns full u-full-width">
+                <label for="Description">Beskriv prosjektet:</label>
+                <textarea class="u-full-width" type="text" name="Description" value=""></textarea>
+            </div>
         </div>
-        <div class="four columns">
-            <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
-            <select id="technologyFilter" class="inputValue u-full-width" name="TechnologyFilter" class="u-full-width"
-                    hx-trigger="change" hx-get="ListExperts" hx-target="#expertTable">
-                <option value="">Alle</option>
-                <option value=".net">.Net</option>
-                <option value="java">Java</option>
-                <option value="ux">UX</option>
-                <option value="tester">Tester</option>
-                <option value="python">Python</option>
-                <option value="frontend">Frontend</option>
-            </select>
+        <div class="row form-row light-blue">
+            <div class="four columns"></div>
+            <div class="four columns">
+                <label for="BookerEmailAddress">Din Epostadresse:</label>
+                <input id="BookerEmailAddress" 
+                        type="text" 
+                        name="BookerEmailAddress" 
+                        value="" 
+                        required 
+                        oninvalid="this.setCustomValidity('Vi trenger din epost for å kontakte deg')" 
+                        oninput="this.setCustomValidity('')"/>
+            </div>
         </div>
-    </div>
-    <h2>Sett sammen ditt ekspertlag</h2>
-    <div class="row form-row" id="expertTable" hx-get="ListExperts" hx-trigger="load"></div>
-    <div id="expertModalContainer"></div>
-    <div id="cartDetails" class="chosenExpertsContainer"></div>
-    <div class="row form-row">
-        <div class="twelve columns full u-full-width">
-            <label for="Description">Beskriv prosjektet:</label>
-            <textarea class="u-full-width" type="text" name="Description" value=""></textarea>
+        <div ></div>
+        <div class="row form-row">
+            <div class="twelve columns">
+                <button id="submit-button" type="submit" class="submitButton loading" >Bestill</button>
+            </div>
         </div>
-    </div>
-    <div class="row form-row light-blue">
-        <div class="four columns"></div>
-        <div class="four columns">
-            <label for="BookerEmailAddress">Din Epostadresse:</label>
-            <input id="BookerEmailAddress" 
-                    type="text" 
-                    name="BookerEmailAddress" 
-                    value="" 
-                    required 
-                    oninvalid="this.setCustomValidity('Vi trenger din epost for å kontakte deg')" 
-                    oninput="this.setCustomValidity('')"/>
-        </div>
-    </div>
-    <div ></div>
-    <div class="row form-row">
-        <div class="twelve columns">
-            <button id="submit-button" type="submit" class="submitButton loading" >Bestill</button>
-        </div>
-    </div>
+    </form>
 </div>
 @section Scripts
 {

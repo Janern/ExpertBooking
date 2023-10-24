@@ -1,10 +1,10 @@
 using Xunit;
 using UseCases.Exceptions;
-using Services;
 using System.Threading.Tasks;
 using BusinessModels;
 using Tests.TestHelpers;
 using UseCases.Experts;
+using UseCases.Email;
 
 namespace Tests.UseCases.Experts;
 public class BookExpertTests
