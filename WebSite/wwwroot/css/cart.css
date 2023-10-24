@@ -1,0 +1,17 @@
+.chosenExpertsContainer{
+    display: flex;
+    flex-direction: column-reverse; 
+    align-items: end;
+    top: 0;
+    right: 10%;
+    background-color: var(--anyshore-green);
+    position: fixed;
+    border: solid 1px black;
+  }
+  .chosenExpertsContainer img{
+    width: 3em;
+    margin-top: 10px;
+    transform: rotate(-5deg); 
+    transition: transform 0.2s ease-in-out; 
+    border-radius: 10%;
+  }

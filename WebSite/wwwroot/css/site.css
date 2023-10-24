@@ -99,22 +99,6 @@ button.green {
   position: absolute;
 }
 
-.chosenExpertsContainer{
-  display: flex;
-  flex-direction: column-reverse; 
-  align-items: end;
-  position: fixed;
-  top: 0;
-  right: 10%;
-}
-.chosenExpertsContainer img{
-  width: 3em;
-  margin-top: 10px;
-  transform: rotate(-5deg); 
-  transition: transform 0.2s ease-in-out; 
-  border-radius: 10%;
-}
-
 .submitButton {
   background-color: var(--anyshore-green);
   color: white;
