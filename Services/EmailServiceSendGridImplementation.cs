@@ -2,21 +2,22 @@ using System.Text.Json;
 using BusinessModels;
 using SendGrid;
 using SendGrid.Helpers.Mail;
+using UseCases.Cart;
 using UseCases.Email;
 
-namespace Services.Implementation;
-
+namespace Services;
 public class EmailServiceSendGridImplementation : EmailService
 {
     private string _apiKey { get; set; }
     private string _bookingReceiver { get; set; }
 
-    public EmailServiceSendGridImplementation(
-                                            string ApiKey, 
-                                            string bookingReceiver)
+    private readonly ExpertsStorage _expertsStorage;
+
+    public EmailServiceSendGridImplementation(EmailServiceConfiguration config, ExpertsStorage expertsStorage)
     {
-        _apiKey = ApiKey;
-        _bookingReceiver = bookingReceiver;
+        _expertsStorage = expertsStorage;
+        _apiKey = config.ApiKey;
+        _bookingReceiver = config.ReceiverAddress;
     }   
     public async Task<bool> SendEmail(Booking booking)
     {
@@ -24,7 +25,7 @@ public class EmailServiceSendGridImplementation : EmailService
         var from = new EmailAddress(_bookingReceiver);
         var subject = "Ny bestilling fra "+booking.BookerEmailAddress;
         var to = new EmailAddress(_bookingReceiver);
-        string expertsText = GenerateExpertsText(booking.ExpertNames);
+        string expertsText = GenerateExpertsText(booking.ExpertIds);
         var plainTextContent = $"Epost: {booking.BookerEmailAddress}\r\n\r\n" +
                                         "Experter: \r\n"+
                                        $"{expertsText}\r\n"+
@@ -48,13 +49,14 @@ public class EmailServiceSendGridImplementation : EmailService
         return response.IsSuccessStatusCode;
     }
 
-    private string GenerateExpertsText(string[] expertNames){
-        if(expertNames == null || expertNames.Length == 0)
+    private string GenerateExpertsText(string[] expertIds){
+        if(expertIds == null || expertIds.Length == 0)
             return "Ingen valgt";
+        var experts = _expertsStorage.GetExperts("").Where(e => expertIds.Contains(e.Id));
         string result = "";
-        foreach(string expertName in expertNames )
+        foreach(var expert in experts )
         {
-            result += $"Navn: {expertName}\r\n";
+            result += $"Navn: {expert.FirstName} {expert.LastName}\r\n";
         }
         return result;
     }

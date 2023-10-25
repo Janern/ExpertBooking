@@ -1,7 +1,7 @@
 using System.Text.Json;
 using BusinessModels;
-using Services.Implementation;
-using Storage.Implementation;
+using Services;
+using Storage;
 using UseCases.Cart;
 using UseCases.Email;
 using UseCases.Experts;
@@ -35,7 +35,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=BookExpert}/{action=Index}");
+    pattern: "{controller=Booking}/{action=Index}");
 
 app.Run();
 
@@ -49,23 +49,26 @@ static IConfigurationRoot GetConfigFromAzure()
 
 void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
 {
-    EmailService emailService = new EmailServiceSendGridImplementation(
-        azureConfig["SendGridApiKey"],  
-        azureConfig["BookingReceiverEmail"]);
-    services.AddSingleton(emailService);
-    
-    Expert[] experts = JsonSerializer.Deserialize<Expert[]>(ReadJsonFromFileHelper.ReadJsonFromTextFile(azureConfig["ExpertsJsonFilePath"]));
-    ExpertsStorage expertsStorage = new ExpertsStorageInMemoryImplementation(experts);
-    services.AddSingleton(expertsStorage);
-    CartStorage cartStorage = new CartStorageInMemoryImplementation();
-    services.AddSingleton(cartStorage);
-    
     services.AddScoped<GetCartUseCase>();
     services.AddScoped<ListCartsUseCase>();
-    
     services.AddScoped<ListExpertsUseCase>();
     services.AddScoped<GetExpertUseCase>();
     services.AddScoped<AddExpertToCartUseCase>();
     services.AddScoped<RemoveExpertFromCartUseCase>();
     services.AddScoped<BookExpertUseCase>();
+
+    services.AddSingleton(
+        new EmailServiceConfiguration
+        {
+            ApiKey = azureConfig["SendGridApiKey"], 
+            ReceiverAddress = azureConfig["BookingReceiverEmail"]
+        });
+    Expert[] experts = JsonSerializer.Deserialize<Expert[]>(ReadJsonFromFileHelper.ReadJsonFromTextFile(azureConfig["ExpertsJsonFilePath"]));
+    ExpertsStorage expertsStorage = new ExpertsStorageInMemoryImplementation(experts);
+    CartStorage cartStorage = new CartStorageInMemoryImplementation();
+    services.AddSingleton(expertsStorage);
+    services.AddSingleton<EmailService, EmailServiceSendGridImplementation>();
+    services.AddSingleton(cartStorage);
+    
+    
 }

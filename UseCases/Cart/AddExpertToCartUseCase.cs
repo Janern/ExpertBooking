@@ -1,5 +1,3 @@
-using Storage.Api;
-
 namespace UseCases.Cart;
 
 public class AddExpertToCartUseCase

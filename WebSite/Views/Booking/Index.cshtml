@@ -1,4 +1,4 @@
-<div class="section">
+<div id="bookingForm" class="section">
     <form>
         <div class="row form-row">
             <div class="four columns">
@@ -48,7 +48,10 @@
         <div ></div>
         <div class="row form-row">
             <div class="twelve columns">
-                <button id="submit-button" type="submit" class="submitButton loading" >Bestill</button>
+                <button id="submit-button" type="submit" class="submitButton loading" 
+                hx-post="Booking"
+                hx-target="#bookingForm"
+                hx-swap="innerHTML">Bestill</button>
             </div>
         </div>
     </form>

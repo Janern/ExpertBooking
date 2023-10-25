@@ -9,7 +9,7 @@ namespace WebSite.Helpers
         {
             return new Booking
             {
-                ExpertNames = inputModel.SelectedExpertIds.ToArray(),
+                ExpertIds = inputModel.SelectedExpertIds.ToArray(),
                 BookerEmailAddress = inputModel.BookerEmailAddress,
                 TimePeriod = inputModel.TimePeriod,
                 Description = inputModel.Description

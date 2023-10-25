@@ -1,4 +1,3 @@
-using Storage.Api;
 using UseCases.Exceptions;
 
 namespace UseCases.Cart;

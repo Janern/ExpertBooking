@@ -7,13 +7,14 @@ using UseCases.Cart;
 
 namespace WebSite.Controllers;
 
-public class BookExpertController : Controller
+[Route("Booking")]
+public class BookingController : Controller
 {
     private BookExpertUseCase _bookExpertUseCase;
     private GetCartUseCase _getCartUseCase;
     private const string CartCookie = "__CartId";
 
-    public BookExpertController(BookExpertUseCase bookExpertUseCase, GetCartUseCase getCartUseCase)
+    public BookingController(BookExpertUseCase bookExpertUseCase, GetCartUseCase getCartUseCase)
     {
         _bookExpertUseCase = bookExpertUseCase;
         _getCartUseCase = getCartUseCase;
@@ -39,7 +40,7 @@ public class BookExpertController : Controller
             success = await _bookExpertUseCase.Execute(booking);
         }catch(Exception ex){
         }
-        return RedirectToAction("Index", "BookExpertResult", 
+        return PartialView("_bookingResult", 
             new BookingResultModel{
                 Booking = booking, 
                 Success = success});

@@ -1,7 +1,7 @@
 using BusinessModels;
 using UseCases.Cart;
 
-namespace Storage.Implementation
+namespace Storage
 {
     public class ExpertsStorageInMemoryImplementation : ExpertsStorage
     {
@@ -11,12 +11,12 @@ namespace Storage.Implementation
         public ExpertsStorageInMemoryImplementation(Expert[] experts)
         {
             _experts = new Dictionary<string, Expert>();
-            foreach(var expert in experts)
+            foreach (var expert in experts)
             {
-                if(expert != null && !string.IsNullOrEmpty(expert.Id))
+                if (expert != null && !string.IsNullOrEmpty(expert.Id))
                     _experts.Add(expert.Id, expert);
             }
-            
+
         }
 
         public Expert[] GetExperts(string technologyFilter)
@@ -26,9 +26,12 @@ namespace Storage.Implementation
 
         public Expert GetExpert(string id)
         {
-            try{
+            try
+            {
                 return _experts[id];
-            }catch(KeyNotFoundException){
+            }
+            catch (KeyNotFoundException)
+            {
 
             }
             return null;

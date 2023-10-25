@@ -1,11 +1,11 @@
 using BusinessModels;
 using UseCases.Cart;
 
-namespace Storage.Implementation;
+namespace Storage;
 
 public class CartStorageInMemoryImplementation : CartStorage
 {
-    private List<Cart> _carts {get; set;}
+    private List<Cart> _carts { get; set; }
     public CartStorageInMemoryImplementation()
     {
         _carts = new List<Cart>();
@@ -24,7 +24,7 @@ public class CartStorageInMemoryImplementation : CartStorage
     public void DeleteCart(string cartId)
     {
         Cart existingCart = _carts.FirstOrDefault(c => c.Id == cartId);
-        if(existingCart != null)
+        if (existingCart != null)
             _carts.Remove(existingCart);
     }
 
@@ -36,7 +36,7 @@ public class CartStorageInMemoryImplementation : CartStorage
     public void UpdateCart(CartUpdate update)
     {
         Cart existingCart = _carts.FirstOrDefault(c => c.Id == update.CartId);
-        if(existingCart != null && existingCart.ExpertIds != null)
+        if (existingCart != null && existingCart.ExpertIds != null)
             existingCart.ExpertIds = update.ExpertIds;
     }
 

@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UseCases\UseCases.csproj" />
+    <ProjectReference Include="..\Storage\Storage.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
