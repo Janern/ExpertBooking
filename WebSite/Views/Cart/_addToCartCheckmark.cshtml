@@ -1,0 +1,9 @@
+@model string
+<form hx-post="Cart/Add"
+      hx-swap="outerHTML"
+      hx-target="this">
+    <button type="submit" class="expertSelectedCheckmark">
+        <img id="add-checkmark" class="expertSelectedCheckmark" src="images/svg/add-checkmark.svg" />
+    </button>
+    <input type="hidden" name="ExpertId" value="@Model"/>
+</form>

@@ -1,4 +1,3 @@
-using System.Text.Json;
 using BusinessModels;
 using WebSite.Models;
 
@@ -8,10 +7,9 @@ namespace WebSite.Helpers
     {
         public static Booking Convert(BookingInputModel inputModel)
         {
-            Expert[] expertsDeserialized = JsonSerializer.Deserialize<Expert[]>(inputModel.SelectedExpertsJson??"[]");
             return new Booking
             {
-                Experts = expertsDeserialized,
+                ExpertIds = inputModel.SelectedExpertIds.ToArray(),
                 BookerEmailAddress = inputModel.BookerEmailAddress,
                 TimePeriod = inputModel.TimePeriod,
                 Description = inputModel.Description

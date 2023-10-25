@@ -1,0 +1,38 @@
+@model ExpertViewModel;
+<div id="expertModal" class="modal modal-background closeModal" 
+    hx-swap="delete"
+    hx-target="this"
+    hx-get=""
+    hx-trigger="click target:.closeModal">>
+    <div class="two columns">&nbsp;</div>
+    <div class="modal-window six columns">
+        <div class="modal-textbox twelve columns">
+            <div class="row">
+                <div class="four columns">
+                    <img id="expertImage" src="images/@(Model.Id).jpg" class="u-max-full-width" />
+                </div>
+                <div class="eight columns">
+                    <span class="expert-name">@Model.FirstName @Model.LastName</span><br />
+                    <span class="role">@Model.Role</span>
+                </div>
+            </div>
+            <div class="row">
+                <p>@Model.Description</p>
+            </div>
+            <div class="row">
+                <div class="columns four">
+                    &nbsp;
+                </div>
+                <div class="columns five">
+                    @{ await (Model.IsSelected ?  
+                        Html.RenderPartialAsync("../Cart/_removeFromCartCheckmark", Model.Id) :  
+                        Html.RenderPartialAsync("../Cart/_addToCartCheckmark", Model.Id)); }
+                    </div>
+                <div class="columns three">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    

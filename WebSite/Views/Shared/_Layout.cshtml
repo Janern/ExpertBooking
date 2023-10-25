@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/css//skeleton.css">
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
+    <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/expertCard.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/modal.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/htmx/htmx.1.9.6.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -36,13 +38,23 @@
                             <img class="layoutLogo" src="images/Experis logo horizontal.svg"/>
                         </a>
                     </div>
-                    <div class="ten columns">
+                    <div class="nine columns">
                         <!-- Slogan -->
                         <div class="slogan">
                             <span>Få en ekspert på laget innen 24 timer</span>
                             <!-- Call-to-Action Button -->
-                            <a href="/BookExpert" class="cta-button">Book en ekspert nå</a>
+                            <a href="/Booking" class="cta-button">Book en ekspert nå</a>
                         </div>
+                    </div>
+                    <div id="shoppingCartButton" class="one column" 
+                         hx-get="Cart/Details"
+                         hx-target="#cartDetails">
+                        <div hx-get="Cart/MenuButton"
+                         hx-swap="outerHTML"
+                         hx-trigger="load"
+
+                         hx-target="this">
+                         </div>
                     </div>
                 </div>
             </div>
