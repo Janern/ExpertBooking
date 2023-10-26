@@ -1,15 +1,11 @@
-<div class="eleven columns">&nbsp;</div>
-<div id="shoppingCartButton" class="one column" 
-    hx-get="Cart/Details"
-    hx-target="#cartDetails">
-    <div hx-get="Cart/MenuButton"
-        hx-swap="outerHTML"
-        hx-trigger="load"
-        hx-target="this">
-    </div>
+<div id="cartContainer" class="cartContainer"
+    hx-get="Cart"
+    hx-target="#cartContainer"
+    hx-swap="innerHTML"
+    hx-select="#openCartButton"
+    hx-trigger="load">
 </div>
-<div id="cartDetails" class="chosenExpertsContainer"></div>                    
-<div id="bookingForm" class="section">
+<div id="bookingForm" class="section container">
     <form>
         <div class="row form-row">
             <div class="four columns">

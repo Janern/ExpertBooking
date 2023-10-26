@@ -61,24 +61,7 @@ public class CartController : Controller
         return PartialView("_removeFromCartCheckmark", Id);
     }
 
-    [HttpGet, Route("MenuButton")]
-    public IActionResult GetCartMenuButton()
-    {
-        try
-        {
-            if(Request.Cookies.TryGetValue(CartCookie, out var result))
-            {
-                var cart = _getCartUseCase.Execute(result);
-                if(cart != null)
-                    return PartialView("_cartMenuButton", cart.ExpertIds.Count);
-            }
-        }catch(Exception ex){
-            Console.WriteLine("Error while getting cart menu button" + ex + ex.Message);
-        }
-        return PartialView("_cartMenuButton", 0);
-    }
-
-    [HttpGet, Route("Details")]
+    [HttpGet]
     public IActionResult GetCart()
     {
         try

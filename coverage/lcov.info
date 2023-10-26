@@ -1,4 +1,4 @@
-SF:c:\Repositories\ExpertBooking\BusinessModels\Booking.cs
+SF:C:\Repositories\ExpertBooking\BusinessModels\Booking.cs
 FN:4,System.String BusinessModels.Booking::get_BookerEmailAddress()
 FNDA:24,System.String BusinessModels.Booking::get_BookerEmailAddress()
 DA:5,24
@@ -18,7 +18,7 @@ BRH:0
 FNF:4
 FNH:4
 end_of_record
-SF:c:\Repositories\ExpertBooking\BusinessModels\Cart.cs
+SF:C:\Repositories\ExpertBooking\BusinessModels\Cart.cs
 FN:4,System.String BusinessModels.Cart::get_Id()
 FNDA:36,System.String BusinessModels.Cart::get_Id()
 DA:5,36
@@ -32,7 +32,7 @@ BRH:0
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\BusinessModels\Expert.cs
+SF:C:\Repositories\ExpertBooking\BusinessModels\Expert.cs
 FN:3,System.String BusinessModels.Expert::get_Id()
 FNDA:147,System.String BusinessModels.Expert::get_Id()
 DA:4,147
@@ -58,7 +58,7 @@ BRH:0
 FNF:6
 FNH:6
 end_of_record
-SF:c:\Repositories\ExpertBooking\Services\EmailServiceConfiguration.cs
+SF:C:\Repositories\ExpertBooking\Services\EmailServiceConfiguration.cs
 FN:4,System.String Services.EmailServiceConfiguration::get_ApiKey()
 FNDA:0,System.String Services.EmailServiceConfiguration::get_ApiKey()
 DA:5,0
@@ -72,7 +72,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\Services\EmailServiceConsoleLogImplementation.cs
+SF:C:\Repositories\ExpertBooking\Services\EmailServiceConsoleLogImplementation.cs
 FN:8,System.Void Services.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
 FNDA:0,System.Void Services.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
 DA:9,0
@@ -87,7 +87,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\Services\EmailServiceSendGridImplementation.cs
+SF:C:\Repositories\ExpertBooking\Services\EmailServiceSendGridImplementation.cs
 FN:10,System.String Services.EmailServiceSendGridImplementation::get__apiKey()
 FNDA:0,System.String Services.EmailServiceSendGridImplementation::get__apiKey()
 DA:11,0
@@ -165,7 +165,7 @@ BRH:0
 FNF:5
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\Storage\CartStorageInMemoryImplementation.cs
+SF:C:\Repositories\ExpertBooking\Storage\CartStorageInMemoryImplementation.cs
 FN:7,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::get__carts()
 FNDA:24,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::get__carts()
 DA:8,24
@@ -223,7 +223,7 @@ BRH:3
 FNF:7
 FNH:5
 end_of_record
-SF:c:\Repositories\ExpertBooking\Storage\ExpertFilteringHelper.cs
+SF:C:\Repositories\ExpertBooking\Storage\ExpertFilteringHelper.cs
 FN:6,BusinessModels.Expert[] Storage.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String)
 FNDA:4,BusinessModels.Expert[] Storage.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String)
 DA:7,4
@@ -260,7 +260,7 @@ BRH:9
 FNF:1
 FNH:1
 end_of_record
-SF:c:\Repositories\ExpertBooking\Storage\ExpertsStorageInMemoryImplementation.cs
+SF:C:\Repositories\ExpertBooking\Storage\ExpertsStorageInMemoryImplementation.cs
 FN:8,System.Collections.Generic.IDictionary`2<System.String,BusinessModels.Expert> Storage.ExpertsStorageInMemoryImplementation::get__experts()
 FNDA:38,System.Collections.Generic.IDictionary`2<System.String,BusinessModels.Expert> Storage.ExpertsStorageInMemoryImplementation::get__experts()
 DA:9,38
@@ -303,7 +303,7 @@ BRH:5
 FNF:4
 FNH:4
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Experts\BookExpertUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Experts\BookExpertUseCase.cs
 FN:7,UseCases.Email.EmailService UseCases.Experts.BookExpertUseCase::get__emailService()
 FNDA:13,UseCases.Email.EmailService UseCases.Experts.BookExpertUseCase::get__emailService()
 DA:8,13
@@ -329,7 +329,7 @@ BRH:2
 FNF:3
 FNH:3
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Experts\GetExpertUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Experts\GetExpertUseCase.cs
 FN:13,BusinessModels.Expert UseCases.Experts.GetExpertUseCase::Execute(System.String)
 FNDA:5,BusinessModels.Expert UseCases.Experts.GetExpertUseCase::Execute(System.String)
 DA:14,5
@@ -352,7 +352,7 @@ BRH:2
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Experts\ListExpertsUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Experts\ListExpertsUseCase.cs
 FN:5,UseCases.Cart.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
 FNDA:11,UseCases.Cart.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
 DA:6,11
@@ -374,7 +374,7 @@ BRH:0
 FNF:3
 FNH:3
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidEditCartRequestException.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidEditCartRequestException.cs
 FN:4,System.Void UseCases.Exceptions.InvalidEditCartRequestException::.ctor(System.String)
 FNDA:0,System.Void UseCases.Exceptions.InvalidEditCartRequestException::.ctor(System.String)
 DA:5,0
@@ -387,7 +387,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\AddExpertToCartUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\AddExpertToCartUseCase.cs
 FN:11,System.String UseCases.Cart.AddExpertToCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 FNDA:8,System.String UseCases.Cart.AddExpertToCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 DA:12,8
@@ -414,7 +414,7 @@ BRH:2
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\CartUpdate.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\CartUpdate.cs
 FN:4,System.String UseCases.Cart.CartUpdate::get_CartId()
 FNDA:17,System.String UseCases.Cart.CartUpdate::get_CartId()
 DA:5,17
@@ -428,7 +428,7 @@ BRH:0
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\EditCartRequest.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\EditCartRequest.cs
 FN:4,System.String UseCases.Cart.EditCartRequest::get_CartId()
 FNDA:12,System.String UseCases.Cart.EditCartRequest::get_CartId()
 DA:5,12
@@ -442,7 +442,7 @@ BRH:0
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\GetCartUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\GetCartUseCase.cs
 FN:4,UseCases.Cart.CartStorage UseCases.Cart.GetCartUseCase::get__storage()
 FNDA:0,UseCases.Cart.CartStorage UseCases.Cart.GetCartUseCase::get__storage()
 DA:5,0
@@ -464,7 +464,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\ListCartsUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\ListCartsUseCase.cs
 FN:4,UseCases.Cart.CartStorage UseCases.Cart.ListCartsUseCase::get__storage()
 FNDA:0,UseCases.Cart.CartStorage UseCases.Cart.ListCartsUseCase::get__storage()
 DA:5,0
@@ -486,7 +486,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\RemoveExpertFromCartUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\RemoveExpertFromCartUseCase.cs
 FN:13,System.Void UseCases.Cart.RemoveExpertFromCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 FNDA:0,System.Void UseCases.Cart.RemoveExpertFromCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 DA:14,0
@@ -641,37 +641,47 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\WebSite\Views\Cart\_cartDetails.cshtml
-FN:11,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartDetails/<ExecuteAsync>d__0::MoveNext()
-FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartDetails/<ExecuteAsync>d__0::MoveNext()
-DA:12,0
-DA:13,0
-DA:15,0
-DA:19,0
-DA:20,0
-DA:22,0
-DA:25,0
-BRDA:12,673,1,0
-BRDA:12,673,0,0
-LF:7
+SF:c:\Repositories\ExpertBooking\WebSite\Views\Cart\_cartCount.cshtml
+FN:5,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartCount/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartCount/<ExecuteAsync>d__0::MoveNext()
+DA:6,0
+DA:7,0
+DA:8,0
+DA:9,0
+BRDA:6,41,0,0
+BRDA:6,41,1,0
+LF:4
 LH:0
 BRF:2
 BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\WebSite\Views\Cart\_cartMenuButton.cshtml
-FN:8,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartMenuButton/<ExecuteAsync>d__0::MoveNext()
-FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartMenuButton/<ExecuteAsync>d__0::MoveNext()
-DA:9,0
-DA:10,0
-DA:11,0
-DA:12,0
-BRDA:9,41,0,0
-BRDA:9,41,1,0
-LF:4
+SF:c:\Repositories\ExpertBooking\WebSite\Views\Cart\_cartDetails.cshtml
+FN:16,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartDetails/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartDetails/<ExecuteAsync>d__0::MoveNext()
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:22,0
+DA:26,0
+DA:27,0
+DA:29,0
+DA:31,0
+DA:32,0
+DA:34,0
+BRDA:17,48,0,0
+BRDA:19,628,1,0
+BRDA:19,628,0,0
+BRDA:17,48,1,0
+BRDA:34,706,0,0
+BRDA:34,706,1,0
+BRDA:34,727,0,0
+BRDA:34,727,1,0
+LF:11
 LH:0
-BRF:2
+BRF:8
 BRH:0
 FNF:1
 FNH:0
@@ -1084,8 +1094,8 @@ BRDA:52,27,0,0
 BRDA:52,27,1,0
 BRDA:59,122,0,0
 BRDA:59,122,1,0
-FN:65,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCartCount()
-FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCartCount()
+FN:65,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCart()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCart()
 DA:66,0
 DA:68,0
 DA:69,0
@@ -1103,29 +1113,8 @@ BRDA:69,27,0,0
 BRDA:72,49,0,0
 BRDA:72,49,1,0
 BRDA:69,27,1,0
-BRDA:76,97,0,0
-BRDA:76,97,1,0
-FN:82,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCart()
-FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCart()
-DA:83,0
-DA:85,0
-DA:86,0
-DA:87,0
-DA:88,0
-DA:89,0
-DA:90,0
-DA:91,0
-DA:92,0
-DA:93,0
-DA:94,0
-DA:95,0
-DA:96,0
-BRDA:86,27,0,0
-BRDA:89,49,0,0
-BRDA:89,49,1,0
-BRDA:86,27,1,0
-BRDA:93,82,0,0
-BRDA:93,82,1,0
+BRDA:76,82,0,0
+BRDA:76,82,1,0
 FN:14,System.Void WebSite.Controllers.CartController::.ctor(UseCases.Cart.AddExpertToCartUseCase,UseCases.Cart.GetCartUseCase,UseCases.Cart.ListCartsUseCase,UseCases.Cart.RemoveExpertFromCartUseCase)
 FNDA:0,System.Void WebSite.Controllers.CartController::.ctor(UseCases.Cart.AddExpertToCartUseCase,UseCases.Cart.GetCartUseCase,UseCases.Cart.ListCartsUseCase,UseCases.Cart.RemoveExpertFromCartUseCase)
 DA:15,0
@@ -1139,11 +1128,11 @@ DA:22,0
 DA:23,0
 DA:24,0
 DA:25,0
-LF:63
+LF:50
 LH:0
-BRF:20
+BRF:14
 BRH:0
-FNF:6
+FNF:5
 FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Controllers\ExpertDetailsController.cs

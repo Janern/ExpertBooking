@@ -1,15 +1,17 @@
-.chosenExpertsContainer {
-  top: -5%;
-  right: -12%;
+.cartContainer{
+  position: relative;
+}
+.cartDetails {
   background-color: var(--anyshore-green);
   border: solid 1px black;
   position: absolute;
   width: 30%;
   overflow: visible;
   z-index: 10;
+  right: 0px;  
 }
 
-.chosenExpertsContainer img {
+.cartDetails img {
   width: 3em;
   margin-top: 10px;
   transform: rotate(-5deg);
@@ -19,8 +21,16 @@
 
 .closeCartButton {
   width: 1em;
+  float: right;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 .openCartButton {
-  width: 1%;
+  width: 1em;
+  float: right;
+  padding: 0;
+  border: none;
+  background: none;
 }
