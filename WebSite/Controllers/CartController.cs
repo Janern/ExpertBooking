@@ -92,6 +92,6 @@ public class CartController : Controller
         }catch(Exception ex){
             Console.WriteLine("Error while getting cart details" + ex + ex.Message);
         }
-        return Index(); //TODO find better handling of errors
+        return PartialView("_cartDetails", null);
     }
 }

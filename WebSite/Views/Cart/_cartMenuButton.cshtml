@@ -1,7 +1,8 @@
 @model int;
-<div hx-get="Cart/MenuButton" 
-     hx-trigger="CartChanged from:body"
-     hx-target="this">
+<div class="openCartButton"
+    hx-get="Cart/MenuButton" 
+    hx-trigger="CartChanged from:body"
+    hx-target="this">
 @if(Model > 0) 
 {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">

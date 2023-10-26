@@ -1,3 +1,14 @@
+<div class="eleven columns">&nbsp;</div>
+<div id="shoppingCartButton" class="one column" 
+    hx-get="Cart/Details"
+    hx-target="#cartDetails">
+    <div hx-get="Cart/MenuButton"
+        hx-swap="outerHTML"
+        hx-trigger="load"
+        hx-target="this">
+    </div>
+</div>
+<div id="cartDetails" class="chosenExpertsContainer"></div>                    
 <div id="bookingForm" class="section">
     <form>
         <div class="row form-row">
@@ -25,7 +36,6 @@
         <h2>Sett sammen ditt ekspertlag</h2>
         <div class="row form-row" id="expertTable" hx-get="ListExperts" hx-trigger="load"></div>
         <div id="expertModalContainer"></div>
-        <div id="cartDetails" class="chosenExpertsContainer"></div>
         <div class="row form-row">
             <div class="twelve columns full u-full-width">
                 <label for="Description">Beskriv prosjektet:</label>
@@ -44,6 +54,7 @@
                         oninvalid="this.setCustomValidity('Vi trenger din epost for å kontakte deg')" 
                         oninput="this.setCustomValidity('')"/>
             </div>
+
         </div>
         <div ></div>
         <div class="row form-row">

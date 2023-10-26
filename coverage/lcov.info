@@ -642,17 +642,17 @@ FNF:1
 FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Views\Cart\_cartDetails.cshtml
-FN:8,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartDetails/<ExecuteAsync>d__0::MoveNext()
+FN:11,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartDetails/<ExecuteAsync>d__0::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartDetails/<ExecuteAsync>d__0::MoveNext()
-DA:9,0
-DA:10,0
 DA:12,0
-DA:16,0
-DA:17,0
+DA:13,0
+DA:15,0
 DA:19,0
+DA:20,0
 DA:22,0
-BRDA:9,673,1,0
-BRDA:9,673,0,0
+DA:25,0
+BRDA:12,673,1,0
+BRDA:12,673,0,0
 LF:7
 LH:0
 BRF:2
@@ -661,14 +661,14 @@ FNF:1
 FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Views\Cart\_cartMenuButton.cshtml
-FN:4,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartMenuButton/<ExecuteAsync>d__0::MoveNext()
+FN:8,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartMenuButton/<ExecuteAsync>d__0::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Cart__cartMenuButton/<ExecuteAsync>d__0::MoveNext()
-DA:5,0
-DA:6,0
+DA:9,0
 DA:10,0
 DA:11,0
-BRDA:5,41,0,0
-BRDA:5,41,1,0
+DA:12,0
+BRDA:9,41,0,0
+BRDA:9,41,1,0
 LF:4
 LH:0
 BRF:2
@@ -799,10 +799,10 @@ BRDA:20,6256,0,0
 BRDA:20,6256,1,0
 BRDA:25,6881,0,0
 BRDA:25,6881,1,0
-FN:64,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__24_1>d::MoveNext()
+FN:54,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__24_1>d::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__24_1>d::MoveNext()
-DA:65,0
-DA:74,0
+DA:55,0
+DA:64,0
 FN:1,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<ExecuteAsync>d__24::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<ExecuteAsync>d__24::MoveNext()
 DA:2,0
@@ -1084,8 +1084,8 @@ BRDA:52,27,0,0
 BRDA:52,27,1,0
 BRDA:59,122,0,0
 BRDA:59,122,1,0
-FN:65,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCartMenuButton()
-FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCartMenuButton()
+FN:65,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCartCount()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.CartController::GetCartCount()
 DA:66,0
 DA:68,0
 DA:69,0

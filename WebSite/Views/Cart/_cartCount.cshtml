@@ -1,0 +1,10 @@
+@model int;
+<div class="openCartButton"
+    hx-get="Cart/Count" 
+    hx-trigger="CartChanged from:body"
+    hx-target="this">
+@if(Model > 0) 
+{
+    <span class="cartCount">@Model</span>
+}
+</div>
