@@ -16,17 +16,23 @@
     </div>
     @if(Model != null)
     {
+        <table>
         @foreach (string item in Model.ExpertIds)
         {
-            <div class="openModal cartItem" 
-            hx-get="ExpertDetails/@item" 
-            hx-target="#expertModalContainer" 
-            hx-swap="innerHTML"
-            hx-trigger="click target:.openModal">
-                <div hx-get="Expert/@item" hx-swap="outerHTML" hx-target="this" hx-trigger="load" hx-select="#expertImage"></div>
-                <div hx-get="Expert/@item" hx-swap="outerHTML" hx-target="this" hx-trigger="load" hx-select="#expertName"></div>
-            </div>
+            <tr>
+                <td>
+<div class="openModal" 
+                hx-get="ExpertDetails/@item" 
+                hx-target="#expertModalContainer" 
+                hx-swap="innerHTML"
+                hx-trigger="click target:.openModal">
+                    <div class="openModal cartItem" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertImage"></div>
+                    <div class="openModal cartItem" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertName"></div>
+                </div>
+                </td>
+            </tr>
         }
+        </table>
     }
 </div>
 <button id="openCartButton" type="button" class="openCartButton" hx-get="Cart" hx-select="#cartItemsList">

@@ -36,6 +36,7 @@
 }
 
 .cartItem {
-  max-width: 2em;
-  font-size: 16px ;
+  font-size: 16px;
+  float: left;
+  padding-right: 1em;
 }

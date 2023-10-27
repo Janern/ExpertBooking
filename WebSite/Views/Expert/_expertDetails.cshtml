@@ -1,7 +1,3 @@
 @model ExpertViewModel;
-<div id="expertImage">
-    <img id="expertImage" src="images/@(Model.Id).jpg" class="u-max-full-width" />
-</div>
-<div id="expertName">
-    <span class="expert-name">@Model.FirstName @Model.LastName</span><br />
-</div>
+<img id="expertImage" src="images/@(Model.Id).jpg" class="u-max-full-width" />
+<span id="expertName" >@Model.FirstName @Model.LastName</span>
