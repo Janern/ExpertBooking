@@ -18,13 +18,13 @@
     {
         @foreach (string item in Model.ExpertIds)
         {
-            <div class="openModal" 
+            <div class="openModal cartItem" 
             hx-get="ExpertDetails/@item" 
             hx-target="#expertModalContainer" 
             hx-swap="innerHTML"
             hx-trigger="click target:.openModal">
-                <img src="images/@(item).jpg" class="expert-table-img u-max-full-width openModal" />
-                @{ await Html.RenderPartialAsync("../Cart/_removeFromCartCheckmark", item); }  
+                <div hx-get="Expert/@item" hx-swap="outerHTML" hx-target="this" hx-trigger="load" hx-select="#expertImage"></div>
+                <div hx-get="Expert/@item" hx-swap="outerHTML" hx-target="this" hx-trigger="load" hx-select="#expertName"></div>
             </div>
         }
     }

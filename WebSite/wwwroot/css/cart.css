@@ -34,3 +34,8 @@
   border: none;
   background: none;
 }
+
+.cartItem {
+  max-width: 2em;
+  font-size: 16px ;
+}
