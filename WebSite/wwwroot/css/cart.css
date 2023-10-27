@@ -7,7 +7,7 @@
   position: absolute;
   width: 30%;
   overflow: visible;
-  z-index: 10;
+  z-index: 1;
   right: 0px;  
 }
 

@@ -59,3 +59,11 @@
     align-items: center;
     gap: 8px; 
 }
+
+.modal-window.expertSelectedCheckmark{
+    filter: var(--anyshore-green-filter);
+}
+
+.modal-window button.expertSelectedCheckmark {
+    filter: var(--anyshore-green-filter);
+}
