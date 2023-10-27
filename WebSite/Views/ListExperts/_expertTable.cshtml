@@ -11,7 +11,7 @@
             <img src="images/@(expert.Id).jpg" class="expert-table-img u-max-full-width openModal" />
         </div>
         <div id="selectExpert" class="two columns">
-            @{ await (expert.IsSelected ?  
+            @{ await (expert.IsSelected ?
                 Html.RenderPartialAsync("../Cart/_removeFromCartCheckmark", expert.Id) :  
                 Html.RenderPartialAsync("../Cart/_addToCartCheckmark", expert.Id)); }
         </div>
