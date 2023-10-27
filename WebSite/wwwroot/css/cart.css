@@ -2,7 +2,7 @@
   position: relative;
 }
 .cartDetails {
-  background-color: #ECECEC;
+  background-color: var(--anyshore-grey);
   border: solid 1px black;
   position: absolute;
   width: 30%;
@@ -39,4 +39,13 @@
   font-size: 16px;
   float: left;
   padding-right: 1em;
+}
+
+button.cartItem {
+  border: none;
+  border: solid 1px var(--anyshore-green);
+  background-color: var(--anyshore-grey);
+  max-width: 1em;
+  filter: var(--anyshore-green-filter);
+  border-radius: 32px;
 }

@@ -1,5 +1,5 @@
 .modal-background {
-    background-color: rgba(120, 120, 120, 0.7);
+    background-color: none;
     width: 100%;
     z-index: 1;
 }
@@ -7,7 +7,7 @@
 .modal-window {
     margin-left: 12%;
     margin-right: auto;
-    background-color: #ECECEC;
+    background-color: var(--anyshore-grey);
     border-radius: 0;
     color: #000;
     font-size: 18px;
