@@ -2,7 +2,7 @@
   position: relative;
 }
 .cartDetails {
-  background-color: var(--anyshore-green);
+  background-color: white;
   border: solid 1px black;
   position: absolute;
   width: 30%;
