@@ -24,14 +24,14 @@ namespace WebSite.Controllers
         public IActionResult Index(string technologyFilter)
         {
             Expert[] experts = _listExpertsUseCase.Execute(technologyFilter);
-            List<string>? expertIds = null;
+            List<string>? selectedExpertIds = null;
             try{
                 if(Request.Cookies.TryGetValue(CartCookie, out var result) && _getCartUseCase.Execute(result) != null)
                 {
-                    expertIds = _getCartUseCase.Execute(result)?.ExpertIds;
+                    selectedExpertIds = _getCartUseCase.Execute(result)?.ExpertIds;
                 }
             }catch{}
-            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, expertIds));
+            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, selectedExpertIds));
         }
     }
 }
