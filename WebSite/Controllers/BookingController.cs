@@ -7,7 +7,6 @@ using UseCases.Cart;
 
 namespace WebSite.Controllers;
 
-[Route("Booking")]
 public class BookingController : Controller
 {
     private BookExpertUseCase _bookExpertUseCase;
