@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Mvc;
 using UseCases.Cart;
 namespace WebSite.Controllers;
@@ -24,41 +25,62 @@ public class CartController : Controller
         _removeExpertFromCartUseCase = removeExpertFromCartUseCase;
     }
 
-    [HttpGet, Route("/Carts")]
+    [HttpGet, Route("Carts")]
     public IActionResult Index()
     {
         var carts = _listCartsUseCase.Execute();
         return View("Index", carts);
     }
 
-    [HttpPost, Route("Add")]
-    public IActionResult AddToCart(EditCartRequest request)
+    [HttpGet, Route("Experts/{Id}")]
+    public IActionResult GetExpertInCartStatus(string Id)
     {
         try{
             if(Request.Cookies.TryGetValue(CartCookie, out var result) && _getCartUseCase.Execute(result) != null)
-                request.CartId = result;
-        }catch{}
-        string cartId = _addExpertToCartUseCase.Execute(request);
-        Response.Cookies.Append(CartCookie, cartId);
-        Response.Headers.Add("HX-Trigger", "CartChanged");
-        return PartialView("_removeFromCartCheckmark", request.ExpertId);
+            {
+                var cart = _getCartUseCase.Execute(result);
+                if(cart?.ExpertIds?.Contains(Id)??false)
+                    return PartialView("_removeFromCartCheckmark", Id);
+            }    
+        }catch(Exception ex)
+        {
+            Console.WriteLine("Error while adding item to cart" + ex + ex.Message);
+        }
+        return PartialView("_addToCartCheckmark", Id);
     }
 
-    [HttpPost, Route("Remove/{Id}")]
-    public IActionResult RemoveFromCart(string Id)
+    [HttpPost, Route("Experts")]
+    public IActionResult AddToCart(string ExpertId)
+    {
+        try
+        {
+            Request.Cookies.TryGetValue(CartCookie, out var result);
+            string cartId = _addExpertToCartUseCase.Execute(new EditCartRequest{CartId = result, ExpertId = ExpertId});
+            Response.Cookies.Append(CartCookie, cartId);
+            Response.Headers.Add("HX-Trigger", "CartChanged");
+            return PartialView("_removeFromCartCheckmark", ExpertId);
+        }catch(Exception ex)
+        {
+            Console.WriteLine("Error while adding item to cart" + ex + ex.Message);
+        }
+        return PartialView("_addToCartCheckmark", ExpertId);
+    }
+
+    [HttpDelete, Route("Experts")]
+    public IActionResult RemoveFromCart(string ExpertId)
     {
         try
         {
             if(Request.Cookies.TryGetValue(CartCookie, out var result))
             {
-                _removeExpertFromCartUseCase.Execute(new EditCartRequest{CartId = result, ExpertId = Id});
+                _removeExpertFromCartUseCase.Execute(new EditCartRequest{CartId = result, ExpertId = ExpertId});
                 Response.Headers.Add("HX-Trigger", "CartChanged");
-                return PartialView("_addToCartCheckmark", Id);
+                return PartialView("_addToCartCheckmark", ExpertId);
             }
         }catch(Exception ex){
             Console.WriteLine("Error while removing item from cart" + ex + ex.Message);
         }
-        return PartialView("_removeFromCartCheckmark", Id);
+        return PartialView("_removeFromCartCheckmark", ExpertId);
     }
 
     [HttpGet]
