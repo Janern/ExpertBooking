@@ -28,7 +28,7 @@
                         hx-trigger="click target:.openModal">
                         <div class="four columns openModal cartItem" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertImage"></div>
                         <div class="four columns openModal cartItem" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertName"></div>
-                        <div class="four columns addToCartButton" hx-get="Expert/@Model" hx-swap="outerHTML" hx-target="this" hx-trigger="load" hx-select="addedToCartCheckmark"></div>
+                        <div class="four columns addToCartButton" hx-get="Cart/Experts/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load"></div>
                     </div>
                 </td>
             </tr>
