@@ -11,6 +11,8 @@ public class AddExpertToCartUseCase
     public string Execute(EditCartRequest request)
     {
         BusinessModels.Cart cart = string.IsNullOrEmpty(request.CartId) ? _storage.CreateCart() : _storage.GetCart(request.CartId);
+        if(cart == null)
+            cart = _storage.CreateCart();
         _storage.UpdateCart(new CartUpdate
         {
             CartId = cart.Id,

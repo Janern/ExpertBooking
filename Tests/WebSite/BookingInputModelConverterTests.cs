@@ -100,5 +100,27 @@ namespace Tests.WebSite
             Assert.Equal(expectedBooking.TimePeriod, result.TimePeriod);
             Assert.Equal(expectedBooking.Description, result.Description);
         }
+
+        [Fact]
+        public void GivenNullWhenConvertingExpertIdsShouldConvertToEmptyList()
+        {
+            List<string> expertIds = null;
+            Booking expectedBooking = new Booking{
+                BookerEmailAddress = "EMAIL@EMAil.com",
+                TimePeriod = "2020-10-8 20:20:20",
+                Description = "DESCRIPTION"
+            };
+            
+            Booking result = BookingInputModelConverter.Convert(new BookingInputModel
+            {
+                SelectedExpertIds = expertIds, 
+                BookerEmailAddress=expectedBooking.BookerEmailAddress, 
+                Description=expectedBooking.Description, 
+                TimePeriod = expectedBooking.TimePeriod
+            });
+
+            Assert.NotNull(result.ExpertIds);
+            Assert.Empty(result.ExpertIds);
+        }
     }
 }

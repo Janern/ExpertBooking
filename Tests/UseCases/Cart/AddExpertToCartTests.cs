@@ -68,4 +68,15 @@ public class AddExpertToCartTests
         Assert.Contains(existingExpert.Id, experts);
         Assert.Contains(existingExpert2.Id, experts);
     }
+
+    [Fact]
+    public void GivenNonExistingCartIdWhenAddingExpertToCartShouldCreateCart()
+    {
+        Expert existingExpert = new Expert { Id = "ID" };
+        string givenCartId = "NONEXISTING";
+
+        string createdCartId = _useCase.Execute(new EditCartRequest{CartId = givenCartId, ExpertId = existingExpert.Id});
+
+        Assert.NotEqual(givenCartId, createdCartId);
+    }
 }

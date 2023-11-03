@@ -14,7 +14,6 @@
 .cartDetails img {
   width: 3em;
   margin-top: 10px;
-  transform: rotate(-5deg);
   transition: transform 0.2s ease-in-out;
   border-radius: 10%;
 }
@@ -39,6 +38,7 @@
   font-size: 16px;
   float: left;
   padding-right: 1em;
+  position: relative;
 }
 
 button.cartItem {
@@ -48,4 +48,8 @@ button.cartItem {
   max-width: 1em;
   filter: var(--anyshore-green-filter);
   border-radius: 32px;
+}
+
+.cartItem img.expertSelectedCheckmark {
+  filter: var(--anyshore-green-filter);
 }
