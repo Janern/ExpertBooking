@@ -15,7 +15,7 @@ public class BookExpertUseCase
     public async Task<bool> Execute(Booking booking)
     {
         if (string.IsNullOrWhiteSpace(booking.BookerEmailAddress))
-            throw new InvalidBookingException();
+            throw new InvalidBookingException("BookerEmailAddress is null or whitespace");
         return await _emailService.SendEmail(booking);
     }
 }

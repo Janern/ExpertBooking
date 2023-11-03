@@ -1,4 +1,4 @@
-using System.Security.Cryptography.X509Certificates;
+using BusinessModels;
 using Microsoft.AspNetCore.Mvc;
 using UseCases.Cart;
 namespace WebSite.Controllers;
@@ -38,7 +38,7 @@ public class CartController : Controller
         try{
             if(Request.Cookies.TryGetValue(CartCookie, out var result) && _getCartUseCase.Execute(result) != null)
             {
-                var cart = _getCartUseCase.Execute(result);
+                Cart? cart = _getCartUseCase.Execute(result);
                 if(cart?.ExpertIds?.Contains(Id)??false)
                     return PartialView("_removeFromCartCheckmark", Id);
             }    
@@ -66,21 +66,21 @@ public class CartController : Controller
         return PartialView("_addToCartCheckmark", ExpertId);
     }
 
-    [HttpDelete, Route("Experts")]
-    public IActionResult RemoveFromCart(string ExpertId)
+    [HttpDelete, Route("Experts/{Id}")]
+    public IActionResult RemoveFromCart(string Id)
     {
         try
         {
             if(Request.Cookies.TryGetValue(CartCookie, out var result))
             {
-                _removeExpertFromCartUseCase.Execute(new EditCartRequest{CartId = result, ExpertId = ExpertId});
+                _removeExpertFromCartUseCase.Execute(new EditCartRequest{CartId = result, ExpertId = Id});
                 Response.Headers.Add("HX-Trigger", "CartChanged");
-                return PartialView("_addToCartCheckmark", ExpertId);
+                return PartialView("_addToCartCheckmark", Id);
             }
         }catch(Exception ex){
             Console.WriteLine("Error while removing item from cart" + ex + ex.Message);
         }
-        return PartialView("_removeFromCartCheckmark", ExpertId);
+        return PartialView("_removeFromCartCheckmark", Id);
     }
 
     [HttpGet]

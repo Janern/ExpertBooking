@@ -4,9 +4,11 @@ using WebSite.Helpers;
 using BusinessModels;
 using UseCases.Experts;
 using UseCases.Cart;
+using UseCases.Exceptions;
 
 namespace WebSite.Controllers;
 
+[Route("[controller]")]
 public class BookingController : Controller
 {
     private BookExpertUseCase _bookExpertUseCase;
@@ -19,6 +21,7 @@ public class BookingController : Controller
         _getCartUseCase = getCartUseCase;
     }
 
+    [Route("/")] //Default route
     public IActionResult Index()
     {
         return View();
@@ -32,17 +35,15 @@ public class BookingController : Controller
         try{
             if(Request.Cookies.TryGetValue(CartCookie, out var result))
             {
-                var cart = _getCartUseCase.Execute(result);
-                bookingInput.SelectedExpertIds = cart.ExpertIds;
+                Cart? cart = _getCartUseCase.Execute(result);
+                bookingInput.SelectedExpertIds = cart?.ExpertIds;
             }
             booking = BookingInputModelConverter.Convert(bookingInput);
             success = await _bookExpertUseCase.Execute(booking);
-        }catch(Exception ex){
+            return PartialView("_bookingResult");
+        }catch(InvalidBookingException ex){
+            Console.WriteLine("Error while booking " + ex + ex.Message);
+            return PartialView("_bookingSubmitButton", "Mangler epostadresse");
         }
-        return PartialView("_bookingResult", 
-            new BookingResultModel{
-                Booking = booking, 
-                Success = success});
-        
     }
 }

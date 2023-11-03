@@ -1,0 +1,12 @@
+@model string;
+<button id="submit-button" type="submit" class="submitButton loading" 
+                        hx-post="Booking"
+                        hx-target="this"
+                        hx-swap="outerHTML">
+    @if(string.IsNullOrEmpty(Model))
+    {
+        <span>Bestill</span>
+    }else{
+        <span>@Model</span>
+    } 
+</button>

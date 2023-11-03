@@ -5,36 +5,47 @@
     hx-trigger="CartChanged from:body"
     hx-target="this"
     hx-swap="outerHTML" >
-    <div hx-get="Cart" 
-        hx-swap="innerHTML"
-        hx-target="#cartContainer"
-        hx-select="#openCartButton"
-        class="closeCartButton">
+    <div class="row">
+        <div class="columns ten">&nbsp;</div>
+        <div hx-get="Cart" 
+            hx-swap="innerHTML"
+            hx-target="#cartContainer"
+            hx-select="#openCartButton"
+            class="closeCartButton columns two">
         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
             <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
         </svg>
+        </div>
     </div>
-    @if(Model != null)
-    {
-        <table>
-        @foreach (string item in Model.ExpertIds)
+    <div class="row">
+        @if(Model != null && Model.ExpertIds != null && Model.ExpertIds.Count > 0)
         {
-            <tr>
-                <td>
-                    <div id="cartExpertDetails@Model" class="openModal" 
-                        hx-get="ExpertDetails/@item" 
-                        hx-target="#expertModalContainer" 
-                        hx-swap="innerHTML"
-                        hx-trigger="click target:.openModal">
-                        <div class="four columns openModal cartItem" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertImage"></div>
-                        <div class="four columns openModal cartItem" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertName"></div>
-                        <div class="four columns addToCartButton" hx-get="Cart/Experts/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load"></div>
+            <table>
+            @foreach (string item in Model.ExpertIds)
+            {
+                    <div id="@("cartExpertDetails"+@item)" class="openModal row" 
+                            hx-get="ExpertDetails/@item" 
+                            hx-target="#expertModalContainer" 
+                            hx-swap="innerHTML"
+                            hx-trigger="click target:.openModal">
+                        <div class="openModal cartItem columns three" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertImage"></div>
+                        <div class="openModal cartItem columns seven" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertName"></div>
+                        <div class="cartItem columns two">
+                            <button hx-delete="Cart/Experts/@item"
+                                    hx-swap="outerHTML"
+                                    hx-target="this"
+                                    type="submit" class="expertSelectedCheckmark">
+                                <img id="checkmark" class="expertSelectedCheckmark" src="images/svg/remove-item.svg" />
+                            </button>
+                        </div> 
                     </div>
-                </td>
-            </tr>
+            }
+            </table>
+        }else
+        {
+            <span>Handlekurven er tom</span>
         }
-        </table>
-    }
+    </div>
 </div>
 <button id="openCartButton" type="button" class="openCartButton" hx-get="Cart" hx-select="#cartItemsList">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
