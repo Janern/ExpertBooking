@@ -3,11 +3,10 @@
       hx-swap="outerHTML"
       hx-target="this"
       hx-trigger="CartChanged from:body">
-    <button hx-delete="Cart/Experts"
+    <button hx-delete="Cart/Experts/@Model"
             hx-swap="outerHTML"
             hx-target="this"
             type="submit" class="expertSelectedCheckmark">
         <img id="checkmark" class="expertSelectedCheckmark" src="images/svg/checkmark.svg" />
     </button>
-    <input type="hidden" name="ExpertId" value="@Model"/>
 </form>
