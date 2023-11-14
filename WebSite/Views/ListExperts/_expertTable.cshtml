@@ -10,8 +10,12 @@
         <div class="eight columns openModal">
             <img src="images/@(expert.Id).jpg" class="expert-table-img u-max-full-width openModal" />
         </div>
-        <div id="selectExpert" class="two columns">
-            <div hx-get="Cart/Experts/@expert.Id" hx-trigger="load" hx-target="this" hx-swap="outerHTML"></div>
+        <div id="selectExpert" class="two columns" 
+            hx-get="Cart/Experts/@expert.Id" 
+            hx-trigger="load" 
+            hx-target="this" 
+            hx-swap="innerHTML" 
+            hx-select="#buttonWithoutText_@expert.Id">
         </div>
         <div class="two columns openModal">&nbsp;</div>
         <div class="twelve columns openModal">

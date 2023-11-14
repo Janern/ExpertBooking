@@ -1,11 +1,31 @@
 @model string
-<form hx-get="Cart/Experts/@Model"
-      hx-swap="outerHTML"
-      hx-target="this"
-      hx-trigger="CartChanged from:body">
-    <button hx-delete="Cart/Experts/@Model"
+<form
+    id="buttonWithText_@Model"
+    hx-get="Cart/Experts/@Model"
+    hx-swap="outerHTML"
+    hx-target="this"
+    hx-trigger="CartChanged from:body"
+    hx-select="#buttonWithText_@Model">
+    <button 
+            hx-delete="Cart/Experts/@Model"
             hx-swap="outerHTML"
-            hx-target="this"
+            hx-target="#buttonWithText_@Model"
+            type="submit" class="expertSelectedCheckmark">
+        <span id="labelText">Fjern fra team</span>
+        <img id="checkmark" class="expertSelectedCheckmark" src="images/svg/checkmark.svg" />
+    </button>
+</form>
+<form
+    id="buttonWithoutText_@Model"
+    hx-get="Cart/Experts/@Model"
+    hx-swap="outerHTML"
+    hx-target="this"
+    hx-trigger="CartChanged from:body"
+    hx-select="#buttonWithoutText_@Model">
+    <button 
+            hx-delete="Cart/Experts/@Model"
+            hx-swap="outerHTML"
+            hx-target="#buttonWithoutText_@Model"
             type="submit" class="expertSelectedCheckmark">
         <img id="checkmark" class="expertSelectedCheckmark" src="images/svg/checkmark.svg" />
     </button>

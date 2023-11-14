@@ -1,13 +1,34 @@
 @model string
-<form hx-get="Cart/Experts/@Model"
-      hx-swap="outerHTML"
-      hx-target="this"
-      hx-trigger="CartChanged from:body">
-    <button hx-post="Cart/Experts"
+<form
+    id="buttonWithText_@Model"
+    hx-get="Cart/Experts/@Model"
+    hx-swap="outerHTML"
+    hx-target="this"
+    hx-trigger="CartChanged from:body"
+    hx-select="#buttonWithText_@Model">
+    <button 
+            hx-post="Cart/Experts"
             hx-swap="outerHTML"
-            hx-target="this"
+            hx-target="#buttonWithText_@Model"
             type="submit" class="expertSelectedCheckmark">
-        <img id="add-checkmark" class="expertSelectedCheckmark" src="images/svg/add-checkmark.svg" />
+        <span id="labelText">Legg til i team</span>
+        <img id="checkmark" class="expertSelectedCheckmark" src="images/svg/add-checkmark.svg" />
+    </button>
+    <input type="hidden" name="ExpertId" value="@Model"/>
+</form>
+<form
+    id="buttonWithoutText_@Model"
+    hx-get="Cart/Experts/@Model"
+    hx-swap="outerHTML"
+    hx-target="this"
+    hx-trigger="CartChanged from:body"
+    hx-select="#buttonWithoutText_@Model">
+    <button 
+            hx-post="Cart/Experts"
+            hx-swap="outerHTML"
+            hx-target="#buttonWithoutText_@Model"
+            type="submit" class="expertSelectedCheckmark">
+        <img id="checkmark" class="expertSelectedCheckmark" src="images/svg/add-checkmark.svg" />
     </button>
     <input type="hidden" name="ExpertId" value="@Model"/>
 </form>
