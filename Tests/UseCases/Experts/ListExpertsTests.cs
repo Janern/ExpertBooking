@@ -152,7 +152,7 @@ public class ListExpertsTests
     }
 
     [Fact]
-    public void GivenExpertIdsWhenFilteringExpertsOnIdsShouldReturnMatchingExperts()
+    public void GivenExistingExpertsWhenFilteringExpertsOnIdsShouldReturnMatchingExperts()
     {
         string[] expectedIds = new string[]{"ID1", "ID2", "ID3"};
         Expert[] expectedExperts = new Expert[]{
@@ -218,6 +218,77 @@ public class ListExpertsTests
         SetUpUseCase();
 
         Expert[] actualExperts = _useCase.Execute("", expectedIds);
+
+        Assert.Equal(expectedExperts.Length, actualExperts.Length);
+        foreach (var expert in expectedExperts)
+        {
+            ExpertAssertionHelper.AssertContainsExpert(expert, actualExperts);
+        };
+    }
+
+    [Fact]
+    public void GivenExistingExpertsWhenFilteringOnEmptyExpertIdListShouldReturnAllExperts()
+    {
+        Expert[] expectedExperts = new Expert[]{
+            new Expert
+            {
+                Id="ID1",
+                FirstName="FirstName1",
+                LastName="LastName1",
+                Role="Role1",
+                Technology="HTML",
+                Description="Description1"
+            },
+            new Expert
+            {
+                Id="ID2",
+                FirstName="FirstName2",
+                LastName="LastName2",
+                Role="Role2",
+                Technology="JavaScript",
+                Description="Description2"
+            },
+            new Expert
+            {
+                Id="ID3",
+                FirstName="FirstName3",
+                LastName="LastName3",
+                Role="Role3",
+                Technology="Java",
+                Description="Description3"
+            },
+            new Expert
+            {
+                Id="ID4",
+                FirstName="FirstName4",
+                LastName="LastName4",
+                Role="Role4",
+                Technology="Java, Javascript",
+                Description="Description4"
+            },
+            new Expert
+            {
+                Id="ID5",
+                FirstName="FirstName5",
+                LastName="LastName5",
+                Role="Role5",
+                Technology="Python, HTML",
+                Description="Description5"
+            },
+            new Expert
+            {
+                Id="ID6",
+                FirstName="FirstName6",
+                LastName="LastName6",
+                Role="Role6",
+                Technology="Javascript, CSS",
+                Description="Description6"
+            }
+        };
+        _existingExperts = expectedExperts;
+        SetUpUseCase();
+
+        Expert[] actualExperts = _useCase.Execute("", new string[]{});
 
         Assert.Equal(expectedExperts.Length, actualExperts.Length);
         foreach (var expert in expectedExperts)
