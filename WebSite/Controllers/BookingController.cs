@@ -17,8 +17,11 @@ public class BookingController : Controller
 
     private readonly ListExpertsUseCase _listExpertsUseCase;
 
-public BookingController(BookExpertUseCase bookExpertUseCase, GetCartUseCase getCartUseCase, ListExpertsUseCase listExpertsUseCase)
+private readonly AddExpertToCartUseCase _addExpertToCartUseCase;
+
+public BookingController(BookExpertUseCase bookExpertUseCase, GetCartUseCase getCartUseCase, ListExpertsUseCase listExpertsUseCase, AddExpertToCartUseCase addExpertToCartUseCase)
     {
+_addExpertToCartUseCase = addExpertToCartUseCase;
 _listExpertsUseCase = listExpertsUseCase;
         _bookExpertUseCase = bookExpertUseCase;
         _getCartUseCase = getCartUseCase;
@@ -33,32 +36,23 @@ _listExpertsUseCase = listExpertsUseCase;
     [HttpGet, Route("Checkout")]
     public IActionResult GetBookingForm()
     {
-        if(Request.Cookies.TryGetValue(CartCookie, out var result))
-        {
-            Cart? cart = _getCartUseCase.Execute(result);
-            List<string> expertIds = cart?.ExpertIds??new List<string>();
-            Expert[]? experts = _listExpertsUseCase.Execute(expertIds: expertIds.ToArray());
-            return PartialView("_bookingForm", ExpertViewModelConverter.Convert(experts, cart?.ExpertIds));
-        }
         return PartialView("_bookingForm");
     }
     
-    [HttpGet, Route("FastCheckout/{Id}")]
+    [HttpPost, Route("FastCheckout/{Id}")]
     public IActionResult GetBookingForm(string Id)
     {
-        /*
-        må få inn expert
-        legges i booking
-        returnerer bookingform med model
-        */
         if(Request.Cookies.TryGetValue(CartCookie, out var result))
         {
             Cart? cart = _getCartUseCase.Execute(result);
             List<string> expertIds = cart?.ExpertIds??new List<string>();
             if(!expertIds.Contains(Id))
-                expertIds.Add(Id);
-            var experts = _listExpertsUseCase.Execute(expertIds: expertIds.ToArray());
-            return PartialView("_bookingForm", ExpertViewModelConverter.Convert(experts, expertIds));
+            {
+
+                string cartId = _addExpertToCartUseCase.Execute(new EditCartRequest{CartId = cart?.Id, ExpertId = Id});
+                Response.Cookies.Append(CartCookie, cartId);
+                Response.Headers.Add("HX-Trigger", "CartChanged");
+            }
         }
         return PartialView("_bookingForm");
     }

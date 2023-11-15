@@ -1,13 +1,5 @@
 @model ExpertViewModel[]
-<div id="cart">
-    @if(Model != null)
-    {
-        @foreach(var expert in Model)
-            {
-                @expert.FirstName @expert.LastName <br/>
-        }
-    }
-    
+<div id="cartorino" hx-get="Cart" hx-select="#cartExpertsTable" hx-swap="innerHTML" hx-trigger="load">
 </div>
 <div id="bookingForm" class="section container">
     <form>
