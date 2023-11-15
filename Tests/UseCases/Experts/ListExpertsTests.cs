@@ -227,9 +227,9 @@ public class ListExpertsTests
     }
 
     [Fact]
-    public void GivenExistingExpertsWhenFilteringOnEmptyExpertIdListShouldReturnAllExperts()
+    public void GivenExistingExpertsWhenFilteringOnEmptyExpertIdListShouldReturnNoExperts()
     {
-        Expert[] expectedExperts = new Expert[]{
+        Expert[] existingExperts = new Expert[]{
             new Expert
             {
                 Id="ID1",
@@ -285,15 +285,11 @@ public class ListExpertsTests
                 Description="Description6"
             }
         };
-        _existingExperts = expectedExperts;
+        _existingExperts = existingExperts;
         SetUpUseCase();
 
         Expert[] actualExperts = _useCase.Execute("", new string[]{});
 
-        Assert.Equal(expectedExperts.Length, actualExperts.Length);
-        foreach (var expert in expectedExperts)
-        {
-            ExpertAssertionHelper.AssertContainsExpert(expert, actualExperts);
-        };
+        Assert.Empty(actualExperts);
     }
 }

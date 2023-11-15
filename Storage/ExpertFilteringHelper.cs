@@ -32,7 +32,7 @@ public static class ExpertFilteringHelper
 
     private static bool FilterId(Expert expert, string[] expertIds)
     {
-        if(expertIds == null || expertIds.Length == 0)
+        if(expertIds == null)
             return true;
         return expertIds.Any(id => id == expert.Id);
     }

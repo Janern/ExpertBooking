@@ -36,7 +36,8 @@ _listExpertsUseCase = listExpertsUseCase;
         if(Request.Cookies.TryGetValue(CartCookie, out var result))
         {
             Cart? cart = _getCartUseCase.Execute(result);
-            var experts = _listExpertsUseCase.Execute(expertIds: cart?.ExpertIds?.ToArray());
+            List<string> expertIds = cart?.ExpertIds??new List<string>();
+            Expert[]? experts = _listExpertsUseCase.Execute(expertIds: expertIds.ToArray());
             return PartialView("_bookingForm", ExpertViewModelConverter.Convert(experts, cart?.ExpertIds));
         }
         return PartialView("_bookingForm");
@@ -56,7 +57,7 @@ _listExpertsUseCase = listExpertsUseCase;
             List<string> expertIds = cart?.ExpertIds??new List<string>();
             if(!expertIds.Contains(Id))
                 expertIds.Add(Id);
-            var experts = _listExpertsUseCase.Execute(expertIds: expertIds?.ToArray());
+            var experts = _listExpertsUseCase.Execute(expertIds: expertIds.ToArray());
             return PartialView("_bookingForm", ExpertViewModelConverter.Convert(experts, expertIds));
         }
         return PartialView("_bookingForm");
