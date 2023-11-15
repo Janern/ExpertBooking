@@ -1,9 +1,13 @@
-@model ExpertViewModel[]
+@model List<ExpertViewModel>
 <div id="cart">
-    @foreach(var expert in Model)
+    @if(Model != null)
     {
-        @expert.FirstName @expert.LastName <br/>
+        @foreach(var expert in Model)
+            {
+                @expert.FirstName @expert.LastName <br/>
+        }
     }
+    
 </div>
 <div id="bookingForm" class="section container">
     <form>

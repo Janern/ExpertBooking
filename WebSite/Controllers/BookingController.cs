@@ -27,6 +27,38 @@ public class BookingController : Controller
         return View();
     }
 
+    [HttpGet, Route("Checkout")]
+    public IActionResult GetBookingForm()
+    {
+        if(Request.Cookies.TryGetValue(CartCookie, out var result))
+        {
+            Cart? cart = _getCartUseCase.Execute(result);
+            
+            return PartialView("_bookingForm", cart?.ExpertIds);
+        }
+        return PartialView("_bookingForm");
+    }
+    
+    [HttpGet, Route("FastCheckout/{Id}")]
+    public IActionResult GetBookingForm(string Id)
+    {
+        /*
+        må få inn expert
+        legges i booking
+        returnerer bookingform med model
+        */
+        if(Request.Cookies.TryGetValue(CartCookie, out var result))
+        {
+            Cart? cart = _getCartUseCase.Execute(result);
+            List<string> expertIds = cart?.ExpertIds??new List<string>();
+            if(!expertIds.Contains(Id))
+                expertIds.Add(Id);
+            return PartialView("_bookingForm", expertIds);
+        }
+        return PartialView("_bookingForm");
+    }
+
+
     [HttpPost]
     public async Task<IActionResult> Book(BookingInputModel bookingInput)
     {
