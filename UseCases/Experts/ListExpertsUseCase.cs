@@ -9,8 +9,8 @@ public class ListExpertsUseCase
         _storage = storage;
     }
 
-    public BusinessModels.Expert[] Execute(string technologyFilter = "")
+    public BusinessModels.Expert[] Execute(string technologyFilter = "", string[] expertIds = null)
     {
-        return _storage.GetExperts(technologyFilter);
+        return _storage.GetExperts(technologyFilter, expertIds);
     }
 }

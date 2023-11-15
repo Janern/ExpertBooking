@@ -19,9 +19,9 @@ namespace Storage
 
         }
 
-        public Expert[] GetExperts(string technologyFilter)
+        public Expert[] GetExperts(string technologyFilter, string[] expertIds = null)
         {
-            return ExpertFilteringHelper.FilterExperts(_experts.Values.ToArray(), technologyFilter);
+            return ExpertFilteringHelper.FilterExperts(_experts.Values.ToArray(), filterString: technologyFilter, expertIds: expertIds);
         }
 
         public Expert GetExpert(string id)
