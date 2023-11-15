@@ -5,7 +5,7 @@ public static class ExpertFilteringHelper
 {
     public static Expert[] FilterExperts(Expert[] experts, string filterString = null, string separationString = ",", string[] expertIds = null)
     {
-        if (string.IsNullOrEmpty(filterString.Trim()) &&
+        if (string.IsNullOrEmpty(filterString?.Trim()) &&
             expertIds == null)
             return experts;
         List<Expert> result = new List<Expert>();
