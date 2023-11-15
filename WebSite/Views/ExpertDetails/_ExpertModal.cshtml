@@ -23,10 +23,11 @@
                 <div class="columns four">
                     &nbsp;
                 </div>
-                <div class="columns five">
+                <div class="columns five secondary-button">
                     <div hx-get="Cart/Experts/@Model.Id" hx-trigger="load" hx-target="this" hx-swap="outerHTML" hx-select="#buttonWithText_@Model.Id"></div>
                 </div>
-                <div class="columns three">
+                <div class="columns three main-button">
+                    <button class="main-button" hx-get="Booking/Booking" hx-target="#expertModal" hx-swap="innerHTML">Bestill</button>
                 </div>
             </div>
         </div>

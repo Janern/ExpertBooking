@@ -1,4 +1,5 @@
 @model ExpertViewModel[];
+<h2>Sett sammen ditt ekspertlag</h2>
 @foreach(var expert in Model)
 {
     <div id="@expert.Id" class="three columns expertCard openModal" 
@@ -11,7 +12,7 @@
             <img src="images/@(expert.Id).jpg" class="expert-table-img u-max-full-width openModal" />
         </div>
         <div id="selectExpert" class="two columns" 
-            hx-get="Cart/Experts/@expert.Id" 
+            hx-get="Cart/Experts/@expert.Id"
             hx-trigger="load" 
             hx-target="this" 
             hx-swap="innerHTML" 
@@ -40,3 +41,5 @@
         </div>
     </div>
 }
+<div id="expertModalContainer"></div>
+<button class="submitButton" hx-get="Booking/Booking" hx-target="#mainView" hx-swap="innerHTML">Gå til bestilling</button>
