@@ -15,8 +15,11 @@ public class BookingController : Controller
     private GetCartUseCase _getCartUseCase;
     private const string CartCookie = "__CartId";
 
-    public BookingController(BookExpertUseCase bookExpertUseCase, GetCartUseCase getCartUseCase)
+    private readonly ListExpertsUseCase _listExpertsUseCase;
+
+public BookingController(BookExpertUseCase bookExpertUseCase, GetCartUseCase getCartUseCase, ListExpertsUseCase listExpertsUseCase)
     {
+_listExpertsUseCase = listExpertsUseCase;
         _bookExpertUseCase = bookExpertUseCase;
         _getCartUseCase = getCartUseCase;
     }
@@ -33,8 +36,8 @@ public class BookingController : Controller
         if(Request.Cookies.TryGetValue(CartCookie, out var result))
         {
             Cart? cart = _getCartUseCase.Execute(result);
-            
-            return PartialView("_bookingForm", cart?.ExpertIds);
+            var experts = _listExpertsUseCase.Execute(expertIds: cart?.ExpertIds?.ToArray());
+            return PartialView("_bookingForm", ExpertViewModelConverter.Convert(experts, cart?.ExpertIds));
         }
         return PartialView("_bookingForm");
     }
@@ -53,7 +56,8 @@ public class BookingController : Controller
             List<string> expertIds = cart?.ExpertIds??new List<string>();
             if(!expertIds.Contains(Id))
                 expertIds.Add(Id);
-            return PartialView("_bookingForm", expertIds);
+            var experts = _listExpertsUseCase.Execute(expertIds: expertIds?.ToArray());
+            return PartialView("_bookingForm", ExpertViewModelConverter.Convert(experts, expertIds));
         }
         return PartialView("_bookingForm");
     }
