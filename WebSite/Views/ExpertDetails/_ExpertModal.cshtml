@@ -27,7 +27,7 @@
                     <div hx-get="Cart/Experts/@Model.Id" hx-trigger="load" hx-target="this" hx-swap="outerHTML" hx-select="#buttonWithText_@Model.Id"></div>
                 </div>
                 <div class="columns three main-button">
-                    <button class="main-button" hx-post="Booking/FastCheckout/@Model.Id" hx-target="#mainView" hx-swap="innerHTML" >Bestill</button>
+                    <button class="main-button" hx-post="Booking/FastCheckout/@Model.Id" hx-target="#expertModalContainer" hx-swap="innerHTML" >Bestill</button>
                 </div>
             </div>
         </div>
