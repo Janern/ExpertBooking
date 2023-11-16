@@ -3,22 +3,37 @@ using BusinessModels;
 namespace Storage;
 public static class ExpertFilteringHelper
 {
-    public static Expert[] FilterExperts(Expert[] experts, string filterString = null, string separationString = ",")
+    public static Expert[] FilterExperts(Expert[] experts, string filterString = null, string separationString = ",", string[] expertIds = null)
     {
-        if (filterString == null || filterString.Trim() == "")
+        if (string.IsNullOrEmpty(filterString?.Trim()) &&
+            expertIds == null)
             return experts;
         List<Expert> result = new List<Expert>();
-        var filterStrings = filterString.ToUpper();
         foreach (var expert in experts)
         {
-            if (expert.Technology
-                     .ToUpper()
-                     .Split(separationString)
-                     .Any(technology => technology == filterString.Trim().ToUpper()))
+            if (FilterTechnology(expert, separationString, filterString) && 
+                FilterId(expert, expertIds))
             {
                 result.Add(expert);
             }
         }
         return result.ToArray();
+    }
+
+    private static bool FilterTechnology(Expert expert, string separationString, string filterString)
+    {
+        if(string.IsNullOrEmpty(filterString?.Trim()))
+            return true;
+        return expert.Technology
+                     .ToUpper()
+                     .Split(separationString)
+                     .Any(technology => technology == filterString.Trim().ToUpper());
+    }
+
+    private static bool FilterId(Expert expert, string[] expertIds)
+    {
+        if(expertIds == null)
+            return true;
+        return expertIds.Any(id => id == expert.Id);
     }
 }

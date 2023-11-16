@@ -1,4 +1,32 @@
 @model ExpertViewModel[];
+<div id="cartContainer" class="cartContainer"
+    hx-get="Cart"
+    hx-target="#cartContainer"
+    hx-swap="innerHTML"
+    hx-select="#openCartButton"
+    hx-trigger="load">
+</div>
+<div class="row">
+    <div class="eight columns"><h2>Sett sammen ditt ekspertlag</h2></div>
+    <div class="four columns">
+        <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
+        <select id="technologyFilter" class="inputValue u-full-width" 
+                hx-trigger="change" 
+                hx-get="ListExperts" 
+                hx-target="#expertTable"
+                hx-select="#expertTable"
+                name="TechnologyFilter">
+            <option value="">Alle</option>
+            <option value=".net">.Net</option>
+            <option value="java">Java</option>
+            <option value="ux">UX</option>
+            <option value="tester">Tester</option>
+            <option value="python">Python</option>
+            <option value="frontend">Frontend</option>
+        </select>
+    </div>
+</div>
+<div class="row" id="expertTable">
 @foreach(var expert in Model)
 {
     <div id="@expert.Id" class="three columns expertCard openModal" 
@@ -11,7 +39,7 @@
             <img src="images/@(expert.Id).jpg" class="expert-table-img u-max-full-width openModal" />
         </div>
         <div id="selectExpert" class="two columns" 
-            hx-get="Cart/Experts/@expert.Id" 
+            hx-get="Cart/Experts/@expert.Id"
             hx-trigger="load" 
             hx-target="this" 
             hx-swap="innerHTML" 
@@ -40,3 +68,8 @@
         </div>
     </div>
 }
+</div>
+
+
+<div id="expertModalContainer"></div>
+<button class="submitButton" hx-get="Booking/Checkout" hx-target="#expertModalContainer" hx-swap="innerHTML">Gå til bestilling</button>

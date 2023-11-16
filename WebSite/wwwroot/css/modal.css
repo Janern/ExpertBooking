@@ -47,12 +47,14 @@
     color: white;
     background-color: var(--anyshore-green);
 }
+.secondary-button button{
+    color: var(--anyshore-green);
+    border: var(--anyshore-green) solid 2px;
+}
 
 .modal-textbox button {
-    border: var(--anyshore-green) solid 2px;
     border-radius: 32px;
     text-transform: none;
-    color: var(--anyshore-green);
     height: 3em;
     display: inline-flex;
     justify-content: center;
