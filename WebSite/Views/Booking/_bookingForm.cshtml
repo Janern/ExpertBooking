@@ -1,58 +1,70 @@
 @model ExpertViewModel[]
-<div id="cart" hx-get="Cart" hx-select="#cartExpertsTable" hx-swap="innerHTML" hx-trigger="load, CartChanged from:body"></div>
-<div id="bookingForm" class="section container">
-    <form>
-        <div class="row form-row">
-            <div class="four columns">
-                &nbsp;
-            </div>
-            <div class="four columns">
-                <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
-                <input id="timePeriod" class="inputValue" type="text" name="TimePeriod" value="" placeholder="Klikk for å velge periode"/>
-            </div>
-            <div class="four columns">
-                <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
-                <select id="technologyFilter" class="inputValue u-full-width" name="TechnologyFilter" class="u-full-width"
-                        hx-trigger="change" hx-get="ListExperts" hx-target="#expertTable">
-                    <option value="">Alle</option>
-                    <option value=".net">.Net</option>
-                    <option value="java">Java</option>
-                    <option value="ux">UX</option>
-                    <option value="tester">Tester</option>
-                    <option value="python">Python</option>
-                    <option value="frontend">Frontend</option>
-                </select>
-            </div>
+<div id="bookingModal" class="modal modal-background closeModal"
+    hx-swap="delete"
+    hx-target="this"
+    hx-get=""
+    hx-trigger="click target:.closeModal">
+    <div class="two columns">&nbsp;</div>
+    <div class="modal-window six columns">
+        <div class="twelve columns">
+            <div class="four columns">&nbsp;</div>
+            <div id="cart" class="bookingFormExpertList four columns" hx-get="Cart" hx-select="#cartExpertsTable" hx-swap="innerHTML" hx-trigger="load, CartChanged from:body" hx-target="this"></div>
+            <div class="four columns">&nbsp;</div>
         </div>
-        <div id="expertModalContainer"></div>
-        <div class="row form-row">
-            <div class="twelve columns full u-full-width">
-                <label for="Description">Beskriv prosjektet:</label>
-                <textarea class="u-full-width" type="text" name="Description" value=""></textarea>
-            </div>
-        </div>
-        <div class="row form-row light-blue">
+    <div class="modal-textbox twelve columns">
+        <div id="bookingForm" class="section container">
+            <form>
+                <div class="row form-row">
+                    <div class="four columns">
+                        &nbsp;
+                    </div>
+                    <div class="four columns">
+                        <label class="inputLabel" for="TimePeriod">Forventet periode:</label>
+                        <input id="timePeriod" class="inputValue" type="text" name="TimePeriod" value="" placeholder="Klikk for å velge periode"/>
+                    </div>
+                    <div class="four columns">
+                        <label class="inputLabel" for="TechnologyFilter">Teknologi:</label>
+                        <select id="technologyFilter" class="inputValue u-full-width" name="TechnologyFilter" class="u-full-width"
+                                hx-trigger="change" hx-get="ListExperts" hx-target="#expertTable">
+                            <option value="">Alle</option>
+                            <option value=".net">.Net</option>
+                            <option value="java">Java</option>
+                            <option value="ux">UX</option>
+                            <option value="tester">Tester</option>
+                            <option value="python">Python</option>
+                            <option value="frontend">Frontend</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="expertModalContainer"></div>
+                <div class="row form-row">
+                    <div class="twelve columns full u-full-width">
+                        <label for="Description">Beskriv prosjektet:</label>
+                        <textarea class="u-full-width" type="text" name="Description" value=""></textarea>
+                    </div>
+                </div>
+                <div class="row form-row light-blue">
 
-            <div class="four columns"></div>
-            <div class="four columns">
-                <label for="BookerEmailAddress">Din Epostadresse:</label>
-                <input id="BookerEmailAddress" 
-                        type="text" 
-                        name="BookerEmailAddress" 
-                        value="" 
-                        required 
-                        oninvalid="this.setCustomValidity('Vi trenger din epost for å kontakte deg')" 
-                        oninput="this.setCustomValidity('')"/>
-            </div>
-
+                    <div class="four columns"></div>
+                    <div class="four columns">
+                        <label for="BookerEmailAddress">Din Epostadresse:</label>
+                        <input id="BookerEmailAddress" 
+                                type="text" 
+                                name="BookerEmailAddress" 
+                                value="" 
+                                required 
+                                oninvalid="this.setCustomValidity('Vi trenger din epost for å kontakte deg')" 
+                                oninput="this.setCustomValidity('')"/>
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="twelve columns">
+                        <button id="submit-button type="submit" class="submitButton loading" hx-post="Booking" hx-swap="outerHTML" hx-target="this">Bestill</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div ></div>
-        <div class="row form-row">
-            <div class="twelve columns">
-                <button id="submit-button type="submit" class="submitButton loading" hx-post="Booking" hx-swap="outerHTML" hx-target="this">Bestill</button>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
 <script>
     flatpickr('#timePeriod', 
