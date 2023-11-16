@@ -1,6 +1,5 @@
 @model ExpertViewModel[]
-<div id="cartorino" hx-get="Cart" hx-select="#cartExpertsTable" hx-swap="innerHTML" hx-trigger="load">
-</div>
+<div id="cart" hx-get="Cart" hx-select="#cartExpertsTable" hx-swap="innerHTML" hx-trigger="load, CartChanged from:body"></div>
 <div id="bookingForm" class="section container">
     <form>
         <div class="row form-row">

@@ -1,4 +1,11 @@
 @model ExpertViewModel[];
+<div id="cartContainer" class="cartContainer"
+    hx-get="Cart"
+    hx-target="#cartContainer"
+    hx-swap="innerHTML"
+    hx-select="#openCartButton"
+    hx-trigger="load">
+</div>
 <h2>Sett sammen ditt ekspertlag</h2>
 @foreach(var expert in Model)
 {
