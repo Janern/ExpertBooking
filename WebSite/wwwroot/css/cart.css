@@ -1,5 +1,9 @@
 .cartContainer{
-  position: relative;
+  position: absolute;
+  z-index: 1;
+  overflow: visible;
+  top: 0px;
+  right: 0px;
 }
 .cartDetails {
   background-color: var(--anyshore-grey);
@@ -11,6 +15,17 @@
   right: 0px;  
 }
 
+@media (max-width: 800px) {
+  .cartDetails {
+    border: solid 1px black;
+    position: absolute;
+    width: 100%;
+    overflow: visible;
+    z-index: 1;
+    right: 0px;  
+  }
+}
+
 .cartDetails img {
   width: 3em;
   margin-top: 10px;
@@ -20,10 +35,11 @@
 
 .closeCartButton {
   width: 1em;
-  float: right;
   padding: 0;
   border: none;
   background: none;
+  position: relative;
+  margin-left: 90%;
 }
 
 .openCartButton {
