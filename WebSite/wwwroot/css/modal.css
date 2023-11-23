@@ -5,7 +5,8 @@
 }
 
 .modal-window {
-    margin-left: 12%;
+    width: 50%;
+    margin-left: 25%;
     margin-right: auto;
     background-color: var(--anyshore-grey);
     border-radius: 0;
@@ -14,9 +15,16 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    z-index: 100;
+    z-index: 2;
     margin-top: 5em;
     position: relative;
+}
+
+@media (max-width: 800px){
+    .modal-window {
+        width: 100%;
+        margin-left: 0%;
+    }
 }
 
 .modal-textbox {
@@ -24,6 +32,8 @@
     padding-left: 4em;
     padding-right: 4em;
     padding-bottom: 4em;
+    z-index: 3;
+    background-color: var(--anyshore-grey);
 }
 
 
