@@ -34,35 +34,30 @@
         hx-target="#expertModalContainer" 
         hx-swap="innerHTML"
         hx-trigger="click target:.openModal">
-        <div class="two columns openModal">&nbsp;</div>
-        <div class="eight columns openModal">
+        <div class="row">
             <img src="images/@(expert.Id).jpg" class="expert-table-img u-max-full-width openModal" />
+            <div id="selectExpert" class="expert-table-checkmark" 
+                hx-get="Cart/Experts/@expert.Id"
+                hx-trigger="load" 
+                hx-target="this" 
+                hx-swap="innerHTML" 
+                hx-select="#buttonWithoutText_@expert.Id">
+            </div>
         </div>
-        <div id="selectExpert" class="two columns" 
-            hx-get="Cart/Experts/@expert.Id"
-            hx-trigger="load" 
-            hx-target="this" 
-            hx-swap="innerHTML" 
-            hx-select="#buttonWithoutText_@expert.Id">
-        </div>
-        <div class="two columns openModal">&nbsp;</div>
-        <div class="twelve columns openModal">
+        <div class="row openModal">
             <span class="expertName openModal">@expert.FirstName @expert.LastName</span>
         </div>
-        <div class="twelve columns openModal">
+        <div class="row openModal">
             <span class="expertLabel openModal">Teknologi: </span>
             <span class="expertAttribute openModal">@expert.Technology</span>
         </div>
-        <div class="twelve columns bottom row u-max-full-width openModal">
-            <div class="four columns senior-label openModal">
+        <div class="bottom row openModal">
+            <div class="senior-label openModal">
                 Senior
             </div>
-            <div class="four columns openModal">
-                &nbsp;
-            </div>
-            <div class="four columns u-max-full-width openModal">
-                <svg class="moreInfoArrow openModal" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M35.7214 8.70711C36.1119 8.31658 36.1119 7.68342 35.7214 7.29289L29.3574 0.928932C28.9669 0.538408 28.3337 0.538408 27.9432 0.928932C27.5527 1.31946 27.5527 1.95262 27.9432 2.34315L33.6001 8L27.9432 13.6569C27.5527 14.0474 27.5527 14.6805 27.9432 15.0711C28.3337 15.4616 28.9669 15.4616 29.3574 15.0711L35.7214 8.70711ZM0 9H35.0143V7H0L0 9Z" fill="white"/>
+            <div class="moreInfoArrow u-max-full-width openModal">
+                <svg class="openModal" width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="openModal" d="M35.7214 8.70711C36.1119 8.31658 36.1119 7.68342 35.7214 7.29289L29.3574 0.928932C28.9669 0.538408 28.3337 0.538408 27.9432 0.928932C27.5527 1.31946 27.5527 1.95262 27.9432 2.34315L33.6001 8L27.9432 13.6569C27.5527 14.0474 27.5527 14.6805 27.9432 15.0711C28.3337 15.4616 28.9669 15.4616 29.3574 15.0711L35.7214 8.70711ZM0 9H35.0143V7H0L0 9Z" fill="white"/>
                 </svg>
             </div>
         </div>

@@ -18,7 +18,19 @@
     margin-bottom: 1em;
     height: 23.5em;
   }
-  
+
+  .expert-table-img {
+    border-radius: 100%;
+    margin-top: -1em;
+    max-width: 75%;
+    margin-left: 12.5%;
+  }
+
+  .expert-table-checkmark {
+    width: 5%;
+    padding: 0;
+  }
+
   button.expertSelectedCheckmark {
     border: none;
     background: none;
@@ -27,8 +39,16 @@
   .expertSelectedCheckmark img{
     width: 1.5em;
     margin-top: 1em;
-    left: 0.5em;
+    left: -0.5em;
     position: relative;
+  }
+
+  .bottom.row {
+    position: absolute; 
+    bottom: 1em;
+    width: 100%;
+    max-width: 100%;
+    max-height: 1em;
   }
 
   .senior-label{
@@ -42,8 +62,19 @@
     line-height: normal;
     width: 4em;
     height: 1.5em;
+    position: relative;
+    left: 0;
+    margin-left: 0.5em;
   }
 
   .moreInfoArrow {
     margin-bottom: 1em;
+    position: relative;
+    padding-left: 50%;
+    max-width: 33%;
+  }
+  @media (max-width: 800px) {
+    .moreInfoArrow {
+      padding-left: 67%
+    }
   }
