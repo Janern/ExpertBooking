@@ -27,9 +27,9 @@
                             hx-target="#expertModalContainer" 
                             hx-swap="innerHTML"
                             hx-trigger="click target:.openModal">
-                        <div class="openModal cartItem columns three" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertImage"></div>
-                        <div class="openModal cartItem columns seven" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertName"></div>
-                        <div class="cartItem columns two">
+                        <div class="openModal cartItem expertImage" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertImage"></div>
+                        <div class="openModal cartItem expertName" hx-get="Expert/@item" hx-swap="innerHTML" hx-target="this" hx-trigger="load" hx-select="#expertName"></div>
+                        <div class="cartItem removeFromCartButton">
                             <button hx-delete="Cart/Experts/@item"
                                     hx-swap="outerHTML"
                                     hx-target="this"
