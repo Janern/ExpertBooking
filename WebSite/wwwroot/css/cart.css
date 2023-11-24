@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 1;
   overflow: visible;
-  top: 0px;
+  top: -4em;
   right: 0px;
 }
 .cartDetails {
