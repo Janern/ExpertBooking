@@ -5,8 +5,8 @@
 }
 
 .modal-window {
-    width: 50%;
-    margin-left: 25%;
+    width: 33%;
+    margin-left: 33%;
     margin-right: auto;
     background-color: var(--anyshore-grey);
     border-radius: 0;
@@ -16,7 +16,7 @@
     font-weight: 400;
     line-height: normal;
     z-index: 2;
-    margin-top: 5em;
+    margin-top: 3em;
     position: relative;
 }
 
