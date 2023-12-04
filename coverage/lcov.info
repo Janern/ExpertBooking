@@ -1,4 +1,4 @@
-SF:c:\Repositories\ExpertBooking\BusinessModels\Booking.cs
+SF:C:\Repositories\ExpertBooking\BusinessModels\Booking.cs
 FN:4,System.String BusinessModels.Booking::get_BookerEmailAddress()
 FNDA:27,System.String BusinessModels.Booking::get_BookerEmailAddress()
 DA:5,27
@@ -18,7 +18,7 @@ BRH:0
 FNF:4
 FNH:4
 end_of_record
-SF:c:\Repositories\ExpertBooking\BusinessModels\Cart.cs
+SF:C:\Repositories\ExpertBooking\BusinessModels\Cart.cs
 FN:4,System.String BusinessModels.Cart::get_Id()
 FNDA:40,System.String BusinessModels.Cart::get_Id()
 DA:5,40
@@ -32,7 +32,7 @@ BRH:0
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\BusinessModels\Expert.cs
+SF:C:\Repositories\ExpertBooking\BusinessModels\Expert.cs
 FN:3,System.String BusinessModels.Expert::get_Id()
 FNDA:220,System.String BusinessModels.Expert::get_Id()
 DA:4,220
@@ -58,7 +58,7 @@ BRH:0
 FNF:6
 FNH:6
 end_of_record
-SF:c:\Repositories\ExpertBooking\Services\EmailServiceConfiguration.cs
+SF:C:\Repositories\ExpertBooking\Services\EmailServiceConfiguration.cs
 FN:4,System.String Services.EmailServiceConfiguration::get_ApiKey()
 FNDA:0,System.String Services.EmailServiceConfiguration::get_ApiKey()
 DA:5,0
@@ -72,7 +72,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\Services\EmailServiceConsoleLogImplementation.cs
+SF:C:\Repositories\ExpertBooking\Services\EmailServiceConsoleLogImplementation.cs
 FN:8,System.Void Services.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
 FNDA:0,System.Void Services.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
 DA:9,0
@@ -87,7 +87,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\Services\EmailServiceSendGridImplementation.cs
+SF:C:\Repositories\ExpertBooking\Services\EmailServiceSendGridImplementation.cs
 FN:10,System.String Services.EmailServiceSendGridImplementation::get__apiKey()
 FNDA:0,System.String Services.EmailServiceSendGridImplementation::get__apiKey()
 DA:11,0
@@ -113,8 +113,8 @@ BRDA:53,37,0,0
 BRDA:53,37,1,0
 BRDA:57,214,1,0
 BRDA:57,214,0,0
-FN:15,System.Void Services.EmailServiceSendGridImplementation::.ctor(Services.EmailServiceConfiguration,UseCases.Cart.ExpertsStorage)
-FNDA:0,System.Void Services.EmailServiceSendGridImplementation::.ctor(Services.EmailServiceConfiguration,UseCases.Cart.ExpertsStorage)
+FN:15,System.Void Services.EmailServiceSendGridImplementation::.ctor(Services.EmailServiceConfiguration,UseCases.Experts.ExpertsStorage)
+FNDA:0,System.Void Services.EmailServiceSendGridImplementation::.ctor(Services.EmailServiceConfiguration,UseCases.Experts.ExpertsStorage)
 DA:16,0
 DA:17,0
 DA:18,0
@@ -165,7 +165,60 @@ BRH:0
 FNF:5
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\Storage\CartStorageInMemoryImplementation.cs
+SF:C:\Repositories\ExpertBooking\Sqlite\SqliteController.cs
+FN:18,System.Collections.Generic.List`1<System.Collections.Generic.IDictionary`2<System.String,System.Object>> Sqlite.SqliteController::SelectRows(System.String)
+FNDA:0,System.Collections.Generic.List`1<System.Collections.Generic.IDictionary`2<System.String,System.Object>> Sqlite.SqliteController::SelectRows(System.String)
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:47,0
+BRDA:33,165,1,0
+BRDA:37,143,1,0
+BRDA:37,143,0,0
+BRDA:33,165,0,0
+FN:7,System.Void Sqlite.SqliteController::.ctor(System.String)
+FNDA:0,System.Void Sqlite.SqliteController::.ctor(System.String)
+DA:8,0
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+BRDA:10,19,0,0
+BRDA:10,19,1,0
+LF:35
+LH:0
+BRF:6
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:C:\Repositories\ExpertBooking\Storage\CartStorageInMemoryImplementation.cs
 FN:7,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::get__carts()
 FNDA:28,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::get__carts()
 DA:8,28
@@ -223,7 +276,7 @@ BRH:3
 FNF:7
 FNH:5
 end_of_record
-SF:c:\Repositories\ExpertBooking\Storage\ExpertFilteringHelper.cs
+SF:C:\Repositories\ExpertBooking\Storage\ExpertFilteringHelper.cs
 FN:6,BusinessModels.Expert[] Storage.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String,System.String[])
 FNDA:6,BusinessModels.Expert[] Storage.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String,System.String[])
 DA:7,6
@@ -283,7 +336,7 @@ BRH:16
 FNF:3
 FNH:3
 end_of_record
-SF:c:\Repositories\ExpertBooking\Storage\ExpertsStorageInMemoryImplementation.cs
+SF:C:\Repositories\ExpertBooking\Storage\ExpertsStorageInMemoryImplementation.cs
 FN:8,System.Collections.Generic.IDictionary`2<System.String,BusinessModels.Expert> Storage.ExpertsStorageInMemoryImplementation::get__experts()
 FNDA:56,System.Collections.Generic.IDictionary`2<System.String,BusinessModels.Expert> Storage.ExpertsStorageInMemoryImplementation::get__experts()
 DA:9,56
@@ -326,7 +379,35 @@ BRH:5
 FNF:4
 FNH:4
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Experts\BookExpertUseCase.cs
+SF:C:\Repositories\ExpertBooking\Storage\ExpertStorageSqliteImplementation.cs
+FN:17,BusinessModels.Expert Storage.ExpertStorageSqliteImplementation::GetExpert(System.String)
+FNDA:0,BusinessModels.Expert Storage.ExpertStorageSqliteImplementation::GetExpert(System.String)
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+FN:24,BusinessModels.Expert[] Storage.ExpertStorageSqliteImplementation::GetExperts(System.String,System.String[])
+FNDA:0,BusinessModels.Expert[] Storage.ExpertStorageSqliteImplementation::GetExperts(System.String,System.String[])
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+FN:11,System.Void Storage.ExpertStorageSqliteImplementation::.ctor(Sqlite.SqliteController)
+FNDA:0,System.Void Storage.ExpertStorageSqliteImplementation::.ctor(Sqlite.SqliteController)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+LF:14
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:C:\Repositories\ExpertBooking\UseCases\Experts\BookExpertUseCase.cs
 FN:7,UseCases.Email.EmailService UseCases.Experts.BookExpertUseCase::get__emailService()
 FNDA:13,UseCases.Email.EmailService UseCases.Experts.BookExpertUseCase::get__emailService()
 DA:8,13
@@ -352,7 +433,7 @@ BRH:2
 FNF:3
 FNH:3
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Experts\GetExpertUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Experts\GetExpertUseCase.cs
 FN:13,BusinessModels.Expert UseCases.Experts.GetExpertUseCase::Execute(System.String)
 FNDA:5,BusinessModels.Expert UseCases.Experts.GetExpertUseCase::Execute(System.String)
 DA:14,5
@@ -362,8 +443,8 @@ DA:17,4
 DA:18,5
 BRDA:15,7,0,1
 BRDA:15,7,1,4
-FN:7,System.Void UseCases.Experts.GetExpertUseCase::.ctor(UseCases.Cart.ExpertsStorage)
-FNDA:8,System.Void UseCases.Experts.GetExpertUseCase::.ctor(UseCases.Cart.ExpertsStorage)
+FN:7,System.Void UseCases.Experts.GetExpertUseCase::.ctor(UseCases.Experts.ExpertsStorage)
+FNDA:8,System.Void UseCases.Experts.GetExpertUseCase::.ctor(UseCases.Experts.ExpertsStorage)
 DA:8,8
 DA:9,8
 DA:10,8
@@ -375,17 +456,17 @@ BRH:2
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Experts\ListExpertsUseCase.cs
-FN:5,UseCases.Cart.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
-FNDA:17,UseCases.Cart.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
+SF:C:\Repositories\ExpertBooking\UseCases\Experts\ListExpertsUseCase.cs
+FN:5,UseCases.Experts.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
+FNDA:17,UseCases.Experts.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
 DA:6,17
 FN:12,BusinessModels.Expert[] UseCases.Experts.ListExpertsUseCase::Execute(System.String,System.String[])
 FNDA:6,BusinessModels.Expert[] UseCases.Experts.ListExpertsUseCase::Execute(System.String,System.String[])
 DA:13,6
 DA:14,6
 DA:15,6
-FN:6,System.Void UseCases.Experts.ListExpertsUseCase::.ctor(UseCases.Cart.ExpertsStorage)
-FNDA:11,System.Void UseCases.Experts.ListExpertsUseCase::.ctor(UseCases.Cart.ExpertsStorage)
+FN:6,System.Void UseCases.Experts.ListExpertsUseCase::.ctor(UseCases.Experts.ExpertsStorage)
+FNDA:11,System.Void UseCases.Experts.ListExpertsUseCase::.ctor(UseCases.Experts.ExpertsStorage)
 DA:7,11
 DA:8,11
 DA:9,11
@@ -397,7 +478,7 @@ BRH:0
 FNF:3
 FNH:3
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidBookingException.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidBookingException.cs
 FN:4,System.Void UseCases.Exceptions.InvalidBookingException::.ctor(System.String)
 FNDA:1,System.Void UseCases.Exceptions.InvalidBookingException::.ctor(System.String)
 DA:5,1
@@ -410,7 +491,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidEditCartRequestException.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidEditCartRequestException.cs
 FN:4,System.Void UseCases.Exceptions.InvalidEditCartRequestException::.ctor(System.String)
 FNDA:0,System.Void UseCases.Exceptions.InvalidEditCartRequestException::.ctor(System.String)
 DA:5,0
@@ -423,7 +504,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\AddExpertToCartUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\AddExpertToCartUseCase.cs
 FN:11,System.String UseCases.Cart.AddExpertToCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 FNDA:9,System.String UseCases.Cart.AddExpertToCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 DA:12,9
@@ -454,7 +535,7 @@ BRH:4
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\CartUpdate.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\CartUpdate.cs
 FN:4,System.String UseCases.Cart.CartUpdate::get_CartId()
 FNDA:19,System.String UseCases.Cart.CartUpdate::get_CartId()
 DA:5,19
@@ -468,7 +549,7 @@ BRH:0
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\EditCartRequest.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\EditCartRequest.cs
 FN:4,System.String UseCases.Cart.EditCartRequest::get_CartId()
 FNDA:15,System.String UseCases.Cart.EditCartRequest::get_CartId()
 DA:5,15
@@ -482,7 +563,7 @@ BRH:0
 FNF:2
 FNH:2
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\GetCartUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\GetCartUseCase.cs
 FN:4,UseCases.Cart.CartStorage UseCases.Cart.GetCartUseCase::get__storage()
 FNDA:0,UseCases.Cart.CartStorage UseCases.Cart.GetCartUseCase::get__storage()
 DA:5,0
@@ -504,7 +585,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\ListCartsUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\ListCartsUseCase.cs
 FN:4,UseCases.Cart.CartStorage UseCases.Cart.ListCartsUseCase::get__storage()
 FNDA:0,UseCases.Cart.CartStorage UseCases.Cart.ListCartsUseCase::get__storage()
 DA:5,0
@@ -526,7 +607,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:c:\Repositories\ExpertBooking\UseCases\Cart\RemoveExpertFromCartUseCase.cs
+SF:C:\Repositories\ExpertBooking\UseCases\Cart\RemoveExpertFromCartUseCase.cs
 FN:13,System.Void UseCases.Cart.RemoveExpertFromCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 FNDA:0,System.Void UseCases.Cart.RemoveExpertFromCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 DA:14,0
@@ -572,39 +653,38 @@ FNF:2
 FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Startup.cs
-FN:9,System.Void Program::<Main>$(System.String[])
+FN:10,System.Void Program::<Main>$(System.String[])
 FNDA:0,System.Void Program::<Main>$(System.String[])
-DA:10,0
-DA:13,0
-DA:16,0
+DA:11,0
+DA:14,0
 DA:17,0
-DA:19,0
-DA:22,0
+DA:18,0
+DA:20,0
 DA:23,0
 DA:24,0
-DA:26,0
+DA:25,0
 DA:27,0
-DA:29,0
+DA:28,0
 DA:30,0
-DA:32,0
-DA:34,0
-DA:36,0
+DA:31,0
+DA:33,0
+DA:35,0
 DA:37,0
 DA:38,0
-DA:40,0
-BRDA:22,61,0,0
-BRDA:22,61,1,0
-FN:42,Microsoft.Extensions.Configuration.IConfigurationRoot Program::<<Main>$>g__GetConfigFromAzure|0_0()
+DA:39,0
+DA:41,0
+BRDA:23,61,0,0
+BRDA:23,61,1,0
+FN:43,Microsoft.Extensions.Configuration.IConfigurationRoot Program::<<Main>$>g__GetConfigFromAzure|0_0()
 FNDA:0,Microsoft.Extensions.Configuration.IConfigurationRoot Program::<<Main>$>g__GetConfigFromAzure|0_0()
-DA:43,0
 DA:44,0
 DA:45,0
 DA:46,0
 DA:47,0
 DA:48,0
-FN:50,System.Void Program::<<Main>$>g__AddServices|0_1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationRoot)
+DA:49,0
+FN:51,System.Void Program::<<Main>$>g__AddServices|0_1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationRoot)
 FNDA:0,System.Void Program::<<Main>$>g__AddServices|0_1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationRoot)
-DA:51,0
 DA:52,0
 DA:53,0
 DA:54,0
@@ -612,19 +692,20 @@ DA:55,0
 DA:56,0
 DA:57,0
 DA:58,0
-DA:60,0
+DA:59,0
 DA:61,0
 DA:62,0
 DA:63,0
 DA:64,0
 DA:65,0
 DA:66,0
-DA:67,0
 DA:68,0
 DA:69,0
 DA:70,0
-DA:71,0
+DA:72,0
+DA:73,0
 DA:74,0
+DA:77,0
 LF:45
 LH:0
 BRF:2

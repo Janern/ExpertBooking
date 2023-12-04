@@ -1,6 +1,7 @@
 using System.Text.Json;
 using BusinessModels;
 using Services;
+using Sqlite;
 using Storage;
 using UseCases.Cart;
 using UseCases.Email;
@@ -63,9 +64,11 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
             ApiKey = azureConfig["SendGridApiKey"], 
             ReceiverAddress = azureConfig["BookingReceiverEmail"]
         });
-    Expert[] experts = JsonSerializer.Deserialize<Expert[]>(ReadJsonFromFileHelper.ReadJsonFromTextFile(azureConfig["ExpertsJsonFilePath"]));
-    ExpertsStorage expertsStorage = new ExpertsStorageInMemoryImplementation(experts);
+    
+    SqliteController sqlite = new SqliteController("C:\\Repositories\\ExpertBooking\\Sqlite\\test.db");
+    ExpertsStorage expertsStorage = new ExpertStorageSqliteImplementation(sqlite);
     CartStorage cartStorage = new CartStorageInMemoryImplementation();
+    
     services.AddSingleton(expertsStorage);
     services.AddSingleton<EmailService, EmailServiceSendGridImplementation>();
     services.AddSingleton(cartStorage);
