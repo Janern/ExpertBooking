@@ -24,9 +24,45 @@ public class SqliteController : SqlController
             command.CommandText =
             $@"
                 SELECT *
+<<<<<<< HEAD
                 FROM {DatabaseTableNameHelper.GetTableName(tableName)}
             ";
             List<IDictionary<string, object>> rows = new List<IDictionary<string, object>>();
+=======
+                FROM @tableName
+            ";
+            List<IDictionary<string, object>> rows = new List<IDictionary<string, object>>();
+            command.Parameters.AddWithValue("@tableName", tableName);
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var row = new Dictionary<string, object>();
+
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        row[reader.GetName(i)] = reader.GetValue(i);
+                    }
+
+                    rows.Add(row);  
+                }
+            }
+            return rows;
+        }
+    }
+
+    public void InsertRow(string tableName, Dictionary<string, string> values)
+    {
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText =
+            @"
+                INSERT INTO @tableName() VALUES()
+            ";
+            command.Parameters.AddWithValue("@tableName", tableName);
+>>>>>>> 778c718 (Create sqlitecontroller for cartstorage)
             using (var reader = command.ExecuteReader())
             {
                 while (reader.Read())

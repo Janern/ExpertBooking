@@ -62,9 +62,10 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
             ReceiverAddress = azureConfig["BookingReceiverEmail"]
         });
     
-    SqlController sql = new SqliteController("C:\\Repositories\\ExpertBooking\\Sqlite\\test.db");
-    ExpertsStorage expertsStorage = new ExpertStorageSqliteImplementation(sql);
-    CartStorage cartStorage = new CartStorageInMemoryImplementation();
+    SqliteController sqliteExpertController = new SqliteController("Storage\\expert.db");
+    SqliteController sqliteCartController = new SqliteController("Storage\\cart.db");
+    ExpertsStorage expertsStorage = new ExpertStorageSqliteImplementation(sqliteExpertController);
+    CartStorage cartStorage = new CartStorageSqliteImplementation(sqliteCartController);
     
     services.AddSingleton(expertsStorage);
     services.AddSingleton<EmailService, EmailServiceSendGridImplementation>();
