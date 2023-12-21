@@ -1,8 +1,8 @@
-using System.ComponentModel;
 using Microsoft.Data.Sqlite;
+using Storage;
 
 namespace Sqlite;
-public class SqliteController
+public class SqliteController : SqlController
 {
     private readonly string _databaseName;
     public SqliteController(string databaseName)
@@ -15,19 +15,18 @@ public class SqliteController
         _databaseName = databaseName;
     }
 
-    public List<IDictionary<string, object>> SelectRows(string tableName) 
+    public List<IDictionary<string, object>> SelectRows(DatabaseTableName tableName) 
     {
-       using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
         {
             connection.Open();
             var command = connection.CreateCommand();
             command.CommandText =
-            @"
+            $@"
                 SELECT *
-                FROM Expert
+                FROM {DatabaseTableNameHelper.GetTableName(tableName)}
             ";
             List<IDictionary<string, object>> rows = new List<IDictionary<string, object>>();
-            command.Parameters.AddWithValue("tableName", tableName);
             using (var reader = command.ExecuteReader())
             {
                 while (reader.Read())

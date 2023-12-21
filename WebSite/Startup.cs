@@ -1,12 +1,9 @@
-using System.Text.Json;
-using BusinessModels;
 using Services;
 using Sqlite;
 using Storage;
 using UseCases.Cart;
 using UseCases.Email;
 using UseCases.Experts;
-using WebSite.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,8 +62,8 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
             ReceiverAddress = azureConfig["BookingReceiverEmail"]
         });
     
-    SqliteController sqlite = new SqliteController("C:\\Repositories\\ExpertBooking\\Sqlite\\test.db");
-    ExpertsStorage expertsStorage = new ExpertStorageSqliteImplementation(sqlite);
+    SqlController sql = new SqliteController("C:\\Repositories\\ExpertBooking\\Sqlite\\test.db");
+    ExpertsStorage expertsStorage = new ExpertStorageSqliteImplementation(sql);
     CartStorage cartStorage = new CartStorageInMemoryImplementation();
     
     services.AddSingleton(expertsStorage);

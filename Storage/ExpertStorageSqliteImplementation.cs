@@ -1,5 +1,4 @@
 using BusinessModels;
-using Sqlite;
 using UseCases.Experts;
 
 
@@ -7,16 +6,16 @@ namespace Storage;
 
 public class ExpertStorageSqliteImplementation : ExpertsStorage
 {
-    private SqliteController _sqlite;
+    private SqlController _sqlite;
 
-    public ExpertStorageSqliteImplementation(SqliteController sqlite)
+    public ExpertStorageSqliteImplementation(SqlController sqlite)
     {
         _sqlite = sqlite;
     }
 
     public Expert GetExpert(string id)
     {
-        List<IDictionary<string, object>> rows = _sqlite.SelectRows("Expert");
+        List<IDictionary<string, object>> rows = _sqlite.SelectRows(DatabaseTableName.Expert);
         IDictionary<string, object>? row = rows.FirstOrDefault(r => ((string) r["Id"]) == id);
         return new Expert{
             Id = (string) row["Id"],
@@ -30,7 +29,7 @@ public class ExpertStorageSqliteImplementation : ExpertsStorage
 
     public Expert[] GetExperts(string technologyFilter, string[] expertIds = null)
     {
-        List<IDictionary<string, object>>? rows = _sqlite.SelectRows("Expert");
+        List<IDictionary<string, object>>? rows = _sqlite.SelectRows(DatabaseTableName.Expert);
         return rows.Select(r => new Expert
         {
             Id = (string) r["Id"],
