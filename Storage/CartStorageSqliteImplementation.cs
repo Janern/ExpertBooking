@@ -15,7 +15,8 @@ public class CartStorageSqliteImplementation : CartStorage
     {
         Cart newCart = new Cart
         {
-            Id = Guid.NewGuid().ToString()
+            Id = Guid.NewGuid().ToString(),
+            ExpertIds = new List<string>()
         };
 
         _sqlite.InsertRow(DatabaseTableName.Cart, new DatabaseColumnName[]{DatabaseColumnName.Id}, new string[]{newCart.Id});
@@ -34,7 +35,8 @@ public class CartStorageSqliteImplementation : CartStorage
         if(row != null)
         {
             return new Cart{
-                Id = (string) row["Id"]
+                Id = (string) row["Id"],
+                ExpertIds = new List<string>() //TODO
             };
         }
         return null;
@@ -51,6 +53,12 @@ public class CartStorageSqliteImplementation : CartStorage
 
     public void UpdateCart(CartUpdate update)
     {
-        throw new NotImplementedException();
+        Cart existingCart = GetCart(update.CartId);
+        if (existingCart != null)
+            UpdateExperts(update);
+    }
+
+    private void UpdateExperts(CartUpdate update){
+        Console.WriteLine("experts are updated...");
     }
 }
