@@ -3,14 +3,12 @@ using System.ComponentModel;
 namespace Storage;
 
 /*
-* This enum is used to reference database table names
+* This enum is used to reference database column names
 * to avoid any possibility of sqlinjection when interpolating strings
 * in sql-commands
 */
-public enum DatabaseTableName
+public enum DatabaseColumnName
 {
-    Expert,
+    Id,
 
-    Cart,
-    CartExpert,
 }

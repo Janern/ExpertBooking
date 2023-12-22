@@ -15,6 +15,29 @@ public class SqliteController : SqlController
         _databaseName = databaseName;
     }
 
+    public void InsertRow(DatabaseTableName tableName, DatabaseColumnName[] columnNames, string[] columnValues)
+    {
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText =
+            $@"
+                INSERT INTO {DatabaseTableNameHelper.GetTableName(tableName)}
+                (
+                    "+
+                        columnNames.Select(col => DatabaseColumnNameHelper.GetColumnName(col)).Aggregate((a, b) => a + ", " + b)
+                    +
+            @"
+                )
+                VALUES
+                (@ColumnValues)
+            ";
+            command.Parameters.AddWithValue("@ColumnValues", columnValues.Aggregate((a, b) => a + ", " + b));
+            command.ExecuteNonQuery();
+        }
+    }
+
     public List<IDictionary<string, object>> SelectRows(DatabaseTableName tableName) 
     {
         using (var connection = new SqliteConnection($"Data Source={_databaseName}"))

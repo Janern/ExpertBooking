@@ -17,7 +17,8 @@ public class CartStorageSqliteImplementation : CartStorage
         {
             Id = Guid.NewGuid().ToString()
         };
-        
+
+        _sqlite.InsertRow(DatabaseTableName.Cart, new DatabaseColumnName[]{DatabaseColumnName.Id}, new string[]{newCart.Id});
         return newCart;
     }
 
