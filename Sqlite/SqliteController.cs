@@ -67,4 +67,19 @@ public class SqliteController : SqlController
             return rows;
         }
     }
+    
+    public void DeleteRow(DatabaseTableName tableName, string Id)
+    {
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText =
+            $@"
+                DELETE FROM {DatabaseTableNameHelper.GetTableName(tableName)} WHERE Id = @Id
+            ";
+            command.Parameters.AddWithValue("@Id", Id);
+            command.ExecuteNonQuery();
+        }
+    }
 }

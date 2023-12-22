@@ -24,7 +24,7 @@ public class CartStorageSqliteImplementation : CartStorage
 
     public void DeleteCart(string cartId)
     {
-        throw new NotImplementedException();
+        _sqlite.DeleteRow(DatabaseTableName.Cart, cartId);
     }
 
     public Cart GetCart(string cartId)
