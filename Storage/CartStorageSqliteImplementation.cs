@@ -29,12 +29,24 @@ public class CartStorageSqliteImplementation : CartStorage
 
     public Cart GetCart(string cartId)
     {
-        throw new NotImplementedException();
+        List<IDictionary<string, object>> rows = _sqlite.SelectRows(DatabaseTableName.Cart);
+        IDictionary<string, object>? row = rows.FirstOrDefault(r => ((string) r["Id"]) == cartId);
+        if(row != null)
+        {
+            return new Cart{
+                Id = (string) row["Id"]
+            };
+        }
+        return null;
     }
 
     public List<Cart> ListCarts()
     {
-        throw new NotImplementedException();
+        List<IDictionary<string, object>>? rows = _sqlite.SelectRows(DatabaseTableName.Cart);
+        return rows.Select(r => new Cart
+        {
+            Id = (string) r["Id"]
+        }).ToList();
     }
 
     public void UpdateCart(CartUpdate update)
