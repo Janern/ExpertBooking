@@ -1,6 +1,6 @@
 using BusinessModels;
 
-namespace UseCases.Cart;
+namespace UseCases.Experts;
 
 public interface ExpertsStorage
 {

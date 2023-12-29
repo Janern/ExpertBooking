@@ -4,6 +4,7 @@
     <ProjectReference Include="..\UseCases\UseCases.csproj" />
     <ProjectReference Include="..\Storage\Storage.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
+    <ProjectReference Include="..\Sqlite\Sqlite.csproj" />
   </ItemGroup>
 
   <ItemGroup>
