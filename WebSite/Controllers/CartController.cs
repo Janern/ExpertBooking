@@ -61,7 +61,7 @@ public class CartController : Controller
             return PartialView("_removeFromCartCheckmark", ExpertId);
         }catch(Exception ex)
         {
-            Console.WriteLine("Error while adding item to cart" + ex + ex.Message);
+            Console.WriteLine("Error while adding item to cart " + ex + ex.Message);
         }
         return PartialView("_addToCartCheckmark", ExpertId);
     }

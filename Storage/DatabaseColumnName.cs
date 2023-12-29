@@ -10,5 +10,7 @@ namespace Storage;
 public enum DatabaseColumnName
 {
     Id,
+    CartId,
+    ExpertId
 
 }

@@ -7,6 +7,10 @@ public static class DatabaseColumnNameHelper
         switch(columnName){
             case DatabaseColumnName.Id :
                 return "Id";
+            case DatabaseColumnName.CartId :
+                return "CartId";
+            case DatabaseColumnName.ExpertId :
+                return "ExpertId";
             default :
                 throw new NotSupportedException("Unknown columnName "+columnName);
         }

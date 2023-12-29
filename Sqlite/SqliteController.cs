@@ -21,19 +21,16 @@ public class SqliteController : SqlController
         {
             connection.Open();
             var command = connection.CreateCommand();
+            string columnNamesText = string.Join(", ", columnNames.Select(col => DatabaseColumnNameHelper.GetColumnName(col)));
+            string parameterNamesText = string.Join(", ", columnValues.Select((_, index) => $"@ColumnValue{index}"));
             command.CommandText =
             $@"
-                INSERT INTO {DatabaseTableNameHelper.GetTableName(tableName)}
-                (
-                    "+
-                        columnNames.Select(col => DatabaseColumnNameHelper.GetColumnName(col)).Aggregate((a, b) => a + ", " + b)
-                    +
-            @"
-                )
-                VALUES
-                (@ColumnValues)
-            ";
-            command.Parameters.AddWithValue("@ColumnValues", columnValues.Aggregate((a, b) => a + ", " + b));
+                INSERT INTO {DatabaseTableNameHelper.GetTableName(tableName)} ({columnNamesText})
+                VALUES ({parameterNamesText})";
+            for (int i = 0; i < columnValues.Length; i++)
+            {
+                command.Parameters.AddWithValue($"@ColumnValue{i}", columnValues[i]);
+            }
             command.ExecuteNonQuery();
         }
     }
@@ -77,6 +74,21 @@ public class SqliteController : SqlController
             command.CommandText =
             $@"
                 DELETE FROM {DatabaseTableNameHelper.GetTableName(tableName)} WHERE Id = @Id
+            ";
+            command.Parameters.AddWithValue("@Id", Id);
+            command.ExecuteNonQuery();
+        }
+    }
+
+    public void DeleteRows(DatabaseTableName tableName, DatabaseColumnName idColumnName, string Id)
+    {
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText =
+            $@"
+                DELETE FROM {DatabaseTableNameHelper.GetTableName(tableName)} WHERE {DatabaseColumnNameHelper.GetColumnName(idColumnName)} = @Id
             ";
             command.Parameters.AddWithValue("@Id", Id);
             command.ExecuteNonQuery();

@@ -34,9 +34,10 @@ public class CartStorageSqliteImplementation : CartStorage
         IDictionary<string, object>? row = rows.FirstOrDefault(r => ((string) r["Id"]) == cartId);
         if(row != null)
         {
+            var cartExpertRows = _sqlite.SelectRows(DatabaseTableName.CartExpert).Where(r => ((string) r["CartId"]) == cartId);
             return new Cart{
                 Id = (string) row["Id"],
-                ExpertIds = new List<string>() //TODO
+                ExpertIds = cartExpertRows.Select(row => (string) row["ExpertId"]).ToList()
             };
         }
         return null;
@@ -59,6 +60,11 @@ public class CartStorageSqliteImplementation : CartStorage
     }
 
     private void UpdateExperts(CartUpdate update){
-        Console.WriteLine("experts are updated...");
+        _sqlite.DeleteRows(DatabaseTableName.CartExpert, DatabaseColumnName.CartId, update.CartId);
+        foreach(var expert in update.ExpertIds)
+        {
+            _sqlite.InsertRow(DatabaseTableName.CartExpert, new DatabaseColumnName[]{DatabaseColumnName.CartId, DatabaseColumnName.ExpertId}, new string[]{update.CartId, expert});
+        }
+        //TODO check if cart exists
     }
 }
