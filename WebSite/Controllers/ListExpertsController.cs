@@ -12,6 +12,7 @@ namespace WebSite.Controllers
         private ListExpertsUseCase _listExpertsUseCase;
         private GetCartUseCase _getCartUseCase;
         private const string CartCookie = "__CartId";
+        private const string AdminKeyCookie = "__SuperSecretAdminKey";
 
         public ListExpertsController(
             ListExpertsUseCase listExpertsUseCase, 
@@ -24,14 +25,20 @@ namespace WebSite.Controllers
         public IActionResult Index(string technologyFilter)
         {
             Expert[] experts = _listExpertsUseCase.Execute(technologyFilter);
+            
             List<string>? selectedExpertIds = null;
+            bool isAdmin = false;
             try{
                 if(Request.Cookies.TryGetValue(CartCookie, out var result) && _getCartUseCase.Execute(result) != null)
                 {
                     selectedExpertIds = _getCartUseCase.Execute(result)?.ExpertIds;
                 }
+                if(Request.Cookies.TryGetValue(AdminKeyCookie, out var AdminCookieValue) && _getCartUseCase.Execute(result) != null)
+                {
+                    isAdmin = AdminCookieValue == "94c165d1-7405-4795-aaa9-c2e6369b8ce8";
+                }
             }catch{}
-            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, selectedExpertIds));
+            return PartialView("_expertTable", ExpertViewModelConverter.Convert(experts, selectedExpertIds, isAdmin));
         }
     }
 }

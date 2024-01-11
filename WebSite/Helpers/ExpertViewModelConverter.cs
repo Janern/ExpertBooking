@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BusinessModels;
-using Microsoft.Extensions.Azure;
 using WebSite.Models;
 
 namespace WebSite.Helpers;
 
 public static class ExpertViewModelConverter
 {
-    public static ExpertViewModel[] Convert(Expert[] experts, List<string>? selectedExperts)
+    public static ExpertViewModel[] Convert(Expert[] experts, List<string>? selectedExperts, bool editable = false)
     {
         ExpertViewModel[] expertViewModels = new ExpertViewModel[experts.Length];
         for(int i = 0; i < expertViewModels.Length; i++)
@@ -23,7 +18,8 @@ public static class ExpertViewModelConverter
                 Description = experts[i].Description,
                 Role = experts[i].Role,
                 Technology = experts[i].Technology,
-                IsSelected = selectedExperts?.Any(e => e == experts[i].Id)??false
+                IsSelected = selectedExperts?.Any(e => e == experts[i].Id)??false,
+                IsEditable = editable
             };
         }
         return expertViewModels;
@@ -34,7 +30,7 @@ public static class ExpertViewModelConverter
         return CreateViewModel(expert, selectedExperts?.Any(e => e == expert.Id)??false);
     }
 
-    private static ExpertViewModel CreateViewModel(Expert expert, bool isSelected)
+    private static ExpertViewModel CreateViewModel(Expert expert, bool isSelected, bool editable = false)
     {
         return new ExpertViewModel
             {
@@ -44,7 +40,8 @@ public static class ExpertViewModelConverter
                 Description = expert.Description,
                 Role = expert.Role,
                 Technology = expert.Technology,
-                IsSelected = isSelected
+                IsSelected = isSelected,
+                IsEditable = editable
             };
     }
 }

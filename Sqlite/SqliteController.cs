@@ -8,9 +8,9 @@ public class SqliteController : SqlController
     public SqliteController(string databaseName)
     {
         if (!File.Exists(databaseName)){
-            throw new Exception("DB IS MISSING!");
+            throw new Exception(databaseName+" DB IS MISSING!");
         }else{
-            Console.WriteLine("DB FOUND!");
+            Console.WriteLine(databaseName + " DB FOUND!");
         }
         _databaseName = databaseName;
     }
@@ -64,6 +64,38 @@ public class SqliteController : SqlController
             return rows;
         }
     }
+
+    public List<IDictionary<string, object>> SelectRows(DatabaseTableName tableName, DatabaseColumnName idColumnName, string Id) 
+    {
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText =
+            $@"
+                SELECT * 
+                FROM {DatabaseTableNameHelper.GetTableName(tableName)} 
+                WHERE {DatabaseColumnNameHelper.GetColumnName(idColumnName)} = @Id             
+            ";
+            command.Parameters.AddWithValue("@Id", Id);
+            List<IDictionary<string, object>> rows = new List<IDictionary<string, object>>();
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var row = new Dictionary<string, object>();
+
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        row[reader.GetName(i)] = reader.GetValue(i);
+                    }
+
+                    rows.Add(row);  
+                }
+            }
+            return rows;
+        }
+    }
     
     public void DeleteRow(DatabaseTableName tableName, string Id)
     {
@@ -92,6 +124,46 @@ public class SqliteController : SqlController
             ";
             command.Parameters.AddWithValue("@Id", Id);
             command.ExecuteNonQuery();
+        }
+    }
+
+    public void EditRow(DatabaseTableName tableName, Dictionary<DatabaseColumnName, string> updateColumns, DatabaseColumnName whereColumn, string whereValue)
+    {
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText =
+            $"UPDATE {DatabaseTableNameHelper.GetTableName(tableName)} "+
+            CreateUpdateStringWithParamaterNames(updateColumns) + " " +           
+            $"WHERE {DatabaseColumnNameHelper.GetColumnName(whereColumn)} = @WhereValue";
+            AddParameterValuesForUpdate(command.Parameters, updateColumns);
+            command.Parameters.AddWithValue("@WhereValue", whereValue);
+            Console.WriteLine("Executing sql: "+command.CommandText);
+            command.ExecuteNonQuery();
+        }
+    }
+
+    private string CreateUpdateStringWithParamaterNames(Dictionary<DatabaseColumnName, string> updateColumns)
+    {
+        string result = "SET ";
+        DatabaseColumnName[] keys = updateColumns.Keys.ToArray();
+        for(int i = 0; i < keys.Length-1; i++)
+        {
+            result += DatabaseColumnNameHelper.GetColumnName(keys[i]) + " = @" + DatabaseColumnNameHelper.GetColumnName(keys[i]) + ", ";
+        }
+        result += DatabaseColumnNameHelper.GetColumnName(keys[keys.Length-1]) + " = @" + DatabaseColumnNameHelper.GetColumnName(keys[keys.Length-1]);
+        Console.WriteLine("updatestring with parameternames: "+result);
+        return result;
+    }
+
+    private void AddParameterValuesForUpdate(SqliteParameterCollection collection, Dictionary<DatabaseColumnName, string> updateColumns)
+    {
+        DatabaseColumnName[] keys = updateColumns.Keys.ToArray();
+        for(int i = 0; i < keys.Length; i++)
+        {
+            Console.WriteLine("setting parametervalue: @"+DatabaseColumnNameHelper.GetColumnName(keys[i])+":"+updateColumns[keys[i]]);
+            collection.AddWithValue("@"+DatabaseColumnNameHelper.GetColumnName(keys[i]), updateColumns[keys[i]]);
         }
     }
 }

@@ -35,6 +35,15 @@
         hx-swap="innerHTML"
         hx-trigger="click target:.openModal">
         <div class="row">
+            @if(expert.IsEditable)
+            {
+                <div id="editExpertPencil" class="expert-table-pencil" 
+                    hx-get="ExpertDetails/Edit/@expert.Id"
+                    hx-target="#expertModalContainer" 
+                    hx-swap="innerHTML">
+                    <img src="images/svg/pencil.svg" />
+                </div>
+            }
             <img src="images/@(expert.Id).jpg" class="expert-table-img u-max-full-width openModal" />
             <div id="selectExpert" class="expert-table-checkmark" 
                 hx-get="Cart/Experts/@expert.Id"

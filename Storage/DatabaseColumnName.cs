@@ -11,6 +11,10 @@ public enum DatabaseColumnName
 {
     Id,
     CartId,
-    ExpertId
-
+    ExpertId,
+    Description,
+    FirstName,
+    LastName,
+    Role, 
+    Technology
 }
