@@ -38,7 +38,7 @@
             @if(expert.IsEditable)
             {
                 <div id="editExpertPencil" class="expert-table-pencil" 
-                    hx-get="EditExpert/@expert.Id"
+                    hx-get="ExpertDetails/Edit/@expert.Id"
                     hx-target="#expertModalContainer" 
                     hx-swap="innerHTML">
                     <img src="images/svg/pencil.svg" />
