@@ -155,7 +155,60 @@ public class EditExpertUseCaseTests
     }
     
     [Fact]
-    public void GivenExistingExpertWhenEditingFirstNameShouldEditFirstName(){}
+    public void GivenExistingExpertWhenEditingFirstNameShouldEditFirstName()
+    {
+        string Id = "EXISTING";
+        string NewFirstName = "NEW Firstname";
+        Expert[] existing = new Expert[]
+        {
+            new Expert
+            {
+                Id = Id,
+                Description = "VERY GOOD PROGRAMMER",
+                FirstName = "OLD FIRSTNAME",
+                LastName = "Ferdinand",
+                Role = "Backend",
+                Technology = ".NET"
+            }
+        };
+        _storage = new ExpertsStorageSpy(existing);
+        InitializeUseCase();
+        EditExpertRequest request = new EditExpertRequest{Id = Id, FirstName = NewFirstName};
+        
+        _useCase.Execute(request);
+    
+        var expert = _storage.GetExpert(Id);
+        Assert.Equal(NewFirstName, expert.FirstName);
+    }
+
+    [Fact]
+    public void GivenExistingExpertWhenEditingFirstNameAndDescriptionShouldEditFirstNameAndDescription()
+    {
+        string Id = "EXISTING";
+        string NewFirstName = "NEW Firstname";
+        string NewDescription = "NEW DEscription";
+        Expert[] existing = new Expert[]
+        {
+            new Expert
+            {
+                Id = Id,
+                Description = "OLD DESCRIPTION",
+                FirstName = "OLD FIRSTNAME",
+                LastName = "Ferdinand",
+                Role = "Backend",
+                Technology = ".NET"
+            }
+        };
+        _storage = new ExpertsStorageSpy(existing);
+        InitializeUseCase();
+        EditExpertRequest request = new EditExpertRequest{Id = Id, FirstName = NewFirstName, Description = NewDescription};
+        
+        _useCase.Execute(request);
+    
+        var expert = _storage.GetExpert(Id);
+        Assert.Equal(NewDescription, expert.Description);
+        Assert.Equal(NewFirstName, expert.FirstName);
+    }
 
     [Fact]
     public void GivenExistingExpertWhenEditingLastNameShouldEditLastName(){}

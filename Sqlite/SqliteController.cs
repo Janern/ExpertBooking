@@ -127,21 +127,40 @@ public class SqliteController : SqlController
         }
     }
 
-    public void EditRow(DatabaseTableName tableName, DatabaseColumnName updateColumn, string updateColumnValue, DatabaseColumnName whereColumn, string whereValue)
+    public void EditRow(DatabaseTableName tableName, Dictionary<DatabaseColumnName, string> updateColumns, DatabaseColumnName whereColumn, string whereValue)
     {
         using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
         {
             connection.Open();
             var command = connection.CreateCommand();
             command.CommandText =
-            $@"
-                UPDATE {DatabaseTableNameHelper.GetTableName(tableName)} 
-                SET {DatabaseColumnNameHelper.GetColumnName(updateColumn)} = @UpdateColumnValue
-                WHERE {DatabaseColumnNameHelper.GetColumnName(whereColumn)} = @WhereValue
-            ";
-            command.Parameters.AddWithValue("@UpdateColumnValue", updateColumnValue);
+            $"UPDATE {DatabaseTableNameHelper.GetTableName(tableName)} "+
+            CreateUpdateStringWithParamaterNames(updateColumns) +            
+            $"WHERE {DatabaseColumnNameHelper.GetColumnName(whereColumn)} = @WhereValue";
+            AddParameterValuesForUpdate(command.Parameters, updateColumns);
             command.Parameters.AddWithValue("@WhereValue", whereValue);
             command.ExecuteNonQuery();
+        }
+    }
+
+    private string CreateUpdateStringWithParamaterNames(Dictionary<DatabaseColumnName, string> updateColumns)
+    {
+        string result = "SET ";
+        DatabaseColumnName[] keys = updateColumns.Keys.ToArray();
+        for(int i = 0; i < keys.Length-1; i++)
+        {
+            result += DatabaseColumnNameHelper.GetColumnName(keys[i]) + " = @" + DatabaseColumnNameHelper.GetColumnName(keys[i]) + ", ";
+        }
+        result += DatabaseColumnNameHelper.GetColumnName(keys[keys.Length-1]) + " = @" + DatabaseColumnNameHelper.GetColumnName(keys[keys.Length-1]);
+        return result;
+    }
+
+    private void AddParameterValuesForUpdate(SqliteParameterCollection collection, Dictionary<DatabaseColumnName, string> updateColumns)
+    {
+        DatabaseColumnName[] keys = updateColumns.Keys.ToArray();
+        for(int i = 0; i < keys.Length-1; i++)
+        {
+            collection.AddWithValue("@"+DatabaseColumnNameHelper.GetColumnName(keys[i]), updateColumns[keys[i]]);
         }
     }
 }

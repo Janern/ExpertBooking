@@ -46,6 +46,8 @@ namespace Storage
         {
             if(request.Description != null)
                 _experts[request.Id].Description = request.Description;
+            if(request.FirstName != null)
+                _experts[request.Id].FirstName = request.FirstName;
         }
     }
 }
