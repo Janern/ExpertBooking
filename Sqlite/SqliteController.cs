@@ -8,9 +8,9 @@ public class SqliteController : SqlController
     public SqliteController(string databaseName)
     {
         if (!File.Exists(databaseName)){
-            throw new Exception("DB IS MISSING!");
+            throw new Exception(databaseName+" DB IS MISSING!");
         }else{
-            Console.WriteLine("DB FOUND!");
+            Console.WriteLine(databaseName + " DB FOUND!");
         }
         _databaseName = databaseName;
     }
@@ -135,10 +135,11 @@ public class SqliteController : SqlController
             var command = connection.CreateCommand();
             command.CommandText =
             $"UPDATE {DatabaseTableNameHelper.GetTableName(tableName)} "+
-            CreateUpdateStringWithParamaterNames(updateColumns) +            
+            CreateUpdateStringWithParamaterNames(updateColumns) + " " +           
             $"WHERE {DatabaseColumnNameHelper.GetColumnName(whereColumn)} = @WhereValue";
             AddParameterValuesForUpdate(command.Parameters, updateColumns);
             command.Parameters.AddWithValue("@WhereValue", whereValue);
+            Console.WriteLine("Executing sql: "+command.CommandText);
             command.ExecuteNonQuery();
         }
     }
@@ -152,14 +153,16 @@ public class SqliteController : SqlController
             result += DatabaseColumnNameHelper.GetColumnName(keys[i]) + " = @" + DatabaseColumnNameHelper.GetColumnName(keys[i]) + ", ";
         }
         result += DatabaseColumnNameHelper.GetColumnName(keys[keys.Length-1]) + " = @" + DatabaseColumnNameHelper.GetColumnName(keys[keys.Length-1]);
+        Console.WriteLine("updatestring with parameternames: "+result);
         return result;
     }
 
     private void AddParameterValuesForUpdate(SqliteParameterCollection collection, Dictionary<DatabaseColumnName, string> updateColumns)
     {
         DatabaseColumnName[] keys = updateColumns.Keys.ToArray();
-        for(int i = 0; i < keys.Length-1; i++)
+        for(int i = 0; i < keys.Length; i++)
         {
+            Console.WriteLine("setting parametervalue: @"+DatabaseColumnNameHelper.GetColumnName(keys[i])+":"+updateColumns[keys[i]]);
             collection.AddWithValue("@"+DatabaseColumnNameHelper.GetColumnName(keys[i]), updateColumns[keys[i]]);
         }
     }
