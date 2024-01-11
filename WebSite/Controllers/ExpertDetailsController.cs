@@ -61,6 +61,25 @@ public class ExpertDetailsController : Controller
         return PartialView("_editExpertModal", expertViewModel);
     }
 
+    [HttpPost, Route("Edit/{Id}")]
+    public IActionResult EditExpertDetails(string Id, EditExpertRequest request)
+    {
+        if(!HasAdminAccess())
+            return StatusCode(403);
+        var expert = _getExpertUseCase.Execute(Id);
+        if(expert == null)
+            return StatusCode(404);
+        List<string> expertIds = null;  
+        try{
+            if(Request.Cookies.TryGetValue(CartCookie, out var result) && _getCartUseCase.Execute(result) != null)
+            {
+                expertIds = _getCartUseCase.Execute(result)?.ExpertIds;
+            }
+        }catch{}
+        var expertViewModel = ExpertViewModelConverter.Convert(expert, expertIds);
+        return PartialView("_editExpertModal", expertViewModel);
+    }
+
     private bool HasAdminAccess()
     {
         bool result = false;

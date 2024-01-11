@@ -18,9 +18,17 @@
                     <span class="role">@Model.Role</span>
                 </div>
             </div>
-            <div class="row">
-                <input value="@Model.Description"></input><button>Save</button>
-            </div>
+            <form>
+                <div class="row" id="DescriptionEdit">
+                    <textarea  name="Description">@Model.Description</textarea>
+                    <button
+                    hx-swap="delete"
+                    hx-target="#DescriptionEdit"
+                    hx-post="ExpertDetails/Edit/@Model.Id">
+                        Save
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
