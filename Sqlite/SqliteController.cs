@@ -64,6 +64,38 @@ public class SqliteController : SqlController
             return rows;
         }
     }
+
+    public List<IDictionary<string, object>> SelectRows(DatabaseTableName tableName, DatabaseColumnName idColumnName, string Id) 
+    {
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText =
+            $@"
+                SELECT * 
+                FROM {DatabaseTableNameHelper.GetTableName(tableName)} 
+                WHERE {DatabaseColumnNameHelper.GetColumnName(idColumnName)} = @Id             
+            ";
+            command.Parameters.AddWithValue("@Id", Id);
+            List<IDictionary<string, object>> rows = new List<IDictionary<string, object>>();
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var row = new Dictionary<string, object>();
+
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        row[reader.GetName(i)] = reader.GetValue(i);
+                    }
+
+                    rows.Add(row);  
+                }
+            }
+            return rows;
+        }
+    }
     
     public void DeleteRow(DatabaseTableName tableName, string Id)
     {
@@ -91,6 +123,24 @@ public class SqliteController : SqlController
                 DELETE FROM {DatabaseTableNameHelper.GetTableName(tableName)} WHERE {DatabaseColumnNameHelper.GetColumnName(idColumnName)} = @Id
             ";
             command.Parameters.AddWithValue("@Id", Id);
+            command.ExecuteNonQuery();
+        }
+    }
+
+    public void EditRow(DatabaseTableName tableName, DatabaseColumnName updateColumn, string updateColumnValue, DatabaseColumnName whereColumn, string whereValue)
+    {
+        using (var connection = new SqliteConnection($"Data Source={_databaseName}"))
+        {
+            connection.Open();
+            var command = connection.CreateCommand();
+            command.CommandText =
+            $@"
+                UPDATE {DatabaseTableNameHelper.GetTableName(tableName)} 
+                SET {DatabaseColumnNameHelper.GetColumnName(updateColumn)} = @UpdateColumnValue
+                WHERE {DatabaseColumnNameHelper.GetColumnName(whereColumn)} = @WhereValue
+            ";
+            command.Parameters.AddWithValue("@UpdateColumnValue", updateColumnValue);
+            command.Parameters.AddWithValue("@WhereValue", whereValue);
             command.ExecuteNonQuery();
         }
     }

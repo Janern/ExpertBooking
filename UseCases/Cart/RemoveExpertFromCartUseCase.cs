@@ -2,6 +2,7 @@ using UseCases.Exceptions;
 
 namespace UseCases.Cart;
 
+ 
 public class RemoveExpertFromCartUseCase
 {
     private CartStorage _storage;
@@ -16,7 +17,7 @@ public class RemoveExpertFromCartUseCase
             throw new InvalidEditCartRequestException("request is null");
         if(string.IsNullOrEmpty(request.CartId))
             throw new InvalidEditCartRequestException("missing cartid");
-            if(string.IsNullOrEmpty(request.ExpertId))
+        if(string.IsNullOrEmpty(request.ExpertId))
             throw new InvalidEditCartRequestException("missing expertid");
         var cart = _storage.GetCart(request.CartId);
         if(cart == null)

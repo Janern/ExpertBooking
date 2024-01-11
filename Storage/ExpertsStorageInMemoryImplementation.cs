@@ -36,5 +36,16 @@ namespace Storage
             }
             return null;
         }
+
+        public bool Exists(string id)
+        {
+            return _experts.ContainsKey(id);
+        }
+
+        public void EditExpert(EditExpertRequest request)
+        {
+            if(request.Description != null)
+                _experts[request.Id].Description = request.Description;
+        }
     }
 }

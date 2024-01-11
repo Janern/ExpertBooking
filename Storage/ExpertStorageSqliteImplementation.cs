@@ -13,6 +13,18 @@ public class ExpertStorageSqliteImplementation : ExpertsStorage
         _sqlite = sqlite;
     }
 
+    public void EditExpert(EditExpertRequest request)
+    {
+        if(request.Description != null)
+            _experts[request.Id].Description = request.Description;
+    }
+
+    public bool Exists(string id)
+    {
+        List<IDictionary<string, object>> rows = _sqlite.SelectRows(DatabaseTableName.Expert, DatabaseColumnName.Id, id);
+        return rows.Any();
+    }
+
     public Expert GetExpert(string id)
     {
         List<IDictionary<string, object>> rows = _sqlite.SelectRows(DatabaseTableName.Expert);
