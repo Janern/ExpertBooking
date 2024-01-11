@@ -63,7 +63,8 @@ void AddServices(IServiceCollection services, IConfigurationRoot azureConfig)
         });
     
     SqliteController sqliteExpertController = new SqliteController("Storage\\expert.db");
-    SqliteController sqliteCartController = new SqliteController("Storage\\cart.db");
+    SqliteController sqliteCartController = new SqliteCo
+    ntroller("Storage\\cart.db");
     ExpertsStorage expertsStorage = new ExpertStorageSqliteImplementation(sqliteExpertController);
     CartStorage cartStorage = new CartStorageSqliteImplementation(sqliteCartController);
     

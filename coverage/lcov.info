@@ -1,64 +1,64 @@
-SF:C:\Repositories\ExpertBooking\BusinessModels\Booking.cs
+SF:c:\Repositories\ExpertBooking\BusinessModels\Booking.cs
 FN:4,System.String BusinessModels.Booking::get_BookerEmailAddress()
-FNDA:27,System.String BusinessModels.Booking::get_BookerEmailAddress()
-DA:5,27
+FNDA:0,System.String BusinessModels.Booking::get_BookerEmailAddress()
+DA:5,0
 FN:5,System.String[] BusinessModels.Booking::get_ExpertIds()
-FNDA:21,System.String[] BusinessModels.Booking::get_ExpertIds()
-DA:6,21
+FNDA:0,System.String[] BusinessModels.Booking::get_ExpertIds()
+DA:6,0
 FN:6,System.String BusinessModels.Booking::get_TimePeriod()
-FNDA:15,System.String BusinessModels.Booking::get_TimePeriod()
-DA:7,15
+FNDA:0,System.String BusinessModels.Booking::get_TimePeriod()
+DA:7,0
 FN:7,System.String BusinessModels.Booking::get_Description()
-FNDA:16,System.String BusinessModels.Booking::get_Description()
-DA:8,16
+FNDA:0,System.String BusinessModels.Booking::get_Description()
+DA:8,0
 LF:4
-LH:4
+LH:0
 BRF:0
 BRH:0
 FNF:4
-FNH:4
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\BusinessModels\Cart.cs
+SF:c:\Repositories\ExpertBooking\BusinessModels\Cart.cs
 FN:4,System.String BusinessModels.Cart::get_Id()
-FNDA:40,System.String BusinessModels.Cart::get_Id()
-DA:5,40
+FNDA:0,System.String BusinessModels.Cart::get_Id()
+DA:5,0
 FN:5,System.Collections.Generic.List`1<System.String> BusinessModels.Cart::get_ExpertIds()
-FNDA:37,System.Collections.Generic.List`1<System.String> BusinessModels.Cart::get_ExpertIds()
-DA:6,37
+FNDA:0,System.Collections.Generic.List`1<System.String> BusinessModels.Cart::get_ExpertIds()
+DA:6,0
 LF:2
-LH:2
+LH:0
 BRF:0
 BRH:0
 FNF:2
-FNH:2
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\BusinessModels\Expert.cs
+SF:c:\Repositories\ExpertBooking\BusinessModels\Expert.cs
 FN:5,System.String BusinessModels.Expert::get_Id()
-FNDA:232,System.String BusinessModels.Expert::get_Id()
-DA:6,232
+FNDA:0,System.String BusinessModels.Expert::get_Id()
+DA:6,0
 FN:6,System.String BusinessModels.Expert::get_FirstName()
-FNDA:91,System.String BusinessModels.Expert::get_FirstName()
-DA:7,91
+FNDA:0,System.String BusinessModels.Expert::get_FirstName()
+DA:7,0
 FN:7,System.String BusinessModels.Expert::get_LastName()
-FNDA:91,System.String BusinessModels.Expert::get_LastName()
-DA:8,91
+FNDA:0,System.String BusinessModels.Expert::get_LastName()
+DA:8,0
 FN:8,System.String BusinessModels.Expert::get_Role()
-FNDA:91,System.String BusinessModels.Expert::get_Role()
-DA:9,91
+FNDA:0,System.String BusinessModels.Expert::get_Role()
+DA:9,0
 FN:9,System.String BusinessModels.Expert::get_Technology()
-FNDA:97,System.String BusinessModels.Expert::get_Technology()
-DA:10,97
+FNDA:0,System.String BusinessModels.Expert::get_Technology()
+DA:10,0
 FN:10,System.String BusinessModels.Expert::get_Description()
-FNDA:92,System.String BusinessModels.Expert::get_Description()
-DA:11,92
+FNDA:0,System.String BusinessModels.Expert::get_Description()
+DA:11,0
 LF:6
-LH:6
+LH:0
 BRF:0
 BRH:0
 FNF:6
-FNH:6
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Services\EmailServiceConfiguration.cs
+SF:c:\Repositories\ExpertBooking\Services\EmailServiceConfiguration.cs
 FN:4,System.String Services.EmailServiceConfiguration::get_ApiKey()
 FNDA:0,System.String Services.EmailServiceConfiguration::get_ApiKey()
 DA:5,0
@@ -72,7 +72,7 @@ BRH:0
 FNF:2
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Services\EmailServiceConsoleLogImplementation.cs
+SF:c:\Repositories\ExpertBooking\Services\EmailServiceConsoleLogImplementation.cs
 FN:8,System.Void Services.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
 FNDA:0,System.Void Services.EmailServiceConsoleLogImplementation/<SendEmail>d__0::MoveNext()
 DA:9,0
@@ -87,7 +87,7 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Services\EmailServiceSendGridImplementation.cs
+SF:c:\Repositories\ExpertBooking\Services\EmailServiceSendGridImplementation.cs
 FN:10,System.String Services.EmailServiceSendGridImplementation::get__apiKey()
 FNDA:0,System.String Services.EmailServiceSendGridImplementation::get__apiKey()
 DA:11,0
@@ -165,21 +165,199 @@ BRH:0
 FNF:5
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Storage\CartStorageInMemoryImplementation.cs
+SF:c:\Repositories\ExpertBooking\Sqlite\SqliteController.cs
+FN:18,System.Void Sqlite.SqliteController::InsertRow(Storage.DatabaseTableName,Storage.DatabaseColumnName[],System.String[])
+FNDA:0,System.Void Sqlite.SqliteController::InsertRow(Storage.DatabaseTableName,Storage.DatabaseColumnName[],System.String[])
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+BRDA:30,322,1,0
+BRDA:30,322,0,0
+FN:38,System.Collections.Generic.List`1<System.Collections.Generic.IDictionary`2<System.String,System.Object>> Sqlite.SqliteController::SelectRows(Storage.DatabaseTableName)
+FNDA:0,System.Collections.Generic.List`1<System.Collections.Generic.IDictionary`2<System.String,System.Object>> Sqlite.SqliteController::SelectRows(Storage.DatabaseTableName)
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:66,0
+BRDA:52,163,1,0
+BRDA:56,141,1,0
+BRDA:56,141,0,0
+BRDA:52,163,0,0
+FN:68,System.Collections.Generic.List`1<System.Collections.Generic.IDictionary`2<System.String,System.Object>> Sqlite.SqliteController::SelectRows(Storage.DatabaseTableName,Storage.DatabaseColumnName,System.String)
+FNDA:0,System.Collections.Generic.List`1<System.Collections.Generic.IDictionary`2<System.String,System.Object>> Sqlite.SqliteController::SelectRows(Storage.DatabaseTableName,Storage.DatabaseColumnName,System.String)
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:93,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:98,0
+BRDA:84,248,1,0
+BRDA:88,225,1,0
+BRDA:88,225,0,0
+BRDA:84,248,0,0
+FN:100,System.Void Sqlite.SqliteController::DeleteRow(Storage.DatabaseTableName,System.String)
+FNDA:0,System.Void Sqlite.SqliteController::DeleteRow(Storage.DatabaseTableName,System.String)
+DA:101,0
+DA:102,0
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:108,0
+DA:109,0
+DA:110,0
+DA:111,0
+DA:112,0
+DA:113,0
+FN:115,System.Void Sqlite.SqliteController::DeleteRows(Storage.DatabaseTableName,Storage.DatabaseColumnName,System.String)
+FNDA:0,System.Void Sqlite.SqliteController::DeleteRows(Storage.DatabaseTableName,Storage.DatabaseColumnName,System.String)
+DA:116,0
+DA:117,0
+DA:118,0
+DA:119,0
+DA:120,0
+DA:121,0
+DA:122,0
+DA:123,0
+DA:124,0
+DA:125,0
+DA:126,0
+DA:127,0
+DA:128,0
+FN:130,System.Void Sqlite.SqliteController::EditRow(Storage.DatabaseTableName,System.Collections.Generic.Dictionary`2<Storage.DatabaseColumnName,System.String>,Storage.DatabaseColumnName,System.String)
+FNDA:0,System.Void Sqlite.SqliteController::EditRow(Storage.DatabaseTableName,System.Collections.Generic.Dictionary`2<Storage.DatabaseColumnName,System.String>,Storage.DatabaseColumnName,System.String)
+DA:131,0
+DA:132,0
+DA:133,0
+DA:134,0
+DA:135,0
+DA:136,0
+DA:137,0
+DA:138,0
+DA:139,0
+DA:140,0
+DA:141,0
+DA:142,0
+DA:143,0
+DA:144,0
+FN:146,System.String Sqlite.SqliteController::CreateUpdateStringWithParamaterNames(System.Collections.Generic.Dictionary`2<Storage.DatabaseColumnName,System.String>)
+FNDA:0,System.String Sqlite.SqliteController::CreateUpdateStringWithParamaterNames(System.Collections.Generic.Dictionary`2<Storage.DatabaseColumnName,System.String>)
+DA:147,0
+DA:148,0
+DA:149,0
+DA:150,0
+DA:151,0
+DA:152,0
+DA:153,0
+DA:154,0
+DA:155,0
+DA:156,0
+BRDA:150,93,1,0
+BRDA:150,93,0,0
+FN:158,System.Void Sqlite.SqliteController::AddParameterValuesForUpdate(Microsoft.Data.Sqlite.SqliteParameterCollection,System.Collections.Generic.Dictionary`2<Storage.DatabaseColumnName,System.String>)
+FNDA:0,System.Void Sqlite.SqliteController::AddParameterValuesForUpdate(Microsoft.Data.Sqlite.SqliteParameterCollection,System.Collections.Generic.Dictionary`2<Storage.DatabaseColumnName,System.String>)
+DA:159,0
+DA:160,0
+DA:161,0
+DA:162,0
+DA:163,0
+DA:164,0
+DA:165,0
+BRDA:161,67,1,0
+BRDA:161,67,0,0
+FN:7,System.Void Sqlite.SqliteController::.ctor(System.String)
+FNDA:0,System.Void Sqlite.SqliteController::.ctor(System.String)
+DA:8,0
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+BRDA:10,19,0,0
+BRDA:10,19,1,0
+LF:136
+LH:0
+BRF:16
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:c:\Repositories\ExpertBooking\Storage\CartStorageInMemoryImplementation.cs
 FN:7,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::get__carts()
-FNDA:28,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::get__carts()
-DA:8,28
+FNDA:0,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::get__carts()
+DA:8,0
 FN:13,BusinessModels.Cart Storage.CartStorageInMemoryImplementation::CreateCart()
-FNDA:7,BusinessModels.Cart Storage.CartStorageInMemoryImplementation::CreateCart()
-DA:14,7
-DA:15,7
-DA:16,7
-DA:17,7
-DA:18,7
-DA:19,7
-DA:20,7
-DA:21,7
-DA:22,7
+FNDA:0,BusinessModels.Cart Storage.CartStorageInMemoryImplementation::CreateCart()
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
 FN:24,System.Void Storage.CartStorageInMemoryImplementation::DeleteCart(System.String)
 FNDA:0,System.Void Storage.CartStorageInMemoryImplementation::DeleteCart(System.String)
 DA:25,0
@@ -190,40 +368,40 @@ DA:29,0
 BRDA:27,44,0,0
 BRDA:27,44,1,0
 FN:31,BusinessModels.Cart Storage.CartStorageInMemoryImplementation::GetCart(System.String)
-FNDA:6,BusinessModels.Cart Storage.CartStorageInMemoryImplementation::GetCart(System.String)
-DA:32,6
-DA:33,11
-DA:34,6
+FNDA:0,BusinessModels.Cart Storage.CartStorageInMemoryImplementation::GetCart(System.String)
+DA:32,0
+DA:33,0
+DA:34,0
 FN:36,System.Void Storage.CartStorageInMemoryImplementation::UpdateCart(UseCases.Cart.CartUpdate)
-FNDA:9,System.Void Storage.CartStorageInMemoryImplementation::UpdateCart(UseCases.Cart.CartUpdate)
-DA:37,9
-DA:38,19
-DA:39,9
-DA:40,9
-DA:41,9
-BRDA:39,39,0,9
+FNDA:0,System.Void Storage.CartStorageInMemoryImplementation::UpdateCart(UseCases.Cart.CartUpdate)
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+BRDA:39,39,0,0
 BRDA:39,39,1,0
-BRDA:39,55,0,9
-BRDA:39,55,1,9
+BRDA:39,55,0,0
+BRDA:39,55,1,0
 FN:43,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::ListCarts()
 FNDA:0,System.Collections.Generic.List`1<BusinessModels.Cart> Storage.CartStorageInMemoryImplementation::ListCarts()
 DA:44,0
 DA:45,0
 DA:46,0
 FN:8,System.Void Storage.CartStorageInMemoryImplementation::.ctor()
-FNDA:6,System.Void Storage.CartStorageInMemoryImplementation::.ctor()
-DA:9,6
-DA:10,6
-DA:11,6
-DA:12,6
+FNDA:0,System.Void Storage.CartStorageInMemoryImplementation::.ctor()
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
 LF:30
-LH:22
+LH:0
 BRF:6
-BRH:3
+BRH:0
 FNF:7
-FNH:5
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Storage\CartStorageSqliteImplementation.cs
+SF:c:\Repositories\ExpertBooking\Storage\CartStorageSqliteImplementation.cs
 FN:14,BusinessModels.Cart Storage.CartStorageSqliteImplementation::CreateCart()
 FNDA:0,BusinessModels.Cart Storage.CartStorageSqliteImplementation::CreateCart()
 DA:15,0
@@ -298,7 +476,7 @@ BRH:0
 FNF:7
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Storage\DatabaseColumnNameHelper.cs
+SF:c:\Repositories\ExpertBooking\Storage\DatabaseColumnNameHelper.cs
 FN:5,System.String Storage.DatabaseColumnNameHelper::GetColumnName(Storage.DatabaseColumnName)
 FNDA:0,System.String Storage.DatabaseColumnNameHelper::GetColumnName(Storage.DatabaseColumnName)
 DA:6,0
@@ -308,18 +486,28 @@ DA:11,0
 DA:13,0
 DA:15,0
 DA:17,0
+DA:19,0
+DA:21,0
+DA:23,0
+DA:25,0
+DA:27,0
 BRDA:7,6,1,0
 BRDA:7,6,2,0
 BRDA:7,6,3,0
+BRDA:7,6,4,0
+BRDA:7,6,5,0
+BRDA:7,6,6,0
+BRDA:7,6,7,0
+BRDA:7,6,8,0
 BRDA:7,6,0,0
-LF:7
+LF:12
 LH:0
-BRF:4
+BRF:9
 BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Storage\DatabaseTableNameHelper.cs
+SF:c:\Repositories\ExpertBooking\Storage\DatabaseTableNameHelper.cs
 FN:5,System.String Storage.DatabaseTableNameHelper::GetTableName(Storage.DatabaseTableName)
 FNDA:0,System.String Storage.DatabaseTableNameHelper::GetTableName(Storage.DatabaseTableName)
 DA:6,0
@@ -340,145 +528,175 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\Storage\ExpertFilteringHelper.cs
+SF:c:\Repositories\ExpertBooking\Storage\ExpertFilteringHelper.cs
 FN:6,BusinessModels.Expert[] Storage.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String,System.String[])
-FNDA:6,BusinessModels.Expert[] Storage.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String,System.String[])
-DA:7,6
-DA:8,6
-DA:9,6
-DA:10,3
-DA:11,3
-DA:12,45
-DA:13,18
-DA:14,18
-DA:15,18
-DA:16,6
-DA:17,6
-DA:18,6
-DA:19,18
-DA:20,3
-DA:21,6
-BRDA:8,2,0,0
-BRDA:8,2,1,6
-BRDA:8,18,0,5
-BRDA:8,18,1,1
-BRDA:8,29,0,3
-BRDA:8,29,1,3
-BRDA:12,107,1,18
-BRDA:14,65,0,15
-BRDA:14,65,1,3
-BRDA:14,82,0,6
-BRDA:14,82,1,18
-BRDA:12,107,0,3
-FN:23,System.Boolean Storage.ExpertFilteringHelper::FilterTechnology(BusinessModels.Expert,System.String,System.String)
-FNDA:18,System.Boolean Storage.ExpertFilteringHelper::FilterTechnology(BusinessModels.Expert,System.String,System.String)
-DA:24,18
-DA:25,18
-DA:26,12
-DA:27,6
-DA:28,6
-DA:29,6
-DA:30,15
-DA:31,18
-BRDA:25,21,0,0
-BRDA:25,21,1,18
-BRDA:25,39,0,12
-BRDA:25,39,1,6
-FN:33,System.Boolean Storage.ExpertFilteringHelper::FilterId(BusinessModels.Expert,System.String[])
-FNDA:15,System.Boolean Storage.ExpertFilteringHelper::FilterId(BusinessModels.Expert,System.String[])
-DA:34,15
-DA:35,15
-DA:36,3
-DA:37,27
-DA:38,15
-BRDA:35,20,0,3
-BRDA:35,20,1,12
-LF:28
-LH:28
-BRF:18
-BRH:16
-FNF:3
-FNH:3
-end_of_record
-SF:C:\Repositories\ExpertBooking\Storage\ExpertsStorageInMemoryImplementation.cs
-FN:8,System.Collections.Generic.IDictionary`2<System.String,BusinessModels.Expert> Storage.ExpertsStorageInMemoryImplementation::get__experts()
-FNDA:79,System.Collections.Generic.IDictionary`2<System.String,BusinessModels.Expert> Storage.ExpertsStorageInMemoryImplementation::get__experts()
-DA:9,79
-FN:22,BusinessModels.Expert[] Storage.ExpertsStorageInMemoryImplementation::GetExperts(System.String,System.String[])
-FNDA:6,BusinessModels.Expert[] Storage.ExpertsStorageInMemoryImplementation::GetExperts(System.String,System.String[])
-DA:23,6
-DA:24,6
-DA:25,6
-FN:27,BusinessModels.Expert Storage.ExpertsStorageInMemoryImplementation::GetExpert(System.String)
-FNDA:4,BusinessModels.Expert Storage.ExpertsStorageInMemoryImplementation::GetExpert(System.String)
-DA:28,4
-DA:30,4
-DA:31,4
-DA:33,2
-DA:34,2
-DA:36,2
-DA:37,2
-DA:38,4
-FN:40,System.Boolean Storage.ExpertsStorageInMemoryImplementation::Exists(System.String)
-FNDA:4,System.Boolean Storage.ExpertsStorageInMemoryImplementation::Exists(System.String)
-DA:41,4
-DA:42,4
-DA:43,4
-FN:45,System.Void Storage.ExpertsStorageInMemoryImplementation::EditExpert(UseCases.Experts.EditExpertRequest)
-FNDA:2,System.Void Storage.ExpertsStorageInMemoryImplementation::EditExpert(UseCases.Experts.EditExpertRequest)
-DA:46,2
-DA:47,2
-FN:10,System.Void Storage.ExpertsStorageInMemoryImplementation::.ctor(BusinessModels.Expert[])
-FNDA:34,System.Void Storage.ExpertsStorageInMemoryImplementation::.ctor(BusinessModels.Expert[])
-DA:11,34
-DA:12,34
-DA:13,34
-DA:14,164
-DA:15,31
-DA:16,31
-DA:17,31
-DA:18,31
-DA:20,34
-BRDA:14,84,1,31
-BRDA:16,33,0,31
-BRDA:16,33,1,0
-BRDA:16,54,0,31
-BRDA:16,54,1,31
-BRDA:14,84,0,34
-LF:26
-LH:26
-BRF:6
-BRH:5
-FNF:6
-FNH:6
-end_of_record
-SF:C:\Repositories\ExpertBooking\Storage\ExpertStorageSqliteImplementation.cs
-FN:16,System.Void Storage.ExpertStorageSqliteImplementation::EditExpert(UseCases.Experts.EditExpertRequest)
-FNDA:0,System.Void Storage.ExpertStorageSqliteImplementation::EditExpert(UseCases.Experts.EditExpertRequest)
+FNDA:0,BusinessModels.Expert[] Storage.ExpertFilteringHelper::FilterExperts(BusinessModels.Expert[],System.String,System.String,System.String[])
+DA:7,0
+DA:8,0
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
 DA:17,0
+DA:18,0
 DA:19,0
-FN:21,System.Boolean Storage.ExpertStorageSqliteImplementation::Exists(System.String)
-FNDA:0,System.Boolean Storage.ExpertStorageSqliteImplementation::Exists(System.String)
-DA:22,0
-DA:23,0
+DA:20,0
+DA:21,0
+BRDA:8,2,0,0
+BRDA:8,2,1,0
+BRDA:8,18,0,0
+BRDA:8,18,1,0
+BRDA:8,29,0,0
+BRDA:8,29,1,0
+BRDA:12,107,1,0
+BRDA:14,65,0,0
+BRDA:14,65,1,0
+BRDA:14,82,0,0
+BRDA:14,82,1,0
+BRDA:12,107,0,0
+FN:23,System.Boolean Storage.ExpertFilteringHelper::FilterTechnology(BusinessModels.Expert,System.String,System.String)
+FNDA:0,System.Boolean Storage.ExpertFilteringHelper::FilterTechnology(BusinessModels.Expert,System.String,System.String)
 DA:24,0
 DA:25,0
-FN:27,BusinessModels.Expert Storage.ExpertStorageSqliteImplementation::GetExpert(System.String)
-FNDA:0,BusinessModels.Expert Storage.ExpertStorageSqliteImplementation::GetExpert(System.String)
+DA:26,0
+DA:27,0
 DA:28,0
 DA:29,0
 DA:30,0
 DA:31,0
-DA:32,0
-DA:33,0
+BRDA:25,21,0,0
+BRDA:25,21,1,0
+BRDA:25,39,0,0
+BRDA:25,39,1,0
+FN:33,System.Boolean Storage.ExpertFilteringHelper::FilterId(BusinessModels.Expert,System.String[])
+FNDA:0,System.Boolean Storage.ExpertFilteringHelper::FilterId(BusinessModels.Expert,System.String[])
 DA:34,0
 DA:35,0
 DA:36,0
 DA:37,0
 DA:38,0
-DA:39,0
-FN:41,BusinessModels.Expert[] Storage.ExpertStorageSqliteImplementation::GetExperts(System.String,System.String[])
-FNDA:0,BusinessModels.Expert[] Storage.ExpertStorageSqliteImplementation::GetExperts(System.String,System.String[])
+BRDA:35,20,0,0
+BRDA:35,20,1,0
+LF:28
+LH:0
+BRF:18
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:c:\Repositories\ExpertBooking\Storage\ExpertsStorageInMemoryImplementation.cs
+FN:8,System.Collections.Generic.IDictionary`2<System.String,BusinessModels.Expert> Storage.ExpertsStorageInMemoryImplementation::get__experts()
+FNDA:0,System.Collections.Generic.IDictionary`2<System.String,BusinessModels.Expert> Storage.ExpertsStorageInMemoryImplementation::get__experts()
+DA:9,0
+FN:22,BusinessModels.Expert[] Storage.ExpertsStorageInMemoryImplementation::GetExperts(System.String,System.String[])
+FNDA:0,BusinessModels.Expert[] Storage.ExpertsStorageInMemoryImplementation::GetExperts(System.String,System.String[])
+DA:23,0
+DA:24,0
+DA:25,0
+FN:27,BusinessModels.Expert Storage.ExpertsStorageInMemoryImplementation::GetExpert(System.String)
+FNDA:0,BusinessModels.Expert Storage.ExpertsStorageInMemoryImplementation::GetExpert(System.String)
+DA:28,0
+DA:30,0
+DA:31,0
+DA:33,0
+DA:34,0
+DA:36,0
+DA:37,0
+DA:38,0
+FN:40,System.Boolean Storage.ExpertsStorageInMemoryImplementation::Exists(System.String)
+FNDA:0,System.Boolean Storage.ExpertsStorageInMemoryImplementation::Exists(System.String)
+DA:41,0
+DA:42,0
+DA:43,0
+FN:45,System.Void Storage.ExpertsStorageInMemoryImplementation::EditExpert(UseCases.Experts.EditExpertRequest)
+FNDA:0,System.Void Storage.ExpertsStorageInMemoryImplementation::EditExpert(UseCases.Experts.EditExpertRequest)
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+BRDA:47,12,0,0
+BRDA:47,12,1,0
+BRDA:49,54,0,0
+BRDA:49,54,1,0
+BRDA:51,96,0,0
+BRDA:51,96,1,0
+BRDA:53,138,0,0
+BRDA:53,138,1,0
+BRDA:55,182,0,0
+BRDA:55,182,1,0
+FN:10,System.Void Storage.ExpertsStorageInMemoryImplementation::.ctor(BusinessModels.Expert[])
+FNDA:0,System.Void Storage.ExpertsStorageInMemoryImplementation::.ctor(BusinessModels.Expert[])
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:20,0
+BRDA:14,84,1,0
+BRDA:16,33,0,0
+BRDA:16,33,1,0
+BRDA:16,54,0,0
+BRDA:16,54,1,0
+BRDA:14,84,0,0
+LF:36
+LH:0
+BRF:16
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:c:\Repositories\ExpertBooking\Storage\ExpertStorageSqliteImplementation.cs
+FN:16,System.Void Storage.ExpertStorageSqliteImplementation::EditExpert(UseCases.Experts.EditExpertRequest)
+FNDA:0,System.Void Storage.ExpertStorageSqliteImplementation::EditExpert(UseCases.Experts.EditExpertRequest)
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:30,0
+DA:31,0
+BRDA:19,18,0,0
+BRDA:19,18,1,0
+BRDA:21,45,0,0
+BRDA:21,45,1,0
+BRDA:23,72,0,0
+BRDA:23,72,1,0
+BRDA:25,101,0,0
+BRDA:25,101,1,0
+BRDA:27,130,0,0
+BRDA:27,130,1,0
+FN:33,System.Boolean Storage.ExpertStorageSqliteImplementation::Exists(System.String)
+FNDA:0,System.Boolean Storage.ExpertStorageSqliteImplementation::Exists(System.String)
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+FN:39,BusinessModels.Expert Storage.ExpertStorageSqliteImplementation::GetExpert(System.String)
+FNDA:0,BusinessModels.Expert Storage.ExpertStorageSqliteImplementation::GetExpert(System.String)
+DA:40,0
+DA:41,0
 DA:42,0
 DA:43,0
 DA:44,0
@@ -489,184 +707,196 @@ DA:48,0
 DA:49,0
 DA:50,0
 DA:51,0
-DA:52,0
-DA:53,0
+FN:53,BusinessModels.Expert[] Storage.ExpertStorageSqliteImplementation::GetExperts(System.String,System.String[])
+FNDA:0,BusinessModels.Expert[] Storage.ExpertStorageSqliteImplementation::GetExperts(System.String,System.String[])
 DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
 FN:10,System.Void Storage.ExpertStorageSqliteImplementation::.ctor(Storage.SqlController)
 FNDA:0,System.Void Storage.ExpertStorageSqliteImplementation::.ctor(Storage.SqlController)
 DA:11,0
 DA:12,0
 DA:13,0
 DA:14,0
-LF:35
+LF:47
 LH:0
-BRF:0
+BRF:10
 BRH:0
 FNF:5
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Experts\BookExpertUseCase.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Experts\BookExpertUseCase.cs
 FN:7,UseCases.Email.EmailService UseCases.Experts.BookExpertUseCase::get__emailService()
-FNDA:13,UseCases.Email.EmailService UseCases.Experts.BookExpertUseCase::get__emailService()
-DA:8,13
+FNDA:0,UseCases.Email.EmailService UseCases.Experts.BookExpertUseCase::get__emailService()
+DA:8,0
 FN:9,System.Void UseCases.Experts.BookExpertUseCase::.ctor(UseCases.Email.EmailService)
-FNDA:7,System.Void UseCases.Experts.BookExpertUseCase::.ctor(UseCases.Email.EmailService)
-DA:10,7
-DA:11,7
-DA:12,7
-DA:13,7
+FNDA:0,System.Void UseCases.Experts.BookExpertUseCase::.ctor(UseCases.Email.EmailService)
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
 FN:15,System.Void UseCases.Experts.BookExpertUseCase/<Execute>d__5::MoveNext()
-FNDA:7,System.Void UseCases.Experts.BookExpertUseCase/<Execute>d__5::MoveNext()
-DA:16,7
-DA:17,7
-DA:18,1
-DA:19,6
-DA:20,6
-BRDA:17,33,0,1
-BRDA:17,33,1,6
+FNDA:0,System.Void UseCases.Experts.BookExpertUseCase/<Execute>d__5::MoveNext()
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+BRDA:17,33,0,0
+BRDA:17,33,1,0
 LF:10
-LH:10
+LH:0
 BRF:2
-BRH:2
+BRH:0
 FNF:3
-FNH:3
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Experts\EditExpertRequest.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Experts\EditExpertRequest.cs
 FN:4,System.String UseCases.Experts.EditExpertRequest::get_Id()
-FNDA:15,System.String UseCases.Experts.EditExpertRequest::get_Id()
-DA:5,15
+FNDA:0,System.String UseCases.Experts.EditExpertRequest::get_Id()
+DA:5,0
 FN:5,System.String UseCases.Experts.EditExpertRequest::get_FirstName()
-FNDA:5,System.String UseCases.Experts.EditExpertRequest::get_FirstName()
-DA:6,5
+FNDA:0,System.String UseCases.Experts.EditExpertRequest::get_FirstName()
+DA:6,0
 FN:6,System.String UseCases.Experts.EditExpertRequest::get_LastName()
-FNDA:5,System.String UseCases.Experts.EditExpertRequest::get_LastName()
-DA:7,5
+FNDA:0,System.String UseCases.Experts.EditExpertRequest::get_LastName()
+DA:7,0
 FN:7,System.String UseCases.Experts.EditExpertRequest::get_Role()
-FNDA:1,System.String UseCases.Experts.EditExpertRequest::get_Role()
-DA:8,1
+FNDA:0,System.String UseCases.Experts.EditExpertRequest::get_Role()
+DA:8,0
 FN:8,System.String UseCases.Experts.EditExpertRequest::get_Technology()
-FNDA:5,System.String UseCases.Experts.EditExpertRequest::get_Technology()
-DA:9,5
+FNDA:0,System.String UseCases.Experts.EditExpertRequest::get_Technology()
+DA:9,0
 FN:9,System.String UseCases.Experts.EditExpertRequest::get_Description()
-FNDA:9,System.String UseCases.Experts.EditExpertRequest::get_Description()
-DA:10,9
+FNDA:0,System.String UseCases.Experts.EditExpertRequest::get_Description()
+DA:10,0
 LF:6
-LH:6
+LH:0
 BRF:0
 BRH:0
 FNF:6
-FNH:6
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Experts\EditExpertUseCase.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Experts\EditExpertUseCase.cs
 FN:7,UseCases.Experts.ExpertsStorage UseCases.Experts.EditExpertUseCase::get__storage()
-FNDA:21,UseCases.Experts.ExpertsStorage UseCases.Experts.EditExpertUseCase::get__storage()
-DA:8,21
+FNDA:0,UseCases.Experts.ExpertsStorage UseCases.Experts.EditExpertUseCase::get__storage()
+DA:8,0
 FN:14,System.Void UseCases.Experts.EditExpertUseCase::Execute(UseCases.Experts.EditExpertRequest)
-FNDA:6,System.Void UseCases.Experts.EditExpertUseCase::Execute(UseCases.Experts.EditExpertRequest)
-DA:15,6
-DA:16,6
-DA:17,1
-DA:18,5
-DA:19,1
-DA:20,4
-DA:21,2
-DA:22,2
-DA:23,2
-BRDA:16,12,0,1
-BRDA:16,12,1,5
-BRDA:18,29,0,1
-BRDA:18,29,1,4
-BRDA:20,59,0,2
-BRDA:20,59,1,2
+FNDA:0,System.Void UseCases.Experts.EditExpertUseCase::Execute(UseCases.Experts.EditExpertRequest)
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+BRDA:16,12,0,0
+BRDA:16,12,1,0
+BRDA:18,29,0,0
+BRDA:18,29,1,0
+BRDA:20,59,0,0
+BRDA:20,59,1,0
 FN:24,System.Boolean UseCases.Experts.EditExpertUseCase::AllFieldAreEmpty(UseCases.Experts.EditExpertRequest)
-FNDA:5,System.Boolean UseCases.Experts.EditExpertUseCase::AllFieldAreEmpty(UseCases.Experts.EditExpertRequest)
-DA:25,5
-DA:26,5
-DA:27,5
-DA:28,5
-DA:29,5
-DA:30,5
-DA:31,5
-BRDA:26,7,0,5
-BRDA:26,15,0,5
-BRDA:26,23,0,5
-BRDA:26,31,0,1
-BRDA:26,7,1,4
-BRDA:26,15,1,4
-BRDA:26,23,1,4
-BRDA:26,31,1,4
+FNDA:0,System.Boolean UseCases.Experts.EditExpertUseCase::AllFieldAreEmpty(UseCases.Experts.EditExpertRequest)
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+BRDA:26,7,0,0
+BRDA:26,15,0,0
+BRDA:26,23,0,0
+BRDA:26,31,0,0
+BRDA:26,7,1,0
+BRDA:26,15,1,0
+BRDA:26,23,1,0
+BRDA:26,31,1,0
 FN:9,System.Void UseCases.Experts.EditExpertUseCase::.ctor(UseCases.Experts.ExpertsStorage)
-FNDA:15,System.Void UseCases.Experts.EditExpertUseCase::.ctor(UseCases.Experts.ExpertsStorage)
-DA:10,15
-DA:11,15
-DA:12,15
-DA:13,15
+FNDA:0,System.Void UseCases.Experts.EditExpertUseCase::.ctor(UseCases.Experts.ExpertsStorage)
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
 LF:21
-LH:21
+LH:0
 BRF:14
-BRH:14
+BRH:0
 FNF:4
-FNH:4
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Experts\GetExpertUseCase.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Experts\GetExpertUseCase.cs
 FN:13,BusinessModels.Expert UseCases.Experts.GetExpertUseCase::Execute(System.String)
-FNDA:5,BusinessModels.Expert UseCases.Experts.GetExpertUseCase::Execute(System.String)
-DA:14,5
-DA:15,5
-DA:16,1
-DA:17,4
-DA:18,5
-BRDA:15,7,0,1
-BRDA:15,7,1,4
+FNDA:0,BusinessModels.Expert UseCases.Experts.GetExpertUseCase::Execute(System.String)
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+BRDA:15,7,0,0
+BRDA:15,7,1,0
 FN:7,System.Void UseCases.Experts.GetExpertUseCase::.ctor(UseCases.Experts.ExpertsStorage)
-FNDA:8,System.Void UseCases.Experts.GetExpertUseCase::.ctor(UseCases.Experts.ExpertsStorage)
-DA:8,8
-DA:9,8
-DA:10,8
-DA:11,8
+FNDA:0,System.Void UseCases.Experts.GetExpertUseCase::.ctor(UseCases.Experts.ExpertsStorage)
+DA:8,0
+DA:9,0
+DA:10,0
+DA:11,0
 LF:9
-LH:9
+LH:0
 BRF:2
-BRH:2
+BRH:0
 FNF:2
-FNH:2
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Experts\ListExpertsUseCase.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Experts\ListExpertsUseCase.cs
 FN:5,UseCases.Experts.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
-FNDA:17,UseCases.Experts.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
-DA:6,17
+FNDA:0,UseCases.Experts.ExpertsStorage UseCases.Experts.ListExpertsUseCase::get__storage()
+DA:6,0
 FN:12,BusinessModels.Expert[] UseCases.Experts.ListExpertsUseCase::Execute(System.String,System.String[])
-FNDA:6,BusinessModels.Expert[] UseCases.Experts.ListExpertsUseCase::Execute(System.String,System.String[])
-DA:13,6
-DA:14,6
-DA:15,6
+FNDA:0,BusinessModels.Expert[] UseCases.Experts.ListExpertsUseCase::Execute(System.String,System.String[])
+DA:13,0
+DA:14,0
+DA:15,0
 FN:6,System.Void UseCases.Experts.ListExpertsUseCase::.ctor(UseCases.Experts.ExpertsStorage)
-FNDA:11,System.Void UseCases.Experts.ListExpertsUseCase::.ctor(UseCases.Experts.ExpertsStorage)
-DA:7,11
-DA:8,11
-DA:9,11
-DA:10,11
+FNDA:0,System.Void UseCases.Experts.ListExpertsUseCase::.ctor(UseCases.Experts.ExpertsStorage)
+DA:7,0
+DA:8,0
+DA:9,0
+DA:10,0
 LF:8
-LH:8
+LH:0
 BRF:0
 BRH:0
 FNF:3
-FNH:3
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidBookingException.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidBookingException.cs
 FN:4,System.Void UseCases.Exceptions.InvalidBookingException::.ctor(System.String)
-FNDA:1,System.Void UseCases.Exceptions.InvalidBookingException::.ctor(System.String)
-DA:5,1
-DA:6,1
-DA:7,1
+FNDA:0,System.Void UseCases.Exceptions.InvalidBookingException::.ctor(System.String)
+DA:5,0
+DA:6,0
+DA:7,0
 LF:3
-LH:3
+LH:0
 BRF:0
 BRH:0
 FNF:1
-FNH:1
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidEditCartRequestException.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Exceptions\InvalidEditCartRequestException.cs
 FN:4,System.Void UseCases.Exceptions.InvalidEditCartRequestException::.ctor(System.String)
 FNDA:0,System.Void UseCases.Exceptions.InvalidEditCartRequestException::.ctor(System.String)
 DA:5,0
@@ -679,66 +909,66 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Cart\AddExpertToCartUseCase.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Cart\AddExpertToCartUseCase.cs
 FN:11,System.String UseCases.Cart.AddExpertToCartUseCase::Execute(UseCases.Cart.EditCartRequest)
-FNDA:9,System.String UseCases.Cart.AddExpertToCartUseCase::Execute(UseCases.Cart.EditCartRequest)
-DA:12,9
-DA:13,9
-DA:14,9
-DA:15,1
-DA:16,9
-DA:17,9
-DA:18,9
-DA:19,9
-DA:20,9
-DA:21,9
-DA:22,9
-BRDA:13,12,0,3
-BRDA:13,12,1,6
-BRDA:14,51,0,1
-BRDA:14,51,1,9
+FNDA:0,System.String UseCases.Cart.AddExpertToCartUseCase::Execute(UseCases.Cart.EditCartRequest)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+BRDA:13,12,0,0
+BRDA:13,12,1,0
+BRDA:14,51,0,0
+BRDA:14,51,1,0
 FN:6,System.Void UseCases.Cart.AddExpertToCartUseCase::.ctor(UseCases.Cart.CartStorage)
-FNDA:6,System.Void UseCases.Cart.AddExpertToCartUseCase::.ctor(UseCases.Cart.CartStorage)
-DA:7,6
-DA:8,6
-DA:9,6
-DA:10,6
+FNDA:0,System.Void UseCases.Cart.AddExpertToCartUseCase::.ctor(UseCases.Cart.CartStorage)
+DA:7,0
+DA:8,0
+DA:9,0
+DA:10,0
 LF:15
-LH:15
+LH:0
 BRF:4
-BRH:4
+BRH:0
 FNF:2
-FNH:2
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Cart\CartUpdate.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Cart\CartUpdate.cs
 FN:4,System.String UseCases.Cart.CartUpdate::get_CartId()
-FNDA:19,System.String UseCases.Cart.CartUpdate::get_CartId()
-DA:5,19
+FNDA:0,System.String UseCases.Cart.CartUpdate::get_CartId()
+DA:5,0
 FN:5,System.Collections.Generic.List`1<System.String> UseCases.Cart.CartUpdate::get_ExpertIds()
-FNDA:18,System.Collections.Generic.List`1<System.String> UseCases.Cart.CartUpdate::get_ExpertIds()
-DA:6,18
+FNDA:0,System.Collections.Generic.List`1<System.String> UseCases.Cart.CartUpdate::get_ExpertIds()
+DA:6,0
 LF:2
-LH:2
+LH:0
 BRF:0
 BRH:0
 FNF:2
-FNH:2
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Cart\EditCartRequest.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Cart\EditCartRequest.cs
 FN:4,System.String UseCases.Cart.EditCartRequest::get_CartId()
-FNDA:15,System.String UseCases.Cart.EditCartRequest::get_CartId()
-DA:5,15
+FNDA:0,System.String UseCases.Cart.EditCartRequest::get_CartId()
+DA:5,0
 FN:5,System.String UseCases.Cart.EditCartRequest::get_ExpertId()
-FNDA:13,System.String UseCases.Cart.EditCartRequest::get_ExpertId()
-DA:6,13
+FNDA:0,System.String UseCases.Cart.EditCartRequest::get_ExpertId()
+DA:6,0
 LF:2
-LH:2
+LH:0
 BRF:0
 BRH:0
 FNF:2
-FNH:2
+FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Cart\GetCartUseCase.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Cart\GetCartUseCase.cs
 FN:4,UseCases.Cart.CartStorage UseCases.Cart.GetCartUseCase::get__storage()
 FNDA:0,UseCases.Cart.CartStorage UseCases.Cart.GetCartUseCase::get__storage()
 DA:5,0
@@ -760,7 +990,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Cart\ListCartsUseCase.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Cart\ListCartsUseCase.cs
 FN:4,UseCases.Cart.CartStorage UseCases.Cart.ListCartsUseCase::get__storage()
 FNDA:0,UseCases.Cart.CartStorage UseCases.Cart.ListCartsUseCase::get__storage()
 DA:5,0
@@ -782,7 +1012,7 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
-SF:C:\Repositories\ExpertBooking\UseCases\Cart\RemoveExpertFromCartUseCase.cs
+SF:c:\Repositories\ExpertBooking\UseCases\Cart\RemoveExpertFromCartUseCase.cs
 FN:14,System.Void UseCases.Cart.RemoveExpertFromCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 FNDA:0,System.Void UseCases.Cart.RemoveExpertFromCartUseCase::Execute(UseCases.Cart.EditCartRequest)
 DA:15,0
@@ -1036,6 +1266,20 @@ BRH:0
 FNF:3
 FNH:0
 end_of_record
+SF:c:\Repositories\ExpertBooking\WebSite\Views\EditExpert\_editExpert.cshtml
+FN:13,System.Void AspNetCoreGeneratedDocument.Views_EditExpert__editExpert/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_EditExpert__editExpert/<ExecuteAsync>d__0::MoveNext()
+DA:14,0
+DA:17,0
+DA:18,0
+DA:22,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Views\ExpertDetails\_ExpertModal.cshtml
 FN:13,System.Void AspNetCoreGeneratedDocument.Views_ExpertDetails__ExpertModal/<ExecuteAsync>d__0::MoveNext()
 FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_ExpertDetails__ExpertModal/<ExecuteAsync>d__0::MoveNext()
@@ -1072,11 +1316,15 @@ DA:31,0
 DA:32,0
 DA:33,0
 DA:38,0
-DA:40,0
+DA:39,0
+DA:41,0
 DA:44,0
-DA:48,0
-DA:52,0
-DA:65,0
+DA:45,0
+DA:47,0
+DA:51,0
+DA:55,0
+DA:59,0
+DA:72,0
 BRDA:30,461,0,0
 BRDA:30,461,1,0
 BRDA:30,953,0,0
@@ -1091,11 +1339,13 @@ BRDA:30,2923,0,0
 BRDA:30,2923,1,0
 BRDA:30,3417,0,0
 BRDA:30,3417,1,0
-BRDA:30,4539,1,0
-BRDA:30,4539,0,0
-LF:10
+BRDA:30,4738,1,0
+BRDA:38,3936,0,0
+BRDA:38,3936,1,0
+BRDA:30,4738,0,0
+LF:14
 LH:0
-BRF:16
+BRF:18
 BRH:0
 FNF:1
 FNH:0
@@ -1200,26 +1450,26 @@ FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Models\BookingInputModel.cs
 FN:4,System.Collections.Generic.List`1<System.String> WebSite.Models.BookingInputModel::get_SelectedExpertIds()
-FNDA:14,System.Collections.Generic.List`1<System.String> WebSite.Models.BookingInputModel::get_SelectedExpertIds()
-DA:5,14
+FNDA:0,System.Collections.Generic.List`1<System.String> WebSite.Models.BookingInputModel::get_SelectedExpertIds()
+DA:5,0
 FN:5,System.String WebSite.Models.BookingInputModel::get_BookerEmailAddress()
-FNDA:9,System.String WebSite.Models.BookingInputModel::get_BookerEmailAddress()
-DA:6,9
+FNDA:0,System.String WebSite.Models.BookingInputModel::get_BookerEmailAddress()
+DA:6,0
 FN:6,System.String WebSite.Models.BookingInputModel::get_TechnologyFilter()
 FNDA:0,System.String WebSite.Models.BookingInputModel::get_TechnologyFilter()
 DA:7,0
 FN:7,System.String WebSite.Models.BookingInputModel::get_TimePeriod()
-FNDA:9,System.String WebSite.Models.BookingInputModel::get_TimePeriod()
-DA:8,9
+FNDA:0,System.String WebSite.Models.BookingInputModel::get_TimePeriod()
+DA:8,0
 FN:8,System.String WebSite.Models.BookingInputModel::get_Description()
-FNDA:9,System.String WebSite.Models.BookingInputModel::get_Description()
-DA:9,9
+FNDA:0,System.String WebSite.Models.BookingInputModel::get_Description()
+DA:9,0
 LF:5
-LH:4
+LH:0
 BRF:0
 BRH:0
 FNF:5
-FNH:4
+FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Models\BookingResultModel.cs
 FN:6,BusinessModels.Booking WebSite.Models.BookingResultModel::get_Booking()
@@ -1254,109 +1504,114 @@ FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Models\ExpertViewModel.cs
 FN:4,System.String WebSite.Models.ExpertViewModel::get_Id()
-FNDA:156,System.String WebSite.Models.ExpertViewModel::get_Id()
-DA:5,156
+FNDA:0,System.String WebSite.Models.ExpertViewModel::get_Id()
+DA:5,0
 FN:5,System.String WebSite.Models.ExpertViewModel::get_FirstName()
-FNDA:76,System.String WebSite.Models.ExpertViewModel::get_FirstName()
-DA:6,76
+FNDA:0,System.String WebSite.Models.ExpertViewModel::get_FirstName()
+DA:6,0
 FN:6,System.String WebSite.Models.ExpertViewModel::get_LastName()
-FNDA:76,System.String WebSite.Models.ExpertViewModel::get_LastName()
-DA:7,76
+FNDA:0,System.String WebSite.Models.ExpertViewModel::get_LastName()
+DA:7,0
 FN:7,System.String WebSite.Models.ExpertViewModel::get_Role()
-FNDA:76,System.String WebSite.Models.ExpertViewModel::get_Role()
-DA:8,76
+FNDA:0,System.String WebSite.Models.ExpertViewModel::get_Role()
+DA:8,0
 FN:8,System.String WebSite.Models.ExpertViewModel::get_Technology()
-FNDA:76,System.String WebSite.Models.ExpertViewModel::get_Technology()
-DA:9,76
+FNDA:0,System.String WebSite.Models.ExpertViewModel::get_Technology()
+DA:9,0
 FN:9,System.String WebSite.Models.ExpertViewModel::get_Description()
-FNDA:76,System.String WebSite.Models.ExpertViewModel::get_Description()
-DA:10,76
+FNDA:0,System.String WebSite.Models.ExpertViewModel::get_Description()
+DA:10,0
 FN:10,System.Boolean WebSite.Models.ExpertViewModel::get_IsSelected()
-FNDA:72,System.Boolean WebSite.Models.ExpertViewModel::get_IsSelected()
-DA:11,72
-LF:7
-LH:7
+FNDA:0,System.Boolean WebSite.Models.ExpertViewModel::get_IsSelected()
+DA:11,0
+FN:11,System.Boolean WebSite.Models.ExpertViewModel::get_IsEditable()
+FNDA:0,System.Boolean WebSite.Models.ExpertViewModel::get_IsEditable()
+DA:12,0
+LF:8
+LH:0
 BRF:0
 BRH:0
-FNF:7
-FNH:7
+FNF:8
+FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Helpers\BookingInputModelConverter.cs
 FN:8,BusinessModels.Booking WebSite.Helpers.BookingInputModelConverter::Convert(WebSite.Models.BookingInputModel)
-FNDA:7,BusinessModels.Booking WebSite.Helpers.BookingInputModelConverter::Convert(WebSite.Models.BookingInputModel)
-DA:9,7
-DA:10,7
-DA:11,7
-DA:12,7
-DA:13,7
-DA:14,7
-DA:15,7
-DA:16,7
-DA:17,7
+FNDA:0,BusinessModels.Booking WebSite.Helpers.BookingInputModelConverter::Convert(WebSite.Models.BookingInputModel)
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
 BRDA:10,9,0,0
-BRDA:10,9,1,7
-BRDA:10,21,0,1
-BRDA:10,21,1,6
-BRDA:10,33,0,1
-BRDA:10,33,1,7
+BRDA:10,9,1,0
+BRDA:10,21,0,0
+BRDA:10,21,1,0
+BRDA:10,33,0,0
+BRDA:10,33,1,0
 LF:9
-LH:9
+LH:0
 BRF:6
-BRH:5
+BRH:0
 FNF:1
-FNH:1
+FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Helpers\ExpertViewModelConverter.cs
-FN:13,WebSite.Models.ExpertViewModel[] WebSite.Helpers.ExpertViewModelConverter::Convert(BusinessModels.Expert[],System.Collections.Generic.List`1<System.String>)
-FNDA:5,WebSite.Models.ExpertViewModel[] WebSite.Helpers.ExpertViewModelConverter::Convert(BusinessModels.Expert[],System.Collections.Generic.List`1<System.String>)
-DA:14,5
-DA:15,5
-DA:16,42
-DA:17,16
-DA:18,16
-DA:19,16
-DA:20,16
-DA:21,16
-DA:22,16
-DA:23,16
-DA:24,16
-DA:25,16
-DA:26,7
-DA:27,16
-DA:28,16
-DA:29,5
-DA:30,5
-BRDA:16,310,1,16
-BRDA:18,248,0,4
-BRDA:18,248,1,12
-BRDA:16,310,0,5
-FN:32,WebSite.Models.ExpertViewModel WebSite.Helpers.ExpertViewModelConverter::Convert(BusinessModels.Expert,System.Collections.Generic.List`1<System.String>)
-FNDA:3,WebSite.Models.ExpertViewModel WebSite.Helpers.ExpertViewModelConverter::Convert(BusinessModels.Expert,System.Collections.Generic.List`1<System.String>)
-DA:33,3
-DA:34,7
-DA:35,3
-BRDA:34,21,0,1
-BRDA:34,21,1,2
-FN:37,WebSite.Models.ExpertViewModel WebSite.Helpers.ExpertViewModelConverter::CreateViewModel(BusinessModels.Expert,System.Boolean)
-FNDA:3,WebSite.Models.ExpertViewModel WebSite.Helpers.ExpertViewModelConverter::CreateViewModel(BusinessModels.Expert,System.Boolean)
-DA:38,3
-DA:39,3
-DA:40,3
-DA:41,3
-DA:42,3
-DA:43,3
-DA:44,3
-DA:45,3
-DA:46,3
-DA:47,3
-DA:48,3
-DA:49,3
-LF:32
-LH:32
+FN:8,WebSite.Models.ExpertViewModel[] WebSite.Helpers.ExpertViewModelConverter::Convert(BusinessModels.Expert[],System.Collections.Generic.List`1<System.String>,System.Boolean)
+FNDA:0,WebSite.Models.ExpertViewModel[] WebSite.Helpers.ExpertViewModelConverter::Convert(BusinessModels.Expert[],System.Collections.Generic.List`1<System.String>,System.Boolean)
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+BRDA:11,318,1,0
+BRDA:13,248,0,0
+BRDA:13,248,1,0
+BRDA:11,318,0,0
+FN:28,WebSite.Models.ExpertViewModel WebSite.Helpers.ExpertViewModelConverter::Convert(BusinessModels.Expert,System.Collections.Generic.List`1<System.String>)
+FNDA:0,WebSite.Models.ExpertViewModel WebSite.Helpers.ExpertViewModelConverter::Convert(BusinessModels.Expert,System.Collections.Generic.List`1<System.String>)
+DA:29,0
+DA:30,0
+DA:31,0
+BRDA:30,21,0,0
+BRDA:30,21,1,0
+FN:33,WebSite.Models.ExpertViewModel WebSite.Helpers.ExpertViewModelConverter::CreateViewModel(BusinessModels.Expert,System.Boolean,System.Boolean)
+FNDA:0,WebSite.Models.ExpertViewModel WebSite.Helpers.ExpertViewModelConverter::CreateViewModel(BusinessModels.Expert,System.Boolean,System.Boolean)
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+LF:34
+LH:0
 BRF:6
-BRH:6
+BRH:0
 FNF:3
-FNH:3
+FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Helpers\ReadJsonFromFileHelper.cs
 FN:4,System.String WebSite.Helpers.ReadJsonFromFileHelper::ReadJsonFromTextFile(System.String)
@@ -1565,6 +1820,26 @@ BRH:0
 FNF:6
 FNH:0
 end_of_record
+SF:c:\Repositories\ExpertBooking\WebSite\Controllers\EditExpertController.cs
+FN:19,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.EditExpertController::Index(System.String)
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.EditExpertController::Index(System.String)
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:13,System.Void WebSite.Controllers.EditExpertController::.ctor(UseCases.Experts.GetExpertUseCase)
+FNDA:0,System.Void WebSite.Controllers.EditExpertController::.ctor(UseCases.Experts.GetExpertUseCase)
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+LF:8
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Controllers\ExpertController.cs
 FN:23,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.ExpertController::Index(System.String)
 FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.ExpertController::Index(System.String)
@@ -1665,9 +1940,8 @@ FNF:2
 FNH:0
 end_of_record
 SF:c:\Repositories\ExpertBooking\WebSite\Controllers\ListExpertsController.cs
-FN:24,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.ListExpertsController::Index(System.String)
+FN:25,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.ListExpertsController::Index(System.String)
 FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebSite.Controllers.ListExpertsController::Index(System.String)
-DA:25,0
 DA:26,0
 DA:27,0
 DA:28,0
@@ -1678,24 +1952,34 @@ DA:32,0
 DA:33,0
 DA:34,0
 DA:35,0
-BRDA:29,41,0,0
-BRDA:29,41,1,0
-BRDA:29,63,0,0
-BRDA:31,79,0,0
-BRDA:31,79,1,0
-BRDA:29,63,1,0
-FN:15,System.Void WebSite.Controllers.ListExpertsController::.ctor(UseCases.Experts.ListExpertsUseCase,UseCases.Cart.GetCartUseCase)
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+BRDA:31,43,0,0
+BRDA:31,43,1,0
+BRDA:31,67,0,0
+BRDA:33,83,0,0
+BRDA:33,83,1,0
+BRDA:31,67,1,0
+BRDA:35,119,0,0
+BRDA:35,119,1,0
+BRDA:35,143,0,0
+BRDA:35,143,1,0
+FN:16,System.Void WebSite.Controllers.ListExpertsController::.ctor(UseCases.Experts.ListExpertsUseCase,UseCases.Cart.GetCartUseCase)
 FNDA:0,System.Void WebSite.Controllers.ListExpertsController::.ctor(UseCases.Experts.ListExpertsUseCase,UseCases.Cart.GetCartUseCase)
-DA:16,0
 DA:17,0
 DA:18,0
 DA:19,0
 DA:20,0
 DA:21,0
 DA:22,0
-LF:18
+DA:23,0
+LF:23
 LH:0
-BRF:6
+BRF:10
 BRH:0
 FNF:2
 FNH:0

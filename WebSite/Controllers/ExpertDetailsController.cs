@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using UseCases.Cart;
 using UseCases.Experts;
 using WebSite.Helpers;
-using WebSite.Models;
 
 namespace WebSite.Controllers;
 
@@ -12,6 +11,7 @@ public class ExpertDetailsController : Controller
     private GetExpertUseCase _getExpertUseCase;
     private GetCartUseCase _getCartUseCase;
     private const string CartCookie = "__CartId";
+    private const string AdminCookie = "__SuperSecretAdminKey";
 
     public ExpertDetailsController(
         GetExpertUseCase getExpertUseCase, 
@@ -33,7 +33,7 @@ public class ExpertDetailsController : Controller
             {
                 expertIds = _getCartUseCase.Execute(result)?.ExpertIds;
             }
-            }catch{}
+        }catch{}
         var expertViewModel = ExpertViewModelConverter.Convert(expert, expertIds);
 
         return PartialView("_expertModal", expertViewModel);

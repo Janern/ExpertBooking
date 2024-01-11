@@ -1,0 +1,26 @@
+@model ExpertViewModel;
+<div id="expertModal" class="modal modal-background closeModal" 
+    hx-swap="delete"
+    hx-target="this"
+    hx-get=""
+    hx-trigger="click target:.closeModal">
+    <div class="modal-window">
+        <div class="closeModalButton closeModal">
+            <img class="closeModal" src="images/svg/x.svg"></img>
+        </div>
+        <div class="modal-textbox">
+            <div class="row">
+                <div class="four columns">
+                    <img id="expertImage" src="images/@(Model.Id).jpg" class="u-max-full-width" />
+                </div>
+                <div class="eight columns">
+                    <span class="expert-name">@Model.FirstName @Model.LastName</span><br />
+                    <span class="role">@Model.Role</span>
+                </div>
+            </div>
+            <div class="row">
+                <input>@Model.Description</input><button>Save</button>
+            </div>
+        </div>
+    </div>
+</div>

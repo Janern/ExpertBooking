@@ -9,4 +9,5 @@ public class ExpertViewModel
     public string Technology { get; set; }
     public string Description { get; set; }
     public bool IsSelected { get; set; }
+    public bool IsEditable { get; set; }
 }
