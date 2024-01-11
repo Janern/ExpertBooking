@@ -211,13 +211,85 @@ public class EditExpertUseCaseTests
     }
 
     [Fact]
-    public void GivenExistingExpertWhenEditingLastNameShouldEditLastName(){}
+    public void GivenExistingExpertWhenEditingLastNameShouldEditLastName()
+    {
+        string Id = "EXISTING";
+        string NewLastName = "NEW LastName";
+        Expert[] existing = new Expert[]
+        {
+            new Expert
+            {
+                Id = Id,
+                Description = "Great programmer",
+                FirstName = "Frank",
+                LastName = "OLD LAST NAME",
+                Role = "Backend",
+                Technology = ".NET"
+            }
+        };
+        _storage = new ExpertsStorageSpy(existing);
+        InitializeUseCase();
+        EditExpertRequest request = new EditExpertRequest{Id = Id, LastName = NewLastName};
+        
+        _useCase.Execute(request);
+    
+        var expert = _storage.GetExpert(Id);
+        Assert.Equal(NewLastName, expert.LastName);
+    }
     
     [Fact]
-    public void GivenExistingExpertWhenEditingFirstNameShouldEditRole(){}
+    public void GivenExistingExpertWhenEditingRoleShouldEditRole()
+    {
+        string Id = "EXISTING";
+        string NewRole = "NEW ROLE";
+        Expert[] existing = new Expert[]
+        {
+            new Expert
+            {
+                Id = Id,
+                Description = "Great programmer",
+                FirstName = "Frank",
+                LastName = "Ferdinand",
+                Role = "OLD ROLE",
+                Technology = ".NET"
+            }
+        };
+        _storage = new ExpertsStorageSpy(existing);
+        InitializeUseCase();
+        EditExpertRequest request = new EditExpertRequest{Id = Id, Role = NewRole};
+        
+        _useCase.Execute(request);
+    
+        var expert = _storage.GetExpert(Id);
+        Assert.Equal(NewRole, expert.Role);
+    }
     
     [Fact]
-    public void GivenExistingExpertWhenEditingFirstNameShouldEditTechnology(){}
+    public void GivenExistingExpertWhenEditingTechnologyShouldEditTechnology()
+    {
+        string Id = "EXISTING";
+        string NewTechnology = "NEW TECHNOLOGY";
+        Expert[] existing = new Expert[]
+        {
+            new Expert
+            {
+                Id = Id,
+                Description = "Great programmer",
+                FirstName = "Frank",
+                LastName = "Ferdinand",
+                Role = "Backend",
+                Technology = "OLD TECHNOLOGY"
+            }
+        };
+        _storage = new ExpertsStorageSpy(existing);
+        InitializeUseCase();
+        EditExpertRequest request = new EditExpertRequest{Id = Id, Technology = NewTechnology};
+        
+        _useCase.Execute(request);
+    
+        var expert = _storage.GetExpert(Id);
+        Assert.Equal(NewTechnology, expert.Technology);
+    }
 
     private class ExpertsStorageSpy : ExpertsStorage
     {

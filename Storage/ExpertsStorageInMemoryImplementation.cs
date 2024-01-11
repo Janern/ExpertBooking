@@ -48,6 +48,12 @@ namespace Storage
                 _experts[request.Id].Description = request.Description;
             if(request.FirstName != null)
                 _experts[request.Id].FirstName = request.FirstName;
+            if(request.LastName != null)
+                _experts[request.Id].LastName = request.LastName;
+            if(request.Role != null)
+                _experts[request.Id].Role = request.Role;
+            if(request.Technology != null)
+                _experts[request.Id].Technology = request.Technology;
         }
     }
 }
