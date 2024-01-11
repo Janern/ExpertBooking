@@ -16,7 +16,7 @@ public class ExpertStorageSqliteImplementation : ExpertsStorage
     public void EditExpert(EditExpertRequest request)
     {
         if(request.Description != null)
-            _experts[request.Id].Description = request.Description;
+            _sqlite.EditRow(DatabaseTableName.Expert, DatabaseColumnName.Description, request.Description, DatabaseColumnName.Id, request.Id);
     }
 
     public bool Exists(string id)

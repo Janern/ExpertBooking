@@ -11,6 +11,8 @@ public static class DatabaseColumnNameHelper
                 return "CartId";
             case DatabaseColumnName.ExpertId :
                 return "ExpertId";
+            case DatabaseColumnName.Description :
+                return "Description";
             default :
                 throw new NotSupportedException("Unknown columnName "+columnName);
         }
