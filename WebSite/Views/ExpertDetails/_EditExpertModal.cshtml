@@ -9,26 +9,37 @@
             <img class="closeModal" src="images/svg/x.svg"></img>
         </div>
         <div class="modal-textbox">
-            <div class="row">
-                <div class="four columns">
+            <form>
+                <div class="row">
                     <img id="expertImage" src="images/@(Model.Id).jpg" class="u-max-full-width" />
                 </div>
-                <div class="eight columns">
-                    <span class="expert-name">@Model.FirstName @Model.LastName</span><br />
-                    <span class="role">@Model.Role</span>
+                <div class="row">
+                    <label for="firstname">Fornavn:</label>
+                    <input id="firstname" class="expert-name" name="FirstName" value="@Model.FirstName"/><br />
                 </div>
-            </div>
-            <form>
-                <div class="row" id="DescriptionEdit">
-                    <textarea  name="Description">@Model.Description</textarea>
-                    <button
-                    hx-swap="delete"
-                    hx-target="#expertModal"
-                    hx-post="ExpertDetails/Edit/@Model.Id">
-                        Save
-                    </button>
+                <div class="row">
+                    <label for="lastname">Etternavn:</label>
+                    <input id="lastname" class="expert-name" name="LastName" value="@Model.LastName"/><br />
                 </div>
-            </form>
+                <div class="row">
+                    <label for="role">Rolle:</label>
+                    <input id="role" class="role" name="Role" value="@Model.Role"/><br />
+                </div>
+                <div class="row">    
+                    <label for="technology">Technology:</label>
+                    <input id="technology" class="technology" name="Technology" value="@Model.Technology"/><br />
+                </div>
+                <div class="row">
+                    <label for="description">Beskrivelse:</label>
+                    <textarea id="description" name="Description">@Model.Description</textarea>
+                </div>
+                <button type="submit"
+                        hx-swap="delete"
+                        hx-target="#expertModal"
+                        hx-post="ExpertDetails/Edit/@Model.Id">
+                    Save
+                </button>
+            </form>  
         </div>
     </div>
 </div>
