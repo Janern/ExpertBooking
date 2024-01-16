@@ -139,7 +139,6 @@ public class SqliteController : SqlController
             $"WHERE {DatabaseColumnNameHelper.GetColumnName(whereColumn)} = @WhereValue";
             AddParameterValuesForUpdate(command.Parameters, updateColumns);
             command.Parameters.AddWithValue("@WhereValue", whereValue);
-            Console.WriteLine("Executing sql: "+command.CommandText);
             command.ExecuteNonQuery();
         }
     }
