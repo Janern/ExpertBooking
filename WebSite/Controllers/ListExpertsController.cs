@@ -33,7 +33,7 @@ namespace WebSite.Controllers
                 {
                     selectedExpertIds = _getCartUseCase.Execute(result)?.ExpertIds;
                 }
-                if(Request.Cookies.TryGetValue(AdminKeyCookie, out var AdminCookieValue) && _getCartUseCase.Execute(result) != null)
+                if(Request.Cookies.TryGetValue(AdminKeyCookie, out var AdminCookieValue))
                 {
                     isAdmin = AdminCookieValue == "94c165d1-7405-4795-aaa9-c2e6369b8ce8";
                 }
