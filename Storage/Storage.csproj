@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BusinessModels\BusinessModels.csproj" />
     <ProjectReference Include="..\UseCases\UseCases.csproj" />
+    <ProjectReference Include="..\ExternalApi\ExternalApi.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

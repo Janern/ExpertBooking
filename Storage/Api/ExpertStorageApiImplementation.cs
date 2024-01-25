@@ -1,10 +1,16 @@
 using BusinessModels;
 using UseCases.Experts;
+using ExternalApi;
 
 namespace Storage;
 
 public class ExpertStorageApiImplementation : ExpertsStorage
 {
+    public ApiClient _api { get; set; }
+    public ExpertStorageApiImplementation(ApiClient api)
+    {
+        _api = api;
+    }
     public void EditExpert(EditExpertRequest request)
     {
         throw new NotImplementedException();
@@ -17,6 +23,7 @@ public class ExpertStorageApiImplementation : ExpertsStorage
 
     public Expert GetExpert(string id)
     {
+        string json = _api.GetExpertJson(id);
         return null;
     }
 

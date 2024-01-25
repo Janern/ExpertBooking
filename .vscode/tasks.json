@@ -36,6 +36,17 @@
                 "${workspaceFolder}/ExpertBooking.sln"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "dotnet",
+            "task": "watch test",
+            "file": "C:\\Repositories\\ExpertBooking\\Tests\\tests.csproj",
+            "problemMatcher": [],
+            "label": "dotnet: watch tests",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         }
     ]
 }
