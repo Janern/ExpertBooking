@@ -29,6 +29,7 @@
     <ProjectReference Include="..\Services\Services.csproj" />
     <ProjectReference Include="..\Storage\Storage.csproj" />
     <ProjectReference Include="..\WebSite\WebSite.csproj" />
+    <ProjectReference Include="..\ExternalApi\ExternalApi.csproj" />
   </ItemGroup>
 
 </Project>
