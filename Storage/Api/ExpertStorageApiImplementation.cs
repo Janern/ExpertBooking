@@ -6,10 +6,12 @@ namespace Storage;
 
 public class ExpertStorageApiImplementation : ExpertsStorage
 {
-    public ApiClient _api { get; set; }
-    public ExpertStorageApiImplementation(ApiClient api)
+    private ApiClient _api { get; set; }
+    private ExpertApiConverter _converter { get; set; }
+    public ExpertStorageApiImplementation(ApiClient api, ExpertApiConverter converter)
     {
         _api = api;
+        _converter = converter;
     }
     public void EditExpert(EditExpertRequest request)
     {
@@ -24,7 +26,7 @@ public class ExpertStorageApiImplementation : ExpertsStorage
     public Expert GetExpert(string id)
     {
         string json = _api.GetExpertJson(id);
-        return null;
+        return _converter.Convert(json);
     }
 
     public Expert[] GetExperts(string technologyFilter, string[] expertIds = null)
