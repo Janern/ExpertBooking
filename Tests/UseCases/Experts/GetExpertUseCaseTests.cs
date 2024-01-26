@@ -77,7 +77,16 @@ public class GetExpertUseCaseTests
             Technology = "Technology",
             Description = "Description"
         };
-        _experts = new Expert[]{expected, new Expert{Id = "WRONGID"}};
+        Expert wrongExpert = new Expert
+        {
+            Id = "WRONGID",
+            FirstName = "wrongFirstName",
+            LastName = "wrongLastName",
+            Role = "wrongRole",
+            Technology = "wrongTechnology",
+            Description = "wrongDescription"
+        };
+        _experts = new Expert[]{expected, wrongExpert};
         SetupUseCase();
         
         Expert actual = _useCase.Execute(Id);
