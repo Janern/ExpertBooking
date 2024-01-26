@@ -54,6 +54,27 @@ public class GetExpertFromExternalStorageUseCaseTests
         Assert.True(_fakeConverter.WasCalled);
     }
 
+    [Fact]
+    public void 
+    GivenExpertObjectFromConverterWhenGettingExpertShouldReturnConvertedExpert()
+    {
+        string Id = "EXTERNALEXPERTID";
+        Expert expectedExpert = new Expert
+        {
+            Id = "ID",
+            Description = "DESCRIPTION",
+            FirstName = "FIRSTNAME",
+            LastName = "LASTNAME",
+            Role = "ROLE",
+            Technology = "TECHNOLOGY"
+        };
+        _fakeConverter.ReturnedExpert = expectedExpert;
+
+        var actual = _useCase.Execute(Id);
+
+        TestHelpers.ExpertAssertionHelper.AssertAreEqual(expectedExpert, actual);
+    }
+
     private class ApiClientFake : ApiClient
     {
         public bool WasCalled = false;
@@ -70,10 +91,11 @@ public class GetExpertFromExternalStorageUseCaseTests
     private class ExpertApiConverterFake : ExpertApiConverter
     {
         public bool WasCalled {get; set;}
+        public Expert ReturnedExpert {get; set;}
         public Expert Convert(string expertJson)
         {
             WasCalled = true;
-            return null;
+            return ReturnedExpert;
         }
     }
 }
