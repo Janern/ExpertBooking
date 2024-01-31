@@ -40,7 +40,7 @@ public class ExpertStorageSqliteImplementation : ExpertsStorage
     {
         List<IDictionary<string, object>> rows = _sqlite.SelectRows(DatabaseTableName.Expert);
         IDictionary<string, object>? row = rows.FirstOrDefault(r => ((string) r["Id"]) == id);
-        return new Expert{
+        return row == null ? null : new Expert{
             Id = (string) row["Id"],
             FirstName = (string)row["FirstName"],
             LastName = (string)row["LastName"],

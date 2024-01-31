@@ -1,29 +1,22 @@
 using BusinessModels;
 using Storage;
 using Tests.TestHelpers;
-using UseCases.Cart;
 using UseCases.Experts;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Tests.UseCases.Experts;
 
-public class GetExpertUseCaseTests
+public class GetExpertUseCaseTests : ExpertTests
 {
     private GetExpertUseCase _useCase;
     private ExpertsStorage _storage;
-    private Expert[] _experts {get;set;}
     public GetExpertUseCaseTests()
     {
-        _experts = new Expert[]{};
-        SetupUseCase();
-    }
-
-    private void SetupUseCase()
-    {
-        _storage = new ExpertsStorageInMemoryImplementation(_experts);
+        _storage = new ExpertStorageSqliteImplementation(_sqlite);
         _useCase = new GetExpertUseCase(_storage);
     }
-    
+
     [Fact]
     public void GivenNoIdShouldGetNull()
     {
@@ -44,8 +37,9 @@ public class GetExpertUseCaseTests
     [Fact]
     public void GivenTwoExpertsWhenGettingWrongIdShouldGetNull()
     {
-        _experts = new Expert[]{new Expert{Id = "ID"}, new Expert{Id = "ID2"}};
-        SetupUseCase();
+        _existingExperts.Add(new Expert{Id = "ID", Description = "", FirstName = "", LastName = "", Role = "", Technology = ""});
+        _existingExperts.Add(new Expert{Id = "ID2", Description = "", FirstName = "", LastName = "", Role = "", Technology = ""});
+        SetUpTestDB();
         
         Expert actual = _useCase.Execute("WRONGID");
 
@@ -56,8 +50,9 @@ public class GetExpertUseCaseTests
     public void GivenTwoExpertsWhenGettingRightIdShouldGetNotNull()
     {
         string Id = "ID";
-        _experts = new Expert[]{new Expert{Id = Id}, new Expert{Id = "WRONGID"}};
-        SetupUseCase();
+        _existingExperts.Add(new Expert{Id = Id, Description = "", FirstName = "", LastName = "", Role = "", Technology = ""});
+        _existingExperts.Add(new Expert{Id = "WRONGID", Description = "", FirstName = "", LastName = "", Role = "", Technology = ""});
+        SetUpTestDB();
         
         Expert actual = _useCase.Execute(Id);
 
@@ -70,15 +65,16 @@ public class GetExpertUseCaseTests
         string Id = "ID";
         Expert expected = new Expert
         {
-            Id = "ID",
+            Id = Id,
             FirstName = "FirstName",
             LastName = "LastName",
             Role = "Role",
             Technology = "Technology",
             Description = "Description"
         };
-        _experts = new Expert[]{expected, new Expert{Id = "WRONGID"}};
-        SetupUseCase();
+        _existingExperts.Add(expected);
+        _existingExperts.Add(new Expert{Id = "WRONGID", Description = "", FirstName = "", LastName = "", Role = "", Technology = ""});
+        SetUpTestDB();
         
         Expert actual = _useCase.Execute(Id);
 
