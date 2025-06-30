@@ -1,2 +1,2 @@
 # ExpertBooking
-Book an expert from AnyShore
+Book a remote expert for your project today
